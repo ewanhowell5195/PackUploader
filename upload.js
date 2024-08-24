@@ -135,14 +135,19 @@ if (!cfVersionsRequest.ok) {
 
 const cfVersions = await cfVersionsRequest.json().then(e => e[0].flatMap(e => e.choices))
 
-const cfProjectVersions = []
+const cfPackVersions = []
 
-if (config.versions.curseforge.type === "latest") {
-  if (config.versions.curseforge.snapshots) {
-    cfProjectVersions.push(cfVersions[0].id)
-  } else {
-    cfProjectVersions.push(cfVersions.find(e => !e.name.endsWith("Snapshot")).id)
-  }
+switch (config.versions.curseforge.type) {
+  case "latest":
+    if (config.versions.curseforge.snapshots) {
+      cfPackVersions.push(cfVersions[0].id)
+    } else {
+      cfPackVersions.push(cfVersions.find(e => !e.name.endsWith("Snapshot")).id)
+    }
+    break
+  case "after":
+    cfPackVersions.push(...cfVersions.slice(0, cfVersions.findIndex(e => e.name === config.versions.curseforge.version) + 1).filter(e => config.versions.curseforge.snapshots || !e.name.endsWith("Snapshot")).map(e => e.id))
+    break
 }
 
 // CurseForge Pack Upload
@@ -156,7 +161,7 @@ cfPackForm.append("file", new Blob([fs.readFileSync("upload/pack.zip")], {
 cfPackForm.append("metadata", JSON.stringify({
   displayName: `${config.name} - v${config.version}`,
   changelog: "Initial release",
-  gameVersions: cfProjectVersions,
+  gameVersions: cfPackVersions,
   releaseType: "release"
 }))
 
@@ -577,8 +582,17 @@ if (!config.versions.modrinth.snapshots) {
 
 const mrVersions = []
 
-if (config.versions.modrinth.type === "latest") {
-  mrVersions.push(mrVersionsRequest[0].version)
+switch (config.versions.modrinth.type) {
+  case "latest":
+    if (config.versions.modrinth.snapshots) {
+      mrVersions.push(mrVersionsRequest[0].version)
+    } else {
+      mrVersions.push(mrVersionsRequest.find(e => e.version_type === "release").version)
+    }
+    break
+  case "after":
+    mrVersions.push(...mrVersionsRequest.slice(0, mrVersionsRequest.findIndex(e => e.version === config.versions.modrinth.version) + 1).filter(e => config.versions.modrinth.snapshots || e.version_type === "release").map(e => e.version))
+    break
 }
 
 const mrPackForm = makeForm({
