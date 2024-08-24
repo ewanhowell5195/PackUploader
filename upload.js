@@ -244,7 +244,7 @@ for (const data of cfUploadedImages) {
       console.log(`CurseForge: Updated metadata for image "${data.fileName}"`)
     }
   } else {
-    console.error(`CurseForge: Image "${data.fileName}" failed to upload`)
+    throw new Error(`CurseForge: Image "${data.fileName}" failed to upload ` + JSON.stringify(data))
   }
 }
 
@@ -459,11 +459,11 @@ const pmcForm = makeForm({
   description: pmcBBCODE,
   wid1: 1,
   wfile1: 1,
-  wurl1: "https://www.mediafire.com/file/f7l1zwp35qpwhqi/F8thful_-_v0.6.zip/file",
+  wurl1: `https://ewanhowell.com/resourcepacks/${config.id}`,
   wtitle1: "Download here",
   wid0: 0,
   wfile0: 0,
-  wurl0: "https://www.mediafire.com/",
+  wurl0: "https://ewanhowell.com/",
   wtitle0: "My Website",
   credit: "",
   item_tag: "",

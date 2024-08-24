@@ -1,0 +1,147 @@
+{
+  "config": {
+    "id": "black-mesa-skyboxes",
+    "name": "Black Mesa Skyboxes",
+    "summary": "Bring the Black Mesa skyboxes into Minecraft",
+    "description": {
+      "titleColour": "#fff",
+      "titleBackground": "#140122",
+      "titleBackground2": "#207489",
+      "description": [
+        "This pack adds the skybox textures from the game Black Mesa into Minecraft. Experience the skyboxes from around the black mesa facility in the overworld, and the skyboxes from Xen in the End dimension!."
+      ],
+      "youtube": "https://www.youtube.com/@EwanHowell",
+      "twitter": "https://twitter.com/ewanhowell5195",
+      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
+      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
+      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
+      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
+    },
+    "video": false,
+    "github": false,
+    "discord": "https://discord.ewanhowell.com/",
+    "kofi": "https://ko-fi.com/ewanhowell",
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "The End",
+        "description": "The End pillars with the Ender Dragon flying by",
+        "file": "end1",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Day",
+        "description": "Overworld daytime with clouds in the sky",
+        "file": "day",
+        "embed": true
+      },
+      {
+        "name": "Evening",
+        "description": "Sunset over the snowy mountains",
+        "file": "evening",
+        "embed": true
+      },
+      {
+        "name": "Night",
+        "description": "Cloudy night sky over a lake",
+        "file": "night"
+      },
+      {
+        "name": "Starry End",
+        "description": "A starry skybox in the end",
+        "file": "end2"
+      },
+      {
+        "name": "The End Island",
+        "description": "Full view of the main and island",
+        "file": "end3"
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": true,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "sky",
+        "skybox",
+        "skyboxes",
+        "optifine",
+        "halflife",
+        "blackmesa",
+        "xen"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": 0,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": true,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": "featured",
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": "featured",
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": 0
+      }
+    }
+  },
+  "curseforge": {
+    "id": 1089747,
+    "slug": "black-mesa-skyboxes"
+  },
+  "planetminecraft": {
+    "id": 6390370,
+    "slug": "black-mesa-skyboxes"
+  },
+  "modrinth": {
+    "id": "eUMDD5Eu",
+    "slug": "black-mesa-skyboxes"
+  }
+}
