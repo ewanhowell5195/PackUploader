@@ -1,29 +1,17 @@
-import settings from "./settings.json" assert { type: "json" }
-import config from "./upload/config.json" assert { type: "json" }
-import { load } from "cheerio"
-import path from "node:path"
-import fs from "node:fs"
+import "./src/main.js"
+import ewan from "./src/ewanhowell.js"
 
-function makeForm(data) {
-  const form = new FormData
-  for (const [k, v] of Object.entries(data)) {
-    if (v === undefined) continue
-    if (typeof v === "object") {
-      form.append(k, JSON.stringify(v))
-    } else {
-      form.append(k, v)
-    }
-  }
-  return form
-}
+globalThis.config = (await import("./upload/config.json", { assert: { type: "json" } })).default
 
 // config.name += " " + Math.random()
 
 // Setup
 
-const projectPath = path.join("projects", config.id)
+globalThis.projectPath = path.join("projects", config.id)
 
-// const project = JSON.parse(fs.readFileSync(projectPath + "/project.json"))
+// globalThis.project = JSON.parse(fs.readFileSync(projectPath + "/project.json"))
+// project.config = config
+// save()
 
 if (fs.existsSync(projectPath)) {
   throw new Error(`Project "${config.id}" already exists`)
@@ -31,15 +19,11 @@ if (fs.existsSync(projectPath)) {
 
 fs.mkdirSync(projectPath)
 
-const project = {
+globalThis.project = {
   config,
   curseforge: {},
   planetminecraft: {},
   modrinth: {}
-}
-
-function save() {
-  fs.writeFileSync(path.join(projectPath, "project.json"), JSON.stringify(project, null, 2))
 }
 
 // CurseForge
@@ -283,7 +267,7 @@ for (const replacement of cfReplacements) {
   } else if (replacement[1] === "images") {
     const images = config.images.filter(e => e.embed)
     for (const image of images) {
-      str += `<br><img src="${cfImageData.find(e => e.title === image.file + ".png").imageUrl}" width="600" alt="${image.name}"><br>`
+      str += `<br><img src="${cfImageData.find(e => e.title === image.file + ".png" || e.title === image.name).imageUrl}" width="600" alt="${image.name}"><br>`
     }
   } else if (replacement[1] === "video") {
     if (config.video) {
@@ -432,7 +416,7 @@ for (const replacement of pmcReplacements) {
     const images = config.images.filter(e => e.embed)
     const imageList = []
     for (const image of images) {
-      imageList.push(`[img width=600 height=338]${cfImageData.find(e => e.title === image.file + ".png").imageUrl}[/img]`)
+      imageList.push(`[img width=600 height=338]${cfImageData.find(e => e.title === image.file + ".png" || e.title === image.name).imageUrl}[/img]`)
     }
     str = imageList.join("\n\n")
   } else {
@@ -709,3 +693,7 @@ if (!mrDescriptionRequest.ok) {
 
 console.log("Modrinth: Written description, donation links, and submitted")
 console.log("Modrinth: Project fully created")
+
+// Ewan Howell
+
+await ewan.create()

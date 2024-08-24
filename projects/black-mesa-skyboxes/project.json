@@ -17,7 +17,8 @@
       "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
       "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
     },
-    "video": false,
+    "optifine": "OptiFine is used to add support for custom skyboxes",
+    "video": "E6_Cxt1mocY",
     "github": false,
     "discord": "https://discord.ewanhowell.com/",
     "kofi": "https://ko-fi.com/ewanhowell",
@@ -69,7 +70,7 @@
       },
       {
         "name": "The End Island",
-        "description": "Full view of the main and island",
+        "description": "Full view of the main end island",
         "file": "end3"
       }
     ],
