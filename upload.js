@@ -17,7 +17,7 @@ function makeForm(data) {
   return form
 }
 
-config.name += " " + Math.random()
+// config.name += " " + Math.random()
 
 // Setup
 
@@ -47,9 +47,9 @@ function save() {
 // CurseForge Icon Upload
 
 const cfIconForm = new FormData()
-cfIconForm.append("file", new Blob([fs.readFileSync("upload/icon.png")], {
+cfIconForm.append("file", new Blob([fs.readFileSync("upload/pack.png")], {
   type: "image/png"
-}), "icon.png")
+}), "pack.png")
 
 const cfIconRequest = await fetch("https://authors.curseforge.com/_api/projects/null/upload-avatar", {
   method: "POST",
@@ -157,7 +157,7 @@ await new Promise(fulfil => setTimeout(fulfil, 5000))
 const cfPackForm = new FormData()
 cfPackForm.append("file", new Blob([fs.readFileSync("upload/pack.zip")], {
   type: "application/zip"
-}), "pack.zip")
+}), `${config.name}.zip`)
 cfPackForm.append("metadata", JSON.stringify({
   displayName: `${config.name} - v${config.version}`,
   changelog: "Initial release",
@@ -455,7 +455,7 @@ const pmcForm = makeForm({
   title: config.name,
   op0: 1, // Resolution
   progress: 100,
-  youtube: config.video,
+  youtube: config.video ? config.video : undefined,
   description: pmcBBCODE,
   wid1: 1,
   wfile1: 1,
@@ -530,7 +530,7 @@ console.log("Planet Minecraft: Project fully created")
 
 const mrProjectForm = makeForm({
   data: {
-    slug: config.id + Math.random(),
+    slug: config.id/* + Math.random()*/,
     title: config.name,
     description: config.summary,
     categories: Object.entries(config.modrinth.tags).filter(e => e[1] === "featured").map(e => e[0]),
@@ -538,8 +538,8 @@ const mrProjectForm = makeForm({
     client_side: "required",
     server_side: "unsupported",
     body: "placeholder",
-    issues_url: config.github,
-    source_url: config.github,
+    issues_url: config.github ? config.github : undefined,
+    source_url: config.github ? config.github : undefined,
     discord_url: config.discord,
     license_id: "LicenseRef-All-Rights-Reserved",
     project_type: "resourcepack",
@@ -548,9 +548,9 @@ const mrProjectForm = makeForm({
   }
 })
 
-mrProjectForm.append("icon", new Blob([fs.readFileSync("upload/icon.png")], {
+mrProjectForm.append("icon", new Blob([fs.readFileSync("upload/pack.png")], {
   type: "image/png"
-}), "icon.png")
+}), "pack.png")
 
 const mrProjectRequest = await fetch("https://api.modrinth.com/v2/project", {
   method: "POST",
@@ -613,7 +613,7 @@ const mrPackForm = makeForm({
 
 mrPackForm.append("file", new Blob([fs.readFileSync("upload/pack.zip")], {
   type: "application/zip"
-}), "pack.zip")
+}), `${config.name}.zip`)
 
 const mrPackRequest = await fetch("https://api.modrinth.com/v2/version", {
   method: "POST",
