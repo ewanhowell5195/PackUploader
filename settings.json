@@ -1,0 +1,13 @@
+{
+  "auth": {
+    "curseforge": {
+      "token": "token",
+      "cookie": "CobaltSession=cookie"
+    },
+    "planetminecraft": {
+      "token": "token",
+      "cookie": "pmc_autologin=cookie"
+    },
+    "modrinth": "token"
+  }
+}
