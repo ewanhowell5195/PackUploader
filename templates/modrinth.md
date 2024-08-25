@@ -1,6 +1,6 @@
 <center>
 
-# {{ name }}
+{{ logo }}
 <br>
 
 ## {{ summary }}

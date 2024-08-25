@@ -10,7 +10,7 @@ globalThis.config = (await import("./upload/config.json", { assert: { type: "jso
 globalThis.projectPath = path.join("projects", config.id)
 
 // globalThis.project = JSON.parse(fs.readFileSync(projectPath + "/project.json"))
-// project.config = config
+// project.config = structuredClone(config)
 // save()
 
 if (fs.existsSync(projectPath)) {
@@ -20,10 +20,14 @@ if (fs.existsSync(projectPath)) {
 fs.mkdirSync(projectPath)
 
 globalThis.project = {
-  config,
+  config: structuredClone(config),
   curseforge: {},
   planetminecraft: {},
   modrinth: {}
+}
+
+for (const img of config.images) {
+  img.buffer = await sharp(path.join("./upload", "images", img.file + ".png")).resize(1920, 1080, { fit: "inside" }).jpeg({ quality: 95 }).toBuffer()
 }
 
 // CurseForge
@@ -168,9 +172,9 @@ console.log("CurseForge: Pack uploaded")
 const cfImageForm = new FormData()
 for (const image of config.images) {
   cfImageForm.append("id", project.curseforge.id)
-  cfImageForm.append("files", new Blob([fs.readFileSync(path.join("upload", "images", image.file + ".png"))], {
-    type: "image/png"
-  }), image.file + ".png")
+  cfImageForm.append("files", new Blob([image.buffer], {
+    type: "image/jpeg"
+  }), image.file + ".jpg")
 }
 
 const cfImagesRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
@@ -208,7 +212,7 @@ const cfImageData = await cfImageDataRequest.json()
 for (const data of cfUploadedImages) {
   if (data.success) {
     const image = config.images.find(e => e.file === data.fileName)
-    const id = cfImageData.find(e => e.title === image.file + ".png").id
+    const id = cfImageData.find(e => e.title === image.file + ".jpg").id
     const r = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
       method: "PUT",
       headers: {
@@ -267,11 +271,20 @@ for (const replacement of cfReplacements) {
   } else if (replacement[1] === "images") {
     const images = config.images.filter(e => e.embed)
     for (const image of images) {
-      str += `<br><img src="${cfImageData.find(e => e.title === image.file + ".png" || e.title === image.name).imageUrl}" width="600" alt="${image.name}"><br>`
+      str += `<br><img src="${cfImageData.find(e => e.title === image.file + ".jpg" || e.title === image.name).imageUrl}" width="600" alt="${image.name}"><br>`
     }
   } else if (replacement[1] === "video") {
     if (config.video) {
       str = `<br><br><iframe src="https://www.youtube.com/embed/${config.video}" width="600" height="336" allowfullscreen="allowfullscreen"></iframe><br>`
+    }
+  } else if (replacement[1] === "logo") {
+    if (fs.existsSync("./upload/logo.png")) {
+      str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp" alt="${config.name} Logo">`
+    } else {
+      str = `<div style="color: ${config.description.titleColour}; background-image: linear-gradient(160deg, ${config.description.titleBackground}, ${config.description.titleBackground2});">
+    <br>
+    <h1 style="font-size: 5ic; font-weight: 700; text-decoration: underline; display: inline-block;">${config.name}</h1>
+  </div>`
     }
   } else {
     str = config.description[replacement[1]] ?? config[replacement[1]]
@@ -357,9 +370,9 @@ for (const image of config.images) {
     connect_id: project.planetminecraft.id,
     title: `${image.name} - ${image.description}`
   })
-  imageForm.append("filename", new Blob([fs.readFileSync(path.join("upload", "images", image.file + ".png"))], {
-    type: "image/png"
-  }), image.file + ".png")
+  imageForm.append("filename", new Blob([image.buffer], {
+    type: "image/jpeg"
+  }), image.file + ".jpg")
   const r2 = await fetch("https://www.planetminecraft.com/ajax.php", {
     method: "POST",
     headers: {
@@ -416,9 +429,15 @@ for (const replacement of pmcReplacements) {
     const images = config.images.filter(e => e.embed)
     const imageList = []
     for (const image of images) {
-      imageList.push(`[img width=600 height=338]${cfImageData.find(e => e.title === image.file + ".png" || e.title === image.name).imageUrl}[/img]`)
+      imageList.push(`[img width=600 height=338]${cfImageData.find(e => e.title === image.file + ".jpg" || e.title === image.name).imageUrl}[/img]`)
     }
     str = imageList.join("\n\n")
+  } else if (replacement[1] === "logo") {
+    if (fs.existsSync("./upload/logo.png")) {
+      str = `[img]https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp[/img]`
+    } else {
+      str = `[size=48px]${config.name}[/size]`
+    }
   } else {
     str = config.description[replacement[1]] ?? config[replacement[1]]
     if (typeof str !== "string") {
@@ -568,21 +587,17 @@ const mrVersions = []
 
 switch (config.versions.modrinth.type) {
   case "latest":
-    if (config.versions.modrinth.snapshots) {
-      mrVersions.push(mrVersionsRequest[0].version)
-    } else {
-      mrVersions.push(mrVersionsRequest.find(e => e.version_type === "release").version)
-    }
+    mrVersions.push(mrVersionsRequest[0].version)
     break
   case "after":
-    mrVersions.push(...mrVersionsRequest.slice(0, mrVersionsRequest.findIndex(e => e.version === config.versions.modrinth.version) + 1).filter(e => config.versions.modrinth.snapshots || e.version_type === "release").map(e => e.version))
+    mrVersions.push(...mrVersionsRequest.slice(0, mrVersionsRequest.findIndex(e => e.version === config.versions.modrinth.version) + 1).map(e => e.version))
     break
 }
 
 const mrPackForm = makeForm({
   data: {
     name: config.name,
-    version_number: config.version,
+    version_number: config.version.toString(),
     changelog: "Initial release",
     dependencies: [],
     game_versions: mrVersions,
@@ -622,8 +637,8 @@ for (const [i, image] of config.images.entries()) {
       Authorization: settings.auth.modrinth,
       "Content-Type": "image/png"
     },
-    body: new Blob([fs.readFileSync(path.join("upload", "images", image.file + ".png"))], {
-      type: "image/png"
+    body: new Blob([image.buffer], {
+      type: "image/jpg"
     })
   })
   if (!r.ok) {
@@ -659,6 +674,12 @@ for (const replacement of mrReplacements) {
   } else if (replacement[1] === "video") {
     if (config.video) {
       str = `<iframe src="https://www.youtube.com/embed/${config.video}" width="600" height="336" allowfullscreen="allowfullscreen"></iframe><br><br><br>\n\n`
+    }
+  } else if (replacement[1] === "logo") {
+    if (fs.existsSync("./upload/logo.png")) {
+      str = `![${config.name} Logo](https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp)`
+    } else {
+      str = "#" + config.name
     }
   } else {
     str = config.description[replacement[1]] ?? config[replacement[1]]

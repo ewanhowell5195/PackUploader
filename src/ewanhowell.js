@@ -6,10 +6,6 @@ function error(err) {
 
 export default {
   async create() {
-    if (fs.existsSync(path.join(sitePath, "json", "resourcepacks", config.id + ".json"))) {
-      error("Pack already exists")
-    }
-
     const imgPath = path.join(sitePath, "images", "resourcepacks", config.id)
 
     fs.mkdirSync(path.join(imgPath, "images"), { recursive: true })
@@ -29,6 +25,10 @@ export default {
     fs.writeFileSync(path.join(sitePath, "json", "resourcepacks", config.id + ".json"), JSON.stringify(data, null, 2))
 
     await sharp("./upload/pack.png").resize(128, 128).webp({ quality: 95 }).toFile(path.join(imgPath, "icon.webp"))
+
+    if (fs.existsSync("./upload/logo.png")) {
+      await sharp("./upload/logo.png").resize(1280, 256, { fit: "inside" }).webp({ quality: 100 }).toFile(path.join(imgPath, "logo.webp"))
+    }
 
     for (const img of config.images) {
       await sharp(path.join("./upload", "images", img.file + ".png")).resize(1920, 1080, { fit: "inside" }).webp({ quality: 95 }).toFile(path.join(imgPath, "images", img.file + ".webp"))
