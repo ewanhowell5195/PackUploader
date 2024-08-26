@@ -3,8 +3,6 @@ import ewan from "./src/ewanhowell.js"
 
 globalThis.config = (await import("./upload/config.json", { assert: { type: "json" } })).default
 
-// config.name += " " + Math.random()
-
 // Setup
 
 globalThis.projectPath = path.join("projects", config.id)
@@ -279,7 +277,7 @@ for (const replacement of cfReplacements) {
     }
   } else if (replacement[1] === "logo") {
     if (fs.existsSync("./upload/logo.png")) {
-      str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp" alt="${config.name} Logo">`
+      str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp" alt="${config.name} Logo"><br><br>`
     } else {
       str = `<div style="color: ${config.description.titleColour}; background-image: linear-gradient(160deg, ${config.description.titleBackground}, ${config.description.titleBackground2});">
     <br>
