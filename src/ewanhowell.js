@@ -33,7 +33,5 @@ export default {
     for (const img of config.images) {
       await sharp(path.join("./data", "images", img.file + ".png")).resize(1920, 1080, { fit: "inside" }).webp({ quality: 95 }).toFile(path.join(imgPath, "images", img.file + ".webp"))
     }
-
-    console.log("Ewan Howell: Project fully created")
   }
 }

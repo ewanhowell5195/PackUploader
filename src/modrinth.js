@@ -126,7 +126,7 @@ export default {
       log(`Uploaded image "${image.file}"`)
     }
   },
-  async writeDescription() {
+  async writeDescription(live) {
     const galleryRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.slug}`, {
       headers: {
         Authorization: settings.auth.modrinth
@@ -157,7 +157,7 @@ export default {
         if (fs.existsSync("./data/logo.png")) {
           str = `![${config.name} Logo](https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp)`
         } else {
-          str = "#" + config.name
+          str = "# " + config.name
         }
       } else {
         str = config.description[replacement[1]] ?? config[replacement[1]]
@@ -182,7 +182,7 @@ export default {
           url: config.kofi
         }] : undefined,
         requested_status: "approved",
-        status: "processing"
+        status: live ? undefined : "processing"
       })
     })
 
