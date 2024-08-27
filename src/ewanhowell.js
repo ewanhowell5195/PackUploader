@@ -5,7 +5,7 @@ function error(err) {
 }
 
 export default {
-  async create() {
+  async createPack() {
     const imgPath = path.join(sitePath, "images", "resourcepacks", config.id)
 
     fs.mkdirSync(path.join(imgPath, "images"), { recursive: true })
