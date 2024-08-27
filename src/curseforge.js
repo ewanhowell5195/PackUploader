@@ -109,7 +109,7 @@ export default {
   async uploadPack() {
     // Get Version Ids
 
-    const versionsRequest = await fetch(`https://authors.curseforge.com/_api/project-files/${project.curseforge.id}/create-project-file-form-data`, {
+    let versionsRequest = await fetch(`https://authors.curseforge.com/_api/project-files/${project.curseforge.id}/create-project-file-form-data`, {
       headers: {
         cookie: settings.auth.curseforge.cookie
       }
@@ -119,20 +119,20 @@ export default {
       await error("CurseForge: Failed getting version list", versionsRequest)
     }
 
-    const versions = await versionsRequest.json().then(e => e[0].flatMap(e => e.choices))
+    versionsRequest = await versionsRequest.json().then(e => e[0].flatMap(e => e.choices))
 
-    const packVersions = []
+    if (!config.versions.curseforge.snapshots) {
+      versionsRequest = versionsRequest.filter(e => !e.name.endsWith("Snapshot"))
+    }
+
+    const versions = []
 
     switch (config.versions.curseforge.type) {
       case "latest":
-        if (config.versions.curseforge.snapshots) {
-          packVersions.push(versions[0].id)
-        } else {
-          packVersions.push(versions.find(e => !e.name.endsWith("Snapshot")).id)
-        }
+        versions.push(versionsRequest[0].id)
         break
       case "after":
-        packVersions.push(...versions.slice(0, versions.findIndex(e => e.name === config.versions.curseforge.version) + 1).filter(e => config.versions.curseforge.snapshots || !e.name.endsWith("Snapshot")).map(e => e.id))
+        versions.push(...versionsRequest.slice(0, versionsRequest.findIndex(e => e.name === config.versions.curseforge.version) + 1).map(e => e.id))
         break
     }
 
@@ -142,7 +142,7 @@ export default {
       metadata: {
         displayName: `${config.name} - v${config.version}`,
         changelog: "Initial release",
-        gameVersions: packVersions,
+        gameVersions: versions,
         releaseType: "release"
       }
     })
