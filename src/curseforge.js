@@ -226,7 +226,7 @@ export default {
     })
 
     if (!imageDataRequest.ok) {
-      error("Failed to get image data", imageDataRequest)
+      await error("Failed to get image data", imageDataRequest)
     }
 
     return imageDataRequest.json()

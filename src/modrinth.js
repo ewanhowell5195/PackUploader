@@ -14,7 +14,7 @@ export default {
   async createProject() {
     const form = makeForm({
       data: {
-        slug: config.id + Math.random(),
+        slug: config.id,
         title: config.name,
         description: config.summary,
         categories: Object.entries(config.modrinth.tags).filter(e => e[1] === "featured").map(e => e[0]),

@@ -4,7 +4,7 @@ import modrinth from "./src/modrinth.js"
 import ewanhowell from "./src/ewanhowell.js"
 
 globalThis.curseforge = (await import("./src/curseforge.js")).default
-globalThis.config = (await import("./config/create.json", { assert: { type: "json" } })).default
+globalThis.config = (await import("./data/create.json", { assert: { type: "json" } })).default
 
 // Setup
 
@@ -28,7 +28,7 @@ globalThis.project = {
 }
 
 for (const img of config.images) {
-  img.buffer = await sharp(path.join("./create", "images", img.file + ".png")).resize(1920, 1080, { fit: "inside" }).jpeg({ quality: 95 }).toBuffer()
+  img.buffer = await sharp(path.join("./data", "images", img.file + ".png")).resize(1920, 1080, { fit: "inside" }).jpeg({ quality: 95 }).toBuffer()
 }
 
 // CurseForge

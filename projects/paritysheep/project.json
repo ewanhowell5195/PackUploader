@@ -1,0 +1,130 @@
+{
+  "config": {
+    "id": "paritysheep",
+    "name": "ParitySheep",
+    "summary": "Bring parity to the sheep of Minecraft ",
+    "description": {
+      "titleColour": false,
+      "titleBackground": false,
+      "titleBackground2": false,
+      "description": [
+        "In Minecraft Bedrock edition, the sheep get dyed on both the wool layer and the skin layer of the their texture. This pack brings consistency to the game by making the Minecraft Java edition sheep work the same way, instead of only having the wool texture dyed and the skin texture untouched.",
+        "The sheep will also show the dyed wool colour after they have been sheared, allowing you to now identify their colour while sheared."
+      ],
+      "youtube": "https://www.youtube.com/@EwanHowell",
+      "twitter": "https://twitter.com/ewanhowell5195",
+      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
+      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
+      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
+      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
+    },
+    "optifine": "OptiFine is used to add support for custom entity models",
+    "video": false,
+    "github": false,
+    "discord": "https://discord.ewanhowell.com/",
+    "kofi": "https://ko-fi.com/ewanhowell",
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.19",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Close",
+        "description": "Sheep do be close",
+        "file": "close",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Far",
+        "description": "Sheep do be far",
+        "file": "far",
+        "embed": true
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "sheep",
+        "java",
+        "dye",
+        "bedrock",
+        "dyed",
+        "parity",
+        "randomentitytextures",
+        "randomentity",
+        "randonentities"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": true,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": "true",
+        "vanilla-like": "featured"
+      }
+    }
+  },
+  "curseforge": {
+    "id": 676404,
+    "slug": "paritysheep"
+  },
+  "planetminecraft": {
+    "id": 5711545,
+    "slug": "paritysheep"
+  },
+  "modrinth": {
+    "id": "zFElCoBb",
+    "slug": "paritysheep"
+  }
+}

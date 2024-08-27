@@ -64,37 +64,6 @@ export default {
 
     // Create Project
 
-    const imageData = await curseforge.getImages()
-
-    let bbcode = fs.readFileSync("templates/planetminecraft.bbcode", "utf-8")
-    const replacements = bbcode.matchAll(/{{\s*([a-z0-9]+)\s*}}/gi)
-
-    for (const replacement of replacements) {
-      let str = ""
-      if (replacement[1] === "description") {
-        str = config.description.description.join("\n\n")
-      } else if (replacement[1] === "images") {
-        const images = config.images.filter(e => e.embed)
-        const imageList = []
-        for (const image of images) {
-          imageList.push(`[img width=600 height=338]${imageData.find(e => e.title === image.file + ".jpg" || e.title === image.name).imageUrl}[/img]`)
-        }
-        str = imageList.join("\n\n")
-      } else if (replacement[1] === "logo") {
-        if (fs.existsSync("./data/logo.png")) {
-          str = `[img]https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp[/img]`
-        } else {
-          str = `[size=48px]${config.name}[/size]`
-        }
-      } else {
-        str = config.description[replacement[1]] ?? config[replacement[1]]
-        if (typeof str !== "string") {
-          str = "undefined"
-        }
-      }
-      bbcode = bbcode.replaceAll(replacement[0], str)
-    }
-
     const form = makeForm({
       member_id: $("[name=member_id]").val(),
       resource_id: project.planetminecraft.id,
@@ -107,7 +76,7 @@ export default {
       op0: 1, // Resolution
       progress: 100,
       youtube: config.video ? config.video : undefined,
-      description: bbcode,
+      description: await this.getDescription(),
       wid1: 1,
       wfile1: 1,
       wurl1: `https://ewanhowell.com/resourcepacks/${config.id}`,
@@ -223,5 +192,39 @@ export default {
       }
       log(`Uploaded image "${image.file}"`)
     }
+  },
+  async getDescription() {
+    const imageData = await curseforge.getImages()
+
+    let bbcode = fs.readFileSync("templates/planetminecraft.bbcode", "utf-8")
+    const replacements = bbcode.matchAll(/{{\s*([a-z0-9]+)\s*}}/gi)
+
+    for (const replacement of replacements) {
+      let str = ""
+      if (replacement[1] === "description") {
+        str = config.description.description.join("\n\n")
+      } else if (replacement[1] === "images") {
+        const images = config.images.filter(e => e.embed)
+        const imageList = []
+        for (const image of images) {
+          imageList.push(`[img width=600 height=338]${imageData.find(e => e.title === image.file + ".jpg" || e.title === image.name).imageUrl}[/img]`)
+        }
+        str = imageList.join("\n\n")
+      } else if (replacement[1] === "logo") {
+        if (fs.existsSync("./data/logo.png")) {
+          str = `[img]https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp[/img]`
+        } else {
+          str = `[size=48px]${config.name}[/size]`
+        }
+      } else {
+        str = config.description[replacement[1]] ?? config[replacement[1]]
+        if (typeof str !== "string") {
+          str = "undefined"
+        }
+      }
+      bbcode = bbcode.replaceAll(replacement[0], str)
+    }
+
+    return bbcode
   }
 }
