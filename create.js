@@ -4,7 +4,7 @@ import modrinth from "./src/modrinth.js"
 import ewanhowell from "./src/ewanhowell.js"
 
 globalThis.curseforge = (await import("./src/curseforge.js")).default
-globalThis.config = (await import("./create/config.json", { assert: { type: "json" } })).default
+globalThis.config = (await import("./config/create.json", { assert: { type: "json" } })).default
 
 // Setup
 

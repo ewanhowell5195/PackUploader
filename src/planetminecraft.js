@@ -81,7 +81,7 @@ export default {
         }
         str = imageList.join("\n\n")
       } else if (replacement[1] === "logo") {
-        if (fs.existsSync("./upload/logo.png")) {
+        if (fs.existsSync("./data/logo.png")) {
           str = `[img]https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp[/img]`
         } else {
           str = `[size=48px]${config.name}[/size]`

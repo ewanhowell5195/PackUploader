@@ -1,6 +1,5 @@
 *.sublime-project
 *.sublime-workspace
 /node_modules/
-/create/
-/upload/
+/data/
 settings.json

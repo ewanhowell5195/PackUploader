@@ -32,7 +32,7 @@ export default {
       }
     })
 
-    form.append("icon", new Blob([fs.readFileSync("upload/pack.png")], {
+    form.append("icon", new Blob([fs.readFileSync("data/pack.png")], {
       type: "image/png"
     }), "pack.png")
 
@@ -90,7 +90,7 @@ export default {
       }
     })
 
-    form.append("file", new Blob([fs.readFileSync("upload/pack.zip")], {
+    form.append("file", new Blob([fs.readFileSync("data/pack.zip")], {
       type: "application/zip"
     }), `${config.name}.zip`)
 
@@ -154,7 +154,7 @@ export default {
           str = `<iframe src="https://www.youtube.com/embed/${config.video}" width="600" height="336" allowfullscreen="allowfullscreen"></iframe><br><br><br>\n\n`
         }
       } else if (replacement[1] === "logo") {
-        if (fs.existsSync("./upload/logo.png")) {
+        if (fs.existsSync("./data/logo.png")) {
           str = `![${config.name} Logo](https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp)`
         } else {
           str = "#" + config.name

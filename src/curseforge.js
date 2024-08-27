@@ -11,7 +11,7 @@ export default {
     // Icon Upload
 
     const iconForm = new FormData()
-    iconForm.append("file", new Blob([fs.readFileSync("upload/pack.png")], {
+    iconForm.append("file", new Blob([fs.readFileSync("data/pack.png")], {
       type: "image/png"
     }), "pack.png")
 
@@ -146,7 +146,7 @@ export default {
         releaseType: "release"
       }
     })
-    packForm.append("file", new Blob([fs.readFileSync("upload/pack.zip")], {
+    packForm.append("file", new Blob([fs.readFileSync("data/pack.zip")], {
       type: "application/zip"
     }), `${config.name}.zip`)
 
@@ -253,7 +253,7 @@ export default {
           str = `<br><br><iframe src="https://www.youtube.com/embed/${config.video}" width="600" height="336" allowfullscreen="allowfullscreen"></iframe><br>`
         }
       } else if (replacement[1] === "logo") {
-        if (fs.existsSync("./upload/logo.png")) {
+        if (fs.existsSync("./data/logo.png")) {
           str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp" alt="${config.name} Logo"><br><br>`
         } else {
           str = `<div style="color: ${config.description.titleColour}; background-image: linear-gradient(160deg, ${config.description.titleBackground}, ${config.description.titleBackground2});">
