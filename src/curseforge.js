@@ -40,7 +40,7 @@ export default {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        name: config.name + Math.random(),
+        name: config.name,
         avatarUrl: iconURL,
         summary: config.summary,
         description: "placeholder",
