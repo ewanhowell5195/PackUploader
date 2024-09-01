@@ -140,15 +140,15 @@ export default {
 
     const packForm = makeForm({
       metadata: {
-        displayName: `${config.name} - v${config.version}`,
-        changelog: "Initial release",
+        displayName: `${project.config.name} - v${config.version}`,
+        changelog: config.changelog ?? "Initial release",
         gameVersions: versions,
         releaseType: "release"
       }
     })
     packForm.append("file", new Blob([fs.readFileSync("data/pack.zip")], {
       type: "application/zip"
-    }), `${config.name}.zip`)
+    }), `${project.config.name}.zip`)
 
     const packUploadRequest = await fetch(`https://minecraft.curseforge.com/api/projects/${project.curseforge.id}/upload-file`, {
       method: "POST",

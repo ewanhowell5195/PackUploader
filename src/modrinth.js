@@ -76,9 +76,9 @@ export default {
 
     const form = makeForm({
       data: {
-        name: config.name,
+        name: project.config.name,
         version_number: config.version.toString(),
-        changelog: "Initial release",
+        changelog: config.changelog ?? "Initial release",
         dependencies: [],
         game_versions: versions,
         version_type: "release",
@@ -92,7 +92,7 @@ export default {
 
     form.append("file", new Blob([fs.readFileSync("data/pack.zip")], {
       type: "application/zip"
-    }), `${config.name}.zip`)
+    }), `${project.config.name}.zip`)
 
     const r = await fetch("https://api.modrinth.com/v2/version", {
       method: "POST",

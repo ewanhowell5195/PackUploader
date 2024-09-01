@@ -35,7 +35,7 @@
       },
       "modrinth": {
         "type": "after",
-        "version": "1.19",
+        "version": "1.20.2",
         "snapshots": false
       }
     },

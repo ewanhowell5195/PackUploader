@@ -22,7 +22,7 @@ export default {
     })
 
     if (!newProjectRequest.ok) {
-      error("Failed to get a new project", await newProjectRequest.text())
+      error("Failed to fetch a new project", await newProjectRequest.text())
     }
 
     const $ = load(await newProjectRequest.text())
@@ -65,6 +65,29 @@ export default {
 
     // Create Project
 
+    const form = await this.createForm($, tags)
+
+    const r = await fetch("https://www.planetminecraft.com/ajax.php", {
+      method: "POST",
+      headers: {
+        "x-pmc-csrf-token": settings.auth.planetminecraft.token,
+        cookie: settings.auth.planetminecraft.cookie,
+        Referer: "https://www.planetminecraft.com/account/manage/texture-packs/item/new"
+      },
+      body: form
+    }).then(e => e.json())
+
+    if (r.status !== "success") {
+      error("Failed to create project", r)
+    }
+
+    project.planetminecraft.slug = r.forward.split("/")[1]
+
+    save()
+
+    log(`Project URL: https://www.planetminecraft.com/texture-pack/${project.planetminecraft.slug}`)
+  },
+  async createForm($, tags) {
     const form = makeForm({
       member_id: $("[name=member_id]").val(),
       resource_id: project.planetminecraft.id,
@@ -73,10 +96,10 @@ export default {
       module: $("[name=module]").val(),
       module_task: $("[name=module_task]").val(),
       server_id: "",
-      title: config.name,
+      title: project.config.name,
       op0: 1, // Resolution
       progress: 100,
-      youtube: config.video ? config.video : undefined,
+      youtube: project.config.video ? project.config.video : undefined,
       description: await this.getDescription(),
       wid1: 1,
       wfile1: 1,
@@ -100,7 +123,7 @@ export default {
       name: $(option).text().slice(10)
     })).get().filter(e => e.name !== "Bedrock" && e.name !== "Dungeons")
 
-    if (config.versions.planetminecraft.type === "latest") {
+    if (project.config.versions.planetminecraft.type === "latest") {
       form.append("op1", versions[0].id) // Minecraft version number
     }
 
@@ -119,30 +142,12 @@ export default {
       models: 153
     }
 
-    for (const [item, on] of Object.entries(config.planetminecraft.modifies)) {
+    for (const [item, on] of Object.entries(project.config.planetminecraft.modifies)) {
       if (!on) continue
       form.append("folder_id[]", modifies[item]) // Modifies content section
     }
 
-    const r = await fetch("https://www.planetminecraft.com/ajax.php", {
-      method: "POST",
-      headers: {
-        "x-pmc-csrf-token": settings.auth.planetminecraft.token,
-        cookie: settings.auth.planetminecraft.cookie,
-        Referer: "https://www.planetminecraft.com/account/manage/texture-packs/item/new"
-      },
-      body: form
-    }).then(e => e.json())
-
-    if (r.status !== "success") {
-      error("Failed to create project", r)
-    }
-
-    project.planetminecraft.slug = r.forward.split("/")[1]
-
-    save()
-
-    log(`Project URL: https://www.planetminecraft.com/texture-pack/${project.planetminecraft.slug}`)
+    return form
   },
   async uploadImages() {
     const form = makeForm({
@@ -203,9 +208,9 @@ export default {
     for (const replacement of replacements) {
       let str = ""
       if (replacement[1] === "description") {
-        str = config.description.description.join("\n\n")
+        str = project.config.description.description.join("\n\n")
       } else if (replacement[1] === "images") {
-        const images = config.images.filter(e => e.embed)
+        const images = project.config.images.filter(e => e.embed)
         const imageList = []
         for (const image of images) {
           imageList.push(`[img width=600 height=338]${imageData.find(e => e.title === image.file + ".jpg" || e.title === image.name).imageUrl}[/img]`)
@@ -215,10 +220,10 @@ export default {
         if (fs.existsSync("./data/logo.png")) {
           str = `[img]https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp[/img]`
         } else {
-          str = `[size=48px]${config.name}[/size]`
+          str = `[size=48px]${project.config.name}[/size]`
         }
       } else {
-        str = config.description[replacement[1]] ?? config[replacement[1]]
+        str = project.config.description[replacement[1]] ?? project.config[replacement[1]]
         if (typeof str !== "string") {
           str = "undefined"
         }
@@ -227,5 +232,72 @@ export default {
     }
 
     return bbcode
+  },
+  async versionUpdate() {
+    const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
+      headers: {
+        "cache-control": "no-cache",
+        cookie: settings.auth.planetminecraft.cookie
+      }
+    })
+
+    if (!projectRequest.ok) {
+      error("Failed to fetch project", await projectRequest.text())
+    }
+
+    log("Fetched project")
+
+    const $ = load(await projectRequest.text())
+
+    // Make Log
+
+    const logForm = makeForm({
+      log_title: `Update v${config.version}`,
+      content: config.changelog,
+      module: "public/resource/manage",
+      module_plugin: "log",
+      module_plugin_task: "create",
+      submit_log: "SAVE LOG",
+      member_id: $("[name=member_id]").val(),
+      resource_id: project.planetminecraft.id
+    })
+
+    const logRequest = await fetch("https://www.planetminecraft.com/ajax.php", {
+      method: "POST",
+      headers: {
+        "x-pmc-csrf-token": settings.auth.planetminecraft.token,
+        cookie: settings.auth.planetminecraft.cookie,
+        Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`
+      },
+      body: logForm
+    }).then(e => e.json())
+
+    if (logRequest.status !== "success") {
+      error("Failed to submit update log", logRequest)
+    }
+
+    log("Submit update log")
+
+    // Update Version
+
+    const form = await this.createForm($, $("#item_tags > div").map((i, e) => $(e).data("tag-id")).get())
+
+    form.append("live", 1)
+
+    const r = await fetch("https://www.planetminecraft.com/ajax.php", {
+      method: "POST",
+      headers: {
+        "x-pmc-csrf-token": settings.auth.planetminecraft.token,
+        cookie: settings.auth.planetminecraft.cookie,
+        Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`
+      },
+      body: form
+    }).then(e => e.json())
+
+    if (r.status !== "success") {
+      error("Failed to update project version", r)
+    }
+
+    log("Updated project version")
   }
 }
