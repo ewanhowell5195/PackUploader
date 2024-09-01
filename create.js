@@ -4,7 +4,7 @@ import modrinth from "./src/modrinth.js"
 import ewanhowell from "./src/ewanhowell.js"
 
 globalThis.curseforge = (await import("./src/curseforge.js")).default
-globalThis.config = (await import("./data/create.json", { assert: { type: "json" } })).default
+globalThis.config = (await import("./data/create.json", { with: { type: "json" } })).default
 
 // Setup
 
@@ -51,7 +51,7 @@ console.log("Planet Minecraft: Project fully created")
 await modrinth.createProject()
 await modrinth.uploadPack()
 await modrinth.uploadImages()
-await modrinth.writeDescription()
+await modrinth.writeDescription(true)
 
 console.log("Modrinth: Project fully created")
 

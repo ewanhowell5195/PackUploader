@@ -16,6 +16,7 @@ export default {
 
     const newProjectRequest = await fetch("https://www.planetminecraft.com/account/manage/texture-packs/item/new", {
       headers: {
+        "cache-control": "no-cache",
         cookie: settings.auth.planetminecraft.cookie
       }
     })
