@@ -1,0 +1,128 @@
+{
+  "config": {
+    "id": "capeless-wings",
+    "name": "Capeless Wings",
+    "summary": "Show the actual elytra texture instead of your cape's texture!",
+    "description": {
+      "titleColour": "#fff",
+      "titleBackground": "#74C24D",
+      "titleBackground2": "#3EA1A3",
+      "description": [
+        "This pack uses the new 1.21.2 equipment models feature to disable the cape texture from showing on the elytra!"
+      ],
+      "youtube": "https://www.youtube.com/@EwanHowell",
+      "twitter": "https://twitter.com/ewanhowell5195",
+      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
+      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
+      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
+      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
+    },
+    "optifine": false,
+    "video": false,
+    "github": false,
+    "discord": "https://discord.ewanhowell.com/",
+    "kofi": "https://ko-fi.com/ewanhowell",
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "latest",
+        "snapshots": true
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "latest",
+        "snapshots": true
+      }
+    },
+    "images": [
+      {
+        "name": "Comparison",
+        "description": "Not using the pack vs using the pack",
+        "file": "compare",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Pack Enabled",
+        "description": "With the pack enabled",
+        "file": "on",
+        "embed": true
+      },
+      {
+        "name": "Pack Disabled",
+        "description": "Without the pack enabled",
+        "file": "off",
+        "embed": true
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": true,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "elytra",
+        "cape",
+        "snapshot",
+        "24w36a"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": "featured",
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": true,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": "featured"
+      }
+    }
+  },
+  "curseforge": {
+    "id": 1096989,
+    "slug": "capeless-wings"
+  },
+  "planetminecraft": {
+    "id": 6397991,
+    "slug": "capeless-wings"
+  },
+  "modrinth": {
+    "id": "91J4MpsK",
+    "slug": "capeless-wings"
+  }
+}

@@ -182,7 +182,7 @@ export default {
           url: config.kofi
         }] : undefined,
         requested_status: "approved",
-        status: live ? undefined : "processing"
+        status: live ? "processing" : undefined
       })
     })
 
