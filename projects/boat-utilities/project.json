@@ -1,0 +1,137 @@
+{
+  "config": {
+    "id": "boat-utilities",
+    "name": "Boat Utilities",
+    "summary": "Add some utilities to the boats!",
+    "description": {
+      "titleColour": "#fff",
+      "titleBackground": "#9A4A2D",
+      "titleBackground2": "#741D32",
+      "description": [
+        "This resource pack makes boats more useful by adding some utilities to them!",
+        "Boats will now include the following utilities on the front:\n- Compass - The red hand points north and the white hand points to the coordinates (0, 0)\n- Speedometer - Shows the speed the boat is currently travelling at\n- Clock - Shows the current in game time on a working 12 hour clockface"
+      ],
+      "youtube": "https://www.youtube.com/@EwanHowell",
+      "twitter": "https://twitter.com/ewanhowell5195",
+      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
+      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
+      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
+      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
+    },
+    "optifine": true,
+    "video": false,
+    "github": false,
+    "discord": "https://discord.ewanhowell.com/",
+    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
+    "kofi": "https://ko-fi.com/ewanhowell",
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "latest",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "latest",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Boat",
+        "description": "A single boat",
+        "file": "boat",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Multiple Boats",
+        "description": "A boat, a chest boat, a raft, and a chest raft",
+        "file": "multiple",
+        "embed": true
+      },
+      {
+        "name": "In boat view",
+        "description": "The view of the utilities from inside the boat",
+        "file": "pov",
+        "embed": true
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": true,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "boat",
+        "raft",
+        "utility",
+        "utilities",
+        "compass",
+        "speedometer",
+        "clock",
+        "optifine",
+        "cem",
+        "entity",
+        "customentitymodel"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": true,
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": true,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": "featured",
+        "vanilla-like": true
+      }
+    }
+  },
+  "curseforge": {
+    "id": 1150181,
+    "slug": "boat-utilities"
+  },
+  "planetminecraft": {
+    "id": 6473709,
+    "slug": "boat-utilities"
+  },
+  "modrinth": {
+    "id": "eAblGSz6",
+    "slug": "boat-utilities"
+  }
+}

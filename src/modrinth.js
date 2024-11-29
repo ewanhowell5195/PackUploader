@@ -146,7 +146,7 @@ export default {
       } else if (replacement[1] === "images") {
         const images = config.images.filter(e => e.embed)
         for (const image of images) {
-          str += `<img src="${galleryRequest.gallery.find(e => e.title === image.name).url}" width="600" alt="${image.name}"><br><br>\n`
+          str += `<img src="${galleryRequest.gallery.find(e => e.title === image.name).raw_url}" width="600" alt="${image.name}"><br><br>\n`
         }
         str = str.trim()
       } else if (replacement[1] === "video") {

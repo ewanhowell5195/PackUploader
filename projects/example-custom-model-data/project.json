@@ -1,0 +1,130 @@
+{
+  "config": {
+    "id": "example-custom-model-data",
+    "name": "Example Custom Model Data",
+    "summary": "Example custom model data for 1.21.4 and beyond",
+    "description": {
+      "titleColour": "#fff",
+      "titleBackground": "#9A4A2D",
+      "titleBackground2": "#741D32",
+      "description": [
+        "This pack provides example item definitions and models for using Custom Model Data in Minecraft 1.21.4 and beyond.",
+        "The examples provided are a mace that can become a bat, and a dirt block that can turn into a hat that can be worn."
+      ],
+      "youtube": "https://www.youtube.com/@EwanHowell",
+      "twitter": "https://twitter.com/ewanhowell5195",
+      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
+      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
+      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
+      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
+    },
+    "optifine": false,
+    "video": false,
+    "github": false,
+    "discord": "https://discord.ewanhowell.com/",
+    "kofi": "https://ko-fi.com/ewanhowell",
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "latest",
+        "snapshots": true
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "latest",
+        "snapshots": true
+      }
+    },
+    "images": [
+      {
+        "name": "Player",
+        "description": "A player holding a bat and wearing a hat",
+        "file": "player",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Bat",
+        "description": "A bat",
+        "file": "bat",
+        "embed": true
+      },
+      {
+        "name": "Hat",
+        "description": "A hat on an armor stand",
+        "file": "hat",
+        "embed": true
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "24w45a",
+        "1.21.4",
+        "custommodeldata",
+        "example",
+        "snapshot"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": "featured",
+        "fonts": 0,
+        "gui": 0,
+        "items": "featured",
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": true,
+        "themed": 0,
+        "tweaks": true,
+        "utility": "featured",
+        "vanilla-like": 0
+      }
+    }
+  },
+  "curseforge": {
+    "id": 1137412,
+    "slug": "example-custom-model-data"
+  },
+  "planetminecraft": {
+    "id": 6458158,
+    "slug": "example-custom-model-data"
+  },
+  "modrinth": {
+    "id": "cJ6zYFXr",
+    "slug": "example-custom-model-data"
+  }
+}

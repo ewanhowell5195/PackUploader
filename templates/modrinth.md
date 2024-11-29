@@ -18,7 +18,11 @@
 
 [<img src="{{ discordIcon }}" width="48" height="48"> 
 <br>
-<u>Join the Discord Server!</u>]( {{ discord }})
+<u>Join my Discord Server!</u>]( {{ discord }})
+<br><br>
+[<img src="{{ discordIcon }}" width="48" height="48"> 
+<br>
+<u>Join the Resource Pack Development Discord Server!</u>]( {{ rpdDiscord }})
 <br><br>
 [<img src="{{ youtubeIcon }}" width="48" height="48"> 
 <br>
