@@ -84,27 +84,6 @@ export default {
     console.log(`CurseForge: Project URL: https://www.curseforge.com/minecraft/texture-packs/${project.curseforge.slug}`)
 
     await new Promise(fulfil => setTimeout(fulfil, 5000))
-
-    // Set GitHub Repo
-
-    if (config.github) {
-      const r = await fetch(`https://authors.curseforge.com/_api/project-source/${project.curseforge.id}/update`, {
-        method: "PUT",
-        headers: {
-          cookie: settings.auth.curseforge.cookie,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          sourceHostUrl: config.github,
-          sourceHost: 3,
-          packagerMode: 1
-        })
-      })
-      if (!r.ok) {
-        await error("Failed to set GitHub link", r)
-      }
-      log("GitHub link set")
-    }
   },
   async uploadPack() {
     // Get Version Ids
@@ -231,7 +210,26 @@ export default {
 
     return imageDataRequest.json()
   },
-  async writeDescription() {
+  async setDetails() {
+    if (config.github) {
+      const r = await fetch(`https://authors.curseforge.com/_api/project-source/${project.curseforge.id}/update`, {
+        method: "PUT",
+        headers: {
+          cookie: settings.auth.curseforge.cookie,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          sourceHostUrl: config.github,
+          sourceHost: 3,
+          packagerMode: 1
+        })
+      })
+      if (!r.ok) {
+        await error("Failed to set GitHub link", r)
+      }
+      log("GitHub link set")
+    }
+
     const imageData = await this.getImages()
 
     let html = fs.readFileSync("templates/curseforge.html", "utf-8")

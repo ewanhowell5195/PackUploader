@@ -36,7 +36,7 @@ for (const img of config.images) {
 await curseforge.createProject()
 await curseforge.uploadPack()
 await curseforge.uploadImages()
-await curseforge.writeDescription()
+await curseforge.setDetails()
 
 console.log("CurseForge: Project fully created")
 
@@ -51,7 +51,7 @@ console.log("Planet Minecraft: Project fully created")
 await modrinth.createProject()
 await modrinth.uploadPack()
 await modrinth.uploadImages()
-await modrinth.writeDescription(true)
+await modrinth.setDetails(true)
 
 console.log("Modrinth: Project fully created")
 

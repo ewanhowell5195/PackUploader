@@ -126,7 +126,7 @@ export default {
       log(`Uploaded image "${image.file}"`)
     }
   },
-  async writeDescription(live) {
+  async setDetails(live) {
     const galleryRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.slug}`, {
       headers: {
         Authorization: settings.auth.modrinth
@@ -181,6 +181,9 @@ export default {
           platform: "Ko-fi",
           url: config.kofi
         }] : undefined,
+        issues_url: config.github ? config.github : undefined,
+        source_url: config.github ? config.github : undefined,
+        discord_url: config.discord,
         requested_status: "approved",
         status: live ? "processing" : undefined
       })

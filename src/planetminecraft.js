@@ -299,5 +299,41 @@ export default {
     }
 
     log("Updated project version")
+  },
+  async updateDetails() {
+    const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
+      headers: {
+        "cache-control": "no-cache",
+        cookie: settings.auth.planetminecraft.cookie
+      }
+    })
+
+    if (!projectRequest.ok) {
+      error("Failed to fetch project", await projectRequest.text())
+    }
+
+    const $ = load(await projectRequest.text())
+
+    const form = await this.createForm($, $("#item_tags > div").map((i, e) => $(e).data("tag-id")).get())
+    
+    if (data.live) {
+      form.append("live", 1)
+    }
+
+    const r = await fetch("https://www.planetminecraft.com/ajax.php", {
+      method: "POST",
+      headers: {
+        "x-pmc-csrf-token": settings.auth.planetminecraft.token,
+        cookie: settings.auth.planetminecraft.cookie,
+        Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`
+      },
+      body: form
+    }).then(e => e.json())
+
+    if (r.status !== "success") {
+      error("Failed to update project details", r)
+    }
+
+    log("Updated project details")
   }
 }
