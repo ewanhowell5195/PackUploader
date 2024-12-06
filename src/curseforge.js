@@ -144,56 +144,56 @@ export default {
     log("Pack uploaded")
   },
   async uploadImages() {
-    const imageForm = new FormData()
     for (const image of config.images) {
-      imageForm.append("id", project.curseforge.id)
-      imageForm.append("files", new Blob([image.buffer], {
-        type: "image/jpeg"
-      }), image.file + ".jpg")
+      try {
+        const imageForm = new FormData()
+        imageForm.append("id", project.curseforge.id)
+        imageForm.append("files", new Blob([image.buffer], {
+          type: "image/jpeg"
+        }), image.file + ".jpg")
+
+        const imagesRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
+          method: "POST",
+          headers: {
+            cookie: settings.auth.curseforge.cookie
+          },
+          body: imageForm
+        })
+
+        if (!imagesRequest.ok) {
+          await error("Image uploads failed", imagesRequest)
+        }
+
+        log(`Image "${image.file}" uploaded`)
+      } catch (err) {
+        throw new Error(`CurseForge: Image "${image.file}" failed to upload - ` + JSON.stringify(err))
+      }
     }
-
-    const imagesRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
-      method: "POST",
-      headers: {
-        cookie: settings.auth.curseforge.cookie
-      },
-      body: imageForm
-    })
-
-    if (!imagesRequest.ok) {
-      await error("Image uploads failed", imagesRequest)
-    }
-
-    const uploadedImages = await imagesRequest.json().then(e => e.results)
-
-    log("Images uploaded")
 
     const imageData = await this.getImages()
 
-    for (const data of uploadedImages) {
-      if (data.success) {
-        const image = config.images.find(e => e.file === data.fileName)
-        const id = imageData.find(e => e.title === image.file + ".jpg").id
-        const r = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
-          method: "PUT",
-          headers: {
-            cookie: settings.auth.curseforge.cookie,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            title: image.name,
-            description: image.description,
-            id,
-            isFeatured: true
-          })
+    for (const image of config.images) {
+      const data = imageData.find(e => e.title === image.file + ".jpg")
+      if (!data) {
+        throw new Error(`CurseForge: Image "${image.file}" failed to upload - ` + JSON.stringify(err))
+      }
+      const r = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
+        method: "PUT",
+        headers: {
+          cookie: settings.auth.curseforge.cookie,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          title: image.name,
+          description: image.description,
+          id: data.id,
+          isFeatured: true
         })
-        if (r.ok) {
-          log(`Updated metadata for image "${data.fileName}"`)
-        } else {
-          console.error(`Failed to update metadata for image "${data.fileName}" - ${await r.text()}`)
-        }
+      })
+      if (r.ok) {
+        log(`Updated metadata for image "${image.file}"`)
       } else {
-        throw new Error(`CurseForge: Image "${data.fileName}" failed to upload - ` + JSON.stringify(data))
+        console.error(`Failed to update metadata for image "${image.file}" - ${await r.text()}`)
       }
     }
   },
