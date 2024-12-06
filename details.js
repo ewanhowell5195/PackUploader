@@ -28,7 +28,7 @@ console.log("Planet Minecraft: Project fully created")
 
 // Modrinth
 
-await modrinth.setDetails(true)
+await modrinth.setDetails(data.live)
 
 console.log("Modrinth: Project details updated")
 

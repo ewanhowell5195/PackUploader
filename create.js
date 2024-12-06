@@ -51,7 +51,7 @@ console.log("Planet Minecraft: Project fully created")
 await modrinth.createProject()
 await modrinth.uploadPack()
 await modrinth.uploadImages()
-await modrinth.setDetails(true)
+await modrinth.setDetails()
 
 console.log("Modrinth: Project fully created")
 

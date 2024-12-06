@@ -185,7 +185,7 @@ export default {
         source_url: config.github ? config.github : undefined,
         discord_url: config.discord,
         requested_status: "approved",
-        status: live ? "processing" : undefined
+        status: !live ? "processing" : undefined
       })
     })
 
