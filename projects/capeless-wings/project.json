@@ -3,6 +3,7 @@
     "id": "capeless-wings",
     "name": "Capeless Wings",
     "summary": "Show the actual elytra texture instead of your cape's texture!",
+    "logo": false,
     "description": {
       "titleColour": "#fff",
       "titleBackground": "#74C24D",
@@ -21,6 +22,7 @@
     "video": false,
     "github": false,
     "discord": "https://discord.ewanhowell.com/",
+    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
     "kofi": "https://ko-fi.com/ewanhowell",
     "version": "1.0.0",
     "versions": {

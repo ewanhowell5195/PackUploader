@@ -251,7 +251,7 @@ export default {
           str = `<br><br><iframe src="https://www.youtube.com/embed/${config.video}" width="600" height="336" allowfullscreen="allowfullscreen"></iframe><br>`
         }
       } else if (replacement[1] === "logo") {
-        if (fs.existsSync("./data/logo.png")) {
+        if (config.logo) {
           str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp" alt="${config.name} Logo"><br><br>`
         } else {
           str = `<div style="color: ${config.description.titleColour}; background-image: linear-gradient(160deg, ${config.description.titleBackground}, ${config.description.titleBackground2});">

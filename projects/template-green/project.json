@@ -1,16 +1,15 @@
 {
   "config": {
-    "id": "paritysheep",
-    "name": "ParitySheep",
-    "summary": "Bring parity to the sheep of Minecraft",
+    "id": "template-green",
+    "name": "Template Green",
+    "summary": "Coloured versions of the grayscaled blocks",
     "logo": true,
     "description": {
-      "titleColour": false,
-      "titleBackground": false,
-      "titleBackground2": false,
+      "titleColour": "#fff",
+      "titleBackground": "#D10002",
+      "titleBackground2": "#650201",
       "description": [
-        "In Minecraft Bedrock edition, the sheep get dyed on both the wool layer and the skin layer of the their texture. This pack brings consistency to the game by making the Minecraft Java edition sheep work the same way, instead of only having the wool texture dyed and the skin texture untouched.",
-        "The sheep will also show the dyed wool colour after they have been sheared, allowing you to now identify their colour while sheared."
+        "This resource pack contains all the normally greyscaled textures in their coloured format, so that it is easy to use them for whatever you need to use them for."
       ],
       "youtube": "https://www.youtube.com/@EwanHowell",
       "twitter": "https://twitter.com/ewanhowell5195",
@@ -19,13 +18,13 @@
       "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
       "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
     },
-    "optifine": "OptiFine is used to add support for custom entity models",
+    "optifine": false,
     "video": false,
-    "github": false,
+    "github": "https://github.com/ewanhowell5195/TemplateGreen",
     "discord": "https://discord.ewanhowell.com/",
     "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
     "kofi": "https://ko-fi.com/ewanhowell",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "versions": {
       "curseforge": {
         "type": "after",
@@ -43,16 +42,21 @@
     },
     "images": [
       {
-        "name": "Close",
-        "description": "Sheep do be close",
-        "file": "close",
-        "embed": true,
+        "name": "Blocks",
+        "description": "A collection of green blocks included in the pack",
+        "file": "blocks",
         "featured": true
       },
       {
-        "name": "Far",
-        "description": "Sheep do be far",
-        "file": "far",
+        "name": "Files",
+        "description": "The files within the pack",
+        "file": "files",
+        "embed": true
+      },
+      {
+        "name": "Redstone",
+        "description": "A preview of the redstone textures",
+        "file": "redstone",
         "embed": true
       }
     ],
@@ -65,22 +69,22 @@
         "gui": 0,
         "items": 0,
         "misc": 0,
-        "mobs": true,
+        "mobs": 0,
         "particles": 0,
         "terrain": 0,
         "audio": 0,
         "models": 0
       },
       "tags": [
-        "sheep",
-        "java",
-        "dye",
-        "bedrock",
-        "dyed",
-        "parity",
-        "randomentitytextures",
-        "randomentity",
-        "randonentities"
+        "color",
+        "green",
+        "colour",
+        "colormap",
+        "useful",
+        "template",
+        "grayscale",
+        "greyscale",
+        "colourmap"
       ]
     },
     "modrinth": {
@@ -94,12 +98,12 @@
         "256x": 0,
         "512x+": 0,
         "audio": 0,
-        "blocks": 0,
+        "blocks": "featured",
         "combat": 0,
         "core-shaders": 0,
         "cursed": 0,
         "decoration": 0,
-        "entities": "featured",
+        "entities": 0,
         "environment": 0,
         "equipment": 0,
         "fonts": 0,
@@ -109,24 +113,24 @@
         "modded": 0,
         "models": 0,
         "realistic": 0,
-        "simplistic": true,
+        "simplistic": 0,
         "themed": 0,
-        "tweaks": "featured",
-        "utility": "true",
+        "tweaks": 0,
+        "utility": "featured",
         "vanilla-like": "featured"
       }
     }
   },
   "curseforge": {
-    "id": 676404,
-    "slug": "paritysheep"
+    "id": 468747,
+    "slug": "template-green"
   },
   "planetminecraft": {
-    "id": 5711545,
-    "slug": "paritysheep"
+    "id": 5059694,
+    "slug": "template-green"
   },
   "modrinth": {
-    "id": "zFElCoBb",
-    "slug": "paritysheep"
+    "id": "q2cTdX09",
+    "slug": "template-green"
   }
 }

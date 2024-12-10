@@ -3,6 +3,7 @@
     "id": "example-custom-model-data",
     "name": "Example Custom Model Data",
     "summary": "Example custom model data for 1.21.4 and beyond",
+    "logo": false,
     "description": {
       "titleColour": "#fff",
       "titleBackground": "#9A4A2D",
@@ -22,6 +23,7 @@
     "video": false,
     "github": false,
     "discord": "https://discord.ewanhowell.com/",
+    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
     "kofi": "https://ko-fi.com/ewanhowell",
     "version": "1.0.0",
     "versions": {

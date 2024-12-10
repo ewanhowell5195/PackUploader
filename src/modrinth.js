@@ -154,7 +154,7 @@ export default {
           str = `<iframe src="https://www.youtube.com/embed/${config.video}" width="600" height="336" allowfullscreen="allowfullscreen"></iframe><br><br><br>\n\n`
         }
       } else if (replacement[1] === "logo") {
-        if (fs.existsSync("./data/logo.png")) {
+        if (config.logo) {
           str = `![${config.name} Logo](https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp)`
         } else {
           str = "# " + config.name

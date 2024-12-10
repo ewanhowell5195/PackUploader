@@ -3,6 +3,7 @@
     "id": "snowstorm",
     "name": "Snowstorm",
     "summary": "The Snowy, Winter Themed Resource Pack!",
+    "logo": true,
     "description": {
       "titleColour": "#fff",
       "titleBackground": "#9A4A2D",

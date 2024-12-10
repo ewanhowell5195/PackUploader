@@ -3,6 +3,7 @@
     "id": "vanilla-emissive-rails",
     "name": "Vanilla Emissive Rails",
     "summary": "Make the powered rail textures emissive, completely in vanilla!",
+    "logo": false,
     "description": {
       "titleColour": "#fff",
       "titleBackground": "#D10002",
@@ -21,6 +22,7 @@
     "video": false,
     "github": "https://github.com/ewanhowell5195/VanillaEmissiveTextures",
     "discord": "https://discord.ewanhowell.com/",
+    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
     "kofi": "https://ko-fi.com/ewanhowell",
     "version": "1.0.0",
     "versions": {

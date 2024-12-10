@@ -3,6 +3,7 @@
     "id": "black-mesa-skyboxes",
     "name": "Black Mesa Skyboxes",
     "summary": "Bring the Black Mesa skyboxes into Minecraft",
+    "logo": false,
     "description": {
       "titleColour": "#fff",
       "titleBackground": "#140122",
@@ -21,6 +22,7 @@
     "video": "E6_Cxt1mocY",
     "github": false,
     "discord": "https://discord.ewanhowell.com/",
+    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
     "kofi": "https://ko-fi.com/ewanhowell",
     "version": "1.0.0",
     "versions": {

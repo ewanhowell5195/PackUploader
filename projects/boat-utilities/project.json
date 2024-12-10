@@ -3,6 +3,7 @@
     "id": "boat-utilities",
     "name": "Boat Utilities",
     "summary": "Add some utilities to the boats!",
+    "logo": true,
     "description": {
       "titleColour": "#fff",
       "titleBackground": "#9A4A2D",

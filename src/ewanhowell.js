@@ -14,7 +14,7 @@ export default {
 
     await sharp("./data/pack.png").resize(128, 128).webp({ quality: 95 }).toFile(path.join(imgPath, "icon.webp"))
 
-    if (fs.existsSync("./data/logo.png")) {
+    if (config.logo) {
       await sharp("./data/logo.png").resize(1280, 256, { fit: "inside" }).webp({ quality: 100 }).toFile(path.join(imgPath, "logo.webp"))
     }
 

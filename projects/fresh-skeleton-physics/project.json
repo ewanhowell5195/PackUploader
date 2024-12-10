@@ -3,6 +3,7 @@
     "id": "fresh-skeleton-physics",
     "name": "Fresh Skeleton Physics",
     "summary": "Give skeletons physics - Now with Fresh Animations!",
+    "logo": true,
     "description": {
       "titleColour": false,
       "titleBackground": false,
@@ -22,6 +23,7 @@
     "video": "E-mUOjjhp5A",
     "github": false,
     "discord": "https://discord.ewanhowell.com/",
+    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
     "kofi": "https://ko-fi.com/ewanhowell",
     "version": "1.0.0",
     "versions": {
