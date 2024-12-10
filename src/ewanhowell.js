@@ -10,16 +10,12 @@ export default {
 
     fs.mkdirSync(path.join(imgPath, "images"), { recursive: true })
 
-    this.writeDetails
+    this.writeDetails()
 
-    await sharp("./data/pack.png").resize(128, 128).webp({ quality: 95 }).toFile(path.join(imgPath, "icon.webp"))
+    await sharp(path.join("./projects", config.id, "pack.png")).resize(128, 128).webp({ quality: 95 }).toFile(path.join(imgPath, "icon.webp"))
 
     if (config.logo) {
-      await sharp("./data/logo.png").resize(1280, 256, { fit: "inside" }).webp({ quality: 100 }).toFile(path.join(imgPath, "logo.webp"))
-    }
-
-    for (const img of config.images) {
-      await sharp(path.join("./data", "images", img.file + ".png")).resize(1920, 1080, { fit: "inside" }).webp({ quality: 95 }).toFile(path.join(imgPath, "images", img.file + ".webp"))
+      await sharp(path.join("./projects", config.id, "logo.png")).resize(1280, 256, { fit: "inside" }).webp({ quality: 100 }).toFile(path.join(imgPath, "logo.webp"))
     }
   },
   writeDetails() {
@@ -36,5 +32,15 @@ export default {
     }
 
     fs.writeFileSync(path.join(sitePath, "json", "resourcepacks", config.id + ".json"), JSON.stringify(data, null, 2))
+  },
+  removeImages() {
+    const imgPath = path.join(sitePath, "images", "resourcepacks", config.id, "images")
+    fs.readdirSync(imgPath).forEach(f => fs.unlinkSync(path.join(imgPath, f)))
+  },
+  async addImages() {
+    const imgPath = path.join(sitePath, "images", "resourcepacks", config.id, "images")
+    for (const img of config.images) {
+      await sharp(path.join("./projects", config.id, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside" }).webp({ quality: 95 }).toFile(path.join(imgPath, img.file + ".webp"))
+    }
   }
 }

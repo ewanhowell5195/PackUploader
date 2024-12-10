@@ -10,7 +10,39 @@ function error(err, res) {
   }
 }
 
+async function request(body, json = true) {
+  const r = await fetch("https://www.planetminecraft.com/ajax.php", {
+    method: "POST",
+    headers: {
+      "x-pmc-csrf-token": settings.auth.planetminecraft.token,
+      cookie: settings.auth.planetminecraft.cookie,
+      Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`
+    },
+    body
+  })
+  if (json) {
+    return r.json()
+  }
+  return r
+}
+
 export default {
+  async getProject() {
+    const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
+      headers: {
+        "cache-control": "no-cache",
+        cookie: settings.auth.planetminecraft.cookie
+      }
+    })
+
+    if (!projectRequest.ok) {
+      error("Failed to fetch project", await projectRequest.text())
+    }
+
+    log("Fetched project")
+
+    return load(await projectRequest.text())
+  },
   async createProject() {
     // Get New Project
 
@@ -199,6 +231,31 @@ export default {
       log(`Uploaded image "${image.file}"`)
     }
   },
+  async removeImages() {
+    const $ = await this.getProject()
+    const images = $(".image_list > .thumbnail[id]").map((i, e) => {
+      const img = $(e)
+      const id = img.data("media-item-id")
+      return {
+        id,
+        title: img.data("caption")?.split(" - ")[0] || id
+      }
+    }).get()
+    for (const image of images) {
+      const deleteRequest = await request(makeForm({
+        module: "tools/media",
+        myaction: "delete",
+        modern: true,
+        media_id: image.id,
+        media_key: "image_key",
+        connect_id: project.planetminecraft.id
+      }), false)
+      if (!deleteRequest.ok) {
+        error(`Failed to remove image "${image.title}"`, deleteRequest)
+      }
+      log(`Removed image "${image.title}"`)
+    }
+  },
   async getDescription() {
     const imageData = await curseforge.getImages()
 
@@ -234,20 +291,7 @@ export default {
     return bbcode
   },
   async versionUpdate() {
-    const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
-      headers: {
-        "cache-control": "no-cache",
-        cookie: settings.auth.planetminecraft.cookie
-      }
-    })
-
-    if (!projectRequest.ok) {
-      error("Failed to fetch project", await projectRequest.text())
-    }
-
-    log("Fetched project")
-
-    const $ = load(await projectRequest.text())
+    const $ = await this.getProject()
 
     // Make Log
 
@@ -262,15 +306,7 @@ export default {
       resource_id: project.planetminecraft.id
     })
 
-    const logRequest = await fetch("https://www.planetminecraft.com/ajax.php", {
-      method: "POST",
-      headers: {
-        "x-pmc-csrf-token": settings.auth.planetminecraft.token,
-        cookie: settings.auth.planetminecraft.cookie,
-        Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`
-      },
-      body: logForm
-    }).then(e => e.json())
+    const logRequest = await request(logForm)
 
     if (logRequest.status !== "success") {
       error("Failed to submit update log", logRequest)
@@ -301,18 +337,7 @@ export default {
     log("Updated project version")
   },
   async updateDetails() {
-    const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
-      headers: {
-        "cache-control": "no-cache",
-        cookie: settings.auth.planetminecraft.cookie
-      }
-    })
-
-    if (!projectRequest.ok) {
-      error("Failed to fetch project", await projectRequest.text())
-    }
-
-    const $ = load(await projectRequest.text())
+    const $ = await this.getProject()
 
     const form = await this.createForm($, $("#item_tags > div").map((i, e) => $(e).data("tag-id")).get())
     

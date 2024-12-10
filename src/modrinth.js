@@ -32,7 +32,7 @@ export default {
       }
     })
 
-    form.append("icon", new Blob([fs.readFileSync("data/pack.png")], {
+    form.append("icon", new Blob([config.icon], {
       type: "image/png"
     }), "pack.png")
 
@@ -90,7 +90,7 @@ export default {
       }
     })
 
-    form.append("file", new Blob([fs.readFileSync("data/pack.zip")], {
+    form.append("file", new Blob([config.pack], {
       type: "application/zip"
     }), `${project.config.name}.zip`)
 
@@ -126,12 +126,30 @@ export default {
       log(`Uploaded image "${image.file}"`)
     }
   },
-  async setDetails(live) {
-    const galleryRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.slug}`, {
+  getImages() {
+    return fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
       headers: {
         Authorization: settings.auth.modrinth
       }
-    }).then(e => e.json())
+    }).then(e => e.json()).then(e => e.gallery)
+  },
+  async removeImages() {
+    const images = await this.getImages()
+    for (const image of images) {
+      const deleteRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/gallery?url=${image.url}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: settings.auth.modrinth
+        }
+      })
+      if (!deleteRequest.ok) {
+        await error(`Failed to remove image "${image.title}"`, deleteRequest)
+      }
+      log(`Removed image "${image.title}"`)
+    }
+  },
+  async setDetails(live) {
+    const gallery = await this.getImages()
 
     let markdown = fs.readFileSync("templates/modrinth.md", "utf-8")
     const replacements = markdown.matchAll(/{{\s*([a-z0-9]+)\s*}}/gi)
@@ -146,7 +164,7 @@ export default {
       } else if (replacement[1] === "images") {
         const images = config.images.filter(e => e.embed)
         for (const image of images) {
-          str += `<img src="${galleryRequest.gallery.find(e => e.title === image.name).raw_url}" width="600" alt="${image.name}"><br><br>\n`
+          str += `<img src="${gallery.find(e => e.title === image.name).raw_url}" width="600" alt="${image.name}"><br><br>\n`
         }
         str = str.trim()
       } else if (replacement[1] === "video") {

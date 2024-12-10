@@ -11,7 +11,7 @@ export default {
     // Icon Upload
 
     const iconForm = new FormData()
-    iconForm.append("file", new Blob([fs.readFileSync("data/pack.png")], {
+    iconForm.append("file", new Blob([config.icon], {
       type: "image/png"
     }), "pack.png")
 
@@ -125,7 +125,7 @@ export default {
         releaseType: "release"
       }
     })
-    packForm.append("file", new Blob([fs.readFileSync("data/pack.zip")], {
+    packForm.append("file", new Blob([config.pack], {
       type: "application/zip"
     }), `${project.config.name}.zip`)
 
@@ -209,6 +209,21 @@ export default {
     }
 
     return imageDataRequest.json()
+  },
+  async removeImages() {
+    const images = await this.getImages()
+    for (const image of images) {
+      const deleteRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}/${image.id}`, {
+        method: "DELETE",
+        headers: {
+          cookie: settings.auth.curseforge.cookie
+        }
+      })
+      if (!deleteRequest.ok) {
+        await error(`Failed to remove image "${image.title}"`, deleteRequest)
+      }
+      log(`Removed image "${image.title}"`)
+    }
   },
   async setDetails() {
     if (config.github) {

@@ -1,0 +1,140 @@
+{
+  "config": {
+    "id": "quindent",
+    "name": "Quindent",
+    "summary": "The five pronged Trident",
+    "logo": true,
+    "description": {
+      "titleColour": "#fff",
+      "titleBackground": "#D10002",
+      "titleBackground2": "#650201",
+      "description": [
+        "This pack remodeles the Trident into a Quindent, which is a Trident with 5 prongs!"
+      ],
+      "youtube": "https://www.youtube.com/@EwanHowell",
+      "twitter": "https://twitter.com/ewanhowell5195",
+      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
+      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
+      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
+      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
+    },
+    "optifine": "OptiFine is required to add support for remodelling the Trident",
+    "video": "DbeCkY1yajI",
+    "github": false,
+    "discord": "https://discord.ewanhowell.com/",
+    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
+    "kofi": "https://ko-fi.com/ewanhowell",
+    "version": "1.4.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.3",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.3",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Throwing",
+        "description": "A player throwing the Quindent",
+        "file": "throw",
+        "embed": true
+      },
+      {
+        "name": "Holding",
+        "description": "A player holding the Quindent",
+        "file": "hold",
+        "embed": true
+      },
+      {
+        "name": "Quindent",
+        "description": "The Quindent",
+        "file": "quindent",
+        "featured": true,
+        "embed": true
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "simplistic",
+        "optifine",
+        "cem",
+        "model",
+        "items",
+        "models",
+        "custommodel",
+        "trident",
+        "five",
+        "prong",
+        "prongs",
+        "quindent"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": true,
+        "fonts": 0,
+        "gui": 0,
+        "items": true,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": true,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": "featured"
+      }
+    }
+  },
+  "curseforge": {
+    "id": 472370,
+    "slug": "quindent"
+  },
+  "planetminecraft": {
+    "id": 5073935,
+    "slug": "quindent"
+  },
+  "modrinth": {
+    "id": "rKre3WZl",
+    "slug": "quindent"
+  }
+}

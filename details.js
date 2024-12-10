@@ -16,26 +16,52 @@ globalThis.project = JSON.parse(fs.readFileSync(projectPath + "/project.json"))
 
 globalThis.config = project.config
 
-// CurseForge
+// Reupload images
+
+if (data.images) {
+  for (const img of config.images) {
+    img.buffer = await sharp(path.join("./projects", config.id, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside" }).jpeg({ quality: 95 }).toBuffer()
+  }
+
+  // Remove images
+
+  await curseforge.removeImages()
+  console.log("CurseForge: Removed project images")
+
+  await planetminecraft.removeImages()
+  console.log("Planet Minecraft: Removed project images")
+
+  await modrinth.removeImages()
+  console.log("Modrinth: Removed project images")
+
+  await ewanhowell.removeImages()
+  console.log("Ewan Howell: Removed project images")
+
+  // Upload images
+
+  await curseforge.uploadImages()
+  console.log("CurseForge: Added project images")
+
+  await planetminecraft.uploadImages()
+  console.log("Planet Minecraft: Added project images")
+
+  await modrinth.uploadImages()
+  console.log("Modrinth: Added project images")
+
+  await ewanhowell.addImages()
+  console.log("Ewan Howell: Added project images")
+}
+
+// Update details
 
 await curseforge.setDetails()
-
-console.log("CurseForge: Project details updated")
-
-// Planet Minecraft
+console.log("CurseForge: Updated project details")
 
 await planetminecraft.updateDetails()
-
-console.log("Planet Minecraft: Project fully created")
-
-// Modrinth
+console.log("Planet Minecraft: Updated project details")
 
 await modrinth.setDetails(data.live)
-
-console.log("Modrinth: Project details updated")
-
-// Ewan Howell
+console.log("Modrinth: Updated project details")
 
 ewanhowell.writeDetails()
-
-console.log("Ewan Howell: Project details updated")
+console.log("Ewan Howell: Updated project details")
