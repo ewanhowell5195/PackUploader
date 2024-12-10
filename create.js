@@ -6,6 +6,8 @@ import ewanhowell from "./src/ewanhowell.js"
 globalThis.curseforge = (await import("./src/curseforge.js")).default
 globalThis.config = (await import("./data/create.json", { with: { type: "json" } })).default
 
+console.log(`Creating project: ${config.id}`)
+
 // Setup
 
 globalThis.projectPath = path.join("projects", config.id)

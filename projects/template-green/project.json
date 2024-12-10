@@ -45,7 +45,8 @@
         "name": "Blocks",
         "description": "A collection of green blocks included in the pack",
         "file": "blocks",
-        "featured": true
+        "featured": true,
+        "embed": true
       },
       {
         "name": "Files",
