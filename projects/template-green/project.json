@@ -4,26 +4,15 @@
     "name": "Template Green",
     "summary": "Coloured versions of the grayscaled blocks",
     "logo": true,
-    "description": {
-      "titleColour": "#fff",
-      "titleBackground": "#D10002",
-      "titleBackground2": "#650201",
-      "description": [
-        "This resource pack contains all the normally greyscaled textures in their coloured format, so that it is easy to use them for whatever you need to use them for."
-      ],
-      "youtube": "https://www.youtube.com/@EwanHowell",
-      "twitter": "https://twitter.com/ewanhowell5195",
-      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
-      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
-      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
-      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
-    },
+    "titleColour": "#fff",
+    "titleBackground": "#D10002",
+    "titleBackground2": "#650201",
+    "description": [
+      "This resource pack contains all the normally greyscaled textures in their coloured format, so that it is easy to use them for whatever you need to use them for."
+    ],
     "optifine": false,
     "video": false,
     "github": "https://github.com/ewanhowell5195/TemplateGreen",
-    "discord": "https://discord.ewanhowell.com/",
-    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
-    "kofi": "https://ko-fi.com/ewanhowell",
     "version": "1.2.0",
     "versions": {
       "curseforge": {

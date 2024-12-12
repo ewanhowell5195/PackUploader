@@ -4,26 +4,15 @@
     "name": "Snowstorm",
     "summary": "The Snowy, Winter Themed Resource Pack!",
     "logo": true,
-    "description": {
-      "titleColour": "#fff",
-      "titleBackground": "#9A4A2D",
-      "titleBackground2": "#741D32",
-      "description": [
-        "This pack changes the complete look of the game to cover everything in the world in a layer of snow, even across dimensions!"
-      ],
-      "youtube": "https://www.youtube.com/@EwanHowell",
-      "twitter": "https://twitter.com/ewanhowell5195",
-      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
-      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
-      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
-      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
-    },
+    "titleColour": "#fff",
+    "titleBackground": "#9A4A2D",
+    "titleBackground2": "#741D32",
+    "description": [
+      "This pack changes the complete look of the game to cover everything in the world in a layer of snow, even across dimensions!"
+    ],
     "optifine": "OptiFine's connected textures are used to add snow onto the tops of blocks which wouldn't usually allow seperate top block only textures.",
     "video": "PRz212unQoE",
     "github": "https://github.com/ewanhowell5195/snowstorm",
-    "discord": "https://discord.ewanhowell.com/",
-    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
-    "kofi": "https://ko-fi.com/ewanhowell",
     "version": "2.0.0",
     "versions": {
       "curseforge": {

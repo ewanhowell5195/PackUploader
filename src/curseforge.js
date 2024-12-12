@@ -253,7 +253,7 @@ export default {
     for (const replacement of replacements) {
       let str = ""
       if (replacement[1] === "description") {
-        for (const part of config.description.description) {
+        for (const part of config.description) {
           str += `<p>${part}</p>`
         }
       } else if (replacement[1] === "images") {
@@ -269,13 +269,13 @@ export default {
         if (config.logo) {
           str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp" alt="${config.name} Logo"><br><br>`
         } else {
-          str = `<div style="color: ${config.description.titleColour}; background-image: linear-gradient(160deg, ${config.description.titleBackground}, ${config.description.titleBackground2});">
+          str = `<div style="color: ${config.titleColour}; background-image: linear-gradient(160deg, ${config.titleBackground}, ${config.titleBackground2});">
         <br>
         <h1 style="font-size: 5ic; font-weight: 700; text-decoration: underline; display: inline-block;">${config.name}</h1>
       </div>`
         }
       } else {
-        str = config.description[replacement[1]] ?? config[replacement[1]]
+        str = config[replacement[1]] ?? default[replacement[1]]
         if (typeof str !== "string") {
           str = "undefined"
         }

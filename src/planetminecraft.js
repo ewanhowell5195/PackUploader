@@ -265,9 +265,9 @@ export default {
     for (const replacement of replacements) {
       let str = ""
       if (replacement[1] === "description") {
-        str = project.config.description.description.join("\n\n")
+        str = config.description.join("\n\n")
       } else if (replacement[1] === "images") {
-        const images = project.config.images.filter(e => e.embed)
+        const images = config.images.filter(e => e.embed)
         const imageList = []
         for (const image of images) {
           imageList.push(`[img width=600 height=338]${imageData.find(e => e.title === image.file + ".jpg" || e.title === image.name).imageUrl}[/img]`)
@@ -277,10 +277,10 @@ export default {
         if (config.logo) {
           str = `[img]https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp[/img]`
         } else {
-          str = `[size=48px]${project.config.name}[/size]`
+          str = `[size=48px]${config.name}[/size]`
         }
       } else {
-        str = project.config.description[replacement[1]] ?? project.config[replacement[1]]
+        str = config[replacement[1]] ?? default[replacement[1]]
         if (typeof str !== "string") {
           str = "undefined"
         }

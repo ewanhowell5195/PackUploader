@@ -157,7 +157,7 @@ export default {
     for (const replacement of replacements) {
       let str = ""
       if (replacement[1] === "description") {
-        for (const part of config.description.description) {
+        for (const part of config.description) {
           str += part + "\n\n"
         }
         str = str.trim()
@@ -178,7 +178,7 @@ export default {
           str = "# " + config.name
         }
       } else {
-        str = config.description[replacement[1]] ?? config[replacement[1]]
+        str = config[replacement[1]] ?? default[replacement[1]]
         if (typeof str !== "string") {
           str = "undefined"
         }

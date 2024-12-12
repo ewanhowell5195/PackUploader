@@ -4,26 +4,15 @@
     "name": "Black Mesa Skyboxes",
     "summary": "Bring the Black Mesa skyboxes into Minecraft",
     "logo": false,
-    "description": {
-      "titleColour": "#fff",
-      "titleBackground": "#140122",
-      "titleBackground2": "#207489",
-      "description": [
-        "This pack adds the skybox textures from the game Black Mesa into Minecraft. Experience the skyboxes from around the Black Mesa facility in the overworld, and the skyboxes from Xen in the End dimension!"
-      ],
-      "youtube": "https://www.youtube.com/@EwanHowell",
-      "twitter": "https://twitter.com/ewanhowell5195",
-      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
-      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
-      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
-      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
-    },
+    "titleColour": "#fff",
+    "titleBackground": "#140122",
+    "titleBackground2": "#207489",
+    "description": [
+      "This pack adds the skybox textures from the game Black Mesa into Minecraft. Experience the skyboxes from around the Black Mesa facility in the overworld, and the skyboxes from Xen in the End dimension!"
+    ],
     "optifine": "OptiFine is used to add support for custom skyboxes",
     "video": "E6_Cxt1mocY",
     "github": false,
-    "discord": "https://discord.ewanhowell.com/",
-    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
-    "kofi": "https://ko-fi.com/ewanhowell",
     "version": "1.0.0",
     "versions": {
       "curseforge": {

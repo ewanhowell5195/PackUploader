@@ -4,27 +4,16 @@
     "name": "Boat Utilities",
     "summary": "Add some utilities to the boats!",
     "logo": true,
-    "description": {
-      "titleColour": "#fff",
-      "titleBackground": "#9A4A2D",
-      "titleBackground2": "#741D32",
-      "description": [
-        "This resource pack makes boats more useful by adding some utilities to them!",
-        "Boats will now include the following utilities on the front:\n- Compass - The red hand points north and the white hand points to the coordinates (0, 0)\n- Speedometer - Shows the speed the boat is currently travelling at\n- Clock - Shows the current in game time on a working 12 hour clockface"
-      ],
-      "youtube": "https://www.youtube.com/@EwanHowell",
-      "twitter": "https://twitter.com/ewanhowell5195",
-      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
-      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
-      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
-      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
-    },
+    "titleColour": "#fff",
+    "titleBackground": "#9A4A2D",
+    "titleBackground2": "#741D32",
+    "description": [
+      "This resource pack makes boats more useful by adding some utilities to them!",
+      "Boats will now include the following utilities on the front:\n- Compass - The red hand points north and the white hand points to the coordinates (0, 0)\n- Speedometer - Shows the speed the boat is currently travelling at\n- Clock - Shows the current in game time on a working 12 hour clockface"
+    ],
     "optifine": "OptiFine is used to add support for remodelling the boats",
     "video": "oSRm__7sDzA",
     "github": false,
-    "discord": "https://discord.ewanhowell.com/",
-    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
-    "kofi": "https://ko-fi.com/ewanhowell",
     "version": "1.0.0",
     "versions": {
       "curseforge": {

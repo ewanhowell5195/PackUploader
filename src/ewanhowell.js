@@ -21,7 +21,7 @@ export default {
   writeDetails() {
     const data = {
       subtitle: config.summary,
-      description: config.description.description.join("\n\n"),
+      description: config.description.join("\n\n"),
       optifine: config.optifine ? config.optifine : undefined,
       video: config.video ? config.video : undefined,
       images: config.images.map(e => e.file),

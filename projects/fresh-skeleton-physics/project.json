@@ -4,27 +4,16 @@
     "name": "Fresh Skeleton Physics",
     "summary": "Give skeletons physics - Now with Fresh Animations!",
     "logo": true,
-    "description": {
-      "titleColour": false,
-      "titleBackground": false,
-      "titleBackground2": false,
-      "description": [
-        "This pack makes it so that when any of the skeleton entities die, instead of falling over to the side like normal, they collapse into a pile of bones!",
-        "Now with Fresh Animations support! This pack is fully compatible with Fresh Animations!"
-      ],
-      "youtube": "https://www.youtube.com/@EwanHowell",
-      "twitter": "https://twitter.com/ewanhowell5195",
-      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
-      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
-      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
-      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
-    },
+    "titleColour": false,
+    "titleBackground": false,
+    "titleBackground2": false,
+    "description": [
+      "This pack makes it so that when any of the skeleton entities die, instead of falling over to the side like normal, they collapse into a pile of bones!",
+      "Now with Fresh Animations support! This pack is fully compatible with Fresh Animations!"
+    ],
     "optifine": "OptiFine is used to add support for custom entity models",
     "video": "E-mUOjjhp5A",
     "github": false,
-    "discord": "https://discord.ewanhowell.com/",
-    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
-    "kofi": "https://ko-fi.com/ewanhowell",
     "version": "1.0.0",
     "versions": {
       "curseforge": {

@@ -4,27 +4,16 @@
     "name": "Example Custom Model Data",
     "summary": "Example custom model data for 1.21.4 and beyond",
     "logo": false,
-    "description": {
-      "titleColour": "#fff",
-      "titleBackground": "#9A4A2D",
-      "titleBackground2": "#741D32",
-      "description": [
-        "This pack provides example item definitions and models for using Custom Model Data in Minecraft 1.21.4 and beyond.",
-        "The examples provided are a mace that can become a bat, and a dirt block that can turn into a hat that can be worn."
-      ],
-      "youtube": "https://www.youtube.com/@EwanHowell",
-      "twitter": "https://twitter.com/ewanhowell5195",
-      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
-      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
-      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
-      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
-    },
+    "titleColour": "#fff",
+    "titleBackground": "#9A4A2D",
+    "titleBackground2": "#741D32",
+    "description": [
+      "This pack provides example item definitions and models for using Custom Model Data in Minecraft 1.21.4 and beyond.",
+      "The examples provided are a mace that can become a bat, and a dirt block that can turn into a hat that can be worn."
+    ],
     "optifine": false,
     "video": false,
     "github": false,
-    "discord": "https://discord.ewanhowell.com/",
-    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
-    "kofi": "https://ko-fi.com/ewanhowell",
     "version": "1.0.0",
     "versions": {
       "curseforge": {

@@ -4,27 +4,16 @@
     "name": "ParitySheep",
     "summary": "Bring parity to the sheep of Minecraft",
     "logo": true,
-    "description": {
-      "titleColour": false,
-      "titleBackground": false,
-      "titleBackground2": false,
-      "description": [
-        "In Minecraft Bedrock edition, the sheep get dyed on both the wool layer and the skin layer of the their texture. This pack brings consistency to the game by making the Minecraft Java edition sheep work the same way, instead of only having the wool texture dyed and the skin texture untouched.",
-        "The sheep will also show the dyed wool colour after they have been sheared, allowing you to now identify their colour while sheared."
-      ],
-      "youtube": "https://www.youtube.com/@EwanHowell",
-      "twitter": "https://twitter.com/ewanhowell5195",
-      "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
-      "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
-      "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
-      "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png"
-    },
+    "titleColour": false,
+    "titleBackground": false,
+    "titleBackground2": false,
+    "description": [
+      "In Minecraft Bedrock edition, the sheep get dyed on both the wool layer and the skin layer of the their texture. This pack brings consistency to the game by making the Minecraft Java edition sheep work the same way, instead of only having the wool texture dyed and the skin texture untouched.",
+      "The sheep will also show the dyed wool colour after they have been sheared, allowing you to now identify their colour while sheared."
+    ],
     "optifine": "OptiFine is used to add support for custom entity models",
     "video": false,
     "github": false,
-    "discord": "https://discord.ewanhowell.com/",
-    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
-    "kofi": "https://ko-fi.com/ewanhowell",
     "version": "1.0.0",
     "versions": {
       "curseforge": {
