@@ -275,7 +275,7 @@ export default {
       </div>`
         }
       } else {
-        str = config[replacement[1]] ?? default[replacement[1]]
+        str = config[replacement[1]] ?? defaultConfig[replacement[1]]
         if (typeof str !== "string") {
           str = "undefined"
         }

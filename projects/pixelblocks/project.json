@@ -1,0 +1,164 @@
+{
+  "config": {
+    "id": "pixelblocks",
+    "name": "pixelBlocks",
+    "summary": "The pack where every pixel is a block texture!",
+    "logo": true,
+    "titleColour": "#fff",
+    "titleBackground": "#74C24D",
+    "titleBackground2": "#3EA1A3",
+    "description": [
+      "This pack makes it so that every pixel in a texture is a block texture!"
+    ],
+    "optifine": "OptiFine is optional, but the water may look strange without it.",
+    "video": "4OX-6S5QTHI",
+    "github": "https://github.com/ewanhowell5195/pixelBlocks",
+    "version": "2.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.21.4",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.21.4",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Farm",
+        "description": "A farm with scarecrows, beetroot, and wheat",
+        "file": "farm",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Shore",
+        "description": "The edge of a lake with sand, grass, and gravel",
+        "file": "shore",
+        "embed": true
+      },
+      {
+        "name": "Oak House",
+        "description": "An oak house",
+        "file": "house"
+      },
+      {
+        "name": "Cherry Grove",
+        "description": "A cherry grove biome",
+        "file": "cherry",
+        "embed": true
+      },
+      {
+        "name": "Lilacs",
+        "description": "A group of lilacs in an oak forest",
+        "file": "lilac"
+      },
+      {
+        "name": "Mangrove Swamp",
+        "description": "A mangrove swamp biome",
+        "file": "mangrove"
+      },
+      {
+        "name": "Striders",
+        "description": "A strider and baby strider on a lava lake in the nether",
+        "file": "strider"
+      },
+      {
+        "name": "Warped Forest",
+        "description": "A warped forest in the nether",
+        "file": "warped"
+      },
+      {
+        "name": "Basalt Delta",
+        "description": "A basalt delta in the nether",
+        "file": "delta"
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": true,
+        "art": true,
+        "environment": true,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": true,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "environment",
+        "items",
+        "gui",
+        "art",
+        "mobs",
+        "armor",
+        "misc",
+        "particles",
+        "pixel",
+        "block",
+        "blocks",
+        "models",
+        "hd",
+        "256x256",
+        "256x",
+        "cursed",
+        "pixelblocks"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": 0,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": true,
+        "audio": 0,
+        "blocks": "featured",
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": true,
+        "environment": true,
+        "equipment": true,
+        "fonts": 0,
+        "gui": 0,
+        "items": "featured",
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": "featured"
+      }
+    }
+  },
+  "curseforge": {
+    "id": 432438,
+    "slug": "pixelblocks"
+  },
+  "planetminecraft": {
+    "id": 4897915,
+    "slug": "pixelblocks"
+  },
+  "modrinth": {
+    "id": "e09tTIQc",
+    "slug": "pixelblocks"
+  }
+}

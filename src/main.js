@@ -1,5 +1,5 @@
+globalThis.defaultConfig = (await import("../config.json", { with: { type: "json" } })).default
 globalThis.settings = (await import("../settings.json", { with: { type: "json" } })).default
-globalThis.default = (await import("../config.json", { with: { type: "json" } })).default
 globalThis.sharp = (await import("sharp")).default
 globalThis.load = (await import("cheerio")).load
 globalThis.path = await import("node:path")

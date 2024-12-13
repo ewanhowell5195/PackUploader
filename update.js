@@ -24,7 +24,7 @@ project.config.versions = config.versions
 
 save()
 
-config.pack = fs.readFileSync("data/create/pack.zip")
+config.pack = fs.readFileSync("data/update/pack.zip")
 
 // CurseForge
 
