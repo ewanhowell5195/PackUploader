@@ -11,9 +11,9 @@
       "This pack makes it so that every pixel in a texture is a block texture!"
     ],
     "optifine": "OptiFine is optional, but the water may look strange without it.",
-    "video": "4OX-6S5QTHI",
+    "video": "-6vtWeUxWeU",
     "github": "https://github.com/ewanhowell5195/pixelBlocks",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "versions": {
       "curseforge": {
         "type": "after",
