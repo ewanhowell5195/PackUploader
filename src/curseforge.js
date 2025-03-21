@@ -152,7 +152,7 @@ export default {
           type: "image/jpeg"
         }), image.file + ".jpg")
 
-        const imagesRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
+        const imagesRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/image/${project.curseforge.id}`, {
           method: "POST",
           headers: {
             cookie: settings.auth.curseforge.cookie
@@ -175,7 +175,7 @@ export default {
     for (const image of config.images) {
       const data = imageData.find(e => e.title === image.file + ".jpg")
       if (!data) {
-        throw new Error(`CurseForge: Image "${image.file}" failed to upload - ` + JSON.stringify(err))
+        throw new Error(`CurseForge: Image "${image.file}" failed to upload`)
       }
       const r = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
         method: "PUT",
@@ -187,7 +187,8 @@ export default {
           title: image.name,
           description: image.description,
           id: data.id,
-          isFeatured: true
+          isFeatured: true,
+          type: 1
         })
       })
       if (r.ok) {
@@ -213,7 +214,7 @@ export default {
   async removeImages() {
     const images = await this.getImages()
     for (const image of images) {
-      const deleteRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}/${image.id}`, {
+      const deleteRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}/${image.id}/1`, {
         method: "DELETE",
         headers: {
           cookie: settings.auth.curseforge.cookie
@@ -259,7 +260,7 @@ export default {
       } else if (replacement[1] === "images") {
         const images = config.images.filter(e => e.embed)
         for (const image of images) {
-          str += `<br><img src="${imageData.find(e => e.title === image.file + ".jpg" || e.title === image.name).imageUrl}" width="600" alt="${image.name}"><br>`
+          str += `<br><img src="${imageData.find(e => e.title === image.file + ".jpg" || e.title === image.name).url}" width="600" alt="${image.name}"><br>`
         }
       } else if (replacement[1] === "video") {
         if (config.video) {

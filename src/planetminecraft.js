@@ -270,7 +270,7 @@ export default {
         const images = project.config.images.filter(e => e.embed)
         const imageList = []
         for (const image of images) {
-          imageList.push(`[img width=600 height=338]${imageData.find(e => e.title === image.file + ".jpg" || e.title === image.name).imageUrl}[/img]`)
+          imageList.push(`[img width=600 height=338]${imageData.find(e => e.title === image.file + ".jpg" || e.title === image.name).url}[/img]`)
         }
         str = imageList.join("\n\n")
       } else if (replacement[1] === "logo") {

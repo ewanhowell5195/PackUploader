@@ -1,0 +1,128 @@
+{
+  "config": {
+    "id": "solid-block-transparency-support",
+    "name": "Solid Block Transparency Support",
+    "summary": "Add transparency to solid blocks!",
+    "logo": true,
+    "titleColour": "#fff",
+    "titleBackground": "#543F7A",
+    "titleBackground2": "#3EA1A3",
+    "description": [
+      "This pack changes how solid blocks render so that they can use transparent textures.",
+      "Either use this pack alongside your pack, or merge it into your pack.",
+      "WARNING: THIS WILL NOT FIX XRAY! ADDING TRANSPARENCY TO SOLID BLOCKS CAN CAUSE XRAY DEPENDING ON HOW YOU USE IT!",
+      "By default, solid blocks do not support transparent textures, resulting in them rendering like the first image below:",
+      "This pack makes it so that you can use transparent textures with them, meaning they instead can render like the second image below:"
+    ],
+    "optifine": false,
+    "video": false,
+    "github": false,
+    "version": "3.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "latest",
+        "snapshots": true
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "latest",
+        "snapshots": true
+      }
+    },
+    "images": [
+      {
+        "name": "Comparison",
+        "description": "Not using the pack vs using the pack",
+        "file": "compare",
+        "featured": true
+      },
+      {
+        "name": "Without Pack",
+        "description": "Without the pack enabled",
+        "file": "solid",
+        "embed": true
+      },
+      {
+        "name": "With Pack",
+        "description": "With the pack enabled",
+        "file": "transparent",
+        "embed": true
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": true,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "transparent",
+        "solid",
+        "models",
+        "shaders",
+        "utility",
+        "shader",
+        "transparency",
+        "render",
+        "rendering",
+        "rendertype"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": "featured",
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": "featured",
+        "vanilla-like": true
+      }
+    }
+  },
+  "curseforge": {
+    "id": 715647,
+    "slug": "solid-block-transparency-support"
+  },
+  "planetminecraft": {
+    "id": 5785711,
+    "slug": "solid-block-transparency-support"
+  },
+  "modrinth": {
+    "id": "gi2Kf7V9",
+    "slug": "solid-block-transparency-support"
+  }
+}
