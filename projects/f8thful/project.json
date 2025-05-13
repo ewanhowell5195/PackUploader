@@ -1,0 +1,176 @@
+{
+  "config": {
+    "id": "f8thful",
+    "name": "F8thful",
+    "summary": "The Vanilla 8x8 Resource Pack",
+    "logo": true,
+    "titleColour": "#fff",
+    "titleBackground": "#543F7A",
+    "titleBackground2": "#3EA1A3",
+    "description": [
+      "F8thful is a vanilla friendly resource pack where every texture has been recreated in 8x8!"
+    ],
+    "optifine": "OptiFine is used to add connected textures to better hide repeated textures.\n\nCustom entity models are also included to make entity models work better with 8x8 textures.",
+    "video": "lFOuPZXskwc",
+    "github": "https://github.com/ewanhowell5195/f8thful",
+    "version": "9.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "House",
+        "description": "A wooden house next to a larger house",
+        "file": "house",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Farm",
+        "description": "A farm with scarecrows in it",
+        "file": "farm",
+        "embed": true
+      },
+      {
+        "name": "Underwater",
+        "description": "Sand, gravel, and dirt, seen from underwater",
+        "file": "underwater",
+        "embed": true
+      },
+      {
+        "name": "Lush Caves",
+        "description": "Glowberries hanging from the ceiling in a lush cave",
+        "file": "lush"
+      },
+      {
+        "name": "Mangrove Swamp",
+        "description": "A mangrove swamp biome",
+        "file": "swamp"
+      },
+      {
+        "name": "Basalt Delta",
+        "description": "A basalt delta biome in the Nether",
+        "file": "delta"
+      },
+      {
+        "name": "Crimson Forest",
+        "description": "A crimson forest biome in the Nether",
+        "file": "crimson"
+      },
+      {
+        "name": "Lush Caves (Ground)",
+        "description": "Azalea bushes and moss on the ground in a lush cave biome",
+        "file": "lush2"
+      },
+      {
+        "name": "Dripstone Caves",
+        "description": "The ceiling of a dripstone caves biome",
+        "file": "dripstone"
+      },
+      {
+        "name": "Warped Forest",
+        "description": "A warped forest biome in the Nether",
+        "file": "warped"
+      },
+      {
+        "name": "Village Farm",
+        "description": "A farm in a village",
+        "file": "farm2"
+      },
+      {
+        "name": "Cherry Grove",
+        "description": "A cherry grove biome",
+        "file": "cherry"
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": true,
+        "art": true,
+        "environment": true,
+        "font": true,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": true,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "simplistic",
+        "minecraft",
+        "faithful",
+        "optifine",
+        "models",
+        "8x8",
+        "cave",
+        "8bit",
+        "java",
+        "lowres",
+        "connectedtextures",
+        "halfres",
+        "117update",
+        "cavesandcliffs"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": "featured",
+        "16x": 0,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": "featured",
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": "true",
+        "equipment": "true",
+        "fonts": "true",
+        "gui": "true",
+        "items": "true",
+        "locale": 0,
+        "modded": 0,
+        "models": "true",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": true
+      }
+    }
+  },
+  "curseforge": {
+    "id": 364688,
+    "slug": "f8thful"
+  },
+  "planetminecraft": {
+    "id": 4595209,
+    "slug": "f8thful-the-complete-vanilla-8x8-resource-pack"
+  },
+  "modrinth": {
+    "id": "ZrW0og1b",
+    "slug": "f8thful"
+  }
+}

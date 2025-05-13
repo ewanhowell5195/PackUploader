@@ -15,7 +15,7 @@ export default {
       type: "image/png"
     }), "pack.png")
 
-    const iconRequest = await fetch("https://authors.curseforge.com/_api/projects/null/upload-avatar", {
+    const iconRequest = await fetch("https://authors.curseforge.com/_api/projects/game/432/upload-avatar", {
       method: "POST",
       headers: {
         cookie: settings.auth.curseforge.cookie
@@ -98,7 +98,7 @@ export default {
       await error("CurseForge: Failed getting version list", versionsRequest)
     }
 
-    versionsRequest = await versionsRequest.json().then(e => e[0].flatMap(e => e.choices))
+    versionsRequest = await versionsRequest.json().then(e => e.versionsData[0].flatMap(e => e.choices))
 
     if (!config.versions.curseforge.snapshots) {
       versionsRequest = versionsRequest.filter(e => !e.name.endsWith("Snapshot"))
