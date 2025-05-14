@@ -101,7 +101,7 @@ export default {
     versionsRequest = await versionsRequest.json().then(e => e.versionsData[0].flatMap(e => e.choices))
 
     if (!config.versions.curseforge.snapshots) {
-      versionsRequest = versionsRequest.filter(e => !e.name.endsWith("Snapshot"))
+      versionsRequest = versionsRequest.filter(e => !e.name.toLowerCase().endsWith("snapshot"))
     }
 
     const versions = []
