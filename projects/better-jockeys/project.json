@@ -1,0 +1,136 @@
+{
+  "config": {
+    "id": "better-jockeys",
+    "name": "Better Jockeys",
+    "summary": "Add improved skeleton jockeys to your world!",
+    "logo": true,
+    "titleColour": "#fff",
+    "titleBackground": "#63A675",
+    "titleBackground2": "#4B7D59",
+    "description": [
+      "This pack adds unique skeleton skins for when the skeleton is riding on either the spider or the skeleton horse!",
+      "Limitations:\nThe skeletons will lose their unique textures if the entity they are riding gets killed and they get reloaded, either through a pack reload, world reload, or chunk reload."
+    ],
+    "optifine": "OptiFine is required so that entity models can be customised.",
+    "video": "ZG7wcExAK1k",
+    "github": false,
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.21.4",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.21.4",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "All",
+        "description": "A skeleton, a spider jockey, and a skeleton horseman",
+        "file": "all",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Spider Jockeys",
+        "description": "A group of spider jockeys",
+        "file": "spider",
+        "embed": true
+      },
+      {
+        "name": "Skeleton Horsemen",
+        "description": "A group of skeleton horsemen",
+        "file": "horse",
+        "embed": true
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": false,
+        "art": false,
+        "environment": false,
+        "font": false,
+        "gui": false,
+        "items": false,
+        "misc": false,
+        "mobs": true,
+        "particles": false,
+        "terrain": false,
+        "audio": false,
+        "models": true
+      },
+      "tags": [
+        "skeleton",
+        "optifine",
+        "better",
+        "cem",
+        "tweak",
+        "horse",
+        "spider",
+        "skeletons",
+        "improvement",
+        "skeletonhorse",
+        "cemanimation",
+        "cemanimations",
+        "cema",
+        "skeletonhorseman",
+        "skeletonhorsemen",
+        "skeletontrap",
+        "spiderjockey",
+        "skeletonjockey"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": 0
+      }
+    }
+  },
+  "curseforge": {
+    "id": 910344,
+    "slug": "better-jockeys"
+  },
+  "planetminecraft": {
+    "id": 6063716,
+    "slug": "better-jockeys"
+  },
+  "modrinth": {
+    "id": "SAo4Rxzb",
+    "slug": "better-jockeys"
+  }
+}
