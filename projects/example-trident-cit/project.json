@@ -1,0 +1,137 @@
+{
+  "config": {
+    "id": "example-trident-cit",
+    "name": "Example Trident CIT",
+    "summary": "An example pack for trident CIT that works on both the item and thrown entity models!",
+    "logo": false,
+    "titleColour": "#000",
+    "titleBackground": "#fff",
+    "titleBackground2": "#589D8E",
+    "description": [
+      "This pack provides examples of how to make CIT tridents.",
+      "It includes three examples: name your trident \"Red Trident\", \"Quindent\", or \"Mjolnir\". Lowercase versions of these names are also supported.",
+      "This works by using the new item definitions feature to redefine trident item models to render as items instead of entities. The same item definition files are used to apply the name-based models. This does not actually use OptiFine CIT.",
+      "Thrown tridents still use entity models, so OptiFine CEM and OptiFine random entities are required to change the model or texture based on the item’s name.",
+      "Custom atlases are included to allow trident textures from the entity folder to be applied to item models. This is optional and can be skipped if your textures are stored in the \"block\" or \"item\" folders.",
+      "Proper trident CIT was not possible before 1.21.5 and requires OptiFine CEM (or a compatible alternative mod)."
+    ],
+    "optifine": true,
+    "video": false,
+    "github": false,
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.21.5",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.21.5",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Tridents",
+        "description": "All the tridents, shown in item frames",
+        "file": "tridents",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Quindent",
+        "description": "A Quindent about to be thrown",
+        "file": "quindent",
+        "embed": true
+      },
+      {
+        "name": "Mjolnir",
+        "description": "Mjolnir, Thor's hammer, being held by Ewan",
+        "file": "mjolnir",
+        "embed": true
+      },
+      {
+        "name": "Red Trident",
+        "description": "A red trident, seen from first person",
+        "file": "red_trident",
+        "embed": true
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": false,
+        "art": false,
+        "environment": false,
+        "font": false,
+        "gui": false,
+        "items": true,
+        "misc": false,
+        "mobs": false,
+        "particles": false,
+        "terrain": false,
+        "audio": false,
+        "models": true
+      },
+      "tags": [
+        "trident",
+        "cit",
+        "optifine",
+        "customitemmodel",
+        "mjolnir",
+        "thor",
+        "example",
+        "examplepack",
+        "tutorial"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": "featured",
+        "fonts": 0,
+        "gui": 0,
+        "items": "featured",
+        "locale": 0,
+        "modded": true,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": true,
+        "utility": 0,
+        "vanilla-like": 0
+      }
+    }
+  },
+  "curseforge": {
+    "id": 1322105,
+    "slug": "example-trident-cit"
+  },
+  "planetminecraft": {
+    "id": 6695586,
+    "slug": "example-trident-cit"
+  },
+  "modrinth": {
+    "id": "Rl6cPuuJ",
+    "slug": "example-trident-cit"
+  }
+}
