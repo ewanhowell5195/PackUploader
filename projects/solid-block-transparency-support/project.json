@@ -17,18 +17,18 @@
     "optifine": false,
     "video": false,
     "github": false,
-    "version": "3.0.0",
+    "version": "4.0.0",
     "versions": {
       "curseforge": {
         "type": "latest",
-        "snapshots": true
+        "snapshots": false
       },
       "planetminecraft": {
         "type": "latest"
       },
       "modrinth": {
         "type": "latest",
-        "snapshots": true
+        "snapshots": false
       }
     },
     "images": [
