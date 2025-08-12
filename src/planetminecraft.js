@@ -2,7 +2,15 @@ function log(message) {
   console.log(`Planet Minecraft: ${message}`)
 }
 
-function error(err, res) {
+function error(err, res, crash = true) {
+  if (!crash) {
+    if (typeof res === "string") {
+      console.error(`Planet Minecraft: ${err} - ${res}`)
+    } else {
+      console.error(`Planet Minecraft: ${err} - ${JSON.stringify(res)}`)
+    }
+    return
+  }
   if (typeof res === "string") {
     throw new Error(`Planet Minecraft: ${err} - ${res}`)
   } else {
@@ -309,7 +317,7 @@ export default {
     const logRequest = await request(logForm)
 
     if (logRequest.status !== "success") {
-      error("Failed to submit update log", logRequest)
+      error("Failed to submit update log", logRequest, false)
     }
 
     log("Submit update log")

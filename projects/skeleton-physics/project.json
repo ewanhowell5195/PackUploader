@@ -1,24 +1,23 @@
 {
   "config": {
-    "id": "fresh-skeleton-physics",
-    "name": "Fresh Skeleton Physics",
-    "summary": "Give skeletons physics - Now with Fresh Animations!",
+    "id": "skeleton-physics",
+    "name": "Skeleton Physics",
+    "summary": "Give skeletons physics!",
     "logo": true,
     "titleColour": false,
     "titleBackground": false,
     "titleBackground2": false,
     "description": [
-      "This pack makes it so that when any of the skeleton entities die, instead of falling over to the side like normal, they collapse into a pile of bones!",
-      "Now with Fresh Animations support! This pack is fully compatible with Fresh Animations!"
+      "This pack makes it so that when any of the skeleton entities die, instead of falling over to the side like normal, they collapse into a pile of bones!\n\nThe entities this applies to are as follows:\n- Skeleton\n- Skeleton Horse\n- Stray\n- Wither Skeleton\n- The Wither\n- Bogged"
     ],
     "optifine": "OptiFine is used to add support for custom entity models",
-    "video": "E-mUOjjhp5A",
+    "video": "26GUodU9zjg",
     "github": false,
     "version": "1.1.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.21.2",
+        "version": "1.20.2",
         "snapshots": false
       },
       "planetminecraft": {
@@ -26,23 +25,23 @@
       },
       "modrinth": {
         "type": "after",
-        "version": "1.21.2",
+        "version": "1.20.2",
         "snapshots": false
       }
     },
     "images": [
       {
-        "name": "Dead",
-        "description": "Dead Skeletons",
-        "file": "dead",
-        "embed": true,
-        "featured": true
+        "name": "Dead Skeleton",
+        "description": "A dead skeleton in a pile on the floor",
+        "file": "skeleton",
+        "embed": true
       },
       {
-        "name": "Alive",
-        "description": "Alive Skeletons",
-        "file": "alive",
-        "embed": true
+        "name": "Bones",
+        "description": "A collection of skeleton bones",
+        "file": "bones",
+        "embed": true,
+        "featured": true
       }
     ],
     "planetminecraft": {
@@ -61,13 +60,20 @@
         "models": true
       },
       "tags": [
+        "mobs",
+        "experimental",
         "skeleton",
+        "wither",
+        "models",
+        "spooky",
+        "math",
+        "doot",
         "skeletons",
-        "optifine",
-        "cem",
-        "animations",
+        "bones",
+        "simulated",
         "physics",
-        "freshanimations"
+        "stray",
+        "thiswasapaintomake"
       ]
     },
     "modrinth": {
@@ -105,15 +111,15 @@
     }
   },
   "curseforge": {
-    "id": 1090911,
-    "slug": "fresh-skeleton-physics"
+    "id": 694653,
+    "slug": "skeleton-physics"
   },
   "planetminecraft": {
-    "id": 6392526,
-    "slug": "fresh-skeleton-physics"
+    "id": 5753421,
+    "slug": "skeleton-physics"
   },
   "modrinth": {
-    "id": "XZhhYcY0",
-    "slug": "fresh-skeleton-physics"
+    "id": "l9VrawNM",
+    "slug": "skeleton-physics"
   }
 }
