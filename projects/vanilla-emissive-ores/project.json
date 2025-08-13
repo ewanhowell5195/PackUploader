@@ -1,0 +1,128 @@
+{
+  "config": {
+    "id": "vanilla-emissive-ores",
+    "name": "Vanilla Emissive Ores",
+    "summary": "Make the ore textures emissive, completely in vanilla!",
+    "description": [
+      "This pack utilises the new emissive block models feature from 1.21.2 to add emissive ore textures!"
+    ],
+    "github": "https://github.com/ewanhowell5195/VanillaEmissiveTextures",
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.21.3",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.21.3",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Wall",
+        "description": "All the ore types together in a wall",
+        "file": "wall",
+        "feature": true
+      },
+      {
+        "name": "Ores",
+        "description": "The wall of ores from another angle",
+        "file": "ores",
+        "embed": true
+      },
+      {
+        "name": "Cave",
+        "description": "Ores seen within a cave",
+        "file": "cave",
+        "embed": true
+      },
+      {
+        "name": "Cave with Water",
+        "description": "A cave of ores with an underground lake",
+        "file": "cave_with_water"
+      },
+      {
+        "name": "Underwater Cave",
+        "description": "Ores seen within an underwater cave",
+        "file": "underwater_cave",
+        "embed": true
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "experimental",
+        "vanilla",
+        "ore",
+        "ores",
+        "tweak",
+        "emissive",
+        "emissives"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": true,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": "featured",
+        "vanilla-like": "featured"
+      }
+    }
+  },
+  "curseforge": {
+    "id": 1084573,
+    "slug": "vanilla-emissive-ores"
+  },
+  "planetminecraft": {
+    "id": 6379653,
+    "slug": "vanilla-emissive-ores-6379653"
+  },
+  "modrinth": {
+    "id": "z1VeBFp5",
+    "slug": "vanilla-emissive-ores"
+  }
+}

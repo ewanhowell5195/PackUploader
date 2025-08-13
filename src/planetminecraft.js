@@ -368,5 +368,37 @@ export default {
     }
 
     log("Updated project details")
+  },
+  async loadDetails() {
+    config.planetminecraft = {
+      modifies: {
+        armor: 0,
+        art: 0,
+        environment: 0,
+        font: 0,
+        gui: 0,
+        items: 0,
+        misc: 0,
+        mobs: 0,
+        particles: 0,
+        terrain: 0,
+        audio: 0,
+        models: 0
+      },
+      tags: []
+    }
+
+    if (!project.planetminecraft.id) return
+
+    const $ = await this.getProject()
+    config.planetminecraft.tags = $("#item_tags .tag").map(function() {
+      return $(this).text().trim()
+    }).get()
+
+    $("#main_folder_modified .folder-item").each(function() {
+      let input = $(this).find("input")[0]
+      let label = $(this).find("label").text().toLowerCase()
+      config.planetminecraft.modifies[label] = input.checked ? true : 0
+    })
   }
 }

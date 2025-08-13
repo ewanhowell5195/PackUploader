@@ -212,5 +212,63 @@ export default {
     }
 
     log("Written description")
+  },
+  async loadDetails() {
+    config.modrinth = {
+      tags: {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        audio: 0,
+        blocks: 0,
+        combat: 0,
+        "core-shaders": 0,
+        cursed: 0,
+        decoration: 0,
+        entities: 0,
+        environment: 0,
+        equipment: 0,
+        fonts: 0,
+        gui: 0,
+        items: 0,
+        locale: 0,
+        modded: 0,
+        models: 0,
+        realistic: 0,
+        simplistic: 0,
+        themed: 0,
+        tweaks: 0,
+        utility: 0,
+        "vanilla-like": 0
+      }
+    }
+
+    if (!project.modrinth.id) return
+
+    const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
+      headers: {
+        Authorization: settings.auth.modrinth,
+        "Content-Type": "application/json"
+      }
+    })
+
+    if (!r.ok) {
+      error("Failed to get project", await r.text())
+    }
+
+    const data = await r.json()
+
+    for (const category of data.categories) {
+      config.modrinth.tags[category] = "featured"
+    }
+
+    for (const category of data.additional_categories) {
+      config.modrinth.tags[category] = true
+    }
   }
 }
