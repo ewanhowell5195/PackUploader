@@ -8,11 +8,11 @@
       "This version of the resource pack supports the Sodium mod, but is more performance heavy."
     ],
     "github": false,
-    "version": "1.0.0",
+    "version": "1.2.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.21.3",
+        "version": "1.21.2",
         "snapshots": false
       },
       "planetminecraft": {
@@ -20,7 +20,7 @@
       },
       "modrinth": {
         "type": "after",
-        "version": "1.21.3",
+        "version": "1.21.2",
         "snapshots": false
       }
     },
@@ -34,8 +34,7 @@
       {
         "name": "Ores",
         "description": "The wall of ores from another angle",
-        "file": "ores",
-        "embed": true
+        "file": "ores"
       },
       {
         "name": "Cave",

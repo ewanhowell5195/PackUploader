@@ -270,10 +270,7 @@ export default {
         if (config.logo) {
           str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp" alt="${config.name} Logo"><br><br>`
         } else {
-          str = `<div style="color: ${config.titleColour}; background-image: linear-gradient(160deg, ${config.titleBackground}, ${config.titleBackground2});">
-        <br>
-        <h1 style="font-size: 5ic; font-weight: 700; text-decoration: underline; display: inline-block;">${config.name}</h1>
-      </div>`
+          str = `<h1 style="font-size: 3ic; font-weight: 700; text-decoration: underline; display: inline-block;">${config.name}</h1>`
         }
       } else {
         str = config[replacement[1]] ?? defaultConfig[replacement[1]]

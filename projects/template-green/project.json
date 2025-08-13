@@ -4,9 +4,6 @@
     "name": "Template Green",
     "summary": "Coloured versions of the grayscaled blocks",
     "logo": true,
-    "titleColour": "#fff",
-    "titleBackground": "#D10002",
-    "titleBackground2": "#650201",
     "description": [
       "This resource pack contains all the normally greyscaled textures in their coloured format, so that it is easy to use them for whatever you need to use them for."
     ],

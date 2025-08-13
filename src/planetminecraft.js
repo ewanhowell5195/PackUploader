@@ -285,7 +285,7 @@ export default {
         if (project.config.logo) {
           str = `[img]https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp[/img]`
         } else {
-          str = `[size=48px]${project.config.name}[/size]`
+          str = `[style b size=48px]${project.config.name}[/style]`
         }
       } else {
         str = project.config[replacement[1]] ?? defaultConfig[replacement[1]]

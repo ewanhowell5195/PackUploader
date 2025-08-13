@@ -4,9 +4,6 @@
     "name": "Solid Block Transparency Support",
     "summary": "Add transparency to solid blocks!",
     "logo": true,
-    "titleColour": "#fff",
-    "titleBackground": "#543F7A",
-    "titleBackground2": "#3EA1A3",
     "description": [
       "This pack changes how solid blocks render so that they can use transparent textures.",
       "Either use this pack alongside your pack, or merge it into your pack.",

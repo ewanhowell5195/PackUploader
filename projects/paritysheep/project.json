@@ -4,9 +4,6 @@
     "name": "ParitySheep",
     "summary": "Bring parity to the sheep of Minecraft",
     "logo": true,
-    "titleColour": false,
-    "titleBackground": false,
-    "titleBackground2": false,
     "description": [
       "In Minecraft Bedrock edition, the sheep get dyed on both the wool layer and the skin layer of the their texture. This pack brings consistency to the game by making the Minecraft Java edition sheep work the same way, instead of only having the wool texture dyed and the skin texture untouched.",
       "The sheep will also show the dyed wool colour after they have been sheared, allowing you to now identify their colour while sheared."

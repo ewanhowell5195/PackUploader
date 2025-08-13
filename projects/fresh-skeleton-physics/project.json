@@ -4,9 +4,6 @@
     "name": "Fresh Skeleton Physics",
     "summary": "Give skeletons physics - Now with Fresh Animations!",
     "logo": true,
-    "titleColour": false,
-    "titleBackground": false,
-    "titleBackground2": false,
     "description": [
       "This pack makes it so that when any of the skeleton entities die, instead of falling over to the side like normal, they collapse into a pile of bones!",
       "Now with Fresh Animations support! This pack is fully compatible with Fresh Animations!"

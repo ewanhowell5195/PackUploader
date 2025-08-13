@@ -7,19 +7,17 @@
       "This pack utilises the new emissive block models feature from 1.21.2 to add emissive ore textures!"
     ],
     "github": "https://github.com/ewanhowell5195/VanillaEmissiveTextures",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "versions": {
       "curseforge": {
-        "type": "after",
-        "version": "1.21.3",
+        "type": "latest",
         "snapshots": false
       },
       "planetminecraft": {
         "type": "latest"
       },
       "modrinth": {
-        "type": "after",
-        "version": "1.21.3",
+        "type": "latest",
         "snapshots": false
       }
     },
@@ -33,8 +31,7 @@
       {
         "name": "Ores",
         "description": "The wall of ores from another angle",
-        "file": "ores",
-        "embed": true
+        "file": "ores"
       },
       {
         "name": "Cave",

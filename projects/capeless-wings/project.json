@@ -4,9 +4,6 @@
     "name": "Capeless Wings",
     "summary": "Show the actual elytra texture instead of your cape's texture!",
     "logo": false,
-    "titleColour": "#fff",
-    "titleBackground": "#74C24D",
-    "titleBackground2": "#3EA1A3",
     "description": [
       "This pack uses the new 1.21.2 equipment models feature to disable the cape texture from showing on the elytra!"
     ],

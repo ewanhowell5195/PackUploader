@@ -4,9 +4,6 @@
     "name": "Example Trident CIT",
     "summary": "An example pack for trident CIT that works on both the item and thrown entity models!",
     "logo": false,
-    "titleColour": "#000",
-    "titleBackground": "#fff",
-    "titleBackground2": "#589D8E",
     "description": [
       "This pack provides examples of how to make CIT tridents.",
       "It includes three examples: name your trident \"Red Trident\", \"Quindent\", or \"Mjolnir\". Lowercase versions of these names are also supported.",

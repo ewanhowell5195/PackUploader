@@ -4,9 +4,6 @@
     "name": "pixelBlocks",
     "summary": "The pack where every pixel is a block texture!",
     "logo": true,
-    "titleColour": "#fff",
-    "titleBackground": "#74C24D",
-    "titleBackground2": "#3EA1A3",
     "description": [
       "This pack makes it so that every pixel in a texture is a block texture!"
     ],
