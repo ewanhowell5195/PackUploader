@@ -1,7 +1,8 @@
 {
   "type": "module",
   "dependencies": {
-    "cheerio": "^1.0.0",
-    "sharp": "^0.33.5"
+    "cheerio": "^1.1.2",
+    "jsdom": "^26.1.0",
+    "sharp": "^0.34.3"
   }
 }

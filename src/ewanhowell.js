@@ -39,6 +39,7 @@ export default {
   },
   async addImages() {
     for (const img of config.images) {
+      if (img.thumbnail) continue
       await sharp(path.join("./projects", config.id, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside" }).webp({ quality: 95 }).toFile(path.join(sitePath, "images", "resourcepacks", config.id, "images", img.file + ".webp"))
     }
   },
@@ -74,9 +75,12 @@ export default {
       name: e.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
       description: e.split("_").join(" ").replace(/^./, c => c.toUpperCase()),
       file: e,
-      feature: info.image === e ? true : undefined,
-      embed: i < 3 ? true : undefined
+      embed: i < 3 ? true : undefined,
+      featured: info.image === e ? true : undefined
     }))
+    if (!config.images.some(e => e.featured)) {
+      config.images[0].featured = true
+    }
     for (const img of config.images) {
       await sharp(path.join(sitePath, "images", "resourcepacks", config.id, "images", img.file + ".webp")).png().toFile(path.join("./projects", config.id, "images", img.file + ".png"))
     }

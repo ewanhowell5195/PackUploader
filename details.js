@@ -20,7 +20,18 @@ globalThis.config = project.config
 
 if (data.images) {
   for (const img of config.images) {
-    img.buffer = await sharp(path.join("./projects", config.id, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside" }).jpeg({ quality: 95 }).toBuffer()
+    img.buffer = await sharp(path.join("./projects", config.id, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside", withoutEnlargement: true }).jpeg({ quality: 95 }).toBuffer()
+  }
+
+  const thumbnail = path.join("projects", config.id, "images", "thumbnail.png")
+  if (fs.existsSync(thumbnail)) {
+    config.images.unshift({
+      name: "Project Thumbnail",
+      description: `The thumbnail image for ${config.name}`,
+      file: "thumbnail",
+      thumbnail: true,
+      buffer: await sharp(thumbnail).resize(1920, 1080, { fit: "inside", withoutEnlargement: true }).jpeg({ quality: 95 }).toBuffer()
+    })
   }
 
   // Remove images

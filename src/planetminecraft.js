@@ -1,3 +1,5 @@
+import { JSDOM } from "jsdom"
+
 function log(message) {
   console.log(`Planet Minecraft: ${message}`)
 }
@@ -50,6 +52,22 @@ export default {
     log("Fetched project")
 
     return load(await projectRequest.text())
+  },
+  async getProjectDom() {
+    const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
+      headers: {
+        "cache-control": "no-cache",
+        cookie: settings.auth.planetminecraft.cookie
+      }
+    })
+
+    if (!projectRequest.ok) {
+      error("Failed to fetch project", await projectRequest.text())
+    }
+
+    log("Fetched project")
+
+    return new JSDOM(await projectRequest.text()).window.document
   },
   async createProject() {
     // Get New Project
@@ -390,15 +408,13 @@ export default {
 
     if (!project.planetminecraft.id) return
 
-    const $ = await this.getProject()
-    config.planetminecraft.tags = $("#item_tags .tag").map(function() {
-      return $(this).text().trim()
-    }).get()
-
-    $("#main_folder_modified .folder-item").each(function() {
-      let input = $(this).find("input")[0]
-      let label = $(this).find("label").text().toLowerCase()
+    const document = await this.getProjectDom()
+    config.planetminecraft.tags = Array.from(document.querySelectorAll("#item_tags .tag")).map(e => e.textContent.trim())
+    
+    for (const check of document.querySelectorAll("#main_folder_modified .folder-item")) {
+      const input = check.querySelector("input")
+      const label = check.querySelector("label").textContent.toLowerCase()
       config.planetminecraft.modifies[label] = input.checked ? true : 0
-    })
+    }
   }
 }

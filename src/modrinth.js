@@ -110,6 +110,7 @@ export default {
   },
   async uploadImages() {
     for (const [i, image] of config.images.entries()) {
+      if (image.thumbnail) continue
       const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/gallery?ext=png&featured=${!!image.featured}&title=${encodeURIComponent(image.name)}&description=${encodeURIComponent(image.description)}&ordering=${i}`, {
         method: "POST",
         headers: {

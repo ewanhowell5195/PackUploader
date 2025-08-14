@@ -1,0 +1,142 @@
+{
+  "config": {
+    "id": "oledcraft",
+    "name": "OLEDcraft",
+    "summary": "The Darkest Minecraft Dark Mode",
+    "description": [
+      "This pack is a Minecraft Dark Mode like no other!",
+      "",
+      "This pack aims to make the Minecraft UI as dark as possible.",
+      "",
+      "Features:",
+      "",
+      "Dark Menu Background",
+      "Dark Menu Buttons",
+      "Dark Inventory",
+      "Dark Hotbar",
+      "",
+      "all while keeping the vanilla style."
+    ],
+    "video": "AvMs3535auI",
+    "github": "https://github.com/ewanhowell5195/OLEDcaft",
+    "version": "1.9.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Inventory",
+        "description": "The survival inventory with the recipe book open",
+        "file": "inventory",
+        "embed": true
+      },
+      {
+        "name": "Creative Inventory",
+        "description": "The creative inventory",
+        "file": "creative",
+        "embed": true
+      },
+      {
+        "name": "Options Menu",
+        "description": "The games options menu",
+        "file": "options",
+        "embed": true
+      },
+      {
+        "name": "New World Screen",
+        "description": "The world creation menu",
+        "file": "new_world"
+      },
+      {
+        "name": "Pause Menu",
+        "description": "The games pause screen",
+        "file": "pause"
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": true,
+        "items": 0,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "gui",
+        "black",
+        "simplistic",
+        "minecraft",
+        "optifine",
+        "dark",
+        "java",
+        "darkmode",
+        "oled",
+        "darkgui"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": "featured",
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": "featured",
+        "themed": true,
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": "featured"
+      }
+    }
+  },
+  "curseforge": {
+    "id": 357900,
+    "slug": "oledcraft"
+  },
+  "planetminecraft": {
+    "id": 4570967,
+    "slug": "oledcraft"
+  },
+  "modrinth": {
+    "id": "TAzY8J8i",
+    "slug": "oledcraft"
+  }
+}

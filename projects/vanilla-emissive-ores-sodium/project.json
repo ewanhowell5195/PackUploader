@@ -29,7 +29,7 @@
         "name": "Wall",
         "description": "All the ore types together in a wall",
         "file": "wall",
-        "feature": true
+        "featured": true
       },
       {
         "name": "Ores",
