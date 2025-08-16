@@ -82,5 +82,3 @@ You will need:
 1. Go to [Modrinth Personal Access Tokens](https://modrinth.com/settings/pats).
 2. Create a new token.
 3. Paste it into your `settings.json`.
-
----
