@@ -16,19 +16,17 @@
     "optifine": false,
     "video": "OLCdC13p2zM",
     "github": false,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "versions": {
       "curseforge": {
-        "type": "after",
-        "version": "1.21.5",
+        "type": "latest",
         "snapshots": false
       },
       "planetminecraft": {
         "type": "latest"
       },
       "modrinth": {
-        "type": "after",
-        "version": "1.21.5",
+        "type": "latest",
         "snapshots": false
       }
     },
