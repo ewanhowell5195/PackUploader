@@ -50,7 +50,7 @@ You will need:
 * `token`
 * `pmc_autologin` cookie
 
-Make sure you are logged in at [Planet Minecraft](https://www.planetminecraft.com/) before starting.
+Make sure open [Planet Minecraft](https://www.planetminecraft.com/) and log in before starting.
 
 ### Token
 
