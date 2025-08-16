@@ -10,7 +10,7 @@
     "optifine": "OptiFine's connected textures are used to add snow onto the tops of blocks which wouldn't usually allow seperate top block only textures.",
     "video": "PRz212unQoE",
     "github": "https://github.com/ewanhowell5195/snowstorm",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "versions": {
       "curseforge": {
         "type": "after",
