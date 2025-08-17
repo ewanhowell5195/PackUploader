@@ -3,6 +3,7 @@
     "id": "oledcraft",
     "name": "OLEDcraft",
     "summary": "The Darkest Minecraft Dark Mode",
+    "logo": true,
     "description": [
       "This pack is a Minecraft Dark Mode like no other!",
       "This pack aims to make the Minecraft UI as dark as possible.",

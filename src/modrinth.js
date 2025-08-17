@@ -187,7 +187,7 @@ export default {
       markdown = markdown.replaceAll(replacement[0], str)
     }
 
-    const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.slug}`, {
+    const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
       method: "PATCH",
       headers: {
         Authorization: settings.auth.modrinth,

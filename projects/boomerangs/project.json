@@ -1,0 +1,133 @@
+{
+  "config": {
+    "id": "boomerangs",
+    "name": "Boomerangs",
+    "summary": "Turn Tridents into Boomerangs!",
+    "logo": true,
+    "description": [
+      "This pack changes the trident model, texture, and name to resemble a boomerang."
+    ],
+    "optifine": "OptiFine is used to add support for remodelling tridents.",
+    "video": "JKhWrToOQ60",
+    "github": "https://github.com/ewanhowell5195/Boomerangs",
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Held",
+        "description": "Holding a boomerang",
+        "file": "held",
+        "embed": true
+      },
+      {
+        "name": "Throwing",
+        "description": "Throwing a boomerang",
+        "file": "throwing",
+        "embed": true
+      },
+      {
+        "name": "First Person",
+        "description": "A boomerang held in first person",
+        "file": "hand",
+        "embed": true
+      },
+      {
+        "name": "Primed",
+        "description": "A boomerang primed to be thrown",
+        "file": "primed",
+        "featured": true
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": true,
+        "models": true
+      },
+      "tags": [
+        "items",
+        "experimental",
+        "weapon",
+        "cem",
+        "entity",
+        "models",
+        "audio",
+        "trident",
+        "cemanimation",
+        "customentitymodel",
+        "boomerang",
+        "boomerangs",
+        "thrown",
+        "frisbee"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": true,
+        "fonts": 0,
+        "gui": 0,
+        "items": true,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": "featured"
+      }
+    }
+  },
+  "curseforge": {
+    "id": 502594,
+    "slug": "boomerangs"
+  },
+  "planetminecraft": {
+    "id": 5184634,
+    "slug": "boomerangs"
+  },
+  "modrinth": {
+    "id": "bMPNCxbE",
+    "slug": "trident-boomerangs"
+  }
+}

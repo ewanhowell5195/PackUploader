@@ -1,14 +1,15 @@
 {
   "config": {
-    "id": "f8thful-font",
-    "name": "F8thful Font",
-    "summary": "The font from F8thful",
+    "id": "butterflies",
+    "name": "Butterflies",
+    "summary": "A pack to replace bees with butterflies",
     "logo": true,
     "description": [
-      "This pack adds the font from the F8thful resource pack so that you can use it on its own without using the rest of the pack!"
+      "This pack replaces the Minecraft Bee mob with Butterflies!"
     ],
+    "video": "5mtykgHM6NQ",
     "github": false,
-    "version": "1.0.1",
+    "version": "1.0.0",
     "versions": {
       "curseforge": {
         "type": "after",
@@ -26,22 +27,16 @@
     },
     "images": [
       {
-        "name": "Menu",
-        "description": "The main menu",
-        "file": "menu",
+        "name": "Multiple",
+        "description": "Multiple butterflies around a flower",
+        "file": "multiple",
         "embed": true,
         "featured": true
       },
       {
-        "name": "Options",
-        "description": "The options screen",
-        "file": "options",
-        "embed": true
-      },
-      {
-        "name": "Signs",
-        "description": "Text on some signs",
-        "file": "signs",
+        "name": "Single",
+        "description": "A single butterfly",
+        "file": "single",
         "embed": true
       }
     ],
@@ -50,20 +45,28 @@
         "armor": 0,
         "art": 0,
         "environment": 0,
-        "font": true,
+        "font": 0,
         "gui": 0,
         "items": 0,
         "misc": 0,
-        "mobs": 0,
+        "mobs": true,
         "particles": 0,
         "terrain": 0,
         "audio": 0,
         "models": 0
       },
       "tags": [
-        "font",
-        "simplistic",
-        "f8thful"
+        "mobs",
+        "experimental",
+        "texture",
+        "resource",
+        "texturepack",
+        "resourcepack",
+        "mob",
+        "butterfly",
+        "bee",
+        "bees",
+        "butterflies"
       ]
     },
     "modrinth": {
@@ -82,34 +85,34 @@
         "core-shaders": 0,
         "cursed": 0,
         "decoration": 0,
-        "entities": 0,
+        "entities": "featured",
         "environment": 0,
         "equipment": 0,
-        "fonts": "featured",
+        "fonts": 0,
         "gui": 0,
         "items": 0,
         "locale": 0,
         "modded": 0,
         "models": 0,
         "realistic": 0,
-        "simplistic": "featured",
+        "simplistic": 0,
         "themed": 0,
-        "tweaks": 0,
+        "tweaks": "featured",
         "utility": 0,
-        "vanilla-like": 0
+        "vanilla-like": "featured"
       }
     }
   },
   "curseforge": {
-    "id": 897399,
-    "slug": "f8thful-font"
+    "id": 413989,
+    "slug": "butterflies"
   },
   "planetminecraft": {
-    "id": 6026033,
-    "slug": "f8thful-font"
+    "id": 4741117,
+    "slug": "butterflies-bee-replacement"
   },
   "modrinth": {
-    "id": "A5NuEFcz",
-    "slug": "f8thful-font"
+    "id": "5GinwE3u",
+    "slug": "butterflies"
   }
 }

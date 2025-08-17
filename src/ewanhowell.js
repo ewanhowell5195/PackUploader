@@ -24,7 +24,7 @@ export default {
       description: config.description.join("\n\n"),
       optifine: config.optifine ? config.optifine : undefined,
       video: config.video ? config.video : undefined,
-      images: config.images.map(e => e.file),
+      images: config.images.map(e => e.file).filter(e => e !== "thumbnail"),
       downloads: [{
         text: "Download",
         link: `https://www.curseforge.com/minecraft/texture-packs/${project.curseforge.slug}/`
@@ -49,6 +49,7 @@ export default {
     const data = JSON.parse(fs.readFileSync(path.join(sitePath, "json", "resourcepacks", config.id + ".json")))
     config.name = info.name ?? info.id.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
     config.summary = data.subtitle
+    config.logo = !info.logoless
     config.description = data.description.split("\n")
     config.optifine = data.optifine
     config.video = data.video

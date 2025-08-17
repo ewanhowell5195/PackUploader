@@ -3,6 +3,7 @@
     "id": "vanilla-emissive-ores",
     "name": "Vanilla Emissive Ores",
     "summary": "Make the ore textures emissive, completely in vanilla!",
+    "logo": false,
     "description": [
       "This pack utilises the new emissive block models feature from 1.21.2 to add emissive ore textures!"
     ],
