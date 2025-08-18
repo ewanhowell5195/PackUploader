@@ -217,7 +217,12 @@ export default {
       connect_id: project.planetminecraft.id
     })
 
-    for (const image of config.images) {
+    if (config.images.length > 15) {
+      console.error(`Too many images! Planet Minecraft supports a maximum of 15 images. Some will not be uploaded`)
+    }
+
+    for (const [i, image] of config.images.entries()) {
+      if (i > 14) break
       const r = await fetch("https://www.planetminecraft.com/ajax.php", {
         method: "POST",
         headers: {
