@@ -10,11 +10,11 @@
     "optifine": "OptiFine is used to add support for remodelling tridents.",
     "video": "JKhWrToOQ60",
     "github": "https://github.com/ewanhowell5195/Boomerangs",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.20",
+        "version": "1.20.3",
         "snapshots": false
       },
       "planetminecraft": {
@@ -22,7 +22,7 @@
       },
       "modrinth": {
         "type": "after",
-        "version": "1.20",
+        "version": "1.20.3",
         "snapshots": false
       }
     },

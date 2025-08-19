@@ -1,0 +1,159 @@
+{
+  "config": {
+    "id": "better-bows",
+    "name": "Better Bows",
+    "summary": "The bow improvement resource pack!",
+    "logo": true,
+    "description": [
+      "This pack remodels both the bow and crossbow to have the arrow 3D, like how it is in the world after you fire it!",
+      "The crossbow also supports showing 3D firewords, spectral arrows, and tipped arrows!",
+      "When you have multishot, you will see three arrows at once in the crossbow!"
+    ],
+    "video": "1a-_sSSfSwM",
+    "github": "https://github.com/ewanhowell5195/BetterBows",
+    "version": "1.2.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Bow",
+        "description": "A bow being aimed in first person",
+        "file": "bow",
+        "embed": true
+      },
+      {
+        "name": "Crossbow",
+        "description": "A crossbow being aimed in first person",
+        "file": "crossbow",
+        "embed": true
+      },
+      {
+        "name": "Aiming Bow",
+        "description": "A bow being aimed by Ewan",
+        "file": "ewan",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Two Players",
+        "description": "Two players holding bows",
+        "file": "double"
+      },
+      {
+        "name": "Two Players (Again)",
+        "description": "The two players from a different angle",
+        "file": "double2"
+      },
+      {
+        "name": "Firework Crossbow",
+        "description": "A firework being used in a crossbow",
+        "file": "firework"
+      },
+      {
+        "name": "Multishot Tipped Arrows",
+        "description": "Three tipped arrows in a multishot crossbow",
+        "file": "multishot_firstperson"
+      },
+      {
+        "name": "Multishot",
+        "description": "GillsBills holding a multishot crossbow",
+        "file": "multishot"
+      },
+      {
+        "name": "Tipped Arrows",
+        "description": "GillsBills holding a crossbow with a tipped arrow",
+        "file": "tipped"
+      },
+      {
+        "name": "Multishot Spectral Arrows",
+        "description": "GillsBills holding a multishot crossbow with spectral arrows",
+        "file": "multishot_spectral"
+      }
+    ],
+    "planetminecraft": {
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "items",
+        "experimental",
+        "weapon",
+        "3d",
+        "bow",
+        "models",
+        "arrow",
+        "improvement",
+        "bowandarrow"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": true,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": "featured"
+      }
+    }
+  },
+  "curseforge": {
+    "id": 491762,
+    "slug": "better-bow"
+  },
+  "planetminecraft": {
+    "id": 5103518,
+    "slug": "better-bows-5103518"
+  },
+  "modrinth": {
+    "id": "IPRL7R5J",
+    "slug": "better-bows"
+  }
+}
