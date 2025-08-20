@@ -23,9 +23,8 @@ CobaltSession=hguoewhguoewhudofewhfuioewhfuopewufjeiwohgoewpgwe
 ## CurseForge
 
 You will need:
-
-* `token`
-* `CobaltSession` cookie
+- `token`
+- `CobaltSession` cookie
 
 ### Token
 
@@ -37,18 +36,16 @@ You will need:
 
 1. Go to [CurseForge Authors](https://authors.curseforge.com/) and log in.
 2. Open your browser’s developer tools.
-
-   * **Firefox:** Storage tab
-   * **Chrome:** Application tab
+   - **Firefox:** Storage tab
+   - **Chrome:** Application tab
 3. Under **Cookies**, select the site.
 4. Copy the `CobaltSession` name and value into your `settings.json`.
 
 ## Planet Minecraft
 
 You will need:
-
-* `token`
-* `pmc_autologin` cookie
+- `token`
+- `pmc_autologin` cookie
 
 Make sure to have open [Planet Minecraft](https://www.planetminecraft.com/) open and logged in before starting.
 
@@ -74,11 +71,17 @@ Paste the copied token into your `settings.json`.
 ## Modrinth
 
 You will need:
-
-* `token`
+- `token`
 
 ### Token
 
 1. Go to [Modrinth Personal Access Tokens](https://modrinth.com/settings/pats).
 2. Create a new token.
-3. Paste it into your `settings.json`.
+3. Enable the following scopes for the token:
+   - Create Projects
+   - Read Projects
+   - Write Projects
+   - Create Versions
+   - Read Versions
+   - Write Versions
+4. Paste it into your `settings.json`.
