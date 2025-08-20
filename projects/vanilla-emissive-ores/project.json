@@ -7,6 +7,8 @@
     "description": [
       "This pack utilises the new emissive block models feature from 1.21.2 to add emissive ore textures!"
     ],
+    "optifine": false,
+    "video": false,
     "github": "https://github.com/ewanhowell5195/VanillaEmissiveTextures",
     "version": "1.2.0",
     "versions": {

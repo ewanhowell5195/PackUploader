@@ -1,16 +1,17 @@
 {
   "config": {
-    "id": "butterflies",
-    "name": "Butterflies",
-    "summary": "A pack to replace bees with butterflies",
+    "id": "minecarts-with-wheels-faithful",
+    "name": "Minecarts with Wheels: Faithful",
+    "summary": "Add working wheels to Minecarts! - Now in 32x",
     "logo": true,
     "description": [
-      "This pack replaces the Minecraft Bee mob with Butterflies!"
+      "Have you ever thought that the minecarts in Minecraft look too static? Well this is the pack for you!",
+      "This pack adds working wheels to the minecarts. When the minecart moves, the wheels turn. The faster the minecart goes, the faster they will spin!"
     ],
-    "optifine": false,
-    "video": "5mtykgHM6NQ",
+    "optifine": "OptiFine is used to add support for remodelling minecarts.",
+    "video": "5tgUBWr22Vw",
     "github": false,
-    "version": "1.1.1",
+    "version": "1.1.0",
     "versions": {
       "curseforge": {
         "type": "after",
@@ -28,16 +29,16 @@
     },
     "images": [
       {
-        "name": "Multiple",
-        "description": "Multiple butterflies around a flower",
-        "file": "multiple",
+        "name": "Minecart with Wheels",
+        "description": "A minecart with wheels, seen from the left side",
+        "file": "left",
         "embed": true,
         "featured": true
       },
       {
-        "name": "Single",
-        "description": "A single butterfly",
-        "file": "single",
+        "name": "Minecart with Wheels (Again)",
+        "description": "A minecart with wheels, seen from the right side",
+        "file": "right",
         "embed": true
       }
     ],
@@ -50,31 +51,30 @@
         "gui": 0,
         "items": 0,
         "misc": 0,
-        "mobs": true,
+        "mobs": 0,
         "particles": 0,
         "terrain": 0,
         "audio": 0,
-        "models": 0
+        "models": true
       },
       "tags": [
-        "mobs",
         "experimental",
-        "texture",
-        "resource",
-        "texturepack",
-        "resourcepack",
-        "mob",
-        "butterfly",
-        "bee",
-        "bees",
-        "butterflies"
+        "optifine",
+        "cem",
+        "models",
+        "minecart",
+        "animations",
+        "wheels",
+        "wheel",
+        "customentitymodel",
+        "minecarts"
       ]
     },
     "modrinth": {
       "tags": {
         "8x-": 0,
-        "16x": true,
-        "32x": 0,
+        "16x": 0,
+        "32x": true,
         "48x": 0,
         "64x": 0,
         "128x": 0,
@@ -86,7 +86,7 @@
         "core-shaders": 0,
         "cursed": 0,
         "decoration": 0,
-        "entities": "featured",
+        "entities": true,
         "environment": 0,
         "equipment": 0,
         "fonts": 0,
@@ -94,7 +94,7 @@
         "items": 0,
         "locale": 0,
         "modded": 0,
-        "models": 0,
+        "models": "featured",
         "realistic": 0,
         "simplistic": 0,
         "themed": 0,
@@ -105,15 +105,15 @@
     }
   },
   "curseforge": {
-    "id": 413989,
-    "slug": "butterflies"
+    "id": 640923,
+    "slug": "minecarts-with-wheels-faithful"
   },
   "planetminecraft": {
-    "id": 4741117,
-    "slug": "butterflies-bee-replacement"
+    "id": 5636438,
+    "slug": "minecarts-with-wheels-faithful"
   },
   "modrinth": {
-    "id": "5GinwE3u",
-    "slug": "butterflies"
+    "id": "n5CS3eMO",
+    "slug": "minecarts-with-wheels-faithful"
   }
 }

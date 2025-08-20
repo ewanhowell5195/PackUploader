@@ -218,7 +218,7 @@ export default {
     config.modrinth = {
       tags: {
         "8x-": 0,
-        "16x": true,
+        "16x": 0,
         "32x": 0,
         "48x": 0,
         "64x": 0,

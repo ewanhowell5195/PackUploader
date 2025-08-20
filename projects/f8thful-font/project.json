@@ -7,6 +7,8 @@
     "description": [
       "This pack adds the font from the F8thful resource pack so that you can use it on its own without using the rest of the pack!"
     ],
+    "optifine": false,
+    "video": false,
     "github": false,
     "version": "1.0.1",
     "versions": {

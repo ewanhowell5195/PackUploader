@@ -1,16 +1,17 @@
 {
   "config": {
-    "id": "1-18-panorama",
-    "name": "1.18 Panorama",
-    "summary": "Bring the 1.18 panorama into other game versions",
+    "id": "minecarts-with-wheels",
+    "name": "Minecarts with Wheels",
+    "summary": "Add working wheels to Minecarts!",
     "logo": true,
     "description": [
-      "This pack brings the 1.18 panorama into other game versions so you can enjoy it in any version of the game!"
+      "Have you ever thought that the minecarts in Minecraft look too static? Well this is the pack for you!",
+      "This pack adds working wheels to the minecarts. When the minecart moves, the wheels turn. The faster the minecart goes, the faster they will spin!"
     ],
-    "optifine": false,
-    "video": false,
+    "optifine": "OptiFine is used to add support for remodelling minecarts.",
+    "video": "5tgUBWr22Vw",
     "github": false,
-    "version": "1.0.0",
+    "version": "1.1.0",
     "versions": {
       "curseforge": {
         "type": "after",
@@ -28,23 +29,17 @@
     },
     "images": [
       {
-        "name": "Menu",
-        "description": "The menu panorama",
-        "file": "panorama",
-        "embed": true
-      },
-      {
-        "name": "Menu (Again)",
-        "description": "Another angle of the menu panorama",
-        "file": "panorama2",
-        "embed": true
-      },
-      {
-        "name": "No UI",
-        "description": "The panorama with no UI on top",
-        "file": "noui",
+        "name": "Minecart with Wheels",
+        "description": "A minecart with wheels, seen from the left side",
+        "file": "left",
         "embed": true,
         "featured": true
+      },
+      {
+        "name": "Minecart with Wheels (Again)",
+        "description": "A minecart with wheels, seen from the right side",
+        "file": "right",
+        "embed": true
       }
     ],
     "planetminecraft": {
@@ -60,19 +55,19 @@
         "particles": 0,
         "terrain": 0,
         "audio": 0,
-        "models": 0
+        "models": true
       },
       "tags": [
-        "menu",
-        "background",
-        "panorama",
-        "caves",
-        "other",
-        "cavesandcliffs",
-        "cliffs",
-        "cavesandcliffsupdate",
-        "118update",
-        "menubackground"
+        "experimental",
+        "optifine",
+        "cem",
+        "models",
+        "minecart",
+        "animations",
+        "wheels",
+        "wheel",
+        "customentitymodel",
+        "minecarts"
       ]
     },
     "modrinth": {
@@ -91,17 +86,17 @@
         "core-shaders": 0,
         "cursed": 0,
         "decoration": 0,
-        "entities": 0,
+        "entities": true,
         "environment": 0,
         "equipment": 0,
         "fonts": 0,
-        "gui": "featured",
+        "gui": 0,
         "items": 0,
         "locale": 0,
         "modded": 0,
-        "models": 0,
+        "models": "featured",
         "realistic": 0,
-        "simplistic": true,
+        "simplistic": 0,
         "themed": 0,
         "tweaks": "featured",
         "utility": 0,
@@ -110,15 +105,15 @@
     }
   },
   "curseforge": {
-    "id": 912543,
-    "slug": "the-1-18-panorama"
+    "id": 640876,
+    "slug": "minecarts-with-wheels"
   },
   "planetminecraft": {
-    "id": 5334286,
-    "slug": "1-18-panorama"
+    "id": 5636391,
+    "slug": "minecarts-with-wheels"
   },
   "modrinth": {
-    "id": "TJqjGhL2",
-    "slug": "1.18-panorama"
+    "id": "NLiFCR9U",
+    "slug": "minecarts-with-wheels"
   }
 }

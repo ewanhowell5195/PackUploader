@@ -51,8 +51,8 @@ export default {
     config.summary = data.subtitle
     config.logo = !info.logoless
     config.description = data.description.split("\n")
-    config.optifine = data.optifine
-    config.video = data.video
+    config.optifine = data.optifine ?? false
+    config.video = data.video ?? false
     const repoName = config.id.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("")
     const res = await fetch(`https://github.com/ewanhowell5195/${repoName}`, { redirect: "manual" })
     config.github = res.headers.get("location") || (res.ok ? `https://github.com/ewanhowell5195/${repoName}` : false)

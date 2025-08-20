@@ -9,7 +9,8 @@
       "The crossbow also supports showing 3D firewords, spectral arrows, and tipped arrows!",
       "When you have multishot, you will see three arrows at once in the crossbow!"
     ],
-    "video": "1a-_sSSfSwM",
+    "optifine": false,
+    "video": "WujjBzwk00g ",
     "github": "https://github.com/ewanhowell5195/BetterBows",
     "version": "1.2.0",
     "versions": {
