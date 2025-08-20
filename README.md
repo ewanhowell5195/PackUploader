@@ -84,4 +84,5 @@ You will need:
    - Create Versions
    - Read Versions
    - Write Versions
-4. Paste it into your `settings.json`.
+4. Set an expiry date some time far in the future.
+5. Paste it into your `settings.json`.
