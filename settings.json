@@ -1,13 +1,32 @@
 {
-  "auth": {
-    "curseforge": {
-      "token": "token",
-      "cookie": "CobaltSession=cookie"
-    },
-    "planetminecraft": {
-      "token": "token",
-      "cookie": "pmc_autologin=cookie"
-    },
-    "modrinth": "token"
+  "ewan": true,
+  "curseforge": {
+    "socials": {
+      "bluesky": "https://bsky.app/profile/ewanhowell.com",
+      "discord": "https://discord.gg/pkRxtGw",
+      "facebook": null,
+      "github": "https://github.com/ewanhowell5195",
+      "instagram": "https://www.instagram.com/ewan.howell/",
+      "mastodon": null,
+      "patreon": null,
+      "pinterest": null,
+      "reddit": "https://www.reddit.com/user/ewanhowell5195/",
+      "tiktok": null,
+      "twitch": null,
+      "twitter": "https://x.com/ewanhowell5195",
+      "website": "https://ewanhowell.com/",
+      "youtube": "https://www.youtube.com/c/ewanhowell"
+    }
+  },
+  "planetminecraft": {
+    "website": {
+      "link": "https://ewanhowell.com/",
+      "title": "My Website"
+    }
+  },
+  "modrinth": {
+    "discord": "https://discord.ewanhowell.com/",
+    "kofi": "https://ko-fi.com/ewanhowell",
+    "paypal": "https://paypal.me/ewanhowell0"
   }
 }
