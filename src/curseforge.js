@@ -555,7 +555,7 @@ export default {
 
     log("Written description")
   },
-  async import() {
+  async import(images = true) {
     const projectRequest = await fetch(`https://authors.curseforge.com/_api/projects/${project.curseforge.id}`, {
       headers: {
         cookie: auth.curseforge.cookie
@@ -614,43 +614,31 @@ export default {
         version: files[0].gameVersions[0].Label
       }
     }
-    config.images = media.filter(e => e.type === 1 && e.title !== "Project Thumbnail" && e.title !== "Project Logo").map((e, i) => ({
-      name: e.title,
-      description: e.description || e.title,
-      file: e.title.toLowerCase().replaceAll(" ", "_"),
-      embed: i < 3 ? true : undefined,
-      featured: i ? undefined : true
-    }))
-    for (const image of media.filter(e => e.type === 1)) {
-      let name, imgPath
-      if (image.title === "Project Thumbnail") {
-        name = "thumbnail.png"
-        imgPath = path.join(projectPath, name)
-      } else if (image.title === "Project Logo") {
-        name = "logo.png"
-        imgPath = path.join(projectPath, name)
-      } else {
-        name = image.title.toLowerCase().replaceAll(" ", "_") + ".png"
-        imgPath = path.join(projectPath, "images", name)
-      }
-      log(`Downloading image: ${name}`)
-      await sharp(await fetch(image.url).then(e => e.arrayBuffer())).png().toFile(imgPath)
-    }
-    await this.importIcon(data)
-  },
-  async importIcon(data) {
-    if (!data) {
-      const projectRequest = await fetch(`https://authors.curseforge.com/_api/projects/${project.curseforge.id}`, {
-        headers: {
-          cookie: auth.curseforge.cookie
-        }
-      })
-      if (!projectRequest.ok) {
-        await error("Failed getting project details", projectRequest)
-      }
-      const data = await projectRequest.json()
-    }
     log(`Downloading image: pack.png`)
     await sharp(await fetch(data.avatarUrl).then(e => e.arrayBuffer())).png().toFile(path.join("projects", project.config.id, "pack.png"))
+    if (images) {
+      config.images = media.filter(e => e.type === 1 && e.title !== "Project Thumbnail" && e.title !== "Project Logo").map((e, i) => ({
+        name: e.title,
+        description: e.description || e.title,
+        file: e.title.toLowerCase().replaceAll(" ", "_"),
+        embed: i < 3 ? true : undefined,
+        featured: i ? undefined : true
+      }))
+      for (const image of media.filter(e => e.type === 1)) {
+        let name, imgPath
+        if (image.title === "Project Thumbnail") {
+          name = "thumbnail.png"
+          imgPath = path.join(projectPath, name)
+        } else if (image.title === "Project Logo") {
+          name = "logo.png"
+          imgPath = path.join(projectPath, name)
+        } else {
+          name = image.title.toLowerCase().replaceAll(" ", "_") + ".png"
+          imgPath = path.join(projectPath, "images", name)
+        }
+        log(`Downloading image: ${name}`)
+        await sharp(await fetch(image.url).then(e => e.arrayBuffer())).png().toFile(imgPath)
+      }
+    }
   }
 }

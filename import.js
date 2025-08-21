@@ -40,8 +40,8 @@ for (const entry of fs.readdirSync("templates")) {
 // Main Details
 
 if (settings.ewan) {
+  await curseforge.import(false)
   await ewanhowell.import()
-  await curseforge.importIcon()
 } else {
   await curseforge.import()
 }
