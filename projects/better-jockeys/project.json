@@ -3,7 +3,6 @@
     "id": "better-jockeys",
     "name": "Better Jockeys",
     "summary": "Add improved skeleton jockeys to your world!",
-    "logo": true,
     "description": [
       "This pack adds unique skeleton skins for when the skeleton is riding on either the spider or the skeleton horse!",
       "Limitations:\nThe skeletons will lose their unique textures if the entity they are riding gets killed and they get reloaded, either through a pack reload, world reload, or chunk reload."

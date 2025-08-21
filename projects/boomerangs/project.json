@@ -3,7 +3,6 @@
     "id": "boomerangs",
     "name": "Boomerangs",
     "summary": "Turn Tridents into Boomerangs!",
-    "logo": true,
     "description": [
       "This pack changes the trident model, texture, and name to resemble a boomerang."
     ],

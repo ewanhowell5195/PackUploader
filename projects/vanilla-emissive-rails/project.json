@@ -3,7 +3,6 @@
     "id": "vanilla-emissive-rails",
     "name": "Vanilla Emissive Rails",
     "summary": "Make the powered rail textures emissive, completely in vanilla!",
-    "logo": false,
     "description": [
       "This pack utilises the new emissive block models feature from 1.21.2 to add emissive powered rail textures!"
     ],

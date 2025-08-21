@@ -3,7 +3,6 @@
     "id": "pixelblocks",
     "name": "pixelBlocks",
     "summary": "The pack where every pixel is a block texture!",
-    "logo": true,
     "description": [
       "This pack makes it so that every pixel in a texture is a block texture!"
     ],
