@@ -35,7 +35,7 @@ You will need:
 ### Cookie
 
 1. Go to [CurseForge Authors](https://authors.curseforge.com/) and log in.
-2. Open your browser’s developer tools.
+2. Open your browser's developer tools.
    - **Firefox:** Storage tab
    - **Chrome:** Application tab
 3. Under **Cookies**, select the site.
@@ -51,7 +51,7 @@ Make sure to have open [Planet Minecraft](https://www.planetminecraft.com/) open
 
 ### Token
 
-Run this in the **Console** tab of your browser’s developer tools to copy your token:
+Run this in the **Console** tab of your browser's developer tools to copy your token:
 
 ```js
 copy(document.getElementById("core-csrf-token").getAttribute("content"))
@@ -61,7 +61,7 @@ Paste the copied token into your `settings.json`.
 
 ### Cookie
 
-1. Open your browser’s developer tools.
+1. Open your browser's developer tools.
 
    * **Firefox:** Storage tab
    * **Chrome:** Application tab
@@ -84,5 +84,5 @@ You will need:
    - Create Versions
    - Read Versions
    - Write Versions
-4. Set an expiry date some time far in the future.
+4. Set the expiry date some time far in the future.
 5. Paste it into your `settings.json`.
