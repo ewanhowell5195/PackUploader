@@ -33,7 +33,13 @@ if (fs.existsSync(logo)) {
 
 const templates = path.join("projects", config.id, "templates")
 if (!fs.existsSync(templates)) {
-  fs.cpSync("templates", path.join("projects", config.id, "templates"), { recursive: true })
+  fs.mkdirSync(templates)
+  for (const entry of fs.readdirSync("templates")) {
+    if (entry === "snippets") continue
+    const src = path.join("templates", entry)
+    const dest = path.join(templates, entry)
+    fs.cpSync(src, dest)
+  }
 }
 
 // Reupload icon & images

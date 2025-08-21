@@ -501,6 +501,12 @@ export default {
     }
 
     let html = fs.readFileSync(path.join("projects", project.config.id, "templates", "curseforge.html"), "utf-8")
+
+    html = html.replace(/{{\s*snippet:([a-z0-9_-]+)\s*}}/gi, (m, name) => {
+      const snippetPath = path.join("templates", "snippets", "curseforge", name + ".html")
+      return fs.existsSync(snippetPath) ? fs.readFileSync(snippetPath, "utf-8") : "undefined"
+    })
+
     const replacements = Array.from(html.matchAll(/{{\s*([a-z0-9_.\[\]]+)\s*}}/gi))
 
     for (const replacement of replacements) {

@@ -23,7 +23,18 @@ if (fs.existsSync(projectPath)) {
   console.error(`Error: "${config.id}" is already exists`)
   process.exit()
 } else {
-  fs.mkdirSync(path.join(projectPath, "images"), { recursive: true })
+  fs.mkdirSync(path.join(projectPath, "images",), { recursive: true })
+}
+
+// Copying
+
+const templates = path.join(projectPath, "templates")
+fs.mkdirSync(templates)
+for (const entry of fs.readdirSync("templates")) {
+  if (entry === "snippets") continue
+  const src = path.join("templates", entry)
+  const dest = path.join(templates, entry)
+  fs.cpSync(src, dest)
 }
 
 // Main Details

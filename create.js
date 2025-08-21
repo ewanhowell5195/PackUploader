@@ -28,7 +28,15 @@ save()
 
 // Copying
 
-fs.cpSync("templates", path.join("projects", config.id, "templates"), { recursive: true })
+const templates = path.join(projectPath, "templates")
+fs.mkdirSync(templates)
+for (const entry of fs.readdirSync("templates")) {
+  if (entry === "snippets") continue
+  const src = path.join("templates", entry)
+  const dest = path.join(templates, entry)
+  fs.cpSync(src, dest)
+}
+
 fs.cpSync("data/create/images", path.join("projects", config.id, "images"), { recursive: true })
 fs.cpSync("data/create/pack.png", path.join("projects", config.id, "pack.png"))
 

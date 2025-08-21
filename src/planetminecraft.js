@@ -302,6 +302,12 @@ export default {
     const imageData = await curseforge.getMedia()
 
     let bbcode = fs.readFileSync(path.join("projects", project.config.id, "templates", "planetminecraft.bbcode"), "utf-8")
+
+    bbcode = bbcode.replace(/{{\s*snippet:([a-z0-9_-]+)\s*}}/gi, (m, name) => {
+      const snippetPath = path.join("templates", "snippets", "planetminecraft", name + ".bbcode")
+      return fs.existsSync(snippetPath) ? fs.readFileSync(snippetPath, "utf-8") : "undefined"
+    })
+
     const replacements = Array.from(bbcode.matchAll(/{{\s*([a-z0-9_.\[\]]+)\s*}}/gi))
 
     for (const replacement of replacements) {
