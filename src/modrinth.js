@@ -22,8 +22,8 @@ export default {
         client_side: "required",
         server_side: "unsupported",
         body: "placeholder",
-        issues_url: project.config.github ? project.config.github : undefined,
-        source_url: project.config.github ? project.config.github : undefined,
+        issues_url: project.config.github ? project.config.github.replace(/\/+$/, "") + "/issues" : undefined,
+        source_url: project.config.github || undefined,
         discord_url: settings.modrinth.discord,
         license_id: "LicenseRef-All-Rights-Reserved",
         project_type: "resourcepack",
@@ -249,8 +249,8 @@ export default {
       body: JSON.stringify({
         body: markdown,
         donation_urls: donationUrls.length ? donationUrls : undefined,
-        issues_url: project.config.github ? project.config.github : undefined,
-        source_url: project.config.github ? project.config.github : undefined,
+        issues_url: project.config.github ? project.config.github.replace(/\/+$/, "") + "/issues" : undefined,
+        source_url: project.config.github || undefined,
         discord_url: settings.modrinth.discord,
         requested_status: "approved",
         status: !live ? "processing" : undefined
