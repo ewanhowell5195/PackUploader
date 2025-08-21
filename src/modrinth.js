@@ -207,21 +207,38 @@ export default {
       markdown = markdown.replaceAll(replacement[0], str)
     }
 
-    const donationUrls = []
-    if (settings.modrinth.kofi) {
-      donationUrls.push({
+    const donationTypes = {
+      buyMeACoffee: {
+        id: "bmac",
+        name: "Buy Me A Coffee"
+      },
+      github: {
+        id: "github",
+        name: "GitHub Sponsors"
+      },
+      kofi: {
         id: "ko-fi",
-        platform: "Ko-fi",
-        url: settings.modrinth.kofi
-      })
-    }
-    if (settings.modrinth.paypal) {
-      donationUrls.push({
+        name: "Ko-fi"
+      },
+      other: {
+        id: "other",
+        name: "Other"
+      },
+      patreon: {
+        id: "patreon",
+        name: "Patreon"
+      },
+      paypal: {
         id: "paypal",
-        platform: "PayPal",
-        url: settings.modrinth.paypal
-      })
+        name: "PayPal"
+      }
     }
+
+    const donationUrls = Object.entries(settings.modrinth.donation).filter(e => e[1]).map(([k, v]) => ({
+      id: donationTypes[k].id,
+      platform: donationTypes[k].name,
+      url: v
+    }))
 
     const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
       method: "PATCH",
