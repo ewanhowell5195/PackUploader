@@ -199,7 +199,7 @@ export default {
           str = "# " + project.config.name
         }
       } else {
-        str = config[replacement[1]] ?? defaultConfig[replacement[1]]
+        str = config[replacement[1]] ?? settings.templateDefaults[replacement[1]]
         if (typeof str !== "string") {
           str = "undefined"
         }

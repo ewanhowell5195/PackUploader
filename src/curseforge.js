@@ -523,7 +523,7 @@ export default {
           str = `<h1 style="font-size: 3ic; font-weight: 700; text-decoration: underline; display: inline-block;">${project.config.name}</h1>`
         }
       } else {
-        str = config[replacement[1]] ?? defaultConfig[replacement[1]]
+        str = config[replacement[1]] ?? settings.templateDefaults[replacement[1]]
         if (typeof str !== "string") {
           str = "undefined"
         }

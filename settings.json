@@ -38,5 +38,16 @@
       "patreon": null,
       "paypal": "https://paypal.me/ewanhowell0"
     }
+  },
+  "templateDefaults": {
+    "youtube": "https://www.youtube.com/@EwanHowell",
+    "twitter": "https://twitter.com/ewanhowell5195",
+    "discordIcon": "https://ewanhowell.com/assets/images/icons/discord.png",
+    "youtubeIcon": "https://ewanhowell.com/assets/images/icons/youtube.png",
+    "twitterIcon": "https://ewanhowell.com/assets/images/icons/twitter.png",
+    "kofiIcon": "https://ewanhowell.com/assets/images/icons/ko-fi.png",
+    "discord": "https://discord.ewanhowell.com/",
+    "rpdDiscord": "https://resourcepacks.ewanhowell.com/",
+    "kofi": "https://ko-fi.com/ewanhowell"
   }
 }

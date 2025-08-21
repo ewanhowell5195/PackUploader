@@ -1,4 +1,3 @@
-globalThis.defaultConfig = (await import("../config.json", { with: { type: "json" } })).default
 globalThis.settings = (await import("../settings.json", { with: { type: "json" } })).default
 globalThis.auth = (await import("../auth.json", { with: { type: "json" } })).default
 globalThis.sharp = (await import("sharp")).default

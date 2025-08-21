@@ -326,7 +326,7 @@ export default {
           str = `[style b size=48px]${project.config.name}[/style]`
         }
       } else {
-        str = project.config[replacement[1]] ?? defaultConfig[replacement[1]]
+        str = project.config[replacement[1]] ?? settings.templateDefaults[replacement[1]]
         if (typeof str !== "string") {
           str = "undefined"
         }
