@@ -41,7 +41,23 @@
         "embed": true
       }
     ],
+    "curseforge": {
+      "mainCategory": "32x",
+      "additionalCategories": {
+        "animated": true,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "modern": false,
+        "traditional": false,
+        "miscellaneous": true
+      }
+    },
     "planetminecraft": {
+      "resolution": 32,
       "modifies": {
         "armor": 0,
         "art": 0,

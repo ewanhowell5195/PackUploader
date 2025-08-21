@@ -6,6 +6,30 @@ async function error(err, req) {
   throw new Error(`CurseForge: ${err} - ${await req.text()}`)
 }
 
+const categories = {
+  "16x": 393,
+  "32x": 394,
+  "64x": 395,
+  "128x": 396,
+  "256x": 397,
+  "512x and Higher": 398,
+  "Data Packs": 5193,
+  "Font Packs": 5244
+}
+
+const subCategories = {
+  animated: 404,
+  dataPacks: 5193,
+  fontPacks: 5244,
+  medieval: 402,
+  modSupport: 4465,
+  modern: 401,
+  photoRealistic: 400,
+  steampunk: 399,
+  traditional: 403,
+  miscellaneous: 405
+}
+
 export default {
   async createProject() {
     // Icon Upload
@@ -44,8 +68,8 @@ export default {
         avatarUrl: iconURL,
         summary: project.config.summary,
         description: "placeholder",
-        primaryCategoryId: 393,
-        subCategoryIds: [405],
+        primaryCategoryId: categories[project.config.curseforge.mainCategory],
+        subCategoryIds: Object.entries(project.config.curseforge.additionalCategories).filter(e => e[1]).map(e => subCategories[e[0]]),
         allowComments: true,
         allowDistribution: false,
         gameId: 432,
@@ -237,7 +261,7 @@ export default {
         slug: project.curseforge.slug,
         allowComments: true,
         enableProjectPages: false,
-        primaryCategoryId: 393,
+        primaryCategoryId: categories[project.config.curseforge.mainCategory],
         summary: project.config.summary
       })
     })
@@ -380,7 +404,8 @@ export default {
         slug: project.curseforge.slug,
         allowComments: true,
         enableProjectPages: false,
-        primaryCategoryId: 393,
+        primaryCategoryId: categories[project.config.curseforge.mainCategory],
+        subCategoryIds: Object.entries(project.config.curseforge.additionalCategories).filter(e => e[1]).map(e => subCategories[e[0]]),
         summary: project.config.summary,
         donationTypeId: donationTypes[settings.curseforge.donation.type],
         donationIdentifier: settings.curseforge.donation.type === "none" ? "" : settings.curseforge.donation.value

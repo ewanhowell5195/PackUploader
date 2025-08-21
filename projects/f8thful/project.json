@@ -91,6 +91,21 @@
         "file": "cherry"
       }
     ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "modern": false,
+        "traditional": false,
+        "miscellaneous": true
+      }
+    },
     "planetminecraft": {
       "resolution": 8,
       "progress": 100,
