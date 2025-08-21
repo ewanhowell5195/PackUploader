@@ -3,7 +3,6 @@
     "id": "f8thful",
     "name": "F8thful",
     "summary": "The Vanilla 8x8 Resource Pack",
-    "logo": true,
     "description": [
       "F8thful is a vanilla friendly resource pack where every texture has been recreated in 8x8!"
     ],
@@ -93,6 +92,8 @@
       }
     ],
     "planetminecraft": {
+      "resolution": 8,
+      "progress": 100,
       "modifies": {
         "armor": true,
         "art": true,

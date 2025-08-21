@@ -1,19 +1,19 @@
 {
   "config": {
-    "id": "quindent",
-    "name": "Quindent",
-    "summary": "The five pronged Trident",
+    "id": "swarm-of-bees",
+    "name": "Swarm Of Bees",
+    "summary": "A pack where bees come in swarms!",
     "description": [
-      "This pack remodeles the Trident into a Quindent, which is a Trident with 5 prongs!"
+      "This pack makes it so that the Bee model is a swarm of 6 small bees!"
     ],
-    "optifine": "OptiFine is required to add support for remodelling the Trident",
-    "video": "DbeCkY1yajI",
+    "optifine": "OptiFine is used to add support for remodelling bees.",
+    "video": "uK8c3BhIxAU",
     "github": false,
-    "version": "1.5.0",
+    "version": "1.1.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.20.3",
+        "version": "1.20.2",
         "snapshots": false
       },
       "planetminecraft": {
@@ -21,28 +21,28 @@
       },
       "modrinth": {
         "type": "after",
-        "version": "1.20.3",
+        "version": "1.20.2",
         "snapshots": false
       }
     },
     "images": [
       {
-        "name": "Throwing",
-        "description": "A player throwing the Quindent",
-        "file": "throw",
+        "name": "Orange Flowers",
+        "description": "Swarms of bees above some orange flowers",
+        "file": "orange_flowers",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "White Flowers",
+        "description": "Swarms of bees above some white and red flowers",
+        "file": "white_flowers",
         "embed": true
       },
       {
-        "name": "Holding",
-        "description": "A player holding the Quindent",
-        "file": "hold",
-        "embed": true
-      },
-      {
-        "name": "Quindent",
-        "description": "The Quindent",
-        "file": "quindent",
-        "featured": true,
+        "name": "Blue Flower",
+        "description": "A single swarm of bees above a blue flower",
+        "file": "single",
         "embed": true
       }
     ],
@@ -53,27 +53,23 @@
         "environment": 0,
         "font": 0,
         "gui": 0,
-        "items": true,
+        "items": 0,
         "misc": 0,
-        "mobs": 0,
+        "mobs": true,
         "particles": 0,
         "terrain": 0,
         "audio": 0,
         "models": true
       },
       "tags": [
-        "simplistic",
+        "realistic",
+        "model",
+        "animation",
         "optifine",
         "cem",
-        "model",
-        "items",
-        "models",
-        "custommodel",
-        "trident",
-        "five",
-        "prong",
-        "prongs",
-        "quindent"
+        "bee",
+        "bees",
+        "swarm"
       ]
     },
     "modrinth": {
@@ -92,17 +88,17 @@
         "core-shaders": 0,
         "cursed": 0,
         "decoration": 0,
-        "entities": 0,
+        "entities": true,
         "environment": 0,
-        "equipment": true,
+        "equipment": 0,
         "fonts": 0,
         "gui": 0,
-        "items": true,
+        "items": 0,
         "locale": 0,
         "modded": 0,
         "models": "featured",
         "realistic": 0,
-        "simplistic": true,
+        "simplistic": 0,
         "themed": 0,
         "tweaks": "featured",
         "utility": 0,
@@ -111,15 +107,15 @@
     }
   },
   "curseforge": {
-    "id": 472370,
-    "slug": "quindent"
+    "id": 473570,
+    "slug": "swarm-of-bees"
   },
   "planetminecraft": {
-    "id": 5073935,
-    "slug": "quindent"
+    "id": 5079334,
+    "slug": "swarm-of-bees"
   },
   "modrinth": {
-    "id": "rKre3WZl",
-    "slug": "quindent"
+    "id": null,
+    "slug": "swarm-of-bees"
   }
 }
