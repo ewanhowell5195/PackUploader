@@ -1,6 +1,10 @@
 {
   "ewan": true,
   "curseforge": {
+    "donation": {
+      "type": "kofi",
+      "value": "ewanhowell"
+    },
     "socials": {
       "bluesky": "https://bsky.app/profile/ewanhowell.com",
       "discord": "https://discord.gg/pkRxtGw",

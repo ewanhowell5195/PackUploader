@@ -359,6 +359,39 @@ export default {
     }
     log("Social links set")
 
+    const donationTypes = {
+      none: -1,
+      paypal: 1,
+      paypalHosted: 2,
+      patreon: 6,
+      github: 7,
+      kofi: 8,
+      buyMeACoffee: 9
+    }
+
+    const updateRequest = await fetch(`https://authors.curseforge.com/_api/projects/${project.curseforge.id}/update-details`, {
+      method: "PUT",
+      headers: {
+        cookie: auth.curseforge.cookie,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: project.config.name,
+        slug: project.curseforge.slug,
+        allowComments: true,
+        enableProjectPages: false,
+        primaryCategoryId: 393,
+        summary: project.config.summary,
+        donationTypeId: donationTypes[settings.curseforge.donation.type],
+        donationIdentifier: settings.curseforge.donation.type === "none" ? "" : settings.curseforge.donation.value
+      })
+    })
+    if (!updateRequest.ok) {
+      await error("Failed to upload details", updateRequest)
+    }
+
+    log("Details updated")
+
     const imageData = await this.getMedia()
     let skip
     const existingVideos = imageData.filter(e => e.type === 2)
