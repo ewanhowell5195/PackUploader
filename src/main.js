@@ -18,4 +18,10 @@ globalThis.makeForm = data => {
   return form
 }
 
-globalThis.save = () => fs.writeFileSync(path.join(projectPath, "project.json"), JSON.stringify(project, null, 2))
+globalThis.save = () => {
+  const clone = structuredClone(project)
+  delete clone.icon
+  delete clone.pack
+  clone.config.images = clone.config.images.filter(img => !img.logo && !img.thumbnail)
+  fs.writeFileSync(path.join(projectPath, "project.json"), JSON.stringify(clone, null, 2))
+}

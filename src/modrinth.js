@@ -14,17 +14,17 @@ export default {
   async createProject() {
     const form = makeForm({
       data: {
-        slug: config.id,
-        title: config.name,
-        description: config.summary,
-        categories: Object.entries(config.modrinth.tags).filter(e => e[1] === "featured").map(e => e[0]),
-        additional_categories: Object.entries(config.modrinth.tags).filter(e => e[1] && e[1] !== "featured").map(e => e[0]),
+        slug: project.config.id,
+        title: project.config.name,
+        description: project.config.summary,
+        categories: Object.entries(project.config.modrinth.tags).filter(e => e[1] === "featured").map(e => e[0]),
+        additional_categories: Object.entries(project.config.modrinth.tags).filter(e => e[1] && e[1] !== "featured").map(e => e[0]),
         client_side: "required",
         server_side: "unsupported",
         body: "placeholder",
-        issues_url: config.github ? config.github : undefined,
-        source_url: config.github ? config.github : undefined,
-        discord_url: config.discord,
+        issues_url: project.config.github ? project.config.github : undefined,
+        source_url: project.config.github ? project.config.github : undefined,
+        discord_url: defaultConfig.discord,
         license_id: "LicenseRef-All-Rights-Reserved",
         project_type: "resourcepack",
         is_draft: true,
@@ -59,25 +59,25 @@ export default {
   async uploadPack() {
     let versionsRequest = await fetch("https://api.modrinth.com/v2/tag/game_version").then(e => e.json())
 
-    if (!config.versions.modrinth.snapshots) {
+    if (!project.config.versions.modrinth.snapshots) {
       versionsRequest = versionsRequest.filter(e => e.version_type === "release")
     }
 
     const versions = []
 
-    switch (config.versions.modrinth.type) {
+    switch (project.config.versions.modrinth.type) {
       case "latest":
         versions.push(versionsRequest[0].version)
         break
       case "after":
-        versions.push(...versionsRequest.slice(0, versionsRequest.findIndex(e => e.version === config.versions.modrinth.version) + 1).map(e => e.version))
+        versions.push(...versionsRequest.slice(0, versionsRequest.findIndex(e => e.version === project.config.versions.modrinth.version) + 1).map(e => e.version))
         break
     }
 
     const form = makeForm({
       data: {
         name: project.config.name,
-        version_number: config.version.toString(),
+        version_number: project.config.version.toString(),
         changelog: config.changelog ?? "Initial release",
         dependencies: [],
         game_versions: versions,
@@ -109,8 +109,8 @@ export default {
     log("Pack uploaded")
   },
   async uploadImages() {
-    for (const [i, image] of config.images.entries()) {
-      if (image.thumbnail) continue
+    for (const [i, image] of project.config.images.entries()) {
+      if (image.thumbnail || (settings.ewan && image.logo)) continue
       const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/gallery?ext=png&featured=${!!image.featured}&title=${encodeURIComponent(image.name)}&description=${encodeURIComponent(image.description)}&ordering=${i}`, {
         method: "POST",
         headers: {
@@ -126,6 +126,22 @@ export default {
       }
       log(`Uploaded image "${image.file}"`)
     }
+  },
+  async uploadIcon() {
+    const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/icon?ext=png`, {
+      method: "PATCH",
+      headers: {
+        Authorization: settings.auth.modrinth,
+        "Content-Type": "image/png"
+      },
+      body: config.icon
+    })
+
+    if (r.error) {
+      error("Failed to upload icon", r)
+    }
+
+    log("Icon set")
   },
   getImages() {
     return fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
@@ -158,25 +174,29 @@ export default {
     for (const replacement of replacements) {
       let str = ""
       if (replacement[1] === "description") {
-        for (const part of config.description) {
+        for (const part of project.config.description) {
           str += part + "\n\n"
         }
         str = str.trim()
       } else if (replacement[1] === "images") {
-        const images = config.images.filter(e => e.embed)
+        const images = project.config.images.filter(e => e.embed)
         for (const image of images) {
           str += `<img src="${gallery.find(e => e.title === image.name).raw_url}" width="600" alt="${image.name}"><br><br>\n`
         }
         str = str.trim()
       } else if (replacement[1] === "video") {
-        if (config.video) {
-          str = `<iframe src="https://www.youtube.com/embed/${config.video}" width="600" height="336" allowfullscreen="allowfullscreen"></iframe><br><br><br>\n\n`
+        if (project.config.video) {
+          str = `<iframe src="https://www.youtube.com/embed/${project.config.video}" width="600" height="336" allowfullscreen="allowfullscreen"></iframe><br><br><br>\n\n`
         }
       } else if (replacement[1] === "logo") {
-        if (config.logo) {
-          str = `![${config.name} Logo](https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp)`
+        if (project.config.images.some(e => e.logo)) {
+          if (settings.ewan) {
+            str = `![${project.config.name} Logo](https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp)`
+          } else {
+            str = `![${project.config.name} Logo](${gallery.find(e => e.title === "Project Logo").raw_url})`
+          }
         } else {
-          str = "# " + config.name
+          str = "# " + project.config.name
         }
       } else {
         str = config[replacement[1]] ?? defaultConfig[replacement[1]]
@@ -195,14 +215,14 @@ export default {
       },
       body: JSON.stringify({
         body: markdown,
-        donation_urls: config.kofi ? [{
+        donation_urls: defaultConfig.kofi ? [{
           id: "ko-fi",
           platform: "Ko-fi",
-          url: config.kofi
+          url: defaultConfig.kofi
         }] : undefined,
-        issues_url: config.github ? config.github : undefined,
-        source_url: config.github ? config.github : undefined,
-        discord_url: config.discord,
+        issues_url: project.config.github ? project.config.github : undefined,
+        source_url: project.config.github ? project.config.github : undefined,
+        discord_url: project.config.discord,
         requested_status: "approved",
         status: !live ? "processing" : undefined
       })
@@ -214,7 +234,7 @@ export default {
 
     log("Written description")
   },
-  async loadDetails() {
+  async import() {
     config.modrinth = {
       tags: {
         "8x-": 0,
@@ -251,18 +271,29 @@ export default {
 
     if (!project.modrinth.id) return
 
-    const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
+    const dataRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
       headers: {
         Authorization: settings.auth.modrinth,
         "Content-Type": "application/json"
       }
     })
-
-    if (!r.ok) {
-      error("Failed to get project", await r.text())
+    if (!dataRequest.ok) {
+      error("Failed to get project", await dataRequest.text())
     }
+    const data = await dataRequest.json()
 
-    const data = await r.json()
+    const versionsRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/version`, {
+      headers: {
+        Authorization: settings.auth.modrinth,
+        "Content-Type": "application/json"
+      }
+    })
+    if (!versionsRequest.ok) {
+      error("Failed to get project version", await versionsRequest.text())
+    }
+    const versions = await versionsRequest.json()
+
+    config.versions.modrinth.version = versions[0].game_versions.at(-1)
 
     for (const category of data.categories) {
       config.modrinth.tags[category] = "featured"

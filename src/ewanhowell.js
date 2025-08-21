@@ -5,51 +5,50 @@ function error(err) {
 }
 
 export default {
-  async createPack() {
-    const imgPath = path.join(sitePath, "images", "resourcepacks", config.id)
-
-    fs.mkdirSync(path.join(imgPath, "images"), { recursive: true })
-
-    this.writeDetails()
-
-    await sharp(path.join("./projects", config.id, "pack.png")).resize(128, 128).webp({ quality: 95 }).toFile(path.join(imgPath, "icon.webp"))
-
-    if (config.logo) {
-      await sharp(path.join("./projects", config.id, "logo.png")).resize(1280, 256, { fit: "inside" }).webp({ quality: 100 }).toFile(path.join(imgPath, "logo.webp"))
-    }
-  },
   writeDetails() {
     const data = {
-      subtitle: config.summary,
-      description: config.description.join("\n\n"),
-      optifine: config.optifine ? config.optifine : undefined,
-      video: config.video ? config.video : undefined,
-      images: config.images.map(e => e.file).filter(e => e !== "thumbnail"),
+      subtitle: project.config.summary,
+      description: project.config.description.join("\n\n"),
+      optifine: project.config.optifine ? project.config.optifine : undefined,
+      video: project.config.video ? project.config.video : undefined,
+      images: project.config.images.filter(e => !e.thumbnail && !e.logo).map(e => e.file),
       downloads: [{
         text: "Download",
         link: `https://www.curseforge.com/minecraft/texture-packs/${project.curseforge.slug}/`
       }]
     }
 
-    fs.writeFileSync(path.join(sitePath, "json", "resourcepacks", config.id + ".json"), JSON.stringify(data, null, 2))
+    fs.writeFileSync(path.join(sitePath, "json", "resourcepacks", project.config.id + ".json"), JSON.stringify(data, null, 2))
   },
   removeImages() {
-    const imgPath = path.join(sitePath, "images", "resourcepacks", config.id, "images")
+    const imgPath = path.join(sitePath, "images", "resourcepacks", project.config.id, "images")
     fs.readdirSync(imgPath).forEach(f => fs.unlinkSync(path.join(imgPath, f)))
   },
   async addImages() {
-    for (const img of config.images) {
-      if (img.thumbnail) continue
-      await sharp(path.join("./projects", config.id, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside" }).webp({ quality: 95 }).toFile(path.join(sitePath, "images", "resourcepacks", config.id, "images", img.file + ".webp"))
+    const imgPath = path.join(sitePath, "images", "resourcepacks", project.config.id)
+    fs.mkdirSync(path.join(imgPath, "images"), { recursive: true })
+
+    for (const img of project.config.images) {
+      if (img.thumbnail || img.logo) continue
+      await sharp(path.join("projects", project.config.id, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside", withoutEnlargement: true }).webp({ quality: 95 }).toFile(path.join(imgPath, "images", img.file + ".webp"))
+    }
+
+    const iconPath = path.join("projects", project.config.id, "pack.png")
+    if (fs.existsSync(iconPath)) {
+      await sharp(iconPath).resize(128, 128).webp({ quality: 95, withoutEnlargement: true }).toFile(path.join(imgPath, "icon.webp"))
+    }
+
+    const logoPath = path.join("projects", project.config.id, "logo.png")
+    if (fs.existsSync(logoPath)) {
+      await sharp(logoPath).resize(1280, 256, { fit: "inside", withoutEnlargement: true }).webp({ quality: 95 }).toFile(path.join(imgPath, "logo.webp"))
     }
   },
-  async loadDetails() {
+  async import() {
     const resourcePacks = JSON.parse(fs.readFileSync(path.join(sitePath, "json", "resourcepacks.json")))
     const info = resourcePacks.categories.flatMap(e => e.entries).find(e => e.id === config.id)
     const data = JSON.parse(fs.readFileSync(path.join(sitePath, "json", "resourcepacks", config.id + ".json")))
     config.name = info.name ?? info.id.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
     config.summary = data.subtitle
-    config.logo = !info.logoless
     config.description = data.description.split("\n")
     config.optifine = data.optifine ?? false
     config.video = data.video ?? false
@@ -59,17 +58,16 @@ export default {
     config.version = "1.0.0"
     config.versions = {
       curseforge: {
-        type: "after",
-        version: info.versions[0],
-        snapshots: false
+        type: "exact",
+        version: info.versions[0]
       },
       planetminecraft: {
-        type: "latest"
+        type: "exact",
+        version: info.versions[0]
       },
       modrinth: {
-        type: "after",
-        version: info.versions[0],
-        snapshots: false
+        type: "exact",
+        version: info.versions[0]
       }
     }
     config.images = data.images.map((e, i) => ({
@@ -83,7 +81,11 @@ export default {
       config.images[0].featured = true
     }
     for (const img of config.images) {
-      await sharp(path.join(sitePath, "images", "resourcepacks", config.id, "images", img.file + ".webp")).png().toFile(path.join("./projects", config.id, "images", img.file + ".png"))
+      await sharp(path.join(sitePath, "images", "resourcepacks", config.id, "images", img.file + ".webp")).png().toFile(path.join("projects", config.id, "images", img.file + ".png"))
+    }
+    const logoPath = path.join(sitePath, "images", "resourcepacks", config.id, "logo.webp")
+    if (fs.existsSync(logoPath)) {
+      await sharp(logoPath).png().toFile(path.join("projects", config.id, "logo.png"))
     }
   }
 }

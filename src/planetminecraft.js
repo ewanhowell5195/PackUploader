@@ -20,16 +20,28 @@ function error(err, res, crash = true) {
   }
 }
 
-async function request(body, json = true) {
+function ratelimited(r) {
+  if (r.status === 302) {
+    throw new Error(`Planet Minecraft: You are ratelimited, or your authentication has expired`)
+  }
+}
+
+async function request(body, referrer, json = true) {
+  referrer ??= project.planetminecraft.id
   const r = await fetch("https://www.planetminecraft.com/ajax.php", {
     method: "POST",
     headers: {
       "x-pmc-csrf-token": settings.auth.planetminecraft.token,
       cookie: settings.auth.planetminecraft.cookie,
-      Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`
+      Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${referrer}`
     },
     body
   })
+
+  if (!r.ok) {
+    error(`Failed request`, await r.text())
+  }
+
   if (json) {
     return r.json()
   }
@@ -42,8 +54,11 @@ export default {
       headers: {
         "cache-control": "no-cache",
         cookie: settings.auth.planetminecraft.cookie
-      }
+      },
+      redirect: "manual"
     })
+
+    ratelimited(projectRequest)
 
     if (!projectRequest.ok) {
       error("Failed to fetch project", await projectRequest.text())
@@ -58,8 +73,11 @@ export default {
       headers: {
         "cache-control": "no-cache",
         cookie: settings.auth.planetminecraft.cookie
-      }
+      },
+      redirect: "manual"
     })
+
+    ratelimited(projectRequest)
 
     if (!projectRequest.ok) {
       error("Failed to fetch project", await projectRequest.text())
@@ -76,8 +94,11 @@ export default {
       headers: {
         "cache-control": "no-cache",
         cookie: settings.auth.planetminecraft.cookie
-      }
+      },
+      redirect: "manual"
     })
+
+    ratelimited(newProjectRequest)
 
     if (!newProjectRequest.ok) {
       error("Failed to fetch a new project", await newProjectRequest.text())
@@ -95,23 +116,15 @@ export default {
 
     const tags = []
 
-    for (const tag of config.planetminecraft.tags) {
-      const r = await fetch("https://www.planetminecraft.com/ajax.php", {
-        method: "POST",
-        headers: {
-          "x-pmc-csrf-token": settings.auth.planetminecraft.token,
-          cookie: settings.auth.planetminecraft.cookie,
-          Referer: "https://www.planetminecraft.com/account/manage/texture-packs/item/new"
-        },
-        body: makeForm({
-          module: "tools/tags",
-          target_type: "resource",
-          item_subject: 4,
-          target_id: project.planetminecraft.id,
-          term: tag,
-          action: "tagAdd"
-        })
-      }).then(e => e.json())
+    for (const tag of project.config.planetminecraft.tags) {
+      const r = await request(makeForm({
+        module: "tools/tags",
+        target_type: "resource",
+        item_subject: 4,
+        target_id: project.planetminecraft.id,
+        term: tag,
+        action: "tagAdd"
+      }), "item/new")
       if (r.status !== "success") {
         error(`Failed to get tag "${tag}"`, r)
       }
@@ -123,18 +136,7 @@ export default {
 
     // Create Project
 
-    const form = await this.createForm($, tags)
-
-    const r = await fetch("https://www.planetminecraft.com/ajax.php", {
-      method: "POST",
-      headers: {
-        "x-pmc-csrf-token": settings.auth.planetminecraft.token,
-        cookie: settings.auth.planetminecraft.cookie,
-        Referer: "https://www.planetminecraft.com/account/manage/texture-packs/item/new"
-      },
-      body: form
-    }).then(e => e.json())
-
+    const r = await request(await this.createForm($, tags), "item/new")
     if (r.status !== "success") {
       error("Failed to create project", r)
     }
@@ -146,6 +148,19 @@ export default {
     log(`Project URL: https://www.planetminecraft.com/texture-pack/${project.planetminecraft.slug}`)
   },
   async createForm($, tags) {
+    const resolutions = {
+      "8": 6,
+      "16": 1,
+      "32": 2,
+      "64": 3,
+      "128": 4,
+      "256": 5,
+      "512": 6,
+      "1024": 7,
+      "2048": 8,
+      "4096": 10
+    }
+
     const form = makeForm({
       member_id: $("[name=member_id]").val(),
       resource_id: project.planetminecraft.id,
@@ -155,18 +170,18 @@ export default {
       module_task: $("[name=module_task]").val(),
       server_id: "",
       title: project.config.name,
-      op0: 1, // Resolution
-      progress: 100,
+      op0: resolutions[project.config.planetminecraft.resolution] ?? 1, // Resolution
+      progress: resolutions[project.config.planetminecraft.progress] ?? 100,
       youtube: project.config.video ? project.config.video : undefined,
       description: await this.getDescription(),
       wid1: 1,
       wfile1: 1,
-      wurl1: `https://ewanhowell.com/resourcepacks/${config.id}`,
+      wurl1: settings.ewan ? `https://ewanhowell.com/resourcepacks/${project.config.id}` : `https://www.curseforge.com/minecraft/texture-packs/${project.curseforge.slug}`,
       wtitle1: "Download here",
       wid0: 0,
       wfile0: 0,
-      wurl0: "https://ewanhowell.com/",
-      wtitle0: "My Website",
+      wurl0: settings.planetminecraft.website.link,
+      wtitle0: settings.planetminecraft.website.title,
       credit: "",
       item_tag: "",
       tag_ids: tags.join(),
@@ -217,21 +232,16 @@ export default {
       connect_id: project.planetminecraft.id
     })
 
-    if (config.images.length > 15) {
+    if (project.config.images.length > 15) {
       console.error(`Too many images! Planet Minecraft supports a maximum of 15 images. Some will not be uploaded`)
     }
 
-    for (const [i, image] of config.images.entries()) {
+    let i = 0
+    for (const image of project.config.images) {
+      if (image.logo) continue
       if (i > 14) break
-      const r = await fetch("https://www.planetminecraft.com/ajax.php", {
-        method: "POST",
-        headers: {
-          "x-pmc-csrf-token": settings.auth.planetminecraft.token,
-          cookie: settings.auth.planetminecraft.cookie,
-          Referer: "https://www.planetminecraft.com/account/manage/texture-packs/item/new"
-        },
-        body: form
-      }).then(e => e.json())
+      i++
+      const r = await request(form, "item/new")
       if (!r.media_id) {
         error(`Failed to create image "${image.file}"`, r)
       }
@@ -247,15 +257,7 @@ export default {
       imageForm.append("filename", new Blob([image.buffer], {
         type: "image/jpeg"
       }), image.file + ".jpg")
-      const r2 = await fetch("https://www.planetminecraft.com/ajax.php", {
-        method: "POST",
-        headers: {
-          "x-pmc-csrf-token": settings.auth.planetminecraft.token,
-          cookie: settings.auth.planetminecraft.cookie,
-          Referer: "https://www.planetminecraft.com/account/manage/texture-packs/item/new"
-        },
-        body: imageForm
-      }).then(e => e.json())
+      const r2 = await request(imageForm, "item/new")
       if (r2.status !== "success") {
         error(`Failed to upload image "${image.file}"`, r2)
       }
@@ -280,7 +282,7 @@ export default {
         media_id: image.id,
         media_key: "image_key",
         connect_id: project.planetminecraft.id
-      }), false)
+      }), undefined, false)
       if (!deleteRequest.ok) {
         error(`Failed to remove image "${image.title}"`, deleteRequest)
       }
@@ -288,7 +290,7 @@ export default {
     }
   },
   async getDescription() {
-    const imageData = await curseforge.getImages()
+    const imageData = await curseforge.getMedia()
 
     let bbcode = fs.readFileSync("templates/planetminecraft.bbcode", "utf-8")
     const replacements = bbcode.matchAll(/{{\s*([a-z0-9]+)\s*}}/gi)
@@ -301,12 +303,16 @@ export default {
         const images = project.config.images.filter(e => e.embed)
         const imageList = []
         for (const image of images) {
-          imageList.push(`[img width=600 height=338]${imageData.find(e => e.title === image.file + ".jpg" || e.title === image.name).url}[/img]`)
+          imageList.push(`[img width=600 height=338]${imageData.find(e => e.type === 1 && (e.title === image.file + ".jpg" || e.title === image.name)).url}[/img]`)
         }
         str = imageList.join("\n\n")
       } else if (replacement[1] === "logo") {
-        if (project.config.logo) {
-          str = `[img]https://ewanhowell.com/assets/images/resourcepacks/${config.id}/logo.webp[/img]`
+        if (project.config.images.some(e => e.logo)) {
+          if (settings.ewan) {
+            str = `[img]https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp[/img]`
+          } else {
+            str = `[img]${imageData.find(e => e.type === 1 && (e.title === "logo.jpg" || e.title === "Project Logo"))?.url}[/img]`
+          }
         } else {
           str = `[style b size=48px]${project.config.name}[/style]`
         }
@@ -351,16 +357,7 @@ export default {
 
     form.append("live", 1)
 
-    const r = await fetch("https://www.planetminecraft.com/ajax.php", {
-      method: "POST",
-      headers: {
-        "x-pmc-csrf-token": settings.auth.planetminecraft.token,
-        cookie: settings.auth.planetminecraft.cookie,
-        Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`
-      },
-      body: form
-    }).then(e => e.json())
-
+    const r = await request(form)
     if (r.status !== "success") {
       error("Failed to update project version", r)
     }
@@ -376,23 +373,14 @@ export default {
       form.append("live", 1)
     }
 
-    const r = await fetch("https://www.planetminecraft.com/ajax.php", {
-      method: "POST",
-      headers: {
-        "x-pmc-csrf-token": settings.auth.planetminecraft.token,
-        cookie: settings.auth.planetminecraft.cookie,
-        Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`
-      },
-      body: form
-    }).then(e => e.json())
-
+    const r = await request(form)
     if (r.status !== "success") {
       error("Failed to update project details", r)
     }
 
     log("Updated project details")
   },
-  async loadDetails() {
+  async import() {
     config.planetminecraft = {
       modifies: {
         armor: 0,

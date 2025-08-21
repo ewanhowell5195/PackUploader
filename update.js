@@ -4,7 +4,7 @@ import modrinth from "./src/modrinth.js"
 import ewanhowell from "./src/ewanhowell.js"
 
 globalThis.curseforge = (await import("./src/curseforge.js")).default
-globalThis.config = (await import("./data/update/update.json", { with: { type: "json" } })).default
+globalThis.config = JSON.parse(fs.readFileSync("./data/update/update.json"))
 
 console.log(`Uploading update for project: ${config.id}`)
 
@@ -26,14 +26,14 @@ save()
 
 config.pack = fs.readFileSync("data/update/pack.zip")
 
-// CurseForge
+// Updates
 
-await curseforge.uploadPack()
+// await curseforge.uploadPack()
 
-// Planet Minecraft
+if (project.planetminecraft.id) {
+  await planetminecraft.versionUpdate()
+}
 
-await planetminecraft.versionUpdate()
-
-// Modrinth
-
-await modrinth.uploadPack()
+if (project.modrinth.id) {
+  await modrinth.uploadPack()
+}

@@ -1,9 +1,10 @@
 import "./src/main.js"
+import curseforge from "./src/curseforge.js"
 import planetminecraft from "./src/planetminecraft.js"
 import modrinth from "./src/modrinth.js"
 import ewanhowell from "./src/ewanhowell.js"
 
-const importData = (await import("./data/import.json", { with: { type: "json" } })).default
+const importData = JSON.parse(fs.readFileSync("./data/import.json"))
 
 globalThis.config = {
   id:importData.id
@@ -25,20 +26,25 @@ if (fs.existsSync(projectPath)) {
   fs.mkdirSync(path.join(projectPath, "images"), { recursive: true })
 }
 
-// Ewan Howell
+// Main Details
 
-await ewanhowell.loadDetails()
+if (settings.ewan) {
+  await ewanhowell.import()
+  await curseforge.importIcon()
+} else {
+  await curseforge.import()
+}
 
 // Planet Minecraft
 
-await planetminecraft.loadDetails()
+await planetminecraft.import()
 
 // Modrinth
 
-await modrinth.loadDetails()
+await modrinth.import()
 
 // Saving
 
-fs.writeFileSync(path.join("projects", config.id, "project.json"), JSON.stringify(project, null, 2))
+save()
 
 console.log(`Imported "${config.id}"`)
