@@ -155,10 +155,20 @@ export default {
       "64": 3,
       "128": 4,
       "256": 5,
-      "512": 6,
-      "1024": 7,
-      "2048": 8,
+      "512": 7,
+      "1024": 8,
+      "2048": 9,
       "4096": 10
+    }
+
+    const categories = {
+      Experimental: 26,
+      PvP: 154,
+      Realistic: 25,
+      Simplistic: 23,
+      Themed: 24,
+      Unreleased: 86,
+      Other: 27
     }
 
     const form = makeForm({
@@ -170,8 +180,8 @@ export default {
       module_task: $("[name=module_task]").val(),
       server_id: "",
       title: project.config.name,
-      op0: resolutions[project.config.planetminecraft.resolution] ?? 1, // Resolution
-      progress: resolutions[project.config.planetminecraft.progress] ?? 100,
+      op0: resolutions[project.config.planetminecraft.resolution] ?? 1,
+      progress: project.config.planetminecraft.progress ?? 100,
       youtube: project.config.video ? project.config.video : undefined,
       description: await this.getDescription(),
       wid1: 1,
@@ -186,10 +196,9 @@ export default {
       item_tag: "",
       tag_ids: tags.join(),
       allowcomments: 1,
-      saved_data: ""
+      saved_data: "",
+      "folder_id[]": categories[project.config.planetminecraft.category] ?? 27
     })
-
-    form.append("folder_id[]", 27) // Other category
 
     const versions = $("#op1 option").map((_, option) => ({
       id: $(option).val(),
