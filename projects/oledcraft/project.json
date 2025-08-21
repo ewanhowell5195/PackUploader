@@ -6,11 +6,7 @@
     "description": [
       "This pack is a Minecraft Dark Mode like no other!",
       "This pack aims to make the Minecraft UI as dark as possible.",
-      "Features:",
-      "- Dark Menu Background",
-      "- Dark Menu Buttons",
-      "- Dark Inventory",
-      "- Dark Hotbar",
+      "Features:\n- Dark Menu Background\n- Dark Menu Buttons\n- Dark Inventory\n- Dark Hotbar",
       "all while keeping the vanilla style."
     ],
     "optifine": false,

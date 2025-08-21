@@ -506,9 +506,7 @@ export default {
     for (const replacement of replacements) {
       let str = ""
       if (replacement[1] === "description") {
-        for (const part of project.config.description) {
-          str += `<p>${part}</p>`
-        }
+        str += project.config.description.map(e => `<p>${e.replaceAll("\n", "<br>")}</p>`).join("")
       } else if (replacement[1] === "images") {
         const images = project.config.images.filter(e => e.embed)
         for (const image of images) {
