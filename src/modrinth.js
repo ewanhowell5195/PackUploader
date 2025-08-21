@@ -247,6 +247,10 @@ export default {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
+        title: project.config.name,
+        description: project.config.summary,
+        categories: Object.entries(project.config.modrinth.tags).filter(e => e[1] === "featured").map(e => e[0]),
+        additional_categories: Object.entries(project.config.modrinth.tags).filter(e => e[1] && e[1] !== "featured").map(e => e[0]),
         body: markdown,
         donation_urls: donationUrls.length ? donationUrls : undefined,
         issues_url: project.config.github ? project.config.github.replace(/\/+$/, "") + "/issues" : undefined,
