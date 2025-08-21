@@ -31,8 +31,8 @@ async function request(body, referrer, json = true) {
   const r = await fetch("https://www.planetminecraft.com/ajax.php", {
     method: "POST",
     headers: {
-      "x-pmc-csrf-token": settings.auth.planetminecraft.token,
-      cookie: settings.auth.planetminecraft.cookie,
+      "x-pmc-csrf-token": auth.planetminecraft.token,
+      cookie: auth.planetminecraft.cookie,
       Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${referrer}`
     },
     body
@@ -53,7 +53,7 @@ export default {
     const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
       headers: {
         "cache-control": "no-cache",
-        cookie: settings.auth.planetminecraft.cookie
+        cookie: auth.planetminecraft.cookie
       },
       redirect: "manual"
     })
@@ -72,7 +72,7 @@ export default {
     const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
       headers: {
         "cache-control": "no-cache",
-        cookie: settings.auth.planetminecraft.cookie
+        cookie: auth.planetminecraft.cookie
       },
       redirect: "manual"
     })
@@ -93,7 +93,7 @@ export default {
     const newProjectRequest = await fetch("https://www.planetminecraft.com/account/manage/texture-packs/item/new", {
       headers: {
         "cache-control": "no-cache",
-        cookie: settings.auth.planetminecraft.cookie
+        cookie: auth.planetminecraft.cookie
       },
       redirect: "manual"
     })

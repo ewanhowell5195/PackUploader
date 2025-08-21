@@ -4,7 +4,7 @@ Easily upload resource packs to **CurseForge**, **Planet Minecraft**, and **Modr
 
 ---
 
-## `settings.json`
+## `auth.json`
 
 This file stores your authentication tokens and cookies, allowing the program to interact with the websites on your behalf.
 
@@ -30,7 +30,7 @@ You will need:
 
 1. Go to [CurseForge API Tokens](https://authors-old.curseforge.com/account/api-tokens).
 2. Create a new API token.
-3. Add this to your `settings.json`.
+3. Add this to your `auth.json`.
 
 ### Cookie
 
@@ -39,7 +39,7 @@ You will need:
    - **Firefox:** Storage tab
    - **Chrome:** Application tab
 3. Under **Cookies**, select the site.
-4. Copy the `CobaltSession` name and value into your `settings.json`.
+4. Copy the `CobaltSession` name and value into your `auth.json`.
 
 ## Planet Minecraft
 
@@ -57,7 +57,7 @@ Run this in the **Console** tab of your browser's developer tools to copy your t
 copy(document.getElementById("core-csrf-token").getAttribute("content"))
 ```
 
-Paste the copied token into your `settings.json`.
+Paste the copied token into your `auth.json`.
 
 ### Cookie
 
@@ -66,7 +66,7 @@ Paste the copied token into your `settings.json`.
    * **Firefox:** Storage tab
    * **Chrome:** Application tab
 2. Under **Cookies**, select the site.
-3. Copy the `pmc_autologin` name and value into your `settings.json`.
+3. Copy the `pmc_autologin` name and value into your `auth.json`.
 
 ## Modrinth
 
@@ -85,4 +85,4 @@ You will need:
    - Read Versions
    - Write Versions
 4. Set the expiry date some time far in the future.
-5. Paste it into your `settings.json`.
+5. Paste it into your `auth.json`.

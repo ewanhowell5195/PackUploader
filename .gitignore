@@ -2,4 +2,4 @@
 *.sublime-workspace
 /node_modules/
 /data/
-settings.json
+auth.json

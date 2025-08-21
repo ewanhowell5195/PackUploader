@@ -39,7 +39,7 @@ export default {
     const r = await fetch("https://api.modrinth.com/v2/project", {
       method: "POST",
       headers: {
-        Authorization: settings.auth.modrinth
+        Authorization: auth.modrinth
       },
       body: form
     }).then(e => e.json())
@@ -97,7 +97,7 @@ export default {
     const r = await fetch("https://api.modrinth.com/v2/version", {
       method: "POST",
       headers: {
-        Authorization: settings.auth.modrinth
+        Authorization: auth.modrinth
       },
       body: form
     }).then(e => e.json())
@@ -114,7 +114,7 @@ export default {
       const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/gallery?ext=png&featured=${!!image.featured}&title=${encodeURIComponent(image.name)}&description=${encodeURIComponent(image.description)}&ordering=${i}`, {
         method: "POST",
         headers: {
-          Authorization: settings.auth.modrinth,
+          Authorization: auth.modrinth,
           "Content-Type": "image/png"
         },
         body: new Blob([image.buffer], {
@@ -131,7 +131,7 @@ export default {
     const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/icon?ext=png`, {
       method: "PATCH",
       headers: {
-        Authorization: settings.auth.modrinth,
+        Authorization: auth.modrinth,
         "Content-Type": "image/png"
       },
       body: config.icon
@@ -146,7 +146,7 @@ export default {
   getImages() {
     return fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
       headers: {
-        Authorization: settings.auth.modrinth
+        Authorization: auth.modrinth
       }
     }).then(e => e.json()).then(e => e.gallery)
   },
@@ -156,7 +156,7 @@ export default {
       const deleteRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/gallery?url=${image.url}`, {
         method: "DELETE",
         headers: {
-          Authorization: settings.auth.modrinth
+          Authorization: auth.modrinth
         }
       })
       if (!deleteRequest.ok) {
@@ -226,7 +226,7 @@ export default {
     const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
       method: "PATCH",
       headers: {
-        Authorization: settings.auth.modrinth,
+        Authorization: auth.modrinth,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -285,7 +285,7 @@ export default {
 
     const dataRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
       headers: {
-        Authorization: settings.auth.modrinth,
+        Authorization: auth.modrinth,
         "Content-Type": "application/json"
       }
     })
@@ -296,7 +296,7 @@ export default {
 
     const versionsRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/version`, {
       headers: {
-        Authorization: settings.auth.modrinth,
+        Authorization: auth.modrinth,
         "Content-Type": "application/json"
       }
     })

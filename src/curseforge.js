@@ -18,7 +18,7 @@ export default {
     const iconRequest = await fetch("https://authors.curseforge.com/_api/projects/game/432/upload-avatar", {
       method: "POST",
       headers: {
-        cookie: settings.auth.curseforge.cookie
+        cookie: auth.curseforge.cookie
       },
       body: iconForm
     })
@@ -36,7 +36,7 @@ export default {
     const projectCreationRequest = await fetch("https://authors.curseforge.com/_api/projects", {
       method: "POST",
       headers: {
-        cookie: settings.auth.curseforge.cookie,
+        cookie: auth.curseforge.cookie,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -69,7 +69,7 @@ export default {
 
     const projectRequest = await fetch(`https://authors.curseforge.com/_api/projects/${project.curseforge.id}`, {
       headers: {
-        cookie: settings.auth.curseforge.cookie
+        cookie: auth.curseforge.cookie
       }
     })
 
@@ -90,7 +90,7 @@ export default {
 
     let versionsRequest = await fetch(`https://authors.curseforge.com/_api/project-files/${project.curseforge.id}/create-project-file-form-data`, {
       headers: {
-        cookie: settings.auth.curseforge.cookie
+        cookie: auth.curseforge.cookie
       }
     })
 
@@ -132,7 +132,7 @@ export default {
     const packUploadRequest = await fetch(`https://minecraft.curseforge.com/api/projects/${project.curseforge.id}/upload-file`, {
       method: "POST",
       headers: {
-        "X-Api-Token": settings.auth.curseforge.token
+        "X-Api-Token": auth.curseforge.token
       },
       body: packForm
     })
@@ -162,7 +162,7 @@ export default {
         const imagesRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/image/${project.curseforge.id}`, {
           method: "POST",
           headers: {
-            cookie: settings.auth.curseforge.cookie
+            cookie: auth.curseforge.cookie
           },
           body: imageForm
         })
@@ -188,7 +188,7 @@ export default {
       const r = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
         method: "PUT",
         headers: {
-          cookie: settings.auth.curseforge.cookie,
+          cookie: auth.curseforge.cookie,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -215,7 +215,7 @@ export default {
     const iconRequest = await fetch(`https://authors.curseforge.com/_api/projects/${project.curseforge.id}/upload-avatar`, {
       method: "POST",
       headers: {
-        cookie: settings.auth.curseforge.cookie
+        cookie: auth.curseforge.cookie
       },
       body: iconForm
     })
@@ -228,7 +228,7 @@ export default {
     const updateRequest = await fetch(`https://authors.curseforge.com/_api/projects/${project.curseforge.id}/update-details`, {
       method: "PUT",
       headers: {
-        cookie: settings.auth.curseforge.cookie,
+        cookie: auth.curseforge.cookie,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -250,7 +250,7 @@ export default {
   async getMedia() {
     const mediaDataRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}?filter=%7B%7D&range=%5B0%2C24%5D&sort=%5B%22id%22%2C%22DESC%22%5D`, {
       headers: {
-        cookie: settings.auth.curseforge.cookie
+        cookie: auth.curseforge.cookie
       }
     })
 
@@ -267,7 +267,7 @@ export default {
       const deleteRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}/${image.id}/1`, {
         method: "DELETE",
         headers: {
-          cookie: settings.auth.curseforge.cookie
+          cookie: auth.curseforge.cookie
         }
       })
       if (!deleteRequest.ok) {
@@ -279,7 +279,7 @@ export default {
   async setDetails() {
     const sourceRequest = await fetch(`https://authors.curseforge.com/_api/project-source/source/${project.curseforge.id}`, {
       headers: {
-        cookie: settings.auth.curseforge.cookie,
+        cookie: auth.curseforge.cookie,
         "Content-Type": "application/json"
       }
     })
@@ -292,7 +292,7 @@ export default {
       const r = await fetch(`https://authors.curseforge.com/_api/project-source/${project.curseforge.id}/update`, {
         method: "PUT",
         headers: {
-          cookie: settings.auth.curseforge.cookie,
+          cookie: auth.curseforge.cookie,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -309,7 +309,7 @@ export default {
       const r = await fetch(`https://authors.curseforge.com/_api/project-source/${project.curseforge.id}/update`, {
         method: "PUT",
         headers: {
-          cookie: settings.auth.curseforge.cookie,
+          cookie: auth.curseforge.cookie,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -344,7 +344,7 @@ export default {
     const socialsRequest = await fetch(`https://authors.curseforge.com/_api/projects/social-links/${project.curseforge.id}`, {
       method: "PUT",
       headers: {
-        cookie: settings.auth.curseforge.cookie,
+        cookie: auth.curseforge.cookie,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -370,7 +370,7 @@ export default {
         const deleteRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}/${existing.id}/2`, {
           method: "DELETE",
           headers: {
-            cookie: settings.auth.curseforge.cookie
+            cookie: auth.curseforge.cookie
           }
         })
         const mode = project.config.video === id && skip ? "duplicate" : "old"
@@ -384,7 +384,7 @@ export default {
       const videoRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/external-link/${project.curseforge.id}`, {
         method: "POST",
         headers: {
-          cookie: settings.auth.curseforge.cookie,
+          cookie: auth.curseforge.cookie,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -404,7 +404,7 @@ export default {
       const metadataRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
         method: "PUT",
         headers: {
-          cookie: settings.auth.curseforge.cookie,
+          cookie: auth.curseforge.cookie,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -423,7 +423,7 @@ export default {
       const orderRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}/update-display-order`, {
         method: "PUT",
         headers: {
-          cookie: settings.auth.curseforge.cookie,
+          cookie: auth.curseforge.cookie,
           "Content-Type": "application/json"
         },
         body: JSON.stringify([
@@ -478,7 +478,7 @@ export default {
     const r = await fetch(`https://authors.curseforge.com/_api/projects/description/${project.curseforge.id}`, {
       method: "PUT",
       headers: {
-        cookie: settings.auth.curseforge.cookie,
+        cookie: auth.curseforge.cookie,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -496,7 +496,7 @@ export default {
   async import() {
     const projectRequest = await fetch(`https://authors.curseforge.com/_api/projects/${project.curseforge.id}`, {
       headers: {
-        cookie: settings.auth.curseforge.cookie
+        cookie: auth.curseforge.cookie
       }
     })
     if (!projectRequest.ok) {
@@ -506,7 +506,7 @@ export default {
 
     const sourceRequest = await fetch(`https://authors.curseforge.com/_api/project-source/source/${project.curseforge.id}`, {
       headers: {
-        cookie: settings.auth.curseforge.cookie,
+        cookie: auth.curseforge.cookie,
         "Content-Type": "application/json"
       }
     })
@@ -520,7 +520,7 @@ export default {
       sort: '["DateCreated", "DESC"]'
     })}`, {
       headers: {
-        cookie: settings.auth.curseforge.cookie,
+        cookie: auth.curseforge.cookie,
         "Content-Type": "application/json"
       }
     })
@@ -580,7 +580,7 @@ export default {
     if (!data) {
       const projectRequest = await fetch(`https://authors.curseforge.com/_api/projects/${project.curseforge.id}`, {
         headers: {
-          cookie: settings.auth.curseforge.cookie
+          cookie: auth.curseforge.cookie
         }
       })
       if (!projectRequest.ok) {
