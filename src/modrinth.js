@@ -24,7 +24,7 @@ export default {
         body: "placeholder",
         issues_url: project.config.github ? project.config.github : undefined,
         source_url: project.config.github ? project.config.github : undefined,
-        discord_url: defaultConfig.discord,
+        discord_url: settings.modrinth.discord,
         license_id: "LicenseRef-All-Rights-Reserved",
         project_type: "resourcepack",
         is_draft: true,
@@ -207,6 +207,22 @@ export default {
       markdown = markdown.replaceAll(replacement[0], str)
     }
 
+    const donationUrls = []
+    if (settings.modrinth.kofi) {
+      donationUrls.push({
+        id: "ko-fi",
+        platform: "Ko-fi",
+        url: settings.modrinth.kofi
+      })
+    }
+    if (settings.modrinth.paypal) {
+      donationUrls.push({
+        id: "paypal",
+        platform: "PayPal",
+        url: settings.modrinth.paypal
+      })
+    }
+
     const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
       method: "PATCH",
       headers: {
@@ -215,14 +231,10 @@ export default {
       },
       body: JSON.stringify({
         body: markdown,
-        donation_urls: defaultConfig.kofi ? [{
-          id: "ko-fi",
-          platform: "Ko-fi",
-          url: defaultConfig.kofi
-        }] : undefined,
+        donation_urls: donationUrls.length ? donationUrls : undefined,
         issues_url: project.config.github ? project.config.github : undefined,
         source_url: project.config.github ? project.config.github : undefined,
-        discord_url: project.config.discord,
+        discord_url: settings.modrinth.discord,
         requested_status: "approved",
         status: !live ? "processing" : undefined
       })
