@@ -324,6 +324,41 @@ export default {
       log("GitHub link removed")
     }
 
+    const socialTypes = {
+      mastodon: 1,
+      discord: 2,
+      website: 3,
+      facebook: 4,
+      twitter: 5,
+      instagram: 6,
+      patreon: 7,
+      twitch: 8,
+      reddit: 9,
+      youtube: 10,
+      tiktok: 11,
+      pinterest: 12,
+      github: 13,
+      bluesky: 14
+    }
+
+    const socialsRequest = await fetch(`https://authors.curseforge.com/_api/projects/social-links/${project.curseforge.id}`, {
+      method: "PUT",
+      headers: {
+        cookie: settings.auth.curseforge.cookie,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        links: Object.entries(settings.curseforge.socials).filter(e => e[1]).map(([k, v]) => ({
+          type: socialTypes[k],
+          url: v
+        }))
+      })
+    })
+    if (!socialsRequest.ok) {
+      console.error(`Failed to set social links - ${await socialsRequest.text()}`)
+    }
+    log("Social links set")
+
     const imageData = await this.getMedia()
     let skip
     const existingVideos = imageData.filter(e => e.type === 2)
