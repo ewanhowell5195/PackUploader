@@ -37,21 +37,21 @@ for (const entry of fs.readdirSync("templates")) {
   fs.cpSync(src, dest)
 }
 
-fs.cpSync("data/create/images", path.join("projects", config.id, "images"), { recursive: true })
-fs.cpSync("data/create/pack.png", path.join("projects", config.id, "pack.png"))
+fs.cpSync("data/create/images", path.join(projectPath, "images"), { recursive: true })
+fs.cpSync("data/create/pack.png", path.join(projectPath, "pack.png"))
 
 // Files
 
 config.pack = fs.readFileSync("data/create/pack.zip")
 
-config.icon = await sharp(path.join("projects", config.id, "pack.png")).resize(512, 512, { kernel: "nearest" }).png().toBuffer()
+config.icon = await sharp(path.join(projectPath, "pack.png")).resize(512, 512, { kernel: "nearest" }).png().toBuffer()
 
 for (const img of config.images) {
-  img.buffer = await sharp(path.join("projects", config.id, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside", withoutEnlargement: true }).jpeg({ quality: 95 }).toBuffer()
+  img.buffer = await sharp(path.join(projectPath, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside", withoutEnlargement: true }).jpeg({ quality: 95 }).toBuffer()
 }
 
 if (fs.existsSync("data/create/thumbnail.png")) {
-  fs.cpSync("data/create/thumbnail.png", path.join("projects", config.id, "thumbnail.png"))
+  fs.cpSync("data/create/thumbnail.png", path.join(projectPath, "thumbnail.png"))
   config.images.unshift({
     name: "Project Thumbnail",
     description: `The thumbnail image for ${config.name}`,
@@ -63,7 +63,7 @@ if (fs.existsSync("data/create/thumbnail.png")) {
 
 if (fs.existsSync("data/create/logo.png")) {
   if (config.logo) {
-    fs.cpSync("data/create/logo.png", path.join("projects", config.id, "logo.png"))
+    fs.cpSync("data/create/logo.png", path.join(projectPath, "logo.png"))
   }
   config.images.push({
     name: "Project Logo",

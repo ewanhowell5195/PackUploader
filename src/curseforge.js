@@ -625,13 +625,13 @@ export default {
       let name, imgPath
       if (image.title === "Project Thumbnail") {
         name = "thumbnail.png"
-        imgPath = path.join("projects", config.id, name)
+        imgPath = path.join(projectPath, name)
       } else if (image.title === "Project Logo") {
         name = "logo.png"
-        imgPath = path.join("projects", config.id, name)
+        imgPath = path.join(projectPath, name)
       } else {
         name = image.title.toLowerCase().replaceAll(" ", "_") + ".png"
-        imgPath = path.join("projects", config.id, "images", name)
+        imgPath = path.join(projectPath, "images", name)
       }
       log(`Downloading image: ${name}`)
       await sharp(await fetch(image.url).then(e => e.arrayBuffer())).png().toFile(imgPath)

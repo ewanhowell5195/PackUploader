@@ -15,12 +15,12 @@ globalThis.project = JSON.parse(fs.readFileSync(projectPath + "/project.json"))
 
 globalThis.config = project.config
 
-const icon = path.join("projects", config.id, "pack.png")
+const icon = path.join(projectPath, "pack.png")
 if (fs.existsSync(icon)) {
   config.icon = await sharp(icon).resize(512, 512, { kernel: "nearest" }).png().toBuffer()
 }
 
-const logo = path.join("projects", config.id, "logo.png")
+const logo = path.join(projectPath, "logo.png")
 if (fs.existsSync(logo)) {
   config.images.push({
     name: "Project Logo",
@@ -31,7 +31,7 @@ if (fs.existsSync(logo)) {
   })
 }
 
-const templates = path.join("projects", config.id, "templates")
+const templates = path.join(projectPath, "templates")
 if (!fs.existsSync(templates)) {
   fs.mkdirSync(templates)
   for (const entry of fs.readdirSync("templates")) {
@@ -47,10 +47,10 @@ if (!fs.existsSync(templates)) {
 if (data.images) {
   for (const img of config.images) {
     if (img.logo) continue
-    img.buffer = await sharp(path.join("projects", config.id, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside", withoutEnlargement: true }).jpeg({ quality: 95 }).toBuffer()
+    img.buffer = await sharp(path.join(projectPath, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside", withoutEnlargement: true }).jpeg({ quality: 95 }).toBuffer()
   }
 
-  const thumbnail = path.join("projects", config.id, "thumbnail.png")
+  const thumbnail = path.join(projectPath, "thumbnail.png")
   if (fs.existsSync(thumbnail)) {
     config.images.unshift({
       name: "Project Thumbnail",

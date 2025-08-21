@@ -81,11 +81,11 @@ export default {
       config.images[0].featured = true
     }
     for (const img of config.images) {
-      await sharp(path.join(sitePath, "images", "resourcepacks", config.id, "images", img.file + ".webp")).png().toFile(path.join("projects", config.id, "images", img.file + ".png"))
+      await sharp(path.join(sitePath, "images", "resourcepacks", config.id, "images", img.file + ".webp")).png().toFile(path.join(projectPath, "images", img.file + ".png"))
     }
     const logoPath = path.join(sitePath, "images", "resourcepacks", config.id, "logo.webp")
     if (fs.existsSync(logoPath)) {
-      await sharp(logoPath).png().toFile(path.join("projects", config.id, "logo.png"))
+      await sharp(logoPath).png().toFile(path.join(projectPath, "logo.png"))
     }
   }
 }
