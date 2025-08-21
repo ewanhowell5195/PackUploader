@@ -22,8 +22,11 @@ globalThis.getReplacementPath = (obj, path) => path.replace(/\[(\d+)\]/g, ".$1")
 
 globalThis.save = () => {
   const clone = structuredClone(project)
-  delete clone.icon
-  delete clone.pack
-  clone.config.images = clone.config.images.filter(img => !img.logo && !img.thumbnail)
+  delete clone.config.icon
+  delete clone.config.pack
+  clone.config.images = clone.config.images.filter(e => {
+    delete e.buffer
+    return !e.logo && !e.thumbnail
+  })
   fs.writeFileSync(path.join(projectPath, "project.json"), JSON.stringify(clone, null, 2))
 }

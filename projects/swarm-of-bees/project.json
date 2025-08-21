@@ -56,7 +56,6 @@
         "modSupport": false,
         "modern": false,
         "photoRealistic": false,
-        "modern": false,
         "traditional": false,
         "miscellaneous": true
       }
@@ -130,7 +129,7 @@
     "slug": "swarm-of-bees"
   },
   "modrinth": {
-    "id": null,
+    "id": "oCeyT3bA",
     "slug": "swarm-of-bees"
   }
 }
