@@ -168,7 +168,7 @@ export default {
   async setDetails(live) {
     const gallery = await this.getImages()
 
-    let markdown = fs.readFileSync("templates/modrinth.md", "utf-8")
+    let markdown = fs.readFileSync(path.join("projects", project.config.id, "templates", "modrinth.md"), "utf-8")
     const replacements = markdown.matchAll(/{{\s*([a-z0-9]+)\s*}}/gi)
 
     for (const replacement of replacements) {

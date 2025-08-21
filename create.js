@@ -28,6 +28,7 @@ save()
 
 // Copying
 
+fs.cpSync("templates", path.join("projects", config.id, "templates"), { recursive: true })
 fs.cpSync("data/create/images", path.join("projects", config.id, "images"), { recursive: true })
 fs.cpSync("data/create/pack.png", path.join("projects", config.id, "pack.png"))
 

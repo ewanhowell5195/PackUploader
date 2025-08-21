@@ -31,6 +31,11 @@ if (fs.existsSync(logo)) {
   })
 }
 
+const templates = path.join("projects", config.id, "templates")
+if (!fs.existsSync(templates)) {
+  fs.cpSync("templates", path.join("projects", config.id, "templates"), { recursive: true })
+}
+
 // Reupload icon & images
 
 if (data.images) {

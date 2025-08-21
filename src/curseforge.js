@@ -500,7 +500,7 @@ export default {
       }
     }
 
-    let html = fs.readFileSync("templates/curseforge.html", "utf-8")
+    let html = fs.readFileSync(path.join("projects", project.config.id, "templates", "curseforge.html"), "utf-8")
     const replacements = html.matchAll(/{{\s*([a-z0-9]+)\s*}}/gi)
 
     for (const replacement of replacements) {

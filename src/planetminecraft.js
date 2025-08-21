@@ -301,7 +301,7 @@ export default {
   async getDescription() {
     const imageData = await curseforge.getMedia()
 
-    let bbcode = fs.readFileSync("templates/planetminecraft.bbcode", "utf-8")
+    let bbcode = fs.readFileSync(path.join("projects", project.config.id, "templates", "planetminecraft.bbcode"), "utf-8")
     const replacements = bbcode.matchAll(/{{\s*([a-z0-9]+)\s*}}/gi)
 
     for (const replacement of replacements) {
