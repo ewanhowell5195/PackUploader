@@ -614,6 +614,11 @@ export default {
         version: files[0].gameVersions[0].Label
       }
     }
+    config.images = []
+    config.curseforge = {
+      mainCategory: Object.entries(categories).find(e => e[1] === data.primaryCategoryId)[0],
+      additionalCategories: Object.fromEntries(Object.entries(subCategories).map(([k, v]) => [k, data.subCategoryIds.includes(v)]))
+    }
     log(`Downloading image: pack.png`)
     await sharp(await fetch(data.avatarUrl).then(e => e.arrayBuffer())).png().toFile(path.join("projects", project.config.id, "pack.png"))
     if (images) {

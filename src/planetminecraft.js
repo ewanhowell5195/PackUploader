@@ -48,6 +48,29 @@ async function request(body, referrer, json = true) {
   return r
 }
 
+const resolutions = {
+  "8": 6,
+  "16": 1,
+  "32": 2,
+  "64": 3,
+  "128": 4,
+  "256": 5,
+  "512": 7,
+  "1024": 8,
+  "2048": 9,
+  "4096": 10
+}
+
+const categories = {
+  Experimental: 26,
+  PvP: 154,
+  Realistic: 25,
+  Simplistic: 23,
+  Themed: 24,
+  Unreleased: 86,
+  Other: 27
+}
+
 export default {
   async getProject() {
     const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
@@ -148,29 +171,6 @@ export default {
     log(`Project URL: https://www.planetminecraft.com/texture-pack/${project.planetminecraft.slug}`)
   },
   async createForm($, tags) {
-    const resolutions = {
-      "8": 6,
-      "16": 1,
-      "32": 2,
-      "64": 3,
-      "128": 4,
-      "256": 5,
-      "512": 7,
-      "1024": 8,
-      "2048": 9,
-      "4096": 10
-    }
-
-    const categories = {
-      Experimental: 26,
-      PvP: 154,
-      Realistic: 25,
-      Simplistic: 23,
-      Themed: 24,
-      Unreleased: 86,
-      Other: 27
-    }
-
     const form = makeForm({
       member_id: $("[name=member_id]").val(),
       resource_id: project.planetminecraft.id,
@@ -397,6 +397,10 @@ export default {
   },
   async import() {
     config.planetminecraft = {
+      category: "Other",
+      resolution: 16,
+      progress: 100,
+      credit: "",
       modifies: {
         armor: 0,
         art: 0,
@@ -417,12 +421,21 @@ export default {
     if (!project.planetminecraft.id) return
 
     const document = await this.getProjectDom()
-    config.planetminecraft.tags = Array.from(document.querySelectorAll("#item_tags .tag")).map(e => e.textContent.trim())
-    
+
+    const category = document.getElementById("folder_id[]").value
+    const resolution = document.getElementById("op0").value
+
+    config.planetminecraft.category = Object.entries(categories).find(e => e[1] == category)[0]
+    config.planetminecraft.resolution = Object.entries(resolutions).find(e => e[1] == resolution)[0]
+    config.planetminecraft.progress = parseInt(document.getElementById("progress").value)
+    config.planetminecraft.credit = document.querySelector('input[name="credit"]').value
+
     for (const check of document.querySelectorAll("#main_folder_modified .folder-item")) {
       const input = check.querySelector("input")
       const label = check.querySelector("label").textContent.toLowerCase()
       config.planetminecraft.modifies[label] = input.checked ? true : 0
     }
+
+    config.planetminecraft.tags = Array.from(document.querySelectorAll("#item_tags .tag")).map(e => e.textContent.trim())    
   }
 }
