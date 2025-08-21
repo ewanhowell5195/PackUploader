@@ -277,7 +277,18 @@ export default {
     }
   },
   async setDetails() {
-    if (project.config.github) {
+    const sourceRequest = await fetch(`https://authors.curseforge.com/_api/project-source/source/${project.curseforge.id}`, {
+      headers: {
+        cookie: settings.auth.curseforge.cookie,
+        "Content-Type": "application/json"
+      }
+    })
+    if (!sourceRequest.ok) {
+      await error("Failed to get GitHub link", sourceRequest)
+    }
+    const existingGithub = (await sourceRequest.json()).sourceHostUrl
+
+    if (project.config.github && existingGithub !== project.config.github) {
       const r = await fetch(`https://authors.curseforge.com/_api/project-source/${project.curseforge.id}/update`, {
         method: "PUT",
         headers: {
@@ -294,6 +305,23 @@ export default {
         await error("Failed to update GitHub link", r)
       }
       log("GitHub link updated")
+    } else if (existingGithub && !project.config.github) {
+      const r = await fetch(`https://authors.curseforge.com/_api/project-source/${project.curseforge.id}/update`, {
+        method: "PUT",
+        headers: {
+          cookie: settings.auth.curseforge.cookie,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          sourceHostUrl: null,
+          sourceHost: 1,
+          packagerMode: 1
+        })
+      })
+      if (!r.ok) {
+        await error("Failed to remove GitHub link", r)
+      }
+      log("GitHub link removed")
     }
 
     const imageData = await this.getMedia()
