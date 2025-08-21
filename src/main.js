@@ -18,6 +18,8 @@ globalThis.makeForm = data => {
   return form
 }
 
+globalThis.getReplacementPath = (obj, path) => path.replace(/\[(\d+)\]/g, ".$1").split(".").reduce((o, k) => (o && k in o ? o[k] : undefined), obj)
+
 globalThis.save = () => {
   const clone = structuredClone(project)
   delete clone.icon

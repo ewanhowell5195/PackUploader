@@ -302,7 +302,7 @@ export default {
     const imageData = await curseforge.getMedia()
 
     let bbcode = fs.readFileSync(path.join("projects", project.config.id, "templates", "planetminecraft.bbcode"), "utf-8")
-    const replacements = bbcode.matchAll(/{{\s*([a-z0-9]+)\s*}}/gi)
+    const replacements = Array.from(bbcode.matchAll(/{{\s*([a-z0-9_.\[\]]+)\s*}}/gi))
 
     for (const replacement of replacements) {
       let str = ""
@@ -312,7 +312,7 @@ export default {
         const images = project.config.images.filter(e => e.embed)
         const imageList = []
         for (const image of images) {
-          imageList.push(`[img width=600 height=338]${imageData.find(e => e.type === 1 && (e.title === image.file + ".jpg" || e.title === image.name)).url}[/img]`)
+          imageList.push(`[img width=600 height=338]${imageData.find(e => e.type === 1 && (e.title === image.file + ".jpg" || e.title === image.name))?.url}[/img]`)
         }
         str = imageList.join("\n\n")
       } else if (replacement[1] === "logo") {
@@ -326,7 +326,7 @@ export default {
           str = `[style b size=48px]${project.config.name}[/style]`
         }
       } else {
-        str = project.config[replacement[1]] ?? settings.templateDefaults[replacement[1]]
+        str = getReplacementPath(config, replacement[1]) ?? getReplacementPath(settings.templateDefaults, replacement[1])
         if (typeof str !== "string") {
           str = "undefined"
         }

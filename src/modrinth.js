@@ -169,19 +169,16 @@ export default {
     const gallery = await this.getImages()
 
     let markdown = fs.readFileSync(path.join("projects", project.config.id, "templates", "modrinth.md"), "utf-8")
-    const replacements = markdown.matchAll(/{{\s*([a-z0-9]+)\s*}}/gi)
+    const replacements = Array.from(markdown.matchAll(/{{\s*([a-z0-9_.\[\]]+)\s*}}/gi))
 
     for (const replacement of replacements) {
       let str = ""
       if (replacement[1] === "description") {
-        for (const part of project.config.description) {
-          str += part + "\n\n"
-        }
-        str = str.trim()
+        str = project.config.description.map(e => e + "\n\n").join("").trim()
       } else if (replacement[1] === "images") {
         const images = project.config.images.filter(e => e.embed)
         for (const image of images) {
-          str += `<img src="${gallery.find(e => e.title === image.name).raw_url}" width="600" alt="${image.name}"><br><br>\n`
+          str += `<img src="${gallery.find(e => e.title === image.name)?.raw_url}" width="600" alt="${image.name}"><br><br>\n`
         }
         str = str.trim()
       } else if (replacement[1] === "video") {
@@ -193,13 +190,13 @@ export default {
           if (settings.ewan) {
             str = `![${project.config.name} Logo](https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp)`
           } else {
-            str = `![${project.config.name} Logo](${gallery.find(e => e.title === "Project Logo").raw_url})`
+            str = `![${project.config.name} Logo](${gallery.find(e => e.title === "Project Logo")?.raw_url})`
           }
         } else {
           str = "# " + project.config.name
         }
       } else {
-        str = config[replacement[1]] ?? settings.templateDefaults[replacement[1]]
+        str = getReplacementPath(config, replacement[1]) ?? getReplacementPath(settings.templateDefaults, replacement[1])
         if (typeof str !== "string") {
           str = "undefined"
         }

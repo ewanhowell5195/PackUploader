@@ -501,7 +501,7 @@ export default {
     }
 
     let html = fs.readFileSync(path.join("projects", project.config.id, "templates", "curseforge.html"), "utf-8")
-    const replacements = html.matchAll(/{{\s*([a-z0-9]+)\s*}}/gi)
+    const replacements = Array.from(html.matchAll(/{{\s*([a-z0-9_.\[\]]+)\s*}}/gi))
 
     for (const replacement of replacements) {
       let str = ""
@@ -510,7 +510,7 @@ export default {
       } else if (replacement[1] === "images") {
         const images = project.config.images.filter(e => e.embed)
         for (const image of images) {
-          str += `<br><img src="${imageData.find(e => e.type === 1 && (e.title === image.file + ".jpg" || e.title === image.name)).url}" width="600" alt="${image.name}"><br>`
+          str += `<br><img src="${imageData.find(e => e.type === 1 && (e.title === image.file + ".jpg" || e.title === image.name))?.url}" width="600" alt="${image.name}"><br>`
         }
       } else if (replacement[1] === "logo") {
         if (project.config.images.some(e => e.logo)) {
@@ -523,7 +523,7 @@ export default {
           str = `<h1 style="font-size: 3ic; font-weight: 700; text-decoration: underline; display: inline-block;">${project.config.name}</h1>`
         }
       } else {
-        str = config[replacement[1]] ?? settings.templateDefaults[replacement[1]]
+        str = getReplacementPath(config, replacement[1]) ?? getReplacementPath(settings.templateDefaults, replacement[1])
         if (typeof str !== "string") {
           str = "undefined"
         }
