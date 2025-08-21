@@ -192,7 +192,7 @@ export default {
       wfile0: 0,
       wurl0: settings.planetminecraft.website.link,
       wtitle0: settings.planetminecraft.website.title,
-      credit: "",
+      credit: project.config.planetminecraft.credit ?? "",
       item_tag: "",
       tag_ids: tags.join(),
       allowcomments: 1,
