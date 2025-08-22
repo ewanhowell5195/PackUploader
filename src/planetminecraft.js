@@ -183,6 +183,17 @@ export default {
     log(`Project URL: https://www.planetminecraft.com/texture-pack/${project.planetminecraft.slug}`)
   },
   async createForm($, tags, keepVersion) {
+    let downloadLink
+    if (settings.ewan) {
+      downloadLink = `https://ewanhowell.com/resourcepacks/${project.config.id}`
+    } else if (project.modrinth.id && settings.planetminecraft.prefer === "modrinth") {
+      downloadLink = `https://modrinth.com/resourcepack/${project.modrinth.slug}`
+    } else if (project.curseforge.id) {
+      downloadLink = `https://www.curseforge.com/minecraft/texture-packs/${project.curseforge.slug}`
+    } else {
+      downloadLink = `https://modrinth.com/resourcepack/${project.modrinth.slug}`
+    }
+
     const form = makeForm({
       member_id: $("[name=member_id]").val(),
       resource_id: project.planetminecraft.id,
@@ -198,7 +209,7 @@ export default {
       description: await this.getDescription(),
       wid1: 1,
       wfile1: 1,
-      wurl1: settings.ewan ? `https://ewanhowell.com/resourcepacks/${project.config.id}` : project.curseforge.id ? `https://www.curseforge.com/minecraft/texture-packs/${project.curseforge.slug}` : `https://modrinth.com/resourcepack/${project.modrinth.slug}`,
+      wurl1: downloadLink,
       wtitle1: "Download here",
       wid0: 0,
       wfile0: 0,

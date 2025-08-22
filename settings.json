@@ -26,7 +26,8 @@
     "website": {
       "link": "https://ewanhowell.com/",
       "title": "My Website"
-    }
+    },
+    "prefer": "curseforge"
   },
   "modrinth": {
     "discord": "https://discord.ewanhowell.com/",
