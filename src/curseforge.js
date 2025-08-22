@@ -564,7 +564,7 @@ export default {
 
     log("Written description")
   },
-  async import(images = true) {
+  async import() {
     const projectRequest = await fetch(`https://authors.curseforge.com/_api/projects/${project.curseforge.id}`, {
       headers: {
         cookie: auth.curseforge.cookie
@@ -605,10 +605,9 @@ export default {
     config.name = data.name
     config.summary = data.summary
     config.description = [data.summary]
-    config.optifine = false
     config.video = media.find(e => e.type === 2)?.url.split("?")[0].split("/").at(-1) ?? false
     config.github = (await sourceRequest.json()).sourceHostUrl ?? false
-    config.version = "1.0.0"
+    
     config.versions = {
       curseforge: {
         type: "exact",
@@ -623,18 +622,20 @@ export default {
         version: files[0].gameVersions[0].Label
       }
     }
-    config.images = []
+
     config.curseforge = {
       mainCategory: Object.entries(categories).find(e => e[1] === data.primaryCategoryId)[0],
       additionalCategories: Object.fromEntries(Object.entries(subCategories).map(([k, v]) => [k, data.subCategoryIds.includes(v)]))
     }
+
     log(`Downloading image: pack.png`)
     await sharp(await fetch(data.avatarUrl).then(e => e.arrayBuffer())).png().toFile(path.join("projects", project.config.id, "pack.png"))
-    if (images) {
+    
+    if (!settings.ewan) {
       config.images = media.filter(e => e.type === 1 && e.title !== "Project Thumbnail" && e.title !== "Project Logo").map((e, i) => ({
-        name: e.title,
+        name: e.title || e.url.split("/").at(-1).split(".").slice(0, -1).join(".").split("-").slice(0, -1).join("_").split("_").map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(" "),
         description: e.description || e.title,
-        file: e.title.toLowerCase().replaceAll(" ", "_"),
+        file: e.title.toLowerCase().replaceAll(" ", "_").replace(/[^a-z0-9_]/g, "") || e.url.split("/").at(-1).split(".").slice(0, -1).join(".").split("-").slice(0, -1).join("_"),
         embed: i < 3 ? true : undefined,
         featured: i ? undefined : true
       }))
@@ -647,7 +648,7 @@ export default {
           name = "logo.png"
           imgPath = path.join(projectPath, name)
         } else {
-          name = image.title.toLowerCase().replaceAll(" ", "_") + ".png"
+          name = image.title.toLowerCase().replaceAll(" ", "_").replace(/[^a-z0-9_]/g, "") + ".png"
           imgPath = path.join(projectPath, "images", name)
         }
         log(`Downloading image: ${name}`)

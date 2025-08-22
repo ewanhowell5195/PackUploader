@@ -280,42 +280,6 @@ export default {
     log("Written description")
   },
   async import() {
-    config.modrinth = {
-      tags: {
-        "8x-": 0,
-        "16x": 0,
-        "32x": 0,
-        "48x": 0,
-        "64x": 0,
-        "128x": 0,
-        "256x": 0,
-        "512x+": 0,
-        audio: 0,
-        blocks: 0,
-        combat: 0,
-        "core-shaders": 0,
-        cursed: 0,
-        decoration: 0,
-        entities: 0,
-        environment: 0,
-        equipment: 0,
-        fonts: 0,
-        gui: 0,
-        items: 0,
-        locale: 0,
-        modded: 0,
-        models: 0,
-        realistic: 0,
-        simplistic: 0,
-        themed: 0,
-        tweaks: 0,
-        utility: 0,
-        "vanilla-like": 0
-      }
-    }
-
-    if (!project.modrinth.id) return
-
     const dataRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
       headers: {
         Authorization: auth.modrinth,
@@ -327,18 +291,7 @@ export default {
     }
     const data = await dataRequest.json()
 
-    const versionsRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/version`, {
-      headers: {
-        Authorization: auth.modrinth,
-        "Content-Type": "application/json"
-      }
-    })
-    if (!versionsRequest.ok) {
-      error("Failed to get project version", await versionsRequest.text())
-    }
-    const versions = await versionsRequest.json()
-
-    config.versions.modrinth.version = versions[0].game_versions.at(-1)
+    config.versions.modrinth.version = data.game_versions.at(-1)
 
     for (const category of data.categories) {
       config.modrinth.tags[category] = "featured"
@@ -346,6 +299,74 @@ export default {
 
     for (const category of data.additional_categories) {
       config.modrinth.tags[category] = true
+    }
+
+    if (!project.curseforge.id) {
+      config.name = data.title
+      config.summary = data.description
+      config.description = [data.description]
+      config.video = data.body.match(/src="https:\/\/www\.youtube\.com\/embed\/([A-Za-z0-9_-]+)"/)?.[1] ?? false
+      
+      if (data.source_url?.includes("github.com")) {
+        config.github = data.source_url
+      }
+
+      const versionsRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/version`, {
+        headers: {
+          Authorization: auth.modrinth,
+          "Content-Type": "application/json"
+        }
+      })
+      if (!versionsRequest.ok) {
+        error("Failed to get project files", await versionsRequest.text())
+      }
+      const versions = await versionsRequest.json()
+
+      config.version = versions[0].version_number
+
+      config.versions = {
+        curseforge: {
+          type: "exact",
+          version: data.game_versions.at(-1)
+        },
+        planetminecraft: {
+          type: "exact",
+          version: data.game_versions.at(-1)
+        },
+        modrinth: {
+          type: "exact",
+          version: data.game_versions.at(-1)
+        }
+      }
+
+      const iconPath = path.join("projects", project.config.id, "pack.png")
+      if (!fs.existsSync(iconPath)) {
+        log(`Downloading image: pack.png`)
+        await sharp(await fetch(data.icon_url).then(e => e.arrayBuffer())).png().toFile(iconPath)
+      }
+
+      if (!settings.ewan) {
+        const hasFeatured = data.gallery.some(e => e.featured)
+        config.images = data.gallery.filter(e => e.title !== "Project Logo").map((e, i) => ({
+          name: e.title,
+          description: e.description || e.title,
+          file: e.title.toLowerCase().replaceAll(" ", "_").replace(/[^a-z0-9_]/g, ""),
+          embed: i < 3 ? true : undefined,
+          featured: (hasFeatured ? e.featured : !i) ? true : undefined
+        }))
+        for (const image of data.gallery) {
+          let name, imgPath
+          if (image.title === "Project Logo") {
+            name = "logo.png"
+            imgPath = path.join(projectPath, name)
+          } else {
+            name = image.title.toLowerCase().replaceAll(" ", "_").replace(/[^a-z0-9_]/g, "") + ".png"
+            imgPath = path.join(projectPath, "images", name)
+          }
+          log(`Downloading image: ${name}`)
+          await sharp(await fetch(image.raw_url).then(e => e.arrayBuffer())).png().toFile(imgPath)
+        }
+      }
     }
   }
 }

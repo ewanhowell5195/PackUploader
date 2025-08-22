@@ -3,7 +3,95 @@ import "../src/main.js"
 const importData = JSON.parse(fs.readFileSync("./data/import.json"))
 
 globalThis.config = {
-  id:importData.id
+  id: importData.id,
+  name: "",
+  summary: "",
+  description: [],
+  optifine: false,
+  video: false,
+  version: "1.0.0",
+  versions: {
+    curseforge: {
+      "type": "latest",
+      "snapshots": false
+    },
+    planetminecraft: {
+      "type": "latest"
+    },
+    modrinth: {
+      "type": "latest",
+      "snapshots": false
+    }
+  },
+  images: [],
+  curseforge: {
+    mainCategory: "16x",
+    additionalCategories: {
+      animated: false,
+      dataPacks: false,
+      fontPacks: false,
+      medieval: false,
+      modSupport: false,
+      modern: false,
+      photoRealistic: false,
+      traditional: false,
+      miscellaneous: true
+    }
+  },
+  planetminecraft: {
+    category: "Other",
+    resolution: 16,
+    progress: 100,
+    credit: "",
+    modifies: {
+      armor: 0,
+      art: 0,
+      environment: 0,
+      font: 0,
+      gui: 0,
+      items: 0,
+      misc: 0,
+      mobs: 0,
+      particles: 0,
+      terrain: 0,
+      audio: 0,
+      models: 0
+    },
+    tags: []
+  },
+  modrinth: {
+    "tags": {
+      "8x-": 0,
+      "16x": 0,
+      "32x": 0,
+      "48x": 0,
+      "64x": 0,
+      "128x": 0,
+      "256x": 0,
+      "512x+": 0,
+      audio: 0,
+      blocks: 0,
+      combat: 0,
+      "core-shaders": 0,
+      cursed: 0,
+      decoration: 0,
+      entities: 0,
+      environment: 0,
+      equipment: 0,
+      fonts: 0,
+      gui: 0,
+      items: 0,
+      locale: 0,
+      modded: 0,
+      models: 0,
+      realistic: 0,
+      simplistic: 0,
+      themed: 0,
+      tweaks: 0,
+      utility: 0,
+      "vanilla-like": 0
+    }
+  }
 }
 
 globalThis.project = {
@@ -19,7 +107,7 @@ if (fs.existsSync(projectPath)) {
   console.error(`Error: "${config.id}" is already exists`)
   process.exit()
 } else {
-  fs.mkdirSync(path.join(projectPath, "images",), { recursive: true })
+  fs.mkdirSync(path.join(projectPath, "images"), { recursive: true })
 }
 
 // Copying
@@ -33,22 +121,28 @@ for (const entry of fs.readdirSync("templates")) {
   fs.cpSync(src, dest)
 }
 
-// Main Details
+// CurseForge
 
 if (settings.ewan) {
-  await curseforge.import(false)
+  if (importData.curseforge.id) {
+    await curseforge.import()
+  }
   await ewanhowell.import()
-} else {
+} else if (importData.curseforge.id) {
   await curseforge.import()
+}
+
+// Modrinth
+
+if (importData.modrinth.id) {
+  await modrinth.import()
 }
 
 // Planet Minecraft
 
-await planetminecraft.import()
-
-// Modrinth
-
-await modrinth.import()
+if (importData.planetminecraft.id) {
+  await planetminecraft.import()
+}
 
 // Saving
 

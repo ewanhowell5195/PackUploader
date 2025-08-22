@@ -424,30 +424,6 @@ export default {
     log("Updated project details")
   },
   async import() {
-    config.planetminecraft = {
-      category: "Other",
-      resolution: 16,
-      progress: 100,
-      credit: "",
-      modifies: {
-        armor: 0,
-        art: 0,
-        environment: 0,
-        font: 0,
-        gui: 0,
-        items: 0,
-        misc: 0,
-        mobs: 0,
-        particles: 0,
-        terrain: 0,
-        audio: 0,
-        models: 0
-      },
-      tags: []
-    }
-
-    if (!project.planetminecraft.id) return
-
     const document = await this.getProjectDom()
 
     const category = document.getElementById("folder_id[]").value
@@ -464,6 +440,64 @@ export default {
       config.planetminecraft.modifies[label] = input.checked ? true : 0
     }
 
-    config.planetminecraft.tags = Array.from(document.querySelectorAll("#item_tags .tag")).map(e => e.textContent.trim())    
+    config.planetminecraft.tags = Array.from(document.querySelectorAll("#item_tags .tag")).map(e => e.textContent.trim())
+
+    if (!project.curseforge.id && !project.modrinth.id) {
+      config.name = document.querySelector('[name="title"]').value
+      config.video = document.querySelector('[name="youtube"]').value || false
+
+      const version = document.getElementById("op1").selectedOptions[0].textContent.slice(10)
+
+      config.versions = {
+        curseforge: {
+          type: "exact",
+          version: version
+        },
+        planetminecraft: {
+          type: "exact",
+          version: version
+        },
+        modrinth: {
+          type: "exact",
+          version: version
+        }
+      }
+      
+      if (!settings.ewan) {
+        const imageData = Array.from(document.querySelectorAll(".image_list > .thumbnail")).map(e => {
+          const file = e.dataset.fullFilename?.split("/").at(-1).slice(0, -6).split("-").slice(1).join("_")
+          return {
+            file,
+            url: e.dataset.fullFilename,
+            title: e.dataset.caption?.split(" - ")[0] || file?.split("_").map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(" "),
+            description: e.dataset.caption?.split(" - ").slice(1).join(" - ")
+          }
+        }).filter(e => e.file)
+        
+        config.images = imageData.filter(e => e.title !== "Project Thumbnail" && e.title !== "Project Logo").map((e, i) => ({
+          name: e.title,
+          description: e.description || e.title,
+          file: e.file,
+          embed: i < 3 ? true : undefined,
+          featured: i ? undefined : true
+        }))
+
+        for (const image of imageData) {
+          let name, imgPath
+          if (image.title === "Project Thumbnail") {
+            name = "thumbnail.png"
+            imgPath = path.join(projectPath, name)
+          } else if (image.title === "Project Logo") {
+            name = "logo.png"
+            imgPath = path.join(projectPath, name)
+          } else {
+            name = image.file + ".png"
+            imgPath = path.join(projectPath, "images", name)
+          }
+          log(`Downloading image: ${name}`)
+          await sharp(await fetch(image.url).then(e => e.arrayBuffer())).png().toFile(imgPath)
+        }
+      }
+    }
   }
 }
