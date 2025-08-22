@@ -1,4 +1,4 @@
-import "./src/main.js"
+import "../src/main.js"
 
 const importData = JSON.parse(fs.readFileSync("./data/import.json"))
 

@@ -1,4 +1,4 @@
-import "./src/main.js"
+import "../src/main.js"
 
 globalThis.data = JSON.parse(fs.readFileSync("./data/details.json"))
 
