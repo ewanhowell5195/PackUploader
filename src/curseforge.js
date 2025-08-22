@@ -134,8 +134,16 @@ export default {
       case "latest":
         versions.push(versionsRequest[0].id)
         break
+      case "exact":
+        versions.push(versionsRequest.find(e => e.name === project.config.versions.curseforge.version).id)
+        break
       case "after":
         versions.push(...versionsRequest.slice(0, versionsRequest.findIndex(e => e.name === project.config.versions.curseforge.version) + 1).map(e => e.id))
+        break
+      case "range":
+        const start = versionsRequest.findIndex(e => e.name === project.config.versions.curseforge.version)
+        const end = versionsRequest.findIndex(e => e.name === project.config.versions.curseforge.to)
+        versions.push(...versionsRequest.slice(Math.min(start, end), Math.max(start, end) + 1).map(e => e.id))
         break
     }
 

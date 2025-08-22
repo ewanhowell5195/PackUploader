@@ -170,7 +170,7 @@ export default {
 
     log(`Project URL: https://www.planetminecraft.com/texture-pack/${project.planetminecraft.slug}`)
   },
-  async createForm($, tags) {
+  async createForm($, tags, keepVersion) {
     const form = makeForm({
       member_id: $("[name=member_id]").val(),
       resource_id: project.planetminecraft.id,
@@ -200,13 +200,23 @@ export default {
       "folder_id[]": categories[project.config.planetminecraft.category] ?? 27
     })
 
-    const versions = $("#op1 option").map((_, option) => ({
-      id: $(option).val(),
-      name: $(option).text().slice(10)
-    })).get().filter(e => e.name !== "Bedrock" && e.name !== "Dungeons")
+    // Minecraft version number
+    if (keepVersion) {
+      form.append("op1", $("#op1").val())
+    } else {
+      const versions = $("#op1 option").map((_, option) => ({
+        id: $(option).val(),
+        name: $(option).text().slice(10)
+      })).get().filter(e => e.name !== "Bedrock" && e.name !== "Dungeons")
 
-    if (project.config.versions.planetminecraft.type === "latest") {
-      form.append("op1", versions[0].id) // Minecraft version number
+      switch (project.config.versions.planetminecraft.type) {
+        case "latest":
+          form.append("op1", versions[0].id)
+          break
+        case "exact":
+          form.append("op1", versions.find(e => e.name === project.config.versions.planetminecraft.version).id)
+          break
+      }
     }
 
     const modifies = {
@@ -400,7 +410,7 @@ export default {
   async updateDetails() {
     const $ = await this.getProject()
 
-    const form = await this.createForm($, $("#item_tags > div").map((i, e) => $(e).data("tag-id")).get())
+    const form = await this.createForm($, $("#item_tags > div").map((i, e) => $(e).data("tag-id")).get(), true)
     
     if (data.live) {
       form.append("live", 1)

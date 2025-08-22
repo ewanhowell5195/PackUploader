@@ -68,9 +68,17 @@ export default {
     switch (project.config.versions.modrinth.type) {
       case "latest":
         versions.push(versionsRequest[0].version)
+        break      
+      case "exact":
+        versions.push(versionsRequest.find(e => e.version === project.config.versions.modrinth.version).version)
         break
       case "after":
         versions.push(...versionsRequest.slice(0, versionsRequest.findIndex(e => e.version === project.config.versions.modrinth.version) + 1).map(e => e.version))
+        break
+      case "range":
+        const start = versionsRequest.findIndex(e => e.version === project.config.versions.modrinth.version)
+        const end = versionsRequest.findIndex(e => e.version === project.config.versions.modrinth.to)
+        versions.push(...versionsRequest.slice(Math.min(start, end), Math.max(start, end) + 1).map(e => e.version))
         break
     }
 
