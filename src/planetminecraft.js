@@ -247,7 +247,7 @@ export default {
 
     let i = 0
     for (const image of project.config.images) {
-      if (image.logo) continue
+      if (image.logo && (settings.ewan || project.curseforge.id || project.modrinth.id)) continue
       if (i > 14) break
       i++
       const r = await request(form, "item/new")
@@ -299,7 +299,25 @@ export default {
     }
   },
   async getDescription() {
-    const imageData = await curseforge.getMedia()
+    const document = await this.getProjectDom()
+
+    const imageData = Array.from(document.querySelectorAll(".image_list > .thumbnail")).map(e => ({
+      url: e.dataset.fullFilename,
+      title: e.dataset.caption?.split(" - ")[0]
+    }))
+
+    let logo
+    if (project.config.images.some(e => e.logo)) {
+      if (project.curseforge.id) {
+        const images = await curseforge.getMedia()
+        logo = images.find(e => e.type === 1 && (e.title === "logo.jpg" || e.title === "Project Logo"))?.url
+      } else if (project.modrinth.id) {
+        const images = await modrinth.getImages()
+        logo = images.find(e => e.title === "Project Logo")?.raw_url
+      } else {
+        logo = imageData.find(e => e.title === "Project Logo")?.url
+      }
+    }
 
     let bbcode = fs.readFileSync(path.join("projects", project.config.id, "templates", "planetminecraft.bbcode"), "utf-8")
 
@@ -318,15 +336,15 @@ export default {
         const images = project.config.images.filter(e => e.embed)
         const imageList = []
         for (const image of images) {
-          imageList.push(`[img width=600 height=338]${imageData.find(e => e.type === 1 && (e.title === image.file + ".jpg" || e.title === image.name))?.url}[/img]`)
+          imageList.push(`[img width=600 height=338]${imageData.find(e => e.title === image.name)?.url}[/img]`)
         }
         str = imageList.join("\n\n")
       } else if (replacement[1] === "logo") {
-        if (project.config.images.some(e => e.logo)) {
+        if (project.config.images.some(e => e.logo) && (logo || settings.ewan)) {
           if (settings.ewan) {
-            str = `[img]https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp[/img]`
+            str = `[img width=700]https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp[/img]`
           } else {
-            str = `[img]${imageData.find(e => e.type === 1 && (e.title === "logo.jpg" || e.title === "Project Logo"))?.url}[/img]`
+            str = `[img width=700]${logo}[/img]`
           }
         } else {
           str = `[style b size=48px]${project.config.name}[/style]`

@@ -1,9 +1,5 @@
 import "./src/main.js"
-import planetminecraft from "./src/planetminecraft.js"
-import modrinth from "./src/modrinth.js"
-import ewanhowell from "./src/ewanhowell.js"
 
-globalThis.curseforge = (await import("./src/curseforge.js")).default
 globalThis.config = JSON.parse(fs.readFileSync("./data/update/update.json"))
 
 console.log(`Uploading update for project: ${config.id}`)
@@ -28,7 +24,9 @@ config.pack = fs.readFileSync("data/update/pack.zip")
 
 // Updates
 
-// await curseforge.uploadPack()
+if (project.curseforge.id) {
+  await curseforge.uploadPack()
+}
 
 if (project.planetminecraft.id) {
   await planetminecraft.versionUpdate()

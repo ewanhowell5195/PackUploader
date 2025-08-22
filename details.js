@@ -1,9 +1,5 @@
 import "./src/main.js"
-import planetminecraft from "./src/planetminecraft.js"
-import modrinth from "./src/modrinth.js"
-import ewanhowell from "./src/ewanhowell.js"
 
-globalThis.curseforge = (await import("./src/curseforge.js")).default
 globalThis.data = JSON.parse(fs.readFileSync("./data/details.json"))
 
 console.log(`Updating details for project: ${data.id}`)
@@ -61,15 +57,17 @@ if (data.images) {
     })
   }
 
-  if (config.icon) {
-    await curseforge.uploadIcon()
+  if (project.curseforge.id) {
+    if (config.icon) {
+      await curseforge.uploadIcon()
+    }
+
+    await curseforge.removeImages()
+    console.log("CurseForge: Removed project images")
+
+    await curseforge.uploadImages()
+    console.log("CurseForge: Added project images")
   }
-
-  await curseforge.removeImages()
-  console.log("CurseForge: Removed project images")
-
-  await curseforge.uploadImages()
-  console.log("CurseForge: Added project images")
 
   if (project.planetminecraft.id) {
     await planetminecraft.removeImages()
@@ -102,12 +100,13 @@ if (data.images) {
 
 // Update details
 
-await curseforge.setDetails()
-console.log("CurseForge: Updated project details")
+if (project.curseforge.id) {
+  await curseforge.setDetails()
+  console.log("CurseForge: Updated project details")
+}
 
 if (project.planetminecraft.id) {
   await planetminecraft.updateDetails()
-  console.log("Planet Minecraft: Updated project details")
 }
 
 if (project.modrinth.id) {

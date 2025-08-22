@@ -192,11 +192,12 @@ export default {
           str = `<iframe src="https://www.youtube.com/embed/${project.config.video}" width="600" height="336" allowfullscreen="allowfullscreen"></iframe><br><br><br>\n\n`
         }
       } else if (replacement[1] === "logo") {
-        if (project.config.images.some(e => e.logo)) {
+        const logo = gallery.find(e => e.title === "Project Logo")?.raw_url
+        if (project.config.images.some(e => e.logo) && (logo || settings.ewan)) {
           if (settings.ewan) {
-            str = `![${project.config.name} Logo](https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp)`
+            str += `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="700" alt="${project.config.name} Logo">`
           } else {
-            str = `![${project.config.name} Logo](${gallery.find(e => e.title === "Project Logo")?.raw_url})`
+            str += `<img src="${logo}" width="700" alt="${project.config.name} Logo">`
           }
         } else {
           str = "# " + project.config.name

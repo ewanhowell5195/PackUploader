@@ -1,9 +1,5 @@
 import "./src/main.js"
-import planetminecraft from "./src/planetminecraft.js"
-import modrinth from "./src/modrinth.js"
-import ewanhowell from "./src/ewanhowell.js"
 
-globalThis.curseforge = (await import("./src/curseforge.js")).default
 globalThis.config = JSON.parse(fs.readFileSync("./data/create/create.json"))
 
 console.log(`Creating project: ${config.id}`)

@@ -1,8 +1,4 @@
 import "./src/main.js"
-import curseforge from "./src/curseforge.js"
-import planetminecraft from "./src/planetminecraft.js"
-import modrinth from "./src/modrinth.js"
-import ewanhowell from "./src/ewanhowell.js"
 
 const importData = JSON.parse(fs.readFileSync("./data/import.json"))
 

@@ -5,6 +5,11 @@ globalThis.load = (await import("cheerio")).load
 globalThis.path = await import("node:path")
 globalThis.fs = await import("node:fs")
 
+globalThis.curseforge = (await import("./curseforge.js")).default
+globalThis.planetminecraft = (await import("./planetminecraft.js")).default
+globalThis.modrinth = (await import("./modrinth.js")).default
+globalThis.ewanhowell = (await import("./ewanhowell.js")).default
+
 globalThis.makeForm = data => {
   const form = new FormData
   for (const [k, v] of Object.entries(data)) {
