@@ -64,7 +64,7 @@ export default {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        name: project.config.name,
+        name: project.config.curseforge.name ?? project.config.name,
         avatarUrl: iconURL,
         summary: project.config.summary,
         description: "placeholder",
@@ -256,7 +256,7 @@ export default {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        name: project.config.name,
+        name: project.config.curseforge.name ?? project.config.name,
         avatarUrl: await iconRequest.text(),
         slug: project.curseforge.slug,
         allowComments: true,
@@ -400,7 +400,7 @@ export default {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        name: project.config.name,
+        name: project.config.curseforge.name ?? project.config.name,
         slug: project.curseforge.slug,
         allowComments: true,
         enableProjectPages: false,
