@@ -44,29 +44,16 @@ You will need:
 ## Planet Minecraft
 
 You will need:
-- `token`
 - `pmc_autologin` cookie
-
-Make sure to have open [Planet Minecraft](https://www.planetminecraft.com/) open and logged in before starting.
-
-### Token
-
-Run this in the **Console** tab of your browser's developer tools to copy your token:
-
-```js
-copy(document.getElementById("core-csrf-token").getAttribute("content"))
-```
-
-Paste the copied token into your `auth.json`.
 
 ### Cookie
 
-1. Open your browser's developer tools.
-
-   * **Firefox:** Storage tab
-   * **Chrome:** Application tab
-2. Under **Cookies**, select the site.
-3. Copy the `pmc_autologin` name and value into your `auth.json`.
+1. Go to [Planet Minecraft](https://www.planetminecraft.com/) and log in.
+2. Open your browser's developer tools.
+   - **Firefox:** Storage tab
+   - **Chrome:** Application tab
+3. Under **Cookies**, select the site.
+4. Copy the `pmc_autologin` name and value into your `auth.json`.
 
 ## Modrinth
 
