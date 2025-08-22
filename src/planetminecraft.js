@@ -186,7 +186,7 @@ export default {
       description: await this.getDescription(),
       wid1: 1,
       wfile1: 1,
-      wurl1: settings.ewan ? `https://ewanhowell.com/resourcepacks/${project.config.id}` : `https://www.curseforge.com/minecraft/texture-packs/${project.curseforge.slug}`,
+      wurl1: settings.ewan ? `https://ewanhowell.com/resourcepacks/${project.config.id}` : project.curseforge.id ? `https://www.curseforge.com/minecraft/texture-packs/${project.curseforge.slug}` : `https://modrinth.com/resourcepack/${project.modrinth.slug}`,
       wtitle1: "Download here",
       wid0: 0,
       wfile0: 0,
