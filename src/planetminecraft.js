@@ -1,5 +1,7 @@
 import { JSDOM } from "jsdom"
 
+let token
+
 function log(message) {
   console.log(`Planet Minecraft: ${message}`)
 }
@@ -31,8 +33,8 @@ async function request(body, referrer, json = true) {
   const r = await fetch("https://www.planetminecraft.com/ajax.php", {
     method: "POST",
     headers: {
-      "x-pmc-csrf-token": auth.planetminecraft.token,
-      cookie: auth.planetminecraft.cookie,
+      "x-pmc-csrf-token": token,
+      cookie: auth.planetminecraft,
       Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${referrer}`
     },
     body
@@ -76,7 +78,7 @@ export default {
     const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
       headers: {
         "cache-control": "no-cache",
-        cookie: auth.planetminecraft.cookie
+        cookie: auth.planetminecraft
       },
       redirect: "manual"
     })
@@ -89,13 +91,17 @@ export default {
 
     log("Fetched project")
 
-    return load(await projectRequest.text())
+    const $ = load(await projectRequest.text())
+
+    token = $("#core-csrf-token").attr("content")
+
+    return $
   },
   async getProjectDom() {
     const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
       headers: {
         "cache-control": "no-cache",
-        cookie: auth.planetminecraft.cookie
+        cookie: auth.planetminecraft
       },
       redirect: "manual"
     })
@@ -108,7 +114,11 @@ export default {
 
     log("Fetched project")
 
-    return new JSDOM(await projectRequest.text()).window.document
+    const document = new JSDOM(await projectRequest.text()).window.document
+
+    token = document.getElementById("core-csrf-token").getAttribute("content")
+
+    return document
   },
   async createProject() {
     // Get New Project
@@ -116,7 +126,7 @@ export default {
     const newProjectRequest = await fetch("https://www.planetminecraft.com/account/manage/texture-packs/item/new", {
       headers: {
         "cache-control": "no-cache",
-        cookie: auth.planetminecraft.cookie
+        cookie: auth.planetminecraft
       },
       redirect: "manual"
     })
@@ -128,6 +138,8 @@ export default {
     }
 
     const $ = load(await newProjectRequest.text())
+
+    token = $("#core-csrf-token").attr("content")
 
     project.planetminecraft.id = parseInt($("[name=resource_id]").val())
 
