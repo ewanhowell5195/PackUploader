@@ -1,0 +1,20 @@
+{
+  "id": "better-bows",
+  "changelog": "Updated for 1.21.8\nThe crossbow now supports spectral arrows, tipped arrows, and multishot showing three arrows",
+  "version": "1.2.0",
+  "versions": {
+    "curseforge": {
+      "type": "after",
+      "version": "1.20.2",
+      "snapshots": false
+    },
+    "planetminecraft": {
+      "type": "latest"
+    },
+    "modrinth": {
+      "type": "after",
+      "version": "1.20.2",
+      "snapshots": false
+    }
+  }
+}
