@@ -1,5 +1,5 @@
 # PackUploader
-Easily upload resource packs to **CurseForge**, **Planet Minecraft**, and **Modrinth**.
+Easily upload resource packs to **CurseForge**, **Planet Minecraft**, and **Modrinth**, all at the same time!
 
 PackUploader is an automation tool that streamlines the process of publishing Minecraft resource packs across multiple platforms simultaneously. Instead of manually uploading to each site individually, configure your project once and deploy everywhere with a single command.
 
