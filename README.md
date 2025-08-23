@@ -284,7 +284,7 @@ If you already have a project imported but it's missing from some platforms (e.g
 - At least one image in the `images/` folder (CurseForge and Modrinth will reject projects without images)
 
 ## Optional Files
-- `logo.png` - Logo image for your project description (replaces `{{ logo }}` template tag). If not provided, `{{ logo }}` becomes the project name as text. Logo images are uploaded as the last image in your project gallery, but won't appear in CurseForge's main image carousel since they're not featured.
+- `logo.png` - Logo image for your project description (replaces `{{ logo }}` template tag). If not provided, `{{ logo }}` becomes the project name as text. Logo images are uploaded as the last image in your project gallery. On CurseForge the image will not be marked as featured so will not appear in CurseForge's main image carousel.
 - `thumbnail.png` - Thumbnail image (used as first image on CurseForge and Planet Minecraft)
 - `images/` - Folder containing additional project images (must be PNG format)
 
