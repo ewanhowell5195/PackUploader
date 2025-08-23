@@ -267,7 +267,7 @@ Used for creating new projects on all platforms.
 3. Add your required files (pack.zip, pack.png, create.json)
 4. Double-click `create.bat` to create and upload the project
 
-Your project will have been created and uploaded. You will now have a project folder within the `/projects` directory with all your project information.
+Your project will have been created and uploaded. You will now have a project folder within the `/projects/` directory with all your project information.
 
 Note: Planet Minecraft projects are created in draft state by default. You must manually set them to live on the Planet Minecraft website once your CurseForge/Modrinth projects get moderator approved.
 
@@ -531,13 +531,21 @@ Configure which platforms to import from using project IDs and slugs:
 ```
 
 ### Settings
-- `id` - Your local project identifier
+- `id` - Your local project identifier. This determines the folder name in `/projects/` and is how you'll reference this project in other scripts
 - For each platform: provide both the `id` and `slug` for the project
 - If the project doesn't exist on a platform yet, set that platform's `id` to `null`
+
+### Finding Project IDs
+**CurseForge:** Found in the sidebar of your project page, or in the URL on the project management page
+
+**Planet Minecraft:** Found in the URL when editing your project
+
+**Modrinth:** On your project page, click the triple dot menu and select "Copy ID"
 
 ### After Importing
 - Check your project folder in `/projects/yourprojectid/` 
 - Verify all information imported correctly
+- Add your description. Due to the complexity of descriptions, they cannot be nicely imported. You must add it yourself after importing
 - Add missing files like `thumbnail.png` or `logo.png` if desired
 - Use the create script to add the project to any missing platforms
 
