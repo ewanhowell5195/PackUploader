@@ -123,6 +123,7 @@ First, change `"ewan": true` to `"ewan": false` to disable ewanhowell.com suppor
 There are two image width options:
 - `logoWidth`: The width that project logos will be when included in project descriptions
 - `imageWidths`: The width that project images will be when included in project descriptions
+
 These can also both be set per project by including them in a projects config JSON.
 
 <details>
