@@ -220,15 +220,15 @@ export default {
         str = str.trim()
       } else if (replacement[1] === "video") {
         if (project.config.video) {
-          str = `<iframe src="https://www.youtube.com/embed/${project.config.video}" width="600" height="336" allowfullscreen="allowfullscreen"></iframe><br><br><br>\n\n`
+          str = `<iframe src="https://www.youtube.com/embed/${project.config.video}" width="${project.config.imageWidths ?? settings.imageWidths ?? 600}" allowfullscreen="allowfullscreen"></iframe><br><br><br>\n\n`
         }
       } else if (replacement[1] === "logo") {
         const logo = gallery.find(e => e.title === "Project Logo")?.raw_url
         if (project.config.images.some(e => e.logo) && (logo || settings.ewan)) {
           if (settings.ewan) {
-            str += `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="700" alt="${project.config.name} Logo">`
+            str += `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo">`
           } else {
-            str += `<img src="${logo}" width="700" alt="${project.config.name} Logo">`
+            str += `<img src="${logo}" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo">`
           }
         } else {
           str = "# " + project.config.name

@@ -555,15 +555,15 @@ export default {
       } else if (replacement[1] === "images") {
         const images = project.config.images.filter(e => e.embed)
         for (const image of images) {
-          str += `<br><img src="${imageData.find(e => e.type === 1 && (e.title === image.file + ".jpg" || e.title === image.name))?.url}" width="600" alt="${image.name}"><br>`
+          str += `<br><img src="${imageData.find(e => e.type === 1 && (e.title === image.file + ".jpg" || e.title === image.name))?.url}" width="${project.config.imageWidths ?? settings.imageWidths ?? 600}" alt="${image.name}"><br>`
         }
       } else if (replacement[1] === "logo") {
         const logo = imageData.find(e => e.type === 1 && (e.title === "logo.png" || e.title === "Project Logo"))?.url
         if (project.config.images.some(e => e.logo) && (logo || settings.ewan)) {
           if (settings.ewan) {
-            str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="700" alt="${project.config.name} Logo"><br><br>`
+            str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br><br>`
           } else {
-            str = `<img src="${logo}" width="700" alt="${project.config.name} Logo"><br><br>`
+            str = `<img src="${logo}" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br><br>`
           }
         } else {
           str = `<h1 style="font-size: 3ic; font-weight: 700; text-decoration: underline; display: inline-block;">${project.config.name}</h1>`

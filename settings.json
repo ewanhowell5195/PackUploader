@@ -1,5 +1,7 @@
 {
   "ewan": true,
+  "logoWidth": 700,
+  "imageWidths": 600,
   "curseforge": {
     "donation": {
       "type": "kofi",

@@ -365,15 +365,15 @@ export default {
         const images = project.config.images.filter(e => e.embed)
         const imageList = []
         for (const image of images) {
-          imageList.push(`[img width=600 height=338]${imageData.find(e => e.title === image.name)?.url}[/img]`)
+          imageList.push(`[img width=${project.config.imageWidths ?? settings.imageWidths ?? 600}]${imageData.find(e => e.title === image.name)?.url}[/img]`)
         }
         str = imageList.join("\n\n")
       } else if (replacement[1] === "logo") {
         if (project.config.images.some(e => e.logo) && (logo || settings.ewan)) {
           if (settings.ewan) {
-            str = `[img width=700]https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp[/img]`
+            str = `[img width=${project.config.logoWidth ?? settings.logoWidth ?? 700}]https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp[/img]`
           } else {
-            str = `[img width=700]${logo}[/img]`
+            str = `[img width=${project.config.logoWidth ?? settings.logoWidth ?? 700}]${logo}[/img]`
           }
         } else {
           str = `[style b size=48px]${project.config.name}[/style]`
