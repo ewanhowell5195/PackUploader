@@ -41,7 +41,7 @@ PackUploader is an automation tool that streamlines the process of publishing Mi
 5. Run `npm i` to install all required dependencies
 
 ## Authentication
-This file stores your authentication tokens and cookies, allowing the program to interact with the websites on your behalf.
+The `auth.json` file stores your authentication tokens and cookies, allowing the program to interact with the websites on your behalf.
 
 Cookies must be provided in the format:
 ```
