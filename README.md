@@ -18,6 +18,17 @@ PackUploader is an automation tool that streamlines the process of publishing Mi
 
 **All Platforms Required:** You must have accounts and configure authentication for all three platforms (CurseForge, Planet Minecraft, and Modrinth) during setup, even if you don't plan to use all of them initially.
 
+## Table of Contents
+- [First Time Setup](#first-time-setup)
+  - [Installation](#installation)
+  - [Authentication](#authentication)
+  - [Configuration](#configuration)
+- [Description Templates](#description-templates)
+- [Creating Projects](#creating-projects)
+- [Importing Projects](#importing-projects)
+- [Updating Projects](#updating-projects)
+- [Editing Project Details](#editing-project-details)
+
 ---
 
 # First Time Setup
