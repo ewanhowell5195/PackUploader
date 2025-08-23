@@ -89,8 +89,6 @@ export default {
       error("Failed to fetch project", await projectRequest.text())
     }
 
-    log("Fetched project")
-
     const $ = load(await projectRequest.text())
 
     token = $("#core-csrf-token").attr("content")
@@ -111,8 +109,6 @@ export default {
     if (!projectRequest.ok) {
       error("Failed to fetch project", await projectRequest.text())
     }
-
-    log("Fetched project")
 
     const document = new JSDOM(await projectRequest.text()).window.document
 

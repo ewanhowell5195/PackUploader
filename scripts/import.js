@@ -129,26 +129,32 @@ for (const entry of fs.readdirSync("templates")) {
 if (settings.ewan) {
   if (importData.curseforge.id) {
     await curseforge.import()
+    save()
+    console.log("CurseForge: Imported project")
   }
   await ewanhowell.import()
+  save()
+  console.log("Ewan Howell: Imported project")
 } else if (importData.curseforge.id) {
   await curseforge.import()
+  save()
+  console.log("CurseForge: Imported project")
 }
 
 // Modrinth
 
 if (importData.modrinth.id) {
   await modrinth.import()
+  save()
+  console.log("Modrinth: Imported project")
 }
 
 // Planet Minecraft
 
 if (importData.planetminecraft.id) {
   await planetminecraft.import()
+  save()
+  console.log("Planet Minecraft: Imported project")
 }
 
-// Saving
-
-save()
-
-console.log(`Imported "${config.id}"`)
+console.log(`Project fully imported "${config.id}"`)
