@@ -460,7 +460,7 @@ export default {
     for (const check of document.querySelectorAll("#main_folder_modified .folder-item")) {
       const input = check.querySelector("input")
       const label = check.querySelector("label").textContent.toLowerCase()
-      config.planetminecraft.modifies[label] = input.checked ? true : 0
+      config.planetminecraft.modifies[label] = input.checked || 0
     }
 
     config.planetminecraft.tags = Array.from(document.querySelectorAll("#item_tags .tag")).map(e => e.textContent.trim())

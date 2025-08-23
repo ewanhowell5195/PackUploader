@@ -28,14 +28,14 @@ globalThis.config = {
   curseforge: {
     mainCategory: "16x",
     additionalCategories: {
-      animated: false,
-      dataPacks: false,
-      fontPacks: false,
-      medieval: false,
-      modSupport: false,
-      modern: false,
-      photoRealistic: false,
-      traditional: false,
+      animated: 0,
+      dataPacks: 0,
+      fontPacks: 0,
+      medieval: 0,
+      modSupport: 0,
+      modern: 0,
+      photoRealistic: 0,
+      traditional: 0,
       miscellaneous: true
     },
     license: "All Rights Reserved"

@@ -666,7 +666,7 @@ export default {
     }
 
     config.curseforge.mainCategory = Object.entries(categories).find(e => e[1] === data.primaryCategoryId)[0]
-    config.curseforge.additionalCategories = Object.fromEntries(Object.entries(subCategories).map(([k, v]) => [k, data.subCategoryIds.includes(v)]))
+    config.curseforge.additionalCategories = Object.fromEntries(Object.entries(subCategories).map(([k, v]) => [k, data.subCategoryIds.includes(v)] || 0))
     config.curseforge.license = Object.entries(licenses).find(e => e[1] === license)[0]
 
     log(`Downloading image: pack.png`)
