@@ -126,6 +126,8 @@ There are two image width options:
 
 These can also both be set per project by including them in a projects config JSON.
 
+### Site settings
+
 <details>
   <summary><strong>CurseForge Settings</strong></summary>
 
