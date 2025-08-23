@@ -421,6 +421,21 @@ export default {
     }
     log("Social links set")
 
+    const licenseRequest = await fetch(`https://authors.curseforge.com/_api/project-license/${project.curseforge.id}/update`, {
+      method: "PUT",
+      headers: {
+        cookie: auth.curseforge.cookie,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        licenseId: licenses[project.config.curseforge.license] ?? 1
+      })
+    })
+    if (!licenseRequest.ok) {
+      console.error(`Failed to set license - ${await licenseRequest.text()}`)
+    }
+    log("License set")
+
     const donationTypes = {
       none: -1,
       paypal: 1,
@@ -446,8 +461,7 @@ export default {
         subCategoryIds: Object.entries(project.config.curseforge.additionalCategories).filter(e => e[1]).map(e => subCategories[e[0]]),
         summary: project.config.summary,
         donationTypeId: donationTypes[settings.curseforge.donation.type],
-        donationIdentifier: settings.curseforge.donation.type === "none" ? "" : settings.curseforge.donation.value,
-        licenseId: licenses[project.config.curseforge.license] ?? 1
+        donationIdentifier: settings.curseforge.donation.type === "none" ? "" : settings.curseforge.donation.value
       })
     })
     if (!updateRequest.ok) {
