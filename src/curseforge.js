@@ -30,6 +30,36 @@ const subCategories = {
   miscellaneous: 405
 }
 
+const licenses = {
+  "Academic Free License v3.0": 3,
+  "Ace3 Style BSD": 162,
+  "All Rights Reserved": 1,
+  "Apache License version 2.0": 14,
+  "Apple Public Source License version 2.0 (APSL)": 15,
+  "Attribution-NonCommercial-ShareAlike 4.0 International": 22004,
+  "BSD License": 5,
+  "Common Development and Distribution License (CDDL)": 550,
+  "Creative Commons 4.0": 22002,
+  "Creative Commons Attribution-NonCommercial 3.0 Unported": 22001,
+  "Eclipse Public License - v 2.0": 22003,
+  "GNU Affero General Public License version 3 (AGPLv3)": 10,
+  "GNU General Public License version 2 (GPLv2)": 6,
+  "GNU General Public License version 3 (GPLv3)": 7,
+  "GNU Lesser General Public License version 2.1 (LGPLv2.1)": 8,
+  "GNU Lesser General Public License version 3 (LGPLv3)": 9,
+  "ISC License (ISCL)": 18,
+  "Microsoft Public License (Ms-PL)": 16,
+  "Microsoft Reciprocal License (Ms-RL)": 17,
+  "MIT License": 4,
+  "Mozilla Public License 1.0 (MPL)": 11,
+  "Mozilla Public License 1.1 (MPL 1.1)": 13,
+  "Mozilla Public License 2.0": 22000,
+  "PolyForm Shield License 1.0.0": 22005,
+  "Public Domain": 2,
+  "WTFPL": 4184,
+  "zlib/libpng License": 12
+}
+
 export default {
   async createProject() {
     // Icon Upload
@@ -75,7 +105,7 @@ export default {
         gameId: 432,
         classId: 12,
         descriptionType: 1,
-        licenseId: 1
+        licenseId: licenses[project.config.curseforge.license] ?? 1
       })
     })
 
@@ -416,7 +446,8 @@ export default {
         subCategoryIds: Object.entries(project.config.curseforge.additionalCategories).filter(e => e[1]).map(e => subCategories[e[0]]),
         summary: project.config.summary,
         donationTypeId: donationTypes[settings.curseforge.donation.type],
-        donationIdentifier: settings.curseforge.donation.type === "none" ? "" : settings.curseforge.donation.value
+        donationIdentifier: settings.curseforge.donation.type === "none" ? "" : settings.curseforge.donation.value,
+        licenseId: licenses[project.config.curseforge.license] ?? 1
       })
     })
     if (!updateRequest.ok) {
@@ -585,6 +616,17 @@ export default {
       await error("Failed to get GitHub link", sourceRequest)
     }
 
+    const licenseRequest = await fetch(`https://authors.curseforge.com/_api/project-license/license/${project.curseforge.id}`, {
+      headers: {
+        cookie: auth.curseforge.cookie,
+        "Content-Type": "application/json"
+      }
+    })
+    if (!licenseRequest.ok) {
+      await error("Failed to get license", licenseRequest)
+    }
+    const license = (await licenseRequest.json()).licenseId
+
     const filesRequest = await fetch(`https://authors.curseforge.com/_api/project-files?${new URLSearchParams({
       filter: `{"projectId": ${project.curseforge.id}}`,
       range: "[0, 0]",
@@ -623,10 +665,9 @@ export default {
       }
     }
 
-    config.curseforge = {
-      mainCategory: Object.entries(categories).find(e => e[1] === data.primaryCategoryId)[0],
-      additionalCategories: Object.fromEntries(Object.entries(subCategories).map(([k, v]) => [k, data.subCategoryIds.includes(v)]))
-    }
+    config.curseforge.mainCategory = Object.entries(categories).find(e => e[1] === data.primaryCategoryId)[0]
+    config.curseforge.additionalCategories = Object.fromEntries(Object.entries(subCategories).map(([k, v]) => [k, data.subCategoryIds.includes(v)]))
+    config.curseforge.license = Object.entries(licenses).find(e => e[1] === license)[0]
 
     log(`Downloading image: pack.png`)
     await sharp(await fetch(data.avatarUrl).then(e => e.arrayBuffer())).png().toFile(path.join("projects", project.config.id, "pack.png"))

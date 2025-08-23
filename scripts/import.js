@@ -9,6 +9,7 @@ globalThis.config = {
   description: [],
   optifine: false,
   video: false,
+  github: false,
   version: "1.0.0",
   versions: {
     curseforge: {
@@ -36,7 +37,8 @@ globalThis.config = {
       photoRealistic: false,
       traditional: false,
       miscellaneous: true
-    }
+    },
+    license: "All Rights Reserved"
   },
   planetminecraft: {
     category: "Other",
@@ -60,7 +62,7 @@ globalThis.config = {
     tags: []
   },
   modrinth: {
-    "tags": {
+    tags: {
       "8x-": 0,
       "16x": 0,
       "32x": 0,
@@ -90,7 +92,8 @@ globalThis.config = {
       tweaks: 0,
       utility: 0,
       "vanilla-like": 0
-    }
+    },
+    license: "All Rights Reserved/No License"
   }
 }
 

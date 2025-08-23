@@ -10,6 +10,29 @@ function error(err, res) {
   }
 }
 
+const licenses = {
+  "All Rights Reserved/No License": "LicenseRef-All-Rights-Reserved",
+  "Apache License 2.0": "Apache-2.0",
+  'BSD 2-Clause "Simplified" License': "BSD-2-Clause",
+  'BSD 3-Clause "New" or "Revised" License': "BSD-3-Clause",
+  "CC Zero (Public Domain equivalent)": "CC0-1.0",
+  "CC-BY 4.0": "CC-BY-4.0",
+  "CC-BY-NC 4.0": "CC-BY-NC-4.0",
+  "CC-BY-NC-ND 4.0": "CC-BY-NC-ND-4.0",
+  "CC-BY-NC-SA 4.0": "CC-BY-NC-SA-4.0",
+  "CC-BY-ND 4.0": "CC-BY-ND-4.0",
+  "CC-BY-SA 4.0": "CC-BY-SA-4.0",
+  "GNU Affero General Public License v3": "AGPL-3.0",
+  "GNU General Public License v2": "GPL-2.0",
+  "GNU General Public License v3": "GPL-3.0",
+  "GNU Lesser General Public License v2.1": "LGPL-2.1",
+  "GNU Lesser General Public License v3": "LGPL-3.0",
+  "ISC License": "ISC",
+  "MIT License": "MIT",
+  "Mozilla Public License 2.0": "MPL-2.0",
+  "zlib License": "Zlib"
+}
+
 export default {
   async createProject() {
     const form = makeForm({
@@ -25,7 +48,7 @@ export default {
         issues_url: project.config.github ? project.config.github.replace(/\/+$/, "") + "/issues" : undefined,
         source_url: project.config.github || undefined,
         discord_url: settings.modrinth.discord,
-        license_id: "LicenseRef-All-Rights-Reserved",
+        license_id: licenses[project.config.modrinth.license] ?? "LicenseRef-All-Rights-Reserved",
         project_type: "resourcepack",
         is_draft: true,
         initial_versions: []
@@ -268,6 +291,7 @@ export default {
         issues_url: project.config.github ? project.config.github.replace(/\/+$/, "") + "/issues" : undefined,
         source_url: project.config.github || undefined,
         discord_url: settings.modrinth.discord,
+        license_id: licenses[project.config.modrinth.license] ?? "LicenseRef-All-Rights-Reserved",
         requested_status: "approved",
         status: !live ? "processing" : undefined
       })
@@ -300,6 +324,8 @@ export default {
     for (const category of data.additional_categories) {
       config.modrinth.tags[category] = true
     }
+
+    config.modrinth.license = Object.entries(licenses).find(e => e[1] === data.license.id)[0]
 
     if (!project.curseforge.id) {
       config.name = data.title

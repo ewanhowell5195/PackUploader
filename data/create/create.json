@@ -58,7 +58,8 @@
       "photoRealistic": false,
       "traditional": false,
       "miscellaneous": true
-    }
+    },
+    "license": "All Rights Reserved"
   },
   "planetminecraft": {
     "category": "Other",
@@ -123,6 +124,7 @@
       "tweaks": "featured",
       "utility": "featured",
       "vanilla-like": true
-    }
+    },
+    "license": "All Rights Reserved/No License"
   }
 }
