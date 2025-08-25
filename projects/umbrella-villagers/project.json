@@ -1,0 +1,150 @@
+{
+  "config": {
+    "id": "umbrella-villagers",
+    "name": "Umbrella Villagers",
+    "summary": "Give villagers umbrellas!",
+    "description": [
+      "This pack makes it so that villagers hold umbrellas when it rains!",
+      "There are 24 different umbrella variants, and villagers can spawn either right handed or left handed!"
+    ],
+    "optifine": "OptiFine is used to add support for remodelling entities.",
+    "video": "JuXFNU3bYHc",
+    "github": "https://github.com/ewanhowell5195/UmbrellaVillagers",
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Group",
+        "description": "A group of villagers at a market with umbrellas",
+        "file": "group",
+        "embed": true
+      },
+      {
+        "name": "Farming",
+        "description": "Two villagers on a farm in the rain",
+        "file": "farm",
+        "embed": true
+      },
+      {
+        "name": "Below",
+        "description": "Villagers holding umbrellas, seen from below",
+        "file": "under",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Crowd",
+        "description": "A large crowd of villagers with umbrellas",
+        "file": "crowd"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "Bold_Muddy",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "experimental",
+        "model",
+        "villager",
+        "optifine",
+        "cem",
+        "rain",
+        "weather",
+        "cemanimation",
+        "umbrella",
+        "cema"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": true,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": true
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 892146,
+    "slug": "umbrella-villagers"
+  },
+  "planetminecraft": {
+    "id": 6014147,
+    "slug": "umbrella-villagers"
+  },
+  "modrinth": {
+    "id": "zUfkXkv1",
+    "slug": "umbrella-villagers"
+  }
+}
