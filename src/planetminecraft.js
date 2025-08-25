@@ -482,7 +482,7 @@ export default {
         }
       }
       
-      if (!settings.ewan || project.ewanhowell?.ignore) { {
+      if (!settings.ewan || project.ewanhowell?.ignore) {
         const imageData = Array.from(document.querySelectorAll(".image_list > .thumbnail")).map(e => {
           const file = e.dataset.fullFilename?.split("/").at(-1).slice(0, -6).split("-").slice(1).join("_")
           return {
