@@ -1,0 +1,148 @@
+{
+  "config": {
+    "id": "entity-healthbars",
+    "name": "Entity Healthbars",
+    "summary": "The pack where every entity has a healthbar!",
+    "description": [
+      "This pack adds healthbars to all of the entities that support OptiFine entity models."
+    ],
+    "optifine": false,
+    "video": "C8JEzsQkFDc",
+    "github": false,
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.19.2"
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.19.2"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.19.2"
+      }
+    },
+    "images": [
+      {
+        "name": "Healthbars",
+        "description": "A group of mobs with healthbars",
+        "file": "all",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Villagers",
+        "description": "Some villagers in a village",
+        "file": "villagers",
+        "embed": true
+      },
+      {
+        "name": "Creeper",
+        "description": "A creeper in a cave next to some lava",
+        "file": "creeper",
+        "embed": true
+      },
+      {
+        "name": "Striders",
+        "description": "A family of striders in a basalt delta",
+        "file": "striders"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "mobs",
+        "experimental",
+        "health",
+        "optifine",
+        "entity",
+        "models",
+        "bar",
+        "utility",
+        "useful",
+        "healthbars"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": 0,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 416745,
+    "slug": "entity-healthbars"
+  },
+  "planetminecraft": {
+    "id": 4819097,
+    "slug": "entity-healthbars"
+  },
+  "modrinth": {
+    "id": "zc3DOGsA",
+    "slug": "entity-healthbars"
+  }
+}
