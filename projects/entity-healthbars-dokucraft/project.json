@@ -1,0 +1,150 @@
+{
+  "config": {
+    "id": "entity-healthbars-dokucraft",
+    "name": "Entity Healthbars: Dokucraft",
+    "summary": "The pack where every entity has a healthbar!\nNow Dokucraft style!",
+    "description": [
+      "This pack adds healthbars to all of the entities that support OptiFine entity models!",
+      "When you damage an entity, you can now see its health update live. You never need to wonder again if an entity is about to crush you, or almost dead!"
+    ],
+    "optifine": false,
+    "video": false,
+    "github": false,
+    "version": "4.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.19.2"
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.19.2"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.19.2"
+      }
+    },
+    "images": [
+      {
+        "name": "Healthbars",
+        "description": "A group of mobs with healthbars",
+        "file": "all",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Farm Animals",
+        "description": "A collection of farm animals in a field",
+        "file": "mobs",
+        "embed": true
+      },
+      {
+        "name": "Wolves",
+        "description": "A pair of wolves in a forest",
+        "file": "wolves",
+        "embed": true
+      },
+      {
+        "name": "Striders",
+        "description": "A family of striders in a basalt delta",
+        "file": "striders",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": true,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": true,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "32",
+      "progress": 100,
+      "credit": "Dokucraft",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "mobs",
+        "experimental",
+        "model",
+        "health",
+        "optifine",
+        "cem",
+        "models",
+        "dokucraft",
+        "useful",
+        "healthbars"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": 0,
+        "32x": true,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": "featured",
+        "vanilla-like": true
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 473562,
+    "slug": "entity-healthbars-dokucraft"
+  },
+  "planetminecraft": {
+    "id": 5079873,
+    "slug": "entity-healthbars-dokucraft"
+  },
+  "modrinth": {
+    "id": "sD0eiLcA",
+    "slug": "entity-healthbars-dokucraft"
+  }
+}

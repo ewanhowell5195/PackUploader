@@ -1,0 +1,146 @@
+{
+  "config": {
+    "id": "entity-healthbars-64x",
+    "name": "Entity Healthbars: 64x",
+    "summary": "Add Healthbars To All The Entities - Now In 64x",
+    "description": [
+      "This pack adds 64x resolution healthbars to all of the entities that support OptiFine entity models!",
+      "When you damage an entity, you can now see its health update live. You never need to wonder again if an entity is about to crush you, or almost dead!"
+    ],
+    "optifine": false,
+    "video": "EF7SNETTMvU",
+    "github": false,
+    "version": "4.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.19.2"
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.19.2"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.19.2"
+      }
+    },
+    "images": [
+      {
+        "name": "Healthbars",
+        "description": "A group of mobs with healthbars",
+        "file": "all",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Endermen",
+        "description": "A huddle of endermen in a warped forest",
+        "file": "endermen",
+        "embed": true
+      },
+      {
+        "name": "Piglins",
+        "description": "A pair of piglins in a piglin bastion",
+        "file": "piglins",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "64x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "64",
+      "progress": 100,
+      "credit": "OptiFine",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "mobs",
+        "experimental",
+        "health",
+        "faithful",
+        "models",
+        "bar",
+        "utility",
+        "healthbar",
+        "faithful64",
+        "utilities",
+        "healthbars",
+        "faithfulx64"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": 0,
+        "32x": 0,
+        "48x": 0,
+        "64x": true,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": "featured",
+        "vanilla-like": true
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 416835,
+    "slug": "entity-healthbars-64x"
+  },
+  "planetminecraft": {
+    "id": 4819659,
+    "slug": "entity-healthbars-faithful-64x"
+  },
+  "modrinth": {
+    "id": "4T6Mnjso",
+    "slug": "entity-healthbars-64x"
+  }
+}
