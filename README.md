@@ -3,6 +3,8 @@ Easily upload resource packs to **CurseForge**, **Planet Minecraft**, and **Modr
 
 PackUploader is an automation tool that streamlines the process of publishing Minecraft resource packs across multiple platforms simultaneously. Instead of manually uploading to each site individually, configure your project once and deploy everywhere with a single command.
 
+[![YouTube Video](https://img.youtube.com/vi/aaxGk7OHAeg/0.jpg)](https://www.youtube.com/watch?v=aaxGk7OHAeg)
+
 ## Features
 - **Multi-platform deployment** - Upload to CurseForge, Planet Minecraft, and Modrinth at once
 - **Template system** - Create dynamic descriptions that adapt to each platform's formatting
