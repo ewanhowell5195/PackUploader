@@ -101,7 +101,8 @@ globalThis.project = {
   config,
   curseforge: importData.curseforge,
   planetminecraft: importData.planetminecraft,
-  modrinth: importData.modrinth
+  modrinth: importData.modrinth,
+  ewanhowell: importData.ewanhowell
 }
 
 globalThis.projectPath = path.join("projects", config.id)
@@ -126,8 +127,8 @@ for (const entry of fs.readdirSync("templates")) {
 
 // CurseForge
 
-if (settings.ewan) {
-  if (importData.curseforge.id) {
+if (settings.ewan && !project.ewanhowell?.ignore) {
+  if (project.curseforge.id) {
     await curseforge.import()
     save()
     console.log("CurseForge: Imported project")
@@ -135,7 +136,7 @@ if (settings.ewan) {
   await ewanhowell.import()
   save()
   console.log("Ewan Howell: Imported project")
-} else if (importData.curseforge.id) {
+} else if (project.curseforge.id) {
   await curseforge.import()
   save()
   console.log("CurseForge: Imported project")
@@ -143,7 +144,7 @@ if (settings.ewan) {
 
 // Modrinth
 
-if (importData.modrinth.id) {
+if (project.modrinth.id) {
   await modrinth.import()
   save()
   console.log("Modrinth: Imported project")
@@ -151,7 +152,7 @@ if (importData.modrinth.id) {
 
 // Planet Minecraft
 
-if (importData.planetminecraft.id) {
+if (project.planetminecraft.id) {
   await planetminecraft.import()
   save()
   console.log("Planet Minecraft: Imported project")

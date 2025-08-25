@@ -141,7 +141,7 @@ export default {
   },
   async uploadImages() {
     for (const [i, image] of project.config.images.entries()) {
-      if (image.thumbnail || (settings.ewan && image.logo)) continue
+      if (image.thumbnail || (settings.ewan && !project.ewanhowell?.ignore && image.logo)) continue
       const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/gallery?ext=png&featured=${!!image.featured}&title=${encodeURIComponent(image.name)}&description=${encodeURIComponent(image.description)}&ordering=${i}`, {
         method: "POST",
         headers: {
@@ -224,8 +224,8 @@ export default {
         }
       } else if (replacement[1] === "logo") {
         const logo = gallery.find(e => e.title === "Project Logo")?.raw_url
-        if (project.config.images.some(e => e.logo) && (logo || settings.ewan)) {
-          if (settings.ewan) {
+        if (project.config.images.some(e => e.logo) && (logo || (settings.ewan && !project.ewanhowell?.ignore))) {
+          if (settings.ewan && !project.ewanhowell?.ignore) {
             str += `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br>`
           } else {
             str += `<img src="${logo}" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br>`
@@ -371,7 +371,7 @@ export default {
         await sharp(await fetch(data.icon_url).then(e => e.arrayBuffer())).png().toFile(iconPath)
       }
 
-      if (!settings.ewan) {
+      if (settings.ewan && !project.ewanhowell?.ignore) {
         const hasFeatured = data.gallery.some(e => e.featured)
         config.images = data.gallery.filter(e => e.title !== "Project Logo").map((e, i) => ({
           name: e.title,

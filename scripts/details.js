@@ -89,7 +89,7 @@ if (data.images) {
     console.log("Modrinth: Added project images")
   }
 
-  if (settings.ewan) {
+  if (settings.ewan && !project.ewanhowell?.ignore) {
     await ewanhowell.removeImages()
     console.log("Ewan Howell: Removed project images")
 
@@ -114,7 +114,7 @@ if (project.modrinth.id) {
   console.log("Modrinth: Updated project details")
 }
 
-if (settings.ewan) {
+if (settings.ewan && !project.ewanhowell?.ignore) {
   ewanhowell.writeDetails()
   console.log("Ewan Howell: Updated project details")
 }

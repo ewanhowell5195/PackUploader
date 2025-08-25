@@ -180,7 +180,7 @@ export default {
   },
   async createForm($, tags, keepVersion) {
     let downloadLink
-    if (settings.ewan) {
+    if (settings.ewan && !project.ewanhowell?.ignore) {
       downloadLink = `https://ewanhowell.com/resourcepacks/${project.config.id}`
     } else if (project.modrinth.id && settings.planetminecraft.prefer === "modrinth") {
       downloadLink = `https://modrinth.com/resourcepack/${project.modrinth.slug}`
@@ -276,7 +276,7 @@ export default {
 
     let i = 0
     for (const image of project.config.images) {
-      if (image.logo && (settings.ewan || project.curseforge.id || project.modrinth.id)) continue
+      if (image.logo && ((settings.ewan && !project.ewanhowell?.ignore) || project.curseforge.id || project.modrinth.id)) continue
       if (i > 14) break
       i++
       const r = await request(form, "item/new")
@@ -369,8 +369,8 @@ export default {
         }
         str = imageList.join("\n\n")
       } else if (replacement[1] === "logo") {
-        if (project.config.images.some(e => e.logo) && (logo || settings.ewan)) {
-          if (settings.ewan) {
+        if (project.config.images.some(e => e.logo) && (logo || (settings.ewan && !project.ewanhowell?.ignore))) {
+          if (settings.ewan && !project.ewanhowell?.ignore) {
             str = `[img width=${project.config.logoWidth ?? settings.logoWidth ?? 700}]https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp[/img]`
           } else {
             str = `[img width=${project.config.logoWidth ?? settings.logoWidth ?? 700}]${logo}[/img]`
@@ -482,7 +482,7 @@ export default {
         }
       }
       
-      if (!settings.ewan) {
+      if (!settings.ewan || project.ewanhowell?.ignore) { {
         const imageData = Array.from(document.querySelectorAll(".image_list > .thumbnail")).map(e => {
           const file = e.dataset.fullFilename?.split("/").at(-1).slice(0, -6).split("-").slice(1).join("_")
           return {

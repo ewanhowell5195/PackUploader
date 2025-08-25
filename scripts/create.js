@@ -110,7 +110,7 @@ if (!project.modrinth.id) {
 
 // Ewan Howell
 
-if (settings.ewan && newProject) {
+if (settings.ewan && !project.ewanhowell?.ignore && newProject) {
   await ewanhowell.writeDetails()
   await ewanhowell.addImages()
 

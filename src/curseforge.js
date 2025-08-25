@@ -207,7 +207,7 @@ export default {
   },
   async uploadImages() {
     for (const image of project.config.images) {
-      if (settings.ewan && image.logo) continue
+      if (settings.ewan && !project.ewanhowell?.ignore && image.logo) continue
       try {
         const imageForm = new FormData()
         imageForm.append("id", project.curseforge.id)
@@ -242,7 +242,7 @@ export default {
     const imageData = await this.getMedia()
 
     for (const image of project.config.images) {
-      if (settings.ewan && image.logo) continue
+      if (settings.ewan && !project.ewanhowell?.ignore && image.logo) continue
       const data = imageData.find(e => e.type === 1 && (image.logo ? e.title === "logo.png" : e.title === image.file + ".jpg"))
       if (!data) {
         throw new Error(`CurseForge: Image "${image.file}" failed to upload`)
@@ -573,8 +573,8 @@ export default {
         }
       } else if (replacement[1] === "logo") {
         const logo = imageData.find(e => e.type === 1 && (e.title === "logo.png" || e.title === "Project Logo"))?.url
-        if (project.config.images.some(e => e.logo) && (logo || settings.ewan)) {
-          if (settings.ewan) {
+        if (project.config.images.some(e => e.logo) && (logo || (settings.ewan && !project.ewanhowell?.ignore))) {
+          if (settings.ewan && !project.ewanhowell?.ignore) {
             str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br><br>`
           } else {
             str = `<img src="${logo}" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br><br>`
@@ -686,7 +686,7 @@ export default {
     log(`Downloading image: pack.png`)
     await sharp(await fetch(data.avatarUrl).then(e => e.arrayBuffer())).png().toFile(path.join("projects", project.config.id, "pack.png"))
     
-    if (!settings.ewan) {
+    if (!settings.ewan || project.ewanhowell?.ignore) {
       config.images = media.filter(e => e.type === 1 && e.title !== "Project Thumbnail" && e.title !== "Project Logo").map((e, i) => ({
         name: e.title || e.url.split("/").at(-1).split(".").slice(0, -1).join(".").split("-").slice(0, -1).join("_").split("_").map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(" "),
         description: e.description || e.title,
