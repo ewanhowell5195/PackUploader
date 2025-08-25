@@ -6,19 +6,25 @@ function error(err) {
 
 export default {
   writeDetails() {
-    const data = {
-      subtitle: project.config.summary,
-      description: project.config.description.join("\n\n"),
-      optifine: project.config.optifine ? project.config.optifine : undefined,
-      video: project.config.video ? project.config.video : undefined,
-      images: project.config.images.filter(e => !e.thumbnail && !e.logo).map(e => e.file),
-      downloads: [{
-        text: "Download",
-        link: `https://www.curseforge.com/minecraft/texture-packs/${project.curseforge.slug}/`
-      }]
+    const dataPath = path.join(sitePath, "json", "resourcepacks", project.config.id + ".json")
+    
+    let data = {}
+    if (fs.existsSync(dataPath)) {
+      data = JSON.parse(fs.readFileSync(dataPath))
     }
 
-    fs.writeFileSync(path.join(sitePath, "json", "resourcepacks", project.config.id + ".json"), JSON.stringify(data, null, 2))
+    data.subtitle = project.config.summary
+    data.description = project.config.description.join("\n\n")
+    data.optifine = project.config.optifine || undefined
+    data.video = project.config.video || undefined
+    data.images = project.config.images.filter(e => !e.thumbnail && !e.logo).map(e => e.file)
+    data.downloads ??= []
+    data.downloads[0] = {
+      text: "Download",
+      link: `https://www.curseforge.com/minecraft/texture-packs/${project.curseforge.slug}/`
+    }
+
+    fs.writeFileSync(dataPath, JSON.stringify(data, null, 2))
   },
   removeImages() {
     const imgPath = path.join(sitePath, "images", "resourcepacks", project.config.id, "images")
@@ -35,7 +41,7 @@ export default {
 
     const iconPath = path.join("projects", project.config.id, "pack.png")
     if (fs.existsSync(iconPath)) {
-      await sharp(iconPath).resize(128, 128).webp({ quality: 95, withoutEnlargement: true }).toFile(path.join(imgPath, "icon.webp"))
+      await sharp(iconPath).resize(128, 128, { withoutEnlargement: true }).webp({ quality: 95, withoutEnlargement: true }).toFile(path.join(imgPath, "icon.webp"))
     }
 
     const logoPath = path.join("projects", project.config.id, "logo.png")
@@ -55,21 +61,6 @@ export default {
     const repoName = config.id.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("")
     const res = await fetch(`https://github.com/ewanhowell5195/${repoName}`, { redirect: "manual" })
     config.github = res.headers.get("location") || (res.ok ? `https://github.com/ewanhowell5195/${repoName}` : false)
-    config.version = "1.0.0"
-    config.versions = {
-      curseforge: {
-        type: "exact",
-        version: info.versions[0]
-      },
-      planetminecraft: {
-        type: "exact",
-        version: info.versions[0]
-      },
-      modrinth: {
-        type: "exact",
-        version: info.versions[0]
-      }
-    }
     config.images = data.images.map((e, i) => ({
       name: e.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
       description: e.split("_").join(" ").replace(/^./, c => c.toUpperCase()),
