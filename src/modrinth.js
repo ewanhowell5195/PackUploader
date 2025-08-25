@@ -226,9 +226,9 @@ export default {
         const logo = gallery.find(e => e.title === "Project Logo")?.raw_url
         if (project.config.images.some(e => e.logo) && (logo || settings.ewan)) {
           if (settings.ewan) {
-            str += `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo">`
+            str += `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br>`
           } else {
-            str += `<img src="${logo}" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo">`
+            str += `<img src="${logo}" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br>`
           }
         } else {
           str = "# " + project.config.name

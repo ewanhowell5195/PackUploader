@@ -1,6 +1,5 @@
 
 {{ logo }}
-<br>
 
 ## {{ summary }}
 <br>
