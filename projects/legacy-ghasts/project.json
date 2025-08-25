@@ -1,0 +1,147 @@
+{
+  "config": {
+    "id": "legacy-ghasts",
+    "name": "Legacy Ghasts",
+    "summary": "Bring back the original Ghast resolution",
+    "description": [
+      "This pack brings back the Ghast resolution that was used before the 1.21.6 update.",
+      "In the 1.21.6 update, along with the addition of the Happy Ghasts, the ghast texture was doubled in resolution, going from 64x32 to 128x64. This pack brings both the Ghast and the Happy Ghast back to their legacy sizes."
+    ],
+    "optifine": false,
+    "video": false,
+    "github": false,
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.21.6",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.21.6",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Happy Ghast",
+        "description": "A Happy Ghast in a blue harness",
+        "file": "blue",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Ghast",
+        "description": "A regular Ghast in the nether",
+        "file": "ghast",
+        "embed": true
+      },
+      {
+        "name": "Both",
+        "description": "A Happy Ghast with a ghastling",
+        "file": "both",
+        "embed": true
+      },
+      {
+        "name": "Pink Happy Ghast",
+        "description": "A Happy Ghast in a pink harness",
+        "file": "pink"
+      },
+      {
+        "name": "Ghast from below",
+        "description": "A Ghast seen from below",
+        "file": "below"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": 0,
+        "dataPacks": 0,
+        "fontPacks": 0,
+        "medieval": 0,
+        "modSupport": 0,
+        "modern": 0,
+        "photoRealistic": 0,
+        "traditional": 0,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": 16,
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "ghast",
+        "happyghast",
+        "legacy"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 1333412,
+    "slug": "legacy-ghasts"
+  },
+  "planetminecraft": {
+    "id": 6709744,
+    "slug": "legacy-ghasts"
+  },
+  "modrinth": {
+    "id": "2ylGmLff",
+    "slug": "legacy-ghasts"
+  }
+}
