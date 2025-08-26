@@ -48,6 +48,11 @@ export default {
     if (fs.existsSync(logoPath)) {
       await sharp(logoPath).resize(1280, 256, { fit: "inside", withoutEnlargement: true }).webp({ quality: 95 }).toFile(path.join(imgPath, "logo.webp"))
     }
+
+    const thumbnailPath = path.join("projects", project.config.id, "thumbnail.png")
+    if (fs.existsSync(thumbnailPath)) {
+      await sharp(thumbnailPath).resize(1280, 720, { fit: "inside", withoutEnlargement: true }).jpeg({ quality: 95 }).toFile(path.join(imgPath, "cover.jpg"))
+    }
   },
   async import() {
     const resourcePacks = JSON.parse(fs.readFileSync(path.join(sitePath, "json", "resourcepacks.json")))

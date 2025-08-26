@@ -1,0 +1,139 @@
+{
+  "config": {
+    "id": "legacy-sheep",
+    "name": "Legacy Sheep",
+    "summary": "Bring back the original dyed sheep design",
+    "description": [
+      "This pack brings back the original dyed sheep design that was used before the 1.21.5 update, when Mojang adjusted the design for parity with Bedrock Edition.",
+      "In the 1.21.5 update, the sheep were changed so that their undercoats follow their dye colour. This means that their faces now get dyed too, rather than stay white. With this resource pack, the sheep's faces will remain white again when dyed!"
+    ],
+    "optifine": false,
+    "video": false,
+    "github": false,
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.21.5",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.21.5",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Flock of Sheep",
+        "description": "A flock of dyed sheep",
+        "file": "flock",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Lime Sheep",
+        "description": "A lime dyed sheep, near the edge",
+        "file": "lime",
+        "embed": true
+      },
+      {
+        "name": "Mountain Sheep",
+        "description": "Some dyed sheep climbing up a mountain",
+        "file": "mountain",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": 0,
+        "dataPacks": 0,
+        "fontPacks": 0,
+        "medieval": 0,
+        "modSupport": 0,
+        "modern": 0,
+        "photoRealistic": 0,
+        "traditional": 0,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": 16,
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "sheep",
+        "legacy",
+        "dyed",
+        "dye",
+        "classic"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 1334698,
+    "slug": "legacy-sheep"
+  },
+  "planetminecraft": {
+    "id": 6711343,
+    "slug": "legacy-sheep"
+  },
+  "modrinth": {
+    "id": "T7xBFNj4",
+    "slug": "legacy-sheep"
+  }
+}

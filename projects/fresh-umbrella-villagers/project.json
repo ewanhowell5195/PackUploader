@@ -1,55 +1,59 @@
 {
   "config": {
-    "id": "umbrella-villagers",
-    "name": "Umbrella Villagers",
-    "summary": "Give villagers umbrellas!",
+    "id": "fresh-umbrella-villagers",
+    "name": "Fresh Umbrella Villagers",
+    "summary": "Give villagers umbrellas! - Now with Fresh Animations!",
     "description": [
       "This pack makes it so that villagers hold umbrellas when it rains!",
-      "There are 24 different umbrella variants, and villagers can spawn either right handed or left handed!"
+      "There are 24 different umbrella variants, and villagers can spawn either right handed or left handed!",
+      "Now with Fresh Animations support! This pack is fully compatible with Fresh Animations!"
     ],
     "optifine": "OptiFine is used to add support for remodelling entities.",
-    "video": "JuXFNU3bYHc",
-    "github": "https://github.com/ewanhowell5195/UmbrellaVillagers",
-    "version": "1.1.1",
+    "video": false,
+    "github": false,
+    "version": "1.0.0",
     "versions": {
       "curseforge": {
-        "type": "after",
-        "version": "1.20.2",
+        "type": "latest",
         "snapshots": false
       },
       "planetminecraft": {
         "type": "latest"
       },
       "modrinth": {
-        "type": "after",
-        "version": "1.20.2",
+        "type": "latest",
         "snapshots": false
       }
     },
     "images": [
       {
-        "name": "Group",
-        "description": "A group of villagers at a market with umbrellas",
-        "file": "group",
-        "embed": true
-      },
-      {
-        "name": "Farming",
-        "description": "Two villagers on a farm in the rain",
-        "file": "farm",
-        "embed": true
-      },
-      {
-        "name": "Below",
-        "description": "Villagers holding umbrellas, seen from below",
-        "file": "under",
+        "name": "Swamp Villager",
+        "description": "A swamp villager caught out in the rain",
+        "file": "swamp",
         "embed": true,
         "featured": true
       },
       {
-        "name": "Crowd",
-        "description": "A large crowd of villagers with umbrellas",
-        "file": "crowd"
+        "name": "Gold Umbrella",
+        "description": "A villager with a gold umbrella looking at the horses",
+        "file": "gold",
+        "embed": true
+      },
+      {
+        "name": "Talking",
+        "description": "Some villagers having a chat",
+        "file": "talk",
+        "embed": true
+      },
+      {
+        "name": "White Umbrella",
+        "description": "A villager with a white umbrella",
+        "file": "white"
+      },
+      {
+        "name": "Close Up",
+        "description": "Up close with some villagers under their umbrellas",
+        "file": "close"
       }
     ],
     "curseforge": {
@@ -97,7 +101,8 @@
         "weather",
         "cemanimation",
         "umbrella",
-        "cema"
+        "cema",
+        "freshanimations"
       ]
     },
     "modrinth": {
@@ -136,15 +141,15 @@
     }
   },
   "curseforge": {
-    "id": 892146,
-    "slug": "umbrella-villagers"
+    "id": 1334875,
+    "slug": "fresh-umbrella-villagers"
   },
   "planetminecraft": {
-    "id": 6014147,
-    "slug": "umbrella-villagers"
+    "id": 6711592,
+    "slug": "fresh-umbrella-villagers"
   },
   "modrinth": {
-    "id": "zUfkXkv1",
-    "slug": "umbrella-villagers"
+    "id": "1jJqpeSV",
+    "slug": "fresh-umbrella-villagers"
   }
 }
