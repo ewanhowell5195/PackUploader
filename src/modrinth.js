@@ -199,7 +199,13 @@ export default {
   async setDetails(live) {
     const gallery = await this.getImages()
 
-    let markdown = fs.readFileSync(path.join("projects", project.config.id, "templates", "modrinth.md"), "utf-8")
+    let markdown
+    let markdownPath = path.join("projects", project.config.id, "templates", "modrinth.md")
+    if (fs.existsSync(markdownPath)) {
+      markdown = fs.readFileSync(markdownPath, "utf-8")
+    } else {
+      markdown = fs.readFileSync(path.join("templates", "modrinth.md"), "utf-8")
+    }
 
     markdown = markdown.replace(/{{\s*snippet:([a-z0-9_-]+)\s*}}/gi, (m, name) => {
       const snippetPath = path.join("templates", "snippets", "modrinth", name + ".md")

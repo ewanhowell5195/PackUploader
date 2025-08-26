@@ -553,7 +553,13 @@ export default {
       }
     }
 
-    let html = fs.readFileSync(path.join("projects", project.config.id, "templates", "curseforge.html"), "utf-8")
+    let html
+    let htmlPath = path.join("projects", project.config.id, "templates", "curseforge.html")
+    if (fs.existsSync(htmlPath)) {
+      html = fs.readFileSync(htmlPath, "utf-8")
+    } else {
+      html = fs.readFileSync(path.join("templates", "curseforge.html"), "utf-8")
+    }
 
     html = html.replace(/{{\s*snippet:([a-z0-9_-]+)\s*}}/gi, (m, name) => {
       const snippetPath = path.join("templates", "snippets", "curseforge", name + ".html")

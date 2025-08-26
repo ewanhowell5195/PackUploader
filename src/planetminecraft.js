@@ -348,7 +348,13 @@ export default {
       }
     }
 
-    let bbcode = fs.readFileSync(path.join("projects", project.config.id, "templates", "planetminecraft.bbcode"), "utf-8")
+    let bbcode
+    let bbcodePath = path.join("projects", project.config.id, "templates", "planetminecraft.bbcode")
+    if (fs.existsSync(bbcodePath)) {
+      bbcode = fs.readFileSync(bbcodePath, "utf-8")
+    } else {
+      bbcode = fs.readFileSync(path.join("templates", "planetminecraft.bbcode"), "utf-8")
+    }
 
     bbcode = bbcode.replace(/{{\s*snippet:([a-z0-9_-]+)\s*}}/gi, (m, name) => {
       const snippetPath = path.join("templates", "snippets", "planetminecraft", name + ".bbcode")
