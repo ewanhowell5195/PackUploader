@@ -83,5 +83,10 @@ export default {
     if (fs.existsSync(logoPath)) {
       await sharp(logoPath).png().toFile(path.join(projectPath, "logo.png"))
     }
+  },
+  async getLogoWidth() {
+    const requestedWidth = project.config.logoWidth ?? settings.logoWidth ?? 700
+    const meta = await sharp(path.join(sitePath, "images", "resourcepacks", config.id, "logo.webp")).metadata()
+    return Math.min(requestedWidth, Math.floor(meta.width * Math.min(1280 / meta.width, 256 / meta.height, 1)))
   }
 }

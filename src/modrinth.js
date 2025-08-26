@@ -232,7 +232,7 @@ export default {
         const logo = gallery.find(e => e.title === "Project Logo")?.raw_url
         if (project.config.images.some(e => e.logo) && (logo || (settings.ewan && !project.ewanhowell?.ignore))) {
           if (settings.ewan && !project.ewanhowell?.ignore) {
-            str += `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br>`
+            str += `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp?rnd=${Math.random()}" width="${await ewanhowell.getLogoWidth()}" alt="${project.config.name} Logo"><br>`
           } else {
             str += `<img src="${logo}" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br>`
           }

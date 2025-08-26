@@ -581,7 +581,7 @@ export default {
         const logo = imageData.find(e => e.type === 1 && (e.title === "logo.png" || e.title === "Project Logo"))?.url
         if (project.config.images.some(e => e.logo) && (logo || (settings.ewan && !project.ewanhowell?.ignore))) {
           if (settings.ewan && !project.ewanhowell?.ignore) {
-            str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br><br>`
+            str = `<img src="https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp" width="${await ewanhowell.getLogoWidth()}" alt="${project.config.name} Logo"><br><br>`
           } else {
             str = `<img src="${logo}" width="${project.config.logoWidth ?? settings.logoWidth ?? 700}" alt="${project.config.name} Logo"><br><br>`
           }

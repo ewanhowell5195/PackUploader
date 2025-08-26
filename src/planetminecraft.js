@@ -377,7 +377,7 @@ export default {
       } else if (replacement[1] === "logo") {
         if (project.config.images.some(e => e.logo) && (logo || (settings.ewan && !project.ewanhowell?.ignore))) {
           if (settings.ewan && !project.ewanhowell?.ignore) {
-            str = `[img width=${project.config.logoWidth ?? settings.logoWidth ?? 700}]https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp[/img]`
+            str = `[img width=${await ewanhowell.getLogoWidth()}]https://ewanhowell.com/assets/images/resourcepacks/${project.config.id}/logo.webp[/img]`
           } else {
             str = `[img width=${project.config.logoWidth ?? settings.logoWidth ?? 700}]${logo}[/img]`
           }
