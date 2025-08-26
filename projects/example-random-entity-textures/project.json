@@ -1,0 +1,144 @@
+{
+  "config": {
+    "id": "example-random-entity-textures",
+    "name": "Example Random Entity Textures",
+    "summary": "An example of OptiFine random entity textures",
+    "description": [
+      "This is an example resource pack that shows users how to create OptiFine random entity textures.",
+      "Included examples:\n- Randomised textures\n- Weight based textures\n- Name based textures\n- Biome based textures\n- NBT based textures",
+      "Using the provided examples, you should be able to understand how OptiFine random entity textures works, and be able to apply it to your own resource pack."
+    ],
+    "optifine": "OptiFine is used to add support for random entity textures.",
+    "video": false,
+    "github": false,
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.21.5",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.21.5",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Random Cows",
+        "description": "A group of cows with randomised textures",
+        "file": "cows",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Random Chickens",
+        "description": "A group of chickens with randomised textures",
+        "file": "chickens",
+        "embed": true
+      },
+      {
+        "name": "Endermen",
+        "description": "An enderman with a changed texture due to holding a grass block, next to a normal enderman",
+        "file": "endermen",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "OptiFine",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "mobs",
+        "optifine",
+        "other",
+        "example",
+        "randomentitytextures",
+        "randomentity",
+        "randomentities",
+        "examplepack"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": "featured",
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": "featured",
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 900872,
+    "slug": "example-random-entity-textures"
+  },
+  "planetminecraft": {
+    "id": 6034504,
+    "slug": "example-random-entity-textures"
+  },
+  "modrinth": {
+    "id": "s8Q3OSwa",
+    "slug": "example-random-entity-textures"
+  }
+}

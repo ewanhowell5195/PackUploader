@@ -8,20 +8,22 @@
       "The examples provided are a mace that can become a bat, and a dirt block that can turn into a hat that can be worn."
     ],
     "optifine": false,
-    "video": false,
+    "video": "K39U55l4-O0",
     "github": false,
-    "version": "1.0.0",
+    "version": "1.1.0",
     "versions": {
       "curseforge": {
-        "type": "latest",
-        "snapshots": true
+        "type": "after",
+        "version": "1.21.4",
+        "snapshots": false
       },
       "planetminecraft": {
         "type": "latest"
       },
       "modrinth": {
-        "type": "latest",
-        "snapshots": true
+        "type": "after",
+        "version": "1.21.4",
+        "snapshots": false
       }
     },
     "images": [

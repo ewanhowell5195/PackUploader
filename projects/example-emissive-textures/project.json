@@ -1,0 +1,150 @@
+{
+  "config": {
+    "id": "example-emissive-textures",
+    "name": "Example Emissive Textures",
+    "summary": "An example of OptiFine emissive textures",
+    "description": [
+      "This is an example resource pack that shows users how to create OptiFine emissive textures.",
+      "Included examples:\n- Emissive properties file\n- Emissive block textures\n- Emissive item textures\n- Emissive entity textures\n- Emissive armour trims",
+      "Using the provided examples, you should be able to understand how OptiFine emissive textures work, and be able to apply them to your own resource pack."
+    ],
+    "optifine": "OptiFine is used to add support for emissive textures.",
+    "video": false,
+    "github": false,
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Emissive Ores",
+        "description": "A collection of emissive ores",
+        "file": "ores",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Emissive Zombies",
+        "description": "A group of zombies with emissive eyes",
+        "file": "zombies",
+        "embed": true
+      },
+      {
+        "name": "Emissive Sword and Trims",
+        "description": "A player with an emissive diamond sword and armor trims",
+        "file": "player",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "OptiFine",
+      "modifies": {
+        "armor": true,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "items",
+        "mobs",
+        "armor",
+        "optifine",
+        "glow",
+        "tutorial",
+        "glowing",
+        "emissive",
+        "other",
+        "example",
+        "emissivetextures",
+        "glowingores",
+        "glowingblocks",
+        "examplepack"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": "featured",
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": true,
+        "fonts": 0,
+        "gui": 0,
+        "items": true,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": "featured",
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 905182,
+    "slug": "example-emissive-textures"
+  },
+  "planetminecraft": {
+    "id": 6047361,
+    "slug": "example-emissive-textures"
+  },
+  "modrinth": {
+    "id": "wIs2YdkN",
+    "slug": "example-emissive-textures"
+  }
+}
