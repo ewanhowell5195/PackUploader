@@ -1,14 +1,11 @@
 {
   "config": {
-    "id": "solid-entity-transparency-support",
-    "name": "Solid Entity Transparency Support",
-    "summary": "Add transparency to solid entities!",
+    "id": "template-remodellable-beds",
+    "name": "Template Remodellable Beds",
+    "summary": "Allow editing the bed models in vanilla!",
     "description": [
-      "This pack changes how solid entities render so that they can use transparent textures.",
-      "Either use this pack alongside your pack, or merge it into your pack.",
-      "By default, solid entities do not support transparent textures, resulting in them rendering like the first image.",
-      "This pack makes it so that you can use transparent textures with them, meaning they instead can render like the second image.",
-      "Solid entities include:\n- Beds\n- Tridents\n- Paintings\n- Enchanting & Lectern Books\n- The Shulker's Head\n- Shields\n- And more"
+      "In vanilla Minecraft, the bed models cannot be remodelled as they are entity models. This resource pack changes beds so that they can be remodelled using regular block models!",
+      "A bonus feature is that beds no longer have a short render distance. They will render all the way to the edge of the main render distance."
     ],
     "optifine": false,
     "video": false,
@@ -29,22 +26,22 @@
     },
     "images": [
       {
-        "name": "Comparison",
-        "description": "Not using the pack vs using the pack",
-        "file": "compare",
+        "name": "Beds",
+        "description": "Beds as far as the eye can see",
+        "file": "beds",
+        "embed": true,
         "featured": true
       },
       {
-        "name": "Without Pack",
-        "description": "With the pack disabled",
-        "file": "solid",
+        "name": "Blockbench",
+        "description": "The bed model, seen within Blockbench",
+        "file": "blockbench",
         "embed": true
       },
       {
-        "name": "With Pack",
-        "description": "With the pack enabled",
-        "file": "transparent",
-        "embed": true
+        "name": "Comparison",
+        "description": "A comparison of vanilla Minecraft's bed render distance vs the pack's bed render distance",
+        "file": "comparison"
       }
     ],
     "curseforge": {
@@ -74,26 +71,24 @@
         "environment": 0,
         "font": 0,
         "gui": 0,
-        "items": 0,
-        "misc": true,
+        "items": true,
+        "misc": 0,
         "mobs": 0,
         "particles": 0,
         "terrain": 0,
         "audio": 0,
-        "models": 0
+        "models": true
       },
       "tags": [
-        "transparent",
-        "solid",
-        "models",
+        "template",
         "shaders",
         "utility",
         "shader",
-        "transparency",
-        "render",
-        "rendering",
-        "rendertype",
-        "entities"
+        "entities",
+        "entity",
+        "beds",
+        "bed",
+        "custom"
       ]
     },
     "modrinth": {
@@ -107,9 +102,9 @@
         "256x": 0,
         "512x+": 0,
         "audio": 0,
-        "blocks": 0,
+        "blocks": true,
         "combat": 0,
-        "core-shaders": "featured",
+        "core-shaders": true,
         "cursed": 0,
         "decoration": 0,
         "entities": "featured",
@@ -117,10 +112,10 @@
         "equipment": 0,
         "fonts": 0,
         "gui": 0,
-        "items": 0,
+        "items": true,
         "locale": 0,
         "modded": 0,
-        "models": 0,
+        "models": "featured",
         "realistic": 0,
         "simplistic": 0,
         "themed": 0,
@@ -132,14 +127,15 @@
     }
   },
   "curseforge": {
-    "id": 1336013,
-    "slug": "solid-entity-transparency-support"
+    "id": 1336154,
+    "slug": "template-remodellable-beds"
   },
   "planetminecraft": {
-    "id": 6712892
+    "id": 6713100,
+    "slug": "template-remodellable-beds"
   },
   "modrinth": {
-    "id": "OzlXkXyM",
-    "slug": "solid-entity-transparency-support"
+    "id": "fbXpVu3w",
+    "slug": "template-remodellable-beds"
   }
 }
