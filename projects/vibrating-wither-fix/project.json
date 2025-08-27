@@ -1,0 +1,127 @@
+{
+  "config": {
+    "id": "vibrating-wither-fix",
+    "name": "Vibrating Wither Fix",
+    "summary": "Stop the wither vibrating",
+    "description": [
+      "In Minecraft Java Edition, Withers have a bug in their path finding that can cause them to vibrate side to side.",
+      "This pack aims to fix that by smoothing out the wither's animations."
+    ],
+    "optifine": "OptiFine is used to add support for editing the wither model and animations.",
+    "video": "fbMsHJ9gcxA",
+    "github": false,
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "OptiFine",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "mobs",
+        "experimental",
+        "optifine",
+        "wither",
+        "cem",
+        "entity",
+        "models",
+        "entitymodel",
+        "bugfix",
+        "customentitymodel",
+        "cemanimations",
+        "cema"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": "featured",
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 746479,
+    "slug": "vibrating-wither-fix"
+  },
+  "planetminecraft": {
+    "id": 5798431,
+    "slug": "vibrating-wither-fix"
+  },
+  "modrinth": {
+    "id": "8cIUYFmo",
+    "slug": "vibrating-wither-fix"
+  }
+}
