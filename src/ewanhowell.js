@@ -66,15 +66,19 @@ export default {
     const repoName = config.id.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("")
     const res = await fetch(`https://github.com/ewanhowell5195/${repoName}`, { redirect: "manual" })
     config.github = res.headers.get("location") || (res.ok ? `https://github.com/ewanhowell5195/${repoName}` : false)
-    config.images = data.images.map((e, i) => ({
-      name: e.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
-      description: e.split("_").join(" ").replace(/^./, c => c.toUpperCase()),
-      file: e,
-      embed: i < 3 ? true : undefined,
-      featured: info.image === e ? true : undefined
-    }))
-    if (!config.images.some(e => e.featured)) {
-      config.images[0].featured = true
+    if (data.images) {
+      config.images = data.images.map((e, i) => ({
+        name: e.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
+        description: e.split("_").join(" ").replace(/^./, c => c.toUpperCase()),
+        file: e,
+        embed: i < 3 ? true : undefined,
+        featured: info.image === e ? true : undefined
+      }))
+      if (!config.images.some(e => e.featured)) {
+        config.images[0].featured = true
+      }
+    } else {
+      config.images = []
     }
     for (const img of config.images) {
       await sharp(path.join(sitePath, "images", "resourcepacks", config.id, "images", img.file + ".webp")).png().toFile(path.join(projectPath, "images", img.file + ".png"))
