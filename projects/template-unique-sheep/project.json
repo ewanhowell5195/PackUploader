@@ -1,0 +1,137 @@
+{
+  "config": {
+    "id": "template-unique-sheep",
+    "name": "Template Unique Sheep",
+    "summary": "Give every dyed sheep a unique texture!",
+    "description": [
+      "This template resource pack gives every dyed sheep its own unique texture instead of relying on Minecraft's default greyscale texture with colour multiplication.",
+      "Because textures are no longer restricted to tinting, you can freely customise each sheep colour — whether by designing unique patterns, adjusting shades, or applying hue shifting directly in the textures.",
+      "Ideal for anyone who wants more variety, creative freedom, or themed designs for their sheep."
+    ],
+    "optifine": "OptiFine is used to add support for remodelling entities, and changing the entity textures based on specific conditions.",
+    "video": false,
+    "github": false,
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Sheep",
+        "description": "A lot of sheep",
+        "file": "sheep",
+        "featured": true
+      },
+      {
+        "name": "Files",
+        "description": "The files in the pack",
+        "file": "files",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "MIT License"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "optifine",
+        "cem",
+        "randomentities",
+        "sheep",
+        "unique",
+        "template",
+        "utility",
+        "custom"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": true,
+        "themed": 0,
+        "tweaks": true,
+        "utility": "featured",
+        "vanilla-like": "featured"
+      },
+      "license": "MIT License"
+    }
+  },
+  "curseforge": {
+    "id": 1335914,
+    "slug": "template-unique-sheep"
+  },
+  "planetminecraft": {
+    "id": 6712770,
+    "slug": "template-unique-sheep"
+  },
+  "modrinth": {
+    "id": "W5cCCeOZ",
+    "slug": "template-unique-sheep"
+  }
+}

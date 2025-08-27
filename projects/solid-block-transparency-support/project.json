@@ -59,7 +59,8 @@
         "photoRealistic": false,
         "traditional": false,
         "miscellaneous": true
-      }
+      },
+      "license": "MIT License"
     },
     "planetminecraft": {
       "modifies": {
@@ -120,7 +121,8 @@
         "tweaks": "featured",
         "utility": "featured",
         "vanilla-like": true
-      }
+      },
+      "license": "MIT License"
     }
   },
   "curseforge": {
