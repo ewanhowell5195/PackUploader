@@ -1,19 +1,19 @@
 {
   "config": {
-    "id": "solid-block-transparency-support",
-    "name": "Solid Block Transparency Support",
-    "summary": "Add transparency to solid blocks!",
+    "id": "solid-entity-transparency-support",
+    "name": "Solid Entity Transparency Support",
+    "summary": "Add transparency to solid entities!",
     "description": [
-      "This pack changes how solid blocks render so that they can use transparent textures.",
+      "This pack changes how solid entities render so that they can use transparent textures.",
       "Either use this pack alongside your pack, or merge it into your pack.",
-      "WARNING: THIS WILL NOT FIX XRAY! ADDING TRANSPARENCY TO SOLID BLOCKS CAN CAUSE XRAY DEPENDING ON HOW YOU USE IT!",
-      "By default, solid blocks do not support transparent textures, resulting in them rendering like the first image.",
-      "This pack makes it so that you can use transparent textures with them, meaning they instead can render like the second image."
+      "By default, solid entities do not support transparent textures, resulting in them rendering like the first image below.",
+      "This pack makes it so that you can use transparent textures with them, meaning they instead can render like the second image.",
+      "Solid entities include:\n- Beds\n- Tridents\n- Paintings\n- Enchanting & Lectern Books\n- The Shulker's Head\n- Shields\n- And more"
     ],
     "optifine": false,
     "video": false,
     "github": false,
-    "version": "4.0.0",
+    "version": "1.0.0",
     "versions": {
       "curseforge": {
         "type": "latest",
@@ -57,12 +57,17 @@
         "modSupport": false,
         "modern": false,
         "photoRealistic": false,
+        "steampunk": false,
         "traditional": false,
         "miscellaneous": true
       },
       "license": "MIT License"
     },
     "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
       "modifies": {
         "armor": 0,
         "art": 0,
@@ -88,7 +93,7 @@
         "render",
         "rendering",
         "rendertype",
-        "blocks"
+        "entities"
       ]
     },
     "modrinth": {
@@ -102,12 +107,12 @@
         "256x": 0,
         "512x+": 0,
         "audio": 0,
-        "blocks": "featured",
+        "blocks": 0,
         "combat": 0,
         "core-shaders": "featured",
         "cursed": 0,
         "decoration": 0,
-        "entities": 0,
+        "entities": "featured",
         "environment": 0,
         "equipment": 0,
         "fonts": 0,
@@ -127,15 +132,14 @@
     }
   },
   "curseforge": {
-    "id": 715647,
-    "slug": "solid-block-transparency-support"
+    "id": 1336013,
+    "slug": "solid-entity-transparency-support"
   },
   "planetminecraft": {
-    "id": 5785711,
-    "slug": "solid-block-transparency-support"
+    "id": 6712892
   },
   "modrinth": {
-    "id": "gi2Kf7V9",
-    "slug": "solid-block-transparency-support"
+    "id": "OzlXkXyM",
+    "slug": "solid-entity-transparency-support"
   }
 }
