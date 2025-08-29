@@ -1,0 +1,150 @@
+{
+  "config": {
+    "id": "flipped-uvs",
+    "name": "Flipped Uvs",
+    "summary": "Give all entities flipped opposite UVs",
+    "description": [
+      "This pack flips the UVs of entities which have opposite UVs that are not usually flipped, such as cows, sheep, pigs, chickens, wolves, and more.",
+      "You are allowed to include these models in any resource pack.",
+      "Some mobs like the cow and pig shown in the images have been fixed in modern game versions, but this pack still applies to 30+ entity models."
+    ],
+    "optifine": "OptiFine is used to add support for remodelling entities.",
+    "video": false,
+    "github": false,
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "latest",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "latest",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Cow",
+        "description": "The cow's legs get mirrored",
+        "file": "cow",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Pig",
+        "description": "The pig's legs get mirrored",
+        "file": "pig",
+        "embed": true
+      },
+      {
+        "name": "Cat",
+        "description": "The cat's legs get mirrored",
+        "file": "cat",
+        "embed": true
+      },
+      {
+        "name": "Donkey",
+        "description": "The donkey's ears get mirrored",
+        "file": "donkey"
+      },
+      {
+        "name": "Panda",
+        "description": "The panda's legs and ears get mirrored",
+        "file": "panda"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": false
+      },
+      "license": "MIT License"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "experimental",
+        "optifine",
+        "cem",
+        "flipped",
+        "uvs",
+        "utility"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": true,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": "featured",
+        "vanilla-like": true
+      },
+      "license": "MIT License"
+    }
+  },
+  "curseforge": {
+    "id": 640099,
+    "slug": "flipped-uvs"
+  },
+  "planetminecraft": {
+    "id": 5633460,
+    "slug": "flipped-uvs"
+  },
+  "modrinth": {
+    "id": "Y9VYXDyK",
+    "slug": "flipped-uvs"
+  }
+}
