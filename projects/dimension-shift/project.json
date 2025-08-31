@@ -1,0 +1,152 @@
+{
+  "config": {
+    "id": "dimension-shift",
+    "name": "Dimension Shift",
+    "summary": "The dimension switching resource pack!",
+    "description": [
+      "This pack switches the dimensions so that the nether becomes the overworld and the overworld becomes the nether!"
+    ],
+    "optifine": "OptiFine is used to add support for custom colours and connected textures.",
+    "video": "DHk-PKDN0uo",
+    "github": false,
+    "version": "3.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.16.5"
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.16.5"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.16.5"
+      }
+    },
+    "images": [
+      {
+        "name": "Crimson Forest",
+        "description": "A crimson forest, turned into an oak forest",
+        "file": "crimson",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Warped Forest",
+        "description": "A warped forest, turned into a taiga forest",
+        "file": "warped",
+        "embed": true
+      },
+      {
+        "name": "Overworld",
+        "description": "The overworld, turned into a crimson forest",
+        "file": "overworld",
+        "embed": true
+      },
+      {
+        "name": "Overworld (Again)",
+        "description": "Another shot of the overworld",
+        "file": "overworld2"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": true,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": true,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "environment",
+        "misc",
+        "experimental",
+        "minecraft",
+        "optifine",
+        "end",
+        "textures",
+        "models",
+        "nether",
+        "overworld",
+        "114update",
+        "115update",
+        "116update",
+        "netherupdate"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": true,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": "featured",
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 391562,
+    "slug": "dimension-shift"
+  },
+  "planetminecraft": {
+    "id": 4651051,
+    "slug": "dimension-shift"
+  },
+  "modrinth": {
+    "id": "N3gJEOO8",
+    "slug": "dimension-shift"
+  }
+}
