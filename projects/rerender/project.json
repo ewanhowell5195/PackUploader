@@ -1,0 +1,136 @@
+{
+  "config": {
+    "id": "rerender",
+    "name": "Rerender",
+    "summary": "The interdimensional improvement pack",
+    "description": [
+      "This pack greatly improves the End and Nether dimensions",
+      "Features:",
+      "Nether:\n- Nether Grass Patches\n- Orange Mushrooms\n- Nether Roots",
+      "End:\n- Purple Ender Dragon\n- Purple Endermen\n- Purple Dragon Beam\n- Purple End Portal Frames\n- Purple End Portal\n- Redesigned End Crystals\n- Redesigned End Sky\n- Multiple Skulker Variants\n- 3D Chorus Plants\n- 3D Chorus Flowers"
+    ],
+    "optifine": "OptiFine is used to add support for connected textures and random entity textures",
+    "video": "hYS0kEceuEo",
+    "github": false,
+    "version": "2.1",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.14.4"
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.14"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.14.4"
+      }
+    },
+    "images": [
+      {
+        "name": "The End",
+        "description": "The End dimension",
+        "file": "end",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "The Nether",
+        "description": "The Nether dimension",
+        "file": "nether",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": 16,
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": true,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": true,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "end",
+        "rerender",
+        "endupdate",
+        "nether",
+        "netherupdate",
+        "tweaks"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": "featured",
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": true,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": true,
+        "environment": true,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": true,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 358001,
+    "slug": "rerender"
+  },
+  "planetminecraft": {
+    "id": 6716064,
+    "slug": "rerender"
+  },
+  "modrinth": {
+    "id": "SFKIB6uS",
+    "slug": "rerender"
+  }
+}

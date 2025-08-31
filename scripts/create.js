@@ -80,7 +80,7 @@ if (fs.existsSync(logoPath)) {
 
 // Ewan Howell
 
-if (settings.ewan && !project.ewanhowell?.ignore) {
+if (settings.ewan && !project.ewanhowell?.ignore && newProject) {
   await ewanhowell.writeDetails()
   await ewanhowell.addImages()
 

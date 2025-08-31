@@ -1,7 +1,7 @@
 {
   "config": {
     "id": "flipped-uvs",
-    "name": "Flipped Uvs",
+    "name": "Flipped UVs",
     "summary": "Give all entities flipped opposite UVs",
     "description": [
       "This pack flips the UVs of entities which have opposite UVs that are not usually flipped, such as cows, sheep, pigs, chickens, wolves, and more.",
