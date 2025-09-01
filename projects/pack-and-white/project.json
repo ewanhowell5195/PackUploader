@@ -1,0 +1,188 @@
+{
+  "config": {
+    "id": "pack-and-white",
+    "name": "Pack & White",
+    "summary": "Make Minecraft Black & White",
+    "description": [
+      "This pack is the regular vanilla Minecraft, but everything is now black and white!",
+      "This pack is compatible with almost any other resource pack.",
+      "Fabulous graphics are optional, but recommended for the full effect!"
+    ],
+    "optifine": false,
+    "video": "vehclKJo_1o",
+    "github": "https://github.com/ewanhowell5195/PackAndWhite",
+    "version": "2.2.0",
+    "versions": {
+      "curseforge": {
+        "type": "latest",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "latest",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Houses",
+        "description": "Two houses on a street",
+        "file": "house",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Farm",
+        "description": "A farm with a scarecrow",
+        "file": "farm",
+        "embed": true
+      },
+      {
+        "name": "Forest",
+        "description": "An oak forest",
+        "file": "forest"
+      },
+      {
+        "name": "Wooden Houses",
+        "description": "A collection of wooden houses",
+        "file": "houses",
+        "embed": true
+      },
+      {
+        "name": "Ice Spikes",
+        "description": "An ice spikes biome",
+        "file": "ice"
+      },
+      {
+        "name": "Dripstone Cave",
+        "description": "A cave filled with dripstone",
+        "file": "cave"
+      },
+      {
+        "name": "Lava Cave",
+        "description": "A cave filled with stone pillars and lava",
+        "file": "lava"
+      },
+      {
+        "name": "Lush Cave",
+        "description": "A cave filled with life",
+        "file": "lush"
+      },
+      {
+        "name": "Crimson Forest",
+        "description": "A crimson forest in the Nether",
+        "file": "crimson"
+      },
+      {
+        "name": "Warped Forest",
+        "description": "A warped forest in the Nether",
+        "file": "warped"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": true,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Simplistic",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": true,
+        "art": true,
+        "environment": 0,
+        "font": 0,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": true,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "items",
+        "gui",
+        "art",
+        "mobs",
+        "armor",
+        "misc",
+        "particles",
+        "pack",
+        "texture",
+        "black",
+        "white",
+        "simplistic",
+        "simple",
+        "resource",
+        "minecraft",
+        "resourcepack",
+        "textures",
+        "100complete",
+        "blackandwhite"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": true,
+        "combat": 0,
+        "core-shaders": "featured",
+        "cursed": 0,
+        "decoration": 0,
+        "entities": true,
+        "environment": 0,
+        "equipment": true,
+        "fonts": 0,
+        "gui": 0,
+        "items": true,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": true,
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 401544,
+    "slug": "pack-and-white"
+  },
+  "planetminecraft": {
+    "id": 4709887,
+    "slug": "pack-amp-white"
+  },
+  "modrinth": {
+    "id": "JKmV3P8J",
+    "slug": "pack-and-white"
+  }
+}

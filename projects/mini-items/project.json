@@ -1,0 +1,150 @@
+{
+  "config": {
+    "id": "mini-items",
+    "name": "Mini Items",
+    "summary": "Free up your screen space with half sized items",
+    "description": [
+      "This pack changes the size of items while held in hand making them less obtrusive, perfect for combat or small screens!"
+    ],
+    "optifine": false,
+    "video": "cOXiETe9FYA",
+    "github": "https://github.com/ewanhowell5195/MiniItems",
+    "version": "1.4.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Sword",
+        "description": "A mini sword",
+        "file": "sword",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Bow",
+        "description": "A mini bow",
+        "file": "bow",
+        "embed": true
+      },
+      {
+        "name": "Crossbow",
+        "description": "A mini crossbow",
+        "file": "crossbow"
+      },
+      {
+        "name": "Trident & Shield",
+        "description": "A mini trident and shield",
+        "file": "trident_shield",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "items",
+        "experimental",
+        "screen",
+        "free",
+        "models",
+        "small",
+        "mini",
+        "smallpack",
+        "minitems",
+        "screenspace",
+        "morespace"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": "featured",
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": true,
+        "fonts": 0,
+        "gui": 0,
+        "items": true,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": true,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": "featured",
+        "vanilla-like": true
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 345860,
+    "slug": "mini-items"
+  },
+  "planetminecraft": {
+    "id": 4802697,
+    "slug": "mini-items"
+  },
+  "modrinth": {
+    "id": "ZmyjTSjb",
+    "slug": "mini-items-pack"
+  }
+}
