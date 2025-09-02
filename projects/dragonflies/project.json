@@ -1,0 +1,141 @@
+{
+  "config": {
+    "id": "dragonflies",
+    "name": "Dragonflies",
+    "summary": "A pack that adds Dragonflies to the game!",
+    "description": [
+      "This pack adds dragonflies to the game, which replace the bees.",
+      "There are three different colours of Dragonfly which can be found, all spawning randomly."
+    ],
+    "optifine": "OptiFine is used to add support for remodelling bees and randomising entity textures.",
+    "video": "pCnBhaqKaD4",
+    "github": false,
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Dragonflies",
+        "description": "A swarm of dragonflies",
+        "file": "dragonflies",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Colours",
+        "description": "The three colours of dragonfly",
+        "file": "showcase",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "OptiFine",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "experimental",
+        "animation",
+        "optifine",
+        "mob",
+        "cem",
+        "entity",
+        "dragonfly",
+        "bee",
+        "insects",
+        "cemanimation",
+        "insect",
+        "dragonflies"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": true,
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 470843,
+    "slug": "dragonflies"
+  },
+  "planetminecraft": {
+    "id": 5070420,
+    "slug": "dragonflies"
+  },
+  "modrinth": {
+    "id": "bhg8e4gh",
+    "slug": "dragonflies"
+  }
+}
