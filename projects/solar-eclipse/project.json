@@ -1,0 +1,144 @@
+{
+  "config": {
+    "id": "solar-eclipse",
+    "name": "Solar Eclipse",
+    "summary": "Bring a Solar Eclipse to your world.",
+    "description": [
+      "This pack modifies the sky, sun, moon, and lightmap to make it look like there is a solar eclipse!"
+    ],
+    "optifine": "OptiFine is used to change the sky colour and to change the lightmap.",
+    "video": "pfWo9oLVK1w",
+    "github": false,
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Eclipse",
+        "description": "The sun, eclipsed by the moon",
+        "file": "sun",
+        "embed": true
+      },
+      {
+        "name": "Forest",
+        "description": "The eclipse seen over a forest",
+        "file": "forest",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Chickens",
+        "description": "The eclipse seen behind some chickens",
+        "file": "chickens",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": true,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": true,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "OptiFine",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "experimental",
+        "optifine",
+        "moon",
+        "sun",
+        "sky",
+        "lightmap",
+        "solar",
+        "eclipse",
+        "optifinerequired",
+        "solareclipse"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": "featured",
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": true,
+        "themed": true,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 473011,
+    "slug": "solar-eclipse"
+  },
+  "planetminecraft": {
+    "id": 5077181,
+    "slug": "solar-eclipse-5077181"
+  },
+  "modrinth": {
+    "id": "RHRgVviF",
+    "slug": "solar-eclipse"
+  }
+}
