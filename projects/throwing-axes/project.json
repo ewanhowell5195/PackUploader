@@ -1,0 +1,158 @@
+{
+  "config": {
+    "id": "throwing-axes",
+    "name": "Throwing Axes",
+    "summary": "Turn Tridents into Throwing Axes!",
+    "description": [
+      "This pack replaces Tridents with Throwing Axes. There's not much more to it."
+    ],
+    "optifine": "OptiFine is used to add support for remodelling tridents.",
+    "video": "P-kZUFLvr74",
+    "github": false,
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.3",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.3",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Target",
+        "description": "A throwing axe in a target",
+        "file": "target",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Hill",
+        "description": "A hill covered in throwing axes",
+        "file": "hill",
+        "embed": true
+      },
+      {
+        "name": "Held",
+        "description": "A throwing axe being held",
+        "file": "hand",
+        "embed": true
+      },
+      {
+        "name": "Wall",
+        "description": "Throwing axes stuck in a wall",
+        "file": "wall"
+      },
+      {
+        "name": "Dead",
+        "description": "Dead",
+        "file": "dead"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "OptiFine",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "items",
+        "experimental",
+        "weapon",
+        "model",
+        "optifine",
+        "cem",
+        "models",
+        "axe",
+        "custommodel",
+        "throwing",
+        "throw",
+        "optifinerequired",
+        "cemanimation",
+        "throwingaxe"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": "featured",
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": true,
+        "environment": 0,
+        "equipment": true,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": true,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 536445,
+    "slug": "throwing-axes"
+  },
+  "planetminecraft": {
+    "id": 5329422,
+    "slug": "throwing-axes"
+  },
+  "modrinth": {
+    "id": "43kaAMuo",
+    "slug": "throwing-axes"
+  }
+}
