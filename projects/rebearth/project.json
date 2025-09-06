@@ -1,0 +1,139 @@
+{
+  "config": {
+    "id": "rebearth",
+    "name": "Rebearth",
+    "summary": "The Minecraft Earth Themed Resource Pack!",
+    "description": [
+      "This pack aims to port all of the custom mobs and features that are exclusive to Minecraft Earth to Minecraft Java!",
+      "Features:\nMoobloom\nWooly Cow\nEnder Cat\nHorned Sheep\nMuddy Pig\nCluckshroom\nCustom Menu Background\nCustom Splashes\nFresh UI\nBone Spider\nJumbo Rabbit\nSkeleton Dog\nGlow Squid\nTropical Slime\nFurnace Golem\nMelon Golem"
+    ],
+    "optifine": "OptiFine is used to add support for remodelling entities and random entity textures.",
+    "video": "fT3U2n-zDMs",
+    "github": false,
+    "version": "3.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.14.4"
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.14"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.14.4"
+      }
+    },
+    "images": [
+      {
+        "name": "Mobs",
+        "description": "A collection of Minecraft Earth mobs",
+        "file": "mobs",
+        "embed": true,
+        "featured": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "Mojang - Textures",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "items",
+        "gui",
+        "mobs",
+        "misc",
+        "clean",
+        "optifine",
+        "textures",
+        "cem",
+        "models",
+        "flat",
+        "earth",
+        "other",
+        "flatui",
+        "minecraftearth",
+        "optifinerequired",
+        "mcearth",
+        "extramobs"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": true,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 352117,
+    "slug": "rebearth"
+  },
+  "planetminecraft": {
+    "id": 4842396,
+    "slug": "rebearth"
+  },
+  "modrinth": {
+    "id": "MEALbzy7",
+    "slug": "rebearth"
+  }
+}

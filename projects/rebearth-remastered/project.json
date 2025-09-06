@@ -1,0 +1,178 @@
+{
+  "config": {
+    "id": "rebearth-remastered",
+    "name": "Rebearth Remastered",
+    "summary": "The remastered Minecraft Earth themed resource pack!",
+    "description": [
+      "This pack aims to port all of the custom mobs and features that are exclusive to Minecraft Earth to Minecraft Java!",
+      "Entities:\n\nAlbino Cow\nAmber Chicken\nAshen Cow\nBold Striped Rabbit\nBone Spider\nBouldering Zombie\nBronzed Chicken\n\nBrule Cow\nCluckshroom\nCookie Cow\n\nDairy Cow\nFancy Chicken\nFlecked Sheep\nFurnace Golem\nGlow Squid\n\nGold-Crested Chicken\nHarelequin Rabbit\nHorned Sheep\nInky Sheep\nJolly Llama\nJumbo Rabbit\nLobber Zombie\nMelon Golem\nMidnight Chicken\nMoobloom\nMoolip\n\nMottled Pig\nMuddy Foot Rabbit\nMuddy Pig\nPale Pig\nPiebald pig\nPink Footed Pig\n\nPinto Cow\nRainbow Sheep\nRocky Sheep\nSkeleton Wolf\nSpotted pig\n\nSkewbald Chicken\n\nSooty Pig\nStormy Chicken\nSunset Cow\nTropical Slime\nVested Rabbit\nViler Witch\nWooly Cow\n\nBlocks:\n\nBlock of Ruby\nButtercup\nAdventure Chests\nPink Daisy\nRainbow Bed\nRainbow Carpet\nRuby Ore\nRainbow Wool\n\nItems:\n\nMusic Disc - Earth\nMusic Disc - Sprouting\nRuby"
+    ],
+    "optifine": "OptiFine is used to add support for custom entity models and random entity textures.",
+    "video": "huogvG1TyV0",
+    "github": false,
+    "version": "1.2.1",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Mobs",
+        "description": "A collection of Minecraft Earth mobs",
+        "file": "mix",
+        "embed": true
+      },
+      {
+        "name": "Swamp Mobs",
+        "description": "Another collection of Minecraft Earth mobs",
+        "file": "swamp",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Pigs",
+        "description": "A collection of Minecraft Earth pigs",
+        "file": "pigs",
+        "embed": true
+      },
+      {
+        "name": "Sheep",
+        "description": "A collection of Minecraft Earth shep",
+        "file": "sheep"
+      },
+      {
+        "name": "Cows",
+        "description": "A collection of Minecraft Earth cows",
+        "file": "cows"
+      },
+      {
+        "name": "Chickens",
+        "description": "A collection of Minecraft Earth chickens",
+        "file": "chickens"
+      },
+      {
+        "name": "Desert",
+        "description": "A Furnace Golem and a Jumbo Rabbit",
+        "file": "desert"
+      },
+      {
+        "name": "Llamas",
+        "description": "A collection of Minecraft Earth llamas",
+        "file": "llamas"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "Textures - Mojang",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": true,
+        "models": true
+      },
+      "tags": [
+        "items",
+        "gui",
+        "mobs",
+        "misc",
+        "experimental",
+        "clean",
+        "optifine",
+        "mob",
+        "cem",
+        "models",
+        "flat",
+        "audio",
+        "update",
+        "earth",
+        "optifinereqired",
+        "flatui",
+        "minecraftearth",
+        "mcearth"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": true,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": true,
+        "items": true,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 420882,
+    "slug": "rebearth-remastered"
+  },
+  "planetminecraft": {
+    "id": 4842404,
+    "slug": "rebearth-remastered"
+  },
+  "modrinth": {
+    "id": "1zPJgHy9",
+    "slug": "rebearth-remastered"
+  }
+}
