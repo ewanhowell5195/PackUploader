@@ -1,0 +1,138 @@
+{
+  "config": {
+    "id": "visual-shulker-labels-2d-display",
+    "name": "Visual Shulker Labels: 2D Display Addon",
+    "summary": "Label your shulkers with style",
+    "description": [
+      "This addon requires the base pack to function.",
+      "This pack makes it so that you can give a shulker box an item name and the shulker gets a visual label of the item on it!",
+      "How to name your shulkers:",
+      "This list shows all of the valid names for a shulker box.\nIn these examples, I will be using the item \"Apple\".\n- Apple\n- Apple Shulker\n- Apple Box\n- Apple Shulker Box\n- Any Prefix You Want Apple\n- Any Prefix You Want Apple Shulker\n- Any Prefix You Want Apple Box\n- Any Prefix You Want Apple Shulker Box",
+      "All of these are case insensitive!"
+    ],
+    "optifine": "OptiFine is used to add the ability to change item models by renaming the item.",
+    "video": "BOBpQRMauQ4",
+    "github": false,
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.19.4"
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.19.4"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.19.4"
+      }
+    },
+    "images": [
+      {
+        "name": "GUI",
+        "description": "Visual Shulker Labels as seen in a GUI",
+        "file": "gui2",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Inventory",
+        "description": "Shulkers seen within a players inventory",
+        "file": "inventory",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "OptiFine",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "items",
+        "optifine",
+        "models",
+        "cit",
+        "labels",
+        "other",
+        "shulkers"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": "featured",
+        "fonts": 0,
+        "gui": 0,
+        "items": "featured",
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": true,
+        "utility": "featured",
+        "vanilla-like": true
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 678352,
+    "slug": "visual-shulker-labels-2d-display-addon"
+  },
+  "planetminecraft": {
+    "id": 5716883,
+    "slug": "visual-shulker-labels-2d-display-addon"
+  },
+  "modrinth": {
+    "id": "zfNZ6HMh",
+    "slug": "visual-shulker-labels-2d-display"
+  }
+}

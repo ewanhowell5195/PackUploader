@@ -416,10 +416,11 @@ export default {
         }))
       })
     })
-    if (!socialsRequest.ok) {
+    if (socialsRequest.ok) {
+      log("Social links set")
+    } else {
       console.error(`Failed to set social links - ${await socialsRequest.text()}`)
     }
-    log("Social links set")
 
     const licenseRequest = await fetch(`https://authors.curseforge.com/_api/project-license/${project.curseforge.id}/update`, {
       method: "PUT",
@@ -431,10 +432,11 @@ export default {
         licenseId: licenses[project.config.curseforge.license] ?? 1
       })
     })
-    if (!licenseRequest.ok) {
+    if (licenseRequest.ok) {
+      log("License set")
+    } else {
       console.error(`Failed to set license - ${await licenseRequest.text()}`)
     }
-    log("License set")
 
     const donationTypes = {
       none: -1,

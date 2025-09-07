@@ -1,0 +1,140 @@
+{
+  "config": {
+    "id": "visual-shulker-labels",
+    "name": "Visual Shulker Labels",
+    "summary": "Label your shulkers with style",
+    "description": [
+      "This pack makes it so that you can give a shulker box an item name and the shulker gets a visual label of the item on it!",
+      "Shulkers must be named to exactly match the name of the item you wish it to display. Names are case sensitive, but fully lowercase and fully uppercase are also supported!"
+    ],
+    "optifine": false,
+    "video": "BOBpQRMauQ4",
+    "github": "https://github.com/ewanhowell5195/VisualShulkerLabels",
+    "version": "2.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.21.8"
+      },
+      "planetminecraft": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.21.8"
+      }
+    },
+    "images": [
+      {
+        "name": "GUI",
+        "description": "Visual Shulker Labels as seen in a GUI",
+        "file": "gui2",
+        "embed": true,
+        "featured": true
+      },
+      {
+        "name": "Orange Shulker",
+        "description": "An orange shulker box renamed to show a diamond sword",
+        "file": "orange",
+        "embed": true
+      },
+      {
+        "name": "Yellow Shulker",
+        "description": "A yellow shulker box renamed to show an elytra",
+        "file": "yellow",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "items",
+        "optifine",
+        "cit",
+        "labels",
+        "other",
+        "shulkers",
+        "vanilla"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": "featured",
+        "fonts": 0,
+        "gui": 0,
+        "items": "featured",
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": true,
+        "utility": "featured",
+        "vanilla-like": true
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 674382,
+    "slug": "visual-shulker-labels"
+  },
+  "planetminecraft": {
+    "id": 5708369,
+    "slug": "visual-shulker-labels"
+  },
+  "modrinth": {
+    "id": "G5qVDE0L",
+    "slug": "visual-shulker-labels"
+  }
+}
