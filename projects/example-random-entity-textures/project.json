@@ -11,20 +11,18 @@
     "optifine": "OptiFine is used to add support for random entity textures.",
     "video": false,
     "github": false,
-    "version": "1.1.0",
+    "version": "1.2.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.21.5",
-        "snapshots": false
+        "version": "1.21.9"
       },
       "planetminecraft": {
         "type": "latest"
       },
       "modrinth": {
         "type": "after",
-        "version": "1.21.5",
-        "snapshots": false
+        "version": "1.21.9"
       }
     },
     "images": [

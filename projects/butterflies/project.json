@@ -9,20 +9,18 @@
     "optifine": false,
     "video": "5mtykgHM6NQ",
     "github": false,
-    "version": "1.1.1",
+    "version": "1.2.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.20.2",
-        "snapshots": false
+        "version": "1.21.9"
       },
       "planetminecraft": {
         "type": "latest"
       },
       "modrinth": {
         "type": "after",
-        "version": "1.20.2",
-        "snapshots": false
+        "version": "1.21.9"
       }
     },
     "images": [

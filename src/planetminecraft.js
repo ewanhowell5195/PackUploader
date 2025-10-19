@@ -415,9 +415,9 @@ export default {
 
     if (logRequest.status !== "success") {
       error("Failed to submit update log", logRequest, false)
+    } else {
+      log("Submit update log")
     }
-
-    log("Submit update log")
 
     // Update Version
 

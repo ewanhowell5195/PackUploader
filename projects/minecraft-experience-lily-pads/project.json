@@ -1,7 +1,7 @@
 {
   "config": {
-    "id": "minecraft_experience_lily_pads",
-    "name": "Minecraft Experience Lilypads",
+    "id": "minecraft-experience-lily-pads",
+    "name": "Minecraft Experience Lily Pads",
     "summary": "Add the Lily Pad textures from Minecraft Experience!",
     "description": [
       "At the Minecraft Experience event, some lily pad textures were used that don't appear in vanilla Minecraft. This pack adds those textures into the game!"
@@ -9,20 +9,18 @@
     "optifine": false,
     "video": "STWKmsgjtk0",
     "github": false,
-    "version": "1.0.0",
+    "version": "1.1.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.20.2",
-        "snapshots": false
+        "version": "1.21.9"
       },
       "planetminecraft": {
         "type": "latest"
       },
       "modrinth": {
         "type": "after",
-        "version": "1.20.2",
-        "snapshots": false
+        "version": "1.21.9"
       }
     },
     "images": [

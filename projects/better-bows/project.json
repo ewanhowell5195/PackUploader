@@ -11,20 +11,18 @@
     "optifine": false,
     "video": "WujjBzwk00g ",
     "github": "https://github.com/ewanhowell5195/BetterBows",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.20.2",
-        "snapshots": false
+        "version": "1.21.9"
       },
       "planetminecraft": {
         "type": "latest"
       },
       "modrinth": {
         "type": "after",
-        "version": "1.20.2",
-        "snapshots": false
+        "version": "1.21.9"
       }
     },
     "images": [

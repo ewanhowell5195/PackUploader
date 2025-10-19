@@ -10,20 +10,18 @@
     "optifine": "OptiFine is used to add support for custom entity models and random entity textures.",
     "video": "SeSEVDqPE9c",
     "github": false,
-    "version": "1.5",
+    "version": "1.6.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.20.2",
-        "snapshots": false
+        "version": "1.21.9"
       },
       "planetminecraft": {
         "type": "latest"
       },
       "modrinth": {
         "type": "after",
-        "version": "1.20.2",
-        "snapshots": false
+        "version": "1.21.9"
       }
     },
     "images": [
