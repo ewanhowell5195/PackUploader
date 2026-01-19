@@ -35,3 +35,5 @@ if (project.planetminecraft.id) {
 if (project.modrinth.id) {
   await modrinth.uploadPack()
 }
+
+process.exit()

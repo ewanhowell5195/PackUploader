@@ -116,3 +116,5 @@ if (!project.modrinth.id) {
 
   console.log("Modrinth: Project fully created")
 }
+
+process.exit()

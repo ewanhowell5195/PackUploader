@@ -118,3 +118,5 @@ if (settings.ewan && !project.ewanhowell?.ignore) {
   ewanhowell.writeDetails()
   console.log("Ewan Howell: Updated project details")
 }
+
+process.exit()

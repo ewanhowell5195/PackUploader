@@ -1,3 +1,4 @@
+import { getHtml, makePost } from "./puppeteer.js"
 import { JSDOM } from "jsdom"
 
 let token
@@ -30,18 +31,21 @@ function ratelimited(r) {
 
 async function request(body, referrer, json = true) {
   referrer ??= project.planetminecraft.id
-  const r = await fetch("https://www.planetminecraft.com/ajax.php", {
-    method: "POST",
-    headers: {
-      "x-pmc-csrf-token": token,
-      cookie: auth.planetminecraft,
-      Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${referrer}`
-    },
-    body
-  })
+  const { status, text } = await makePost(`https://www.planetminecraft.com/account/manage/texture-packs/${referrer}`, "https://www.planetminecraft.com/ajax.php", auth.planetminecraft, {
+    "x-pmc-csrf-token": token,
+    cookie: auth.planetminecraft,
+    Referer: `https://www.planetminecraft.com/account/manage/texture-packs/${referrer}`
+  }, body)
+
+  const r = {
+    status,
+    ok: status >= 200 && status < 300,
+    text: async () => text,
+    json: async () => JSON.parse(text)
+  }
 
   if (!r.ok) {
-    error(`Failed request`, await r.text())
+    error("Failed request", await r.text())
   }
 
   if (json) {
@@ -75,42 +79,36 @@ const categories = {
 
 export default {
   async getProject() {
-    const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
-      headers: {
-        "cache-control": "no-cache",
-        cookie: auth.planetminecraft
-      },
-      redirect: "manual"
-    })
+    const { status, html } = await getHtml(
+      `https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`,
+      auth.planetminecraft
+    )
 
-    ratelimited(projectRequest)
+    ratelimited({ status })
 
-    if (!projectRequest.ok) {
-      error("Failed to fetch project", await projectRequest.text())
+    const $ = load(html)
+
+    if (status >= 400) {
+      error("Failed to fetch project", html)
     }
-
-    const $ = load(await projectRequest.text())
 
     token = $("#core-csrf-token").attr("content")
 
     return $
   },
   async getProjectDom() {
-    const projectRequest = await fetch(`https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`, {
-      headers: {
-        "cache-control": "no-cache",
-        cookie: auth.planetminecraft
-      },
-      redirect: "manual"
-    })
+    const { status, html } = await getHtml(
+      `https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`,
+      auth.planetminecraft
+    )
 
-    ratelimited(projectRequest)
+    ratelimited({ status })
 
-    if (!projectRequest.ok) {
-      error("Failed to fetch project", await projectRequest.text())
+    if (status >= 400) {
+      error("Failed to fetch project", html)
     }
 
-    const document = new JSDOM(await projectRequest.text()).window.document
+    const document = new JSDOM(html).window.document
 
     token = document.getElementById("core-csrf-token").getAttribute("content")
 

@@ -159,3 +159,5 @@ if (project.planetminecraft.id) {
 }
 
 console.log(`Project fully imported "${config.id}"`)
+
+process.exit()
