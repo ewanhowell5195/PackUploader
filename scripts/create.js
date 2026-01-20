@@ -98,14 +98,6 @@ if (!project.curseforge.id) {
   console.log("CurseForge: Project fully created")
 }
 
-// Planet Minecraft
-
-if (!project.planetminecraft.id) {
-  await planetminecraft.createProject()
-
-  console.log("Planet Minecraft: Project fully created")
-}
-
 // Modrinth
 
 if (!project.modrinth.id) {
@@ -115,6 +107,14 @@ if (!project.modrinth.id) {
   await modrinth.setDetails()
 
   console.log("Modrinth: Project fully created")
+}
+
+// Planet Minecraft
+
+if (!project.planetminecraft.id) {
+  await planetminecraft.createProject()
+
+  console.log("Planet Minecraft: Project fully created")
 }
 
 process.exit()

@@ -105,13 +105,13 @@ if (project.curseforge.id) {
   console.log("CurseForge: Updated project details")
 }
 
-if (project.planetminecraft.id) {
-  await planetminecraft.updateDetails()
-}
-
 if (project.modrinth.id) {
   await modrinth.setDetails(data.live)
   console.log("Modrinth: Updated project details")
+}
+
+if (project.planetminecraft.id) {
+  await planetminecraft.updateDetails()
 }
 
 if (settings.ewan && !project.ewanhowell?.ignore) {

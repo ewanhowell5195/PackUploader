@@ -28,12 +28,12 @@ if (project.curseforge.id) {
   await curseforge.uploadPack()
 }
 
-if (project.planetminecraft.id) {
-  await planetminecraft.versionUpdate()
-}
-
 if (project.modrinth.id) {
   await modrinth.uploadPack()
+}
+
+if (project.planetminecraft.id) {
+  await planetminecraft.versionUpdate()
 }
 
 process.exit()
