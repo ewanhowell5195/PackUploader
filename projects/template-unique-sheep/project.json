@@ -11,7 +11,7 @@
     "optifine": "OptiFine is used to add support for remodelling entities, and changing the entity textures based on specific conditions.",
     "video": false,
     "github": false,
-    "version": "1.1.0",
+    "version": "1.2.0",
     "versions": {
       "curseforge": {
         "type": "after",
