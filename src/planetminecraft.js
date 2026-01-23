@@ -393,28 +393,61 @@ export default {
 
     return bbcode
   },
+  async submitLog(args) {
+    const logForm = makeForm({
+      log_title: `Update v${args.version}`,
+      content: args.changelog,
+      module: "public/resource/manage",
+      module_plugin: "log",
+      module_plugin_task: "create",
+      submit_log: "SAVE LOG",
+      member_id: args.memberId,
+      resource_id: project.planetminecraft.id
+    })
+
+    const logRequest = await request(logForm, args.id)
+
+    if (logRequest.status !== "success") {
+      if (logRequest.feedback?.includes("Hit current daily update limit")) {
+        if (args.queued) {
+          log("You have reached the daily Planet Minecraft update limit. No more queued Planet Minecraft updates will be processed")
+          return
+        }
+        log("You have reached the daily Planet Minecraft update limit. Your update has been added to the update queue")
+        let queue = []
+        if (fs.existsSync("data/queue.json")) {
+          queue = JSON.parse(fs.readFileSync("data/queue.json")).filter(e => e.id !== project.planetminecraft.id)
+        }
+        queue.push({
+          id: config.id,
+          type: "planetminecraft",
+          version: args.version,
+          changelog: args.changelog,
+          versions: config.versions.planetminecraft
+        })
+        fs.writeFileSync("data/queue.json", JSON.stringify(queue, null, 2))
+        return
+      }
+      error("Failed to submit update log", logRequest, false)
+      return
+    } else {
+      log("Submit update log")
+    }
+    return true
+  },
   async versionUpdate() {
     const $ = await this.getProject()
 
     // Make Log
 
-    const logForm = makeForm({
-      log_title: `Update v${config.version}`,
-      content: config.changelog,
-      module: "public/resource/manage",
-      module_plugin: "log",
-      module_plugin_task: "create",
-      submit_log: "SAVE LOG",
-      member_id: $("[name=member_id]").val(),
-      resource_id: project.planetminecraft.id
+    const logSuccess = await this.submitLog({
+      version: config.version,
+      changelog: config.changelog,
+      memberId: $("[name=member_id]").val()
     })
 
-    const logRequest = await request(logForm)
-
-    if (logRequest.status !== "success") {
-      error("Failed to submit update log", logRequest, false)
-    } else {
-      log("Submit update log")
+    if (!logSuccess) {
+      return
     }
 
     // Update Version
@@ -522,5 +555,31 @@ export default {
         }
       }
     }
+  },
+  async queue(entry) {
+    log(`Processing queue entry for: ${config.id}`)
+
+    const $ = await this.getProject()
+
+    const logSuccess = await this.submitLog({
+      ...entry,
+      memberId: $("[name=member_id]").val(),
+      queued: true
+    })
+
+    if (!logSuccess) {
+      return true
+    }
+
+    const form = await this.createForm($, $("#item_tags > div").map((i, e) => $(e).data("tag-id")).get())
+
+    form.append("live", 1)
+
+    const r = await request(form)
+    if (r.status !== "success") {
+      error("Failed to update project version, please do it manually", r)
+    }
+
+    log("Updated project version")
   }
 }

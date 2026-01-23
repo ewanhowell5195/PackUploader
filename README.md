@@ -8,7 +8,7 @@ PackUploader is an automation tool that streamlines the process of publishing Mi
 [![YouTube Video](https://img.youtube.com/vi/aaxGk7OHAeg/maxresdefault.jpg)](https://www.youtube.com/watch?v=aaxGk7OHAeg)
 
 ## Features
-- **Multi-platform deployment** - Upload to CurseForge, Planet Minecraft, and Modrinth at once
+- **Multi-platform deployment** - Upload to CurseForge, Modrinth, and Planet Minecraft, all at once
 - **Template system** - Create dynamic descriptions that adapt to each platform's formatting
 - **Version management** - Support version ranges and automatically target multiple Minecraft versions at once
 - **Project synchronization** - Keep project details, images, and descriptions in sync across platforms
@@ -32,6 +32,7 @@ PackUploader is an automation tool that streamlines the process of publishing Mi
 - [Importing Projects](#importing-projects)
 - [Updating Projects](#updating-projects)
 - [Editing Project Details](#editing-project-details)
+- [The Queue](#the-queue)
 
 ---
 
@@ -79,22 +80,6 @@ You will need:
 </details>
 
 <details>
-  <summary><strong>Planet Minecraft Setup</strong></summary>
-
-You will need:
-- `pmc_autologin` cookie
-
-### Cookie
-1. Go to [Planet Minecraft](https://www.planetminecraft.com/) and log in
-2. Open your browser's developer tools.
-   - **Firefox:** Storage tab
-   - **Chrome:** Application tab
-3. Under **Cookies**, select the site
-4. Copy the `pmc_autologin` name and value into your `auth.json`
-
-</details>
-
-<details>
   <summary><strong>Modrinth Setup</strong></summary>
 
 You will need:
@@ -112,6 +97,22 @@ You will need:
    - Write Versions
 4. Set the expiry date some time far in the future
 5. Paste it into your `auth.json`
+
+</details>
+
+<details>
+  <summary><strong>Planet Minecraft Setup</strong></summary>
+
+You will need:
+- `pmc_autologin` cookie
+
+### Cookie
+1. Go to [Planet Minecraft](https://www.planetminecraft.com/) and log in
+2. Open your browser's developer tools.
+   - **Firefox:** Storage tab
+   - **Chrome:** Application tab
+3. Under **Cookies**, select the site
+4. Copy the `pmc_autologin` name and value into your `auth.json`
 
 </details>
 
@@ -196,16 +197,16 @@ The templates included in the repository can be used as references for creating 
 4. Replace static content with template variables (e.g., replace your project name with `{{ name }}`)
 5. Note: HTML is used for CurseForge, but not all HTML features will work
 
+### Modrinth
+1. Write your description in the Markdown editor
+2. Copy the markdown directly into `modrinth.md`
+3. Replace static content with template variables
+
 ### Planet Minecraft  
 1. Create your description using the editor
 2. Click the "BBCode Source" button to get the raw BBCode
 3. Copy this into `planetminecraft.bbcode`
 4. Replace static content with template variables
-
-### Modrinth
-1. Write your description in the Markdown editor
-2. Copy the markdown directly into `modrinth.md`
-3. Replace static content with template variables
 
 ## Template Variables
 
@@ -439,6 +440,36 @@ Configure your project images in the `images` array. Each image object supports:
 
 </details>
 
+### Modrinth Settings
+
+**Tags:** Enable relevant tags (use `0` for false, `true` for true, `"featured"` for featured tags - you can have up to 3 featured tags)
+
+<details>
+ <summary>License: Choose one of</summary>
+
+- `All Rights Reserved/No License`
+- `Apache License 2.0`
+- `BSD 2-Clause "Simplified" License`
+- `BSD 3-Clause "New" or "Revised" License`
+- `CC Zero (Public Domain equivalent)`
+- `CC-BY 4.0`
+- `CC-BY-NC 4.0`
+- `CC-BY-NC-ND 4.0`
+- `CC-BY-NC-SA 4.0`
+- `CC-BY-ND 4.0`
+- `CC-BY-SA 4.0`
+- `GNU Affero General Public License v3`
+- `GNU General Public License v2`
+- `GNU General Public License v3`
+- `GNU Lesser General Public License v2.1`
+- `GNU Lesser General Public License v3`
+- `ISC License`
+- `MIT License`
+- `Mozilla Public License 2.0`
+- `zlib License`
+
+</details>
+
 ### Planet Minecraft Settings
 
 <details>
@@ -478,36 +509,6 @@ Configure your project images in the `images` array. Each image object supports:
 
 **Tags:** Array of tag strings for your pack
 
-### Modrinth Settings
-
-**Tags:** Enable relevant tags (use `0` for false, `true` for true, `"featured"` for featured tags - you can have up to 3 featured tags)
-
-<details>
- <summary>License: Choose one of</summary>
-
-- `All Rights Reserved/No License`
-- `Apache License 2.0`
-- `BSD 2-Clause "Simplified" License`
-- `BSD 3-Clause "New" or "Revised" License`
-- `CC Zero (Public Domain equivalent)`
-- `CC-BY 4.0`
-- `CC-BY-NC 4.0`
-- `CC-BY-NC-ND 4.0`
-- `CC-BY-NC-SA 4.0`
-- `CC-BY-ND 4.0`
-- `CC-BY-SA 4.0`
-- `GNU Affero General Public License v3`
-- `GNU General Public License v2`
-- `GNU General Public License v3`
-- `GNU Lesser General Public License v2.1`
-- `GNU Lesser General Public License v3`
-- `ISC License`
-- `MIT License`
-- `Mozilla Public License 2.0`
-- `zlib License`
-
-</details>
-
 ---
 
 # Importing Projects
@@ -532,13 +533,13 @@ Configure which platforms to import from using project IDs and slugs:
     "id": 364688,
     "slug": "f8thful"
   },
-  "planetminecraft": {
-    "id": 4595209,
-    "slug": "f8thful-the-complete-vanilla-8x8-resource-pack"
-  },
   "modrinth": {
     "id": "ZrW0og1b",
     "slug": "f8thful"
+  },
+  "planetminecraft": {
+    "id": 4595209,
+    "slug": "f8thful-the-complete-vanilla-8x8-resource-pack"
   }
 }
 ```
@@ -551,9 +552,9 @@ Configure which platforms to import from using project IDs and slugs:
 ### Finding Project IDs
 **CurseForge:** Found in the sidebar of your project page, or in the URL on the project management page
 
-**Planet Minecraft:** Found in the URL when editing your project
-
 **Modrinth:** On your project page, click the triple dot menu and select "Copy ID"
+
+**Planet Minecraft:** Found in the URL when editing your project
 
 ### After Importing
 - Check your project folder in `/projects/yourprojectid/` 
@@ -593,13 +594,13 @@ Configure your update settings:
       "version": "1.20.2",
       "snapshots": false
     },
-    "planetminecraft": {
-      "type": "latest"
-    },
     "modrinth": {
       "type": "after",
       "version": "1.20.2",
       "snapshots": false
+    },
+    "planetminecraft": {
+      "type": "latest"
     }
   }
 }
@@ -643,3 +644,13 @@ Make all desired changes to your project files in the `/projects/yourprojectid/`
 - `id` - Your project identifier (must match existing project)
 - `images` - Set to `true` to also reupload project icon and images across all platforms
 - `live` - If the Modrinth project is not yet approved, this must be set to `false` to prevent crashes, otherwise set to `true`. Also controls Planet Minecraft's live/draft status so it stays hidden until the Modrinth project is approved. Does nothing for CurseForge.
+
+---
+
+# The Queue
+
+Planet Minecraft has a limit of how many project updates you can submit per day. If you are submitting updates and you reach this limit, these updates will be submit on CurseForge and Modrinth, but queued for Planet Minecraft. You can then process the queue once your limit has been reset to submit those updates.
+
+## Usage
+1. Have a project be added to the queue. You will be told when this happens
+1. Double-click `queue.bat` to process your queue
