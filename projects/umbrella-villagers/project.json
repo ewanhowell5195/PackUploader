@@ -10,20 +10,18 @@
     "optifine": "OptiFine is used to add support for remodelling entities.",
     "video": "JuXFNU3bYHc",
     "github": "https://github.com/ewanhowell5195/UmbrellaVillagers",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.20.2",
-        "snapshots": false
-      },
-      "planetminecraft": {
-        "type": "latest"
+        "version": "1.21.9"
       },
       "modrinth": {
         "type": "after",
-        "version": "1.20.2",
-        "snapshots": false
+        "version": "1.21.9"
+      },
+      "planetminecraft": {
+        "type": "latest"
       }
     },
     "images": [
