@@ -18,6 +18,8 @@ if (project.config.version === config.version) {
 project.config.version = config.version
 project.config.versions = config.versions
 
+globalThis.config = project.config
+
 save()
 
 config.pack = fs.readFileSync("data/update/pack.zip")
