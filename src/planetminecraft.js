@@ -117,21 +117,18 @@ export default {
   async createProject() {
     // Get New Project
 
-    const newProjectRequest = await fetch("https://www.planetminecraft.com/account/manage/texture-packs/item/new", {
-      headers: {
-        "cache-control": "no-cache",
-        cookie: auth.planetminecraft
-      },
-      redirect: "manual"
-    })
+    const { status, html } = await getHtml(
+      "https://www.planetminecraft.com/account/manage/texture-packs/item/new",
+      auth.planetminecraft
+    )
 
-    ratelimited(newProjectRequest)
+    ratelimited({ status })
 
-    if (!newProjectRequest.ok) {
-      error("Failed to fetch a new project", await newProjectRequest.text())
+    if (status >= 400) {
+      error("Failed to fetch a new project", html)
     }
 
-    const $ = load(await newProjectRequest.text())
+    const $ = load(html)
 
     token = $("#core-csrf-token").attr("content")
 

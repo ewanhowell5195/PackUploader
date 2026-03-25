@@ -54,6 +54,14 @@ export async function makePost(referrerUrl, requestUrl, cookie, headers, body) {
           file: true,
           filename: "upload.bin"
         })
+      } else if (value instanceof Blob) {
+        const arrayBuffer = await value.arrayBuffer()
+        entries.push({
+          key,
+          value: Array.from(new Uint8Array(arrayBuffer)),
+          file: true,
+          filename: value.name || "upload.bin"
+        })
       } else {
         entries.push({
           key,

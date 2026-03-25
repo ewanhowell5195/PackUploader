@@ -270,6 +270,7 @@ export default {
   },
   async uploadIcon() {
     const iconForm = new FormData()
+    iconForm.append("id", project.curseforge.id)
     iconForm.append("file", new Blob([config.icon], {
       type: "image/png"
     }), "pack.png")
