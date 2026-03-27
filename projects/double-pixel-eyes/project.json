@@ -7,7 +7,7 @@
       "Baby mobs in Minecraft have only a single pixel for their eyes. This pack gives every baby mob proper double pixel eyes, matching the look of their adult counterparts!"
     ],
     "optifine": false,
-    "video": false,
+    "video": "-iZ4ud0Qz74",
     "github": "https://github.com/ewanhowell5195/DoublePixelEyes",
     "version": "1.0.0",
     "versions": {
@@ -34,16 +34,31 @@
         "embed": true
       },
       {
+        "name": "A day at the beach",
+        "description": "Aquatic Mobs are aura farming",
+        "file": "ocean"
+      },
+      {
         "name": "Baby Wolves",
         "description": "A group of baby wolves showing off their new double pixel eyes",
         "file": "wolves",
         "embed": true
       },
       {
+        "name": "Bambo... Yum..",
+        "description": "Baby panda is too bamboo-pilled to not notice the warm-coded piglet, while both are being outmogged by the baby Strider",
+        "file": "jungle"
+      },
+      {
         "name": "Baby Foxes",
         "description": "A group of baby foxes showing off their new double pixel eyes",
         "file": "foxes",
         "embed": true
+      },
+      {
+        "name": "Scaled and Icy",
+        "description": "The goat is so majestic and there's a cow too, and that's it",
+        "file": "ice"
       },
       {
         "name": "All Baby Mobs",
