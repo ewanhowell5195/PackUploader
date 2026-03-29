@@ -1,15 +1,15 @@
 {
   "config": {
-    "id": "1-18-panorama",
-    "name": "1.18 Panorama",
-    "summary": "Bring the 1.18 panorama into other game versions",
+    "id": "spinning-skull",
+    "name": "Spinning Skull",
+    "summary": "Make the skull in the burning skull painting spin!",
     "description": [
-      "This pack brings the 1.18 panorama into other game versions so you can enjoy it in any version of the game!"
+      "This pack makes the skull in the burning skull painting spin!"
     ],
     "optifine": false,
-    "video": false,
+    "video": "zC8DkctEhKk",
     "github": false,
-    "version": "1.4.0",
+    "version": "1.1.0",
     "versions": {
       "curseforge": {
         "type": "after",
@@ -25,44 +25,37 @@
     },
     "images": [
       {
-        "name": "Menu",
-        "description": "The menu panorama",
-        "file": "panorama",
-        "embed": true
-      },
-      {
-        "name": "Menu (Again)",
-        "description": "Another angle of the menu panorama",
-        "file": "panorama2",
-        "embed": true
-      },
-      {
-        "name": "No UI",
-        "description": "The panorama with no UI on top",
-        "file": "noui",
+        "name": "Painting",
+        "description": "The skull on fire painting, now spinning",
+        "file": "painting",
         "embed": true,
         "featured": true
       }
     ],
     "curseforge": {
-      "name": "Caves & Cliffs Panorama",
       "mainCategory": "16x",
       "additionalCategories": {
-        "animated": false,
+        "animated": true,
         "dataPacks": false,
         "fontPacks": false,
         "medieval": false,
         "modSupport": false,
         "modern": false,
         "photoRealistic": false,
+        "steampunk": false,
         "traditional": false,
         "miscellaneous": true
-      }
+      },
+      "license": "All Rights Reserved"
     },
     "planetminecraft": {
+      "category": "Other",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "Kristoffer Zetterstrand",
       "modifies": {
         "armor": 0,
-        "art": 0,
+        "art": true,
         "environment": 0,
         "font": 0,
         "gui": 0,
@@ -75,16 +68,12 @@
         "models": 0
       },
       "tags": [
-        "menu",
-        "background",
-        "panorama",
-        "caves",
+        "art",
+        "skeleton",
+        "meme",
+        "painting",
         "other",
-        "cavesandcliffs",
-        "cliffs",
-        "cavesandcliffsupdate",
-        "118update",
-        "menubackground"
+        "kristofferzetterstrand"
       ]
     },
     "modrinth": {
@@ -102,35 +91,36 @@
         "combat": 0,
         "core-shaders": 0,
         "cursed": 0,
-        "decoration": 0,
+        "decoration": "featured",
         "entities": 0,
         "environment": 0,
         "equipment": 0,
         "fonts": 0,
-        "gui": "featured",
+        "gui": 0,
         "items": 0,
         "locale": 0,
         "modded": 0,
         "models": 0,
         "realistic": 0,
-        "simplistic": true,
+        "simplistic": 0,
         "themed": 0,
         "tweaks": "featured",
         "utility": 0,
         "vanilla-like": "featured"
-      }
+      },
+      "license": "All Rights Reserved/No License"
     }
   },
   "curseforge": {
-    "id": 912543,
-    "slug": "the-1-18-panorama"
+    "id": 873862,
+    "slug": "spinning-skull"
   },
   "planetminecraft": {
-    "id": 5334286,
-    "slug": "1-18-panorama"
+    "id": 5883637,
+    "slug": "spinning-skull"
   },
   "modrinth": {
-    "id": "TJqjGhL2",
-    "slug": "1.18-panorama"
+    "id": "NFwA9yKy",
+    "slug": "spinning-skull"
   }
 }
