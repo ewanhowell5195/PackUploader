@@ -207,6 +207,7 @@ export default {
   },
   async uploadImages() {
     for (const image of project.config.images) {
+      if (image.thumbnail) continue
       if (settings.ewan && !project.ewanhowell?.ignore && image.logo) continue
       try {
         const imageForm = new FormData()
