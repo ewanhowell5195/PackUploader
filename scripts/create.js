@@ -78,15 +78,6 @@ if (fs.existsSync(logoPath)) {
   })
 }
 
-// Ewan Howell
-
-if (settings.ewan && !project.ewanhowell?.ignore && newProject) {
-  await ewanhowell.writeDetails()
-  await ewanhowell.addImages()
-
-  console.log("Ewan Howell: Project fully created")
-}
-
 // CurseForge
 
 if (!project.curseforge.id) {
@@ -107,6 +98,15 @@ if (!project.modrinth.id) {
   await modrinth.setDetails()
 
   console.log("Modrinth: Project fully created")
+}
+
+// Ewan Howell
+
+if (settings.ewan && !project.ewanhowell?.ignore && newProject) {
+  await ewanhowell.writeDetails()
+  await ewanhowell.addImages()
+
+  console.log("Ewan Howell: Project fully created")
 }
 
 // Planet Minecraft

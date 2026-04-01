@@ -1,0 +1,164 @@
+{
+  "config": {
+    "id": "consistent-baby-mobs",
+    "name": "Consistent Baby Mobs",
+    "summary": "Make the babies consistent with the adults!",
+    "description": [
+      "In Minecraft 26.1, Mojang updated the baby mobs to have their own unique textures and models, but now there is no consistency between them and the adults at all!",
+      "This pack fixes Mojang's terrible inconsistencies and makes the babies consistent with the adults again!"
+    ],
+    "optifine": "OptiFine is needed to add support for changing the entity models",
+    "video": false,
+    "github": "https://github.com/ewanhowell5195/ConsistentBabyMobs",
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "latest"
+      },
+      "modrinth": {
+        "type": "latest"
+      },
+      "planetminecraft": {
+        "type": "latest"
+      }
+    },
+    "images": [
+      {
+        "name": "Zombies",
+        "description": "Zombies with consistent textures and proportions",
+        "file": "zombies",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Chickens",
+        "description": "Chickens with consistent textures between adult and baby",
+        "file": "chickens",
+        "embed": true
+      },
+      {
+        "name": "Sheep",
+        "description": "Sheep with consistent textures between adult and baby",
+        "file": "sheep",
+        "embed": true
+      },
+      {
+        "name": "Brown Sheep",
+        "description": "Brown sheep with consistent textures between adult and baby",
+        "file": "brown_sheep"
+      },
+      {
+        "name": "Villagers",
+        "description": "Villagers in a village with consistent textures",
+        "file": "villagers"
+      },
+      {
+        "name": "Villager Conversation",
+        "description": "Two villagers having a conversation showing off their consistent look",
+        "file": "villagers_conversation"
+      },
+      {
+        "name": "Pigs",
+        "description": "Pigs with consistent textures between adult and baby",
+        "file": "pigs"
+      },
+      {
+        "name": "Cows",
+        "description": "Cows with consistent textures between adult and baby",
+        "file": "cows"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "baby",
+        "mobs",
+        "texture",
+        "fix",
+        "vanilla",
+        "entities",
+        "consistent",
+        "models"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": true,
+        "themed": 0,
+        "tweaks": "featured",
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 1501341,
+    "slug": "consistent-baby-mobs"
+  },
+  "planetminecraft": {
+    "id": 6889522,
+    "slug": "consistent-baby-mobs"
+  },
+  "modrinth": {
+    "id": "NkRZWgiv",
+    "slug": "consistent-baby-mobs"
+  }
+}

@@ -69,33 +69,33 @@ if (data.images) {
     console.log("CurseForge: Added project images")
   }
 
-  // if (project.planetminecraft.id) {
-  //   await planetminecraft.removeImages()
-  //   console.log("Planet Minecraft: Removed project images")
+  if (project.planetminecraft.id) {
+    await planetminecraft.removeImages()
+    console.log("Planet Minecraft: Removed project images")
 
-  //   await planetminecraft.uploadImages()
-  //   console.log("Planet Minecraft: Added project images")
-  // }
+    await planetminecraft.uploadImages()
+    console.log("Planet Minecraft: Added project images")
+  }
 
-  // if (project.modrinth.id) {
-  //   if (config.icon) {
-  //     await modrinth.uploadIcon()
-  //   }
+  if (project.modrinth.id) {
+    if (config.icon) {
+      await modrinth.uploadIcon()
+    }
 
-  //   await modrinth.removeImages()
-  //   console.log("Modrinth: Removed project images")
+    await modrinth.removeImages()
+    console.log("Modrinth: Removed project images")
 
-  //   await modrinth.uploadImages()
-  //   console.log("Modrinth: Added project images")
-  // }
+    await modrinth.uploadImages()
+    console.log("Modrinth: Added project images")
+  }
 
-  // if (settings.ewan && !project.ewanhowell?.ignore) {
-  //   await ewanhowell.removeImages()
-  //   console.log("Ewan Howell: Removed project images")
+  if (settings.ewan && !project.ewanhowell?.ignore) {
+    await ewanhowell.removeImages()
+    console.log("Ewan Howell: Removed project images")
 
-  //   await ewanhowell.addImages()
-  //   console.log("Ewan Howell: Added project images")
-  // }
+    await ewanhowell.addImages()
+    console.log("Ewan Howell: Added project images")
+  }
 }
 
 // Update details
@@ -105,18 +105,18 @@ if (project.curseforge.id) {
   console.log("CurseForge: Updated project details")
 }
 
-// if (project.modrinth.id) {
-//   await modrinth.setDetails(data.live)
-//   console.log("Modrinth: Updated project details")
-// }
+if (project.modrinth.id) {
+  await modrinth.setDetails(data.live)
+  console.log("Modrinth: Updated project details")
+}
 
-// if (project.planetminecraft.id) {
-//   await planetminecraft.updateDetails()
-// }
+if (project.planetminecraft.id) {
+  await planetminecraft.updateDetails()
+}
 
-// if (settings.ewan && !project.ewanhowell?.ignore) {
-//   ewanhowell.writeDetails()
-//   console.log("Ewan Howell: Updated project details")
-// }
+if (settings.ewan && !project.ewanhowell?.ignore) {
+  ewanhowell.writeDetails()
+  console.log("Ewan Howell: Updated project details")
+}
 
 process.exit()

@@ -230,12 +230,13 @@ export default {
         })
 
         if (!imagesRequest.ok) {
-          await error("Image uploads failed", imagesRequest)
+          await error(`Image "${image.file}" failed to upload`, imagesRequest).catch(e => console.error(e.message))
+          continue
         }
 
         log(`Image "${image.file}" uploaded`)
       } catch (err) {
-        throw new Error(`CurseForge: Image "${image.file}" failed to upload - ` + JSON.stringify(err))
+        console.error(`CurseForge: Image "${image.file}" failed to upload - ` + JSON.stringify(err))
       }
     }
 
@@ -245,7 +246,8 @@ export default {
       if (settings.ewan && !project.ewanhowell?.ignore && image.logo) continue
       const data = imageData.find(e => e.type === 1 && (image.logo ? e.title === "logo.png" : e.title === image.file + ".jpg"))
       if (!data) {
-        throw new Error(`CurseForge: Image "${image.file}" failed to upload`)
+        log(`Image "${image.file}" not found in uploaded media, skipping metadata update`)
+        continue
       }
       const r = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
         method: "PUT",
