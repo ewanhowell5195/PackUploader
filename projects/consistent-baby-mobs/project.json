@@ -10,13 +10,15 @@
     "optifine": "OptiFine is needed to add support for changing the entity models",
     "video": "KM5eWSR4O4o",
     "github": "https://github.com/ewanhowell5195/ConsistentBabyMobs",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "versions": {
       "curseforge": {
-        "type": "latest"
+        "type": "after",
+        "version": "26.1"
       },
       "modrinth": {
-        "type": "latest"
+        "type": "after",
+        "version": "26.1"
       },
       "planetminecraft": {
         "type": "latest"
