@@ -244,6 +244,7 @@ export default {
     const imageData = await this.getMedia()
 
     for (const image of project.config.images) {
+      if (image.thumbnail) continue
       if (settings.ewan && !project.ewanhowell?.ignore && image.logo) continue
       const data = imageData.find(e => e.type === 1 && (image.logo ? e.title === "logo.png" : e.title === image.file + ".jpg"))
       if (!data) {
