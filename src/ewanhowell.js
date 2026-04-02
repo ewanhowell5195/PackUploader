@@ -21,7 +21,7 @@ export default {
     data.downloads ??= []
     data.downloads[0] = {
       text: "Download",
-      link: `https://modrinth.com/resourcepack/${project.modrinth.slug}/`
+      link: `https://modrinth.com/resourcepack/${project.modrinth.slug}`
     }
 
     fs.writeFileSync(dataPath, JSON.stringify(data, null, 2))

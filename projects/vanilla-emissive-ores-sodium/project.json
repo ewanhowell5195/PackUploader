@@ -4,6 +4,7 @@
     "name": "Vanilla Emissive Ores [Sodium]",
     "summary": "Make the ore textures emissive, completely in vanilla!",
     "description": [
+      "AFTER MINECRAFT 26.1, THIS SODIUM VERSION IS NO LONGER NEEDED! USE THE REGULAR PACK INSTEAD!",
       "This pack utilises the new emissive block models feature from 1.21.2 to add emissive ore textures!",
       "This version of the resource pack supports the Sodium mod, but is more performance heavy."
     ],
