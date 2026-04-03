@@ -148,7 +148,7 @@ Configure your social media links. **Important:** Links must match CurseForge's 
 <details>
   <summary><strong>Planet Minecraft Settings</strong></summary>
 
-**Website Link:** This is displayed underneath the primary download button as a secondary button
+**Website Link:** This is displayed underneath the primary download button as a secondary button. If not provided, no website link will be shown.
 - `link`: URL to your website/social media
 - `title`: Display text for the link
 
