@@ -36,18 +36,36 @@ export async function getBuffer(url, cookie) {
 
   await page.setExtraHTTPHeaders({ cookie })
 
-  const origin = new URL(url).origin.replace("static.", "www.")
-  await page.goto(origin, { waitUntil: "domcontentloaded" })
+  let status = 0
+  let buffer = null
 
-  const result = await page.evaluate(async u => {
-    const r = await fetch(u, { credentials: "include" })
-    const buf = await r.arrayBuffer()
-    return { status: r.status, data: Array.from(new Uint8Array(buf)) }
-  }, url)
+  const capture = async res => {
+    if (res.url() !== url) return
+    status = res.status()
+    try {
+      buffer = await res.buffer()
+    } catch {}
+  }
+  page.on("response", capture)
 
+  try {
+    await page.goto(url, { waitUntil: "networkidle0" })
+  } catch (e) {
+    if (!/ERR_ABORTED/.test(e.message)) {
+      page.off("response", capture)
+      await page.close()
+      throw e
+    }
+  }
+
+  for (let i = 0; i < 20 && !buffer; i++) {
+    await new Promise(r => setTimeout(r, 50))
+  }
+
+  page.off("response", capture)
   await page.close()
 
-  return { status: result.status, buffer: Buffer.from(result.data) }
+  return { status, buffer }
 }
 
 export async function makePost(referrerUrl, requestUrl, cookie, headers, body) {
