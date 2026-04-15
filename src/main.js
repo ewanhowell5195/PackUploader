@@ -25,6 +25,30 @@ globalThis.makeForm = data => {
 
 globalThis.getReplacementPath = (obj, path) => path.replace(/\[(\d+)\]/g, ".$1").split(".").reduce((o, k) => (o && k in o ? o[k] : undefined), obj)
 
+globalThis.formatInline = (str, platform) => {
+  if (platform === "modrinth") return str
+  const r = {
+    curseforge: {
+      boldItalic: t => `<strong><em>${t}</em></strong>`,
+      bold: t => `<strong>${t}</strong>`,
+      italic: t => `<em>${t}</em>`,
+      underline: t => `<span style="text-decoration: underline;">${t}</span>`
+    },
+    planetminecraft: {
+      boldItalic: t => `[b][i]${t}[/i][/b]`,
+      bold: t => `[b]${t}[/b]`,
+      italic: t => `[i]${t}[/i]`,
+      underline: t => `[u]${t}[/u]`
+    }
+  }[platform]
+  if (!r) return str
+  str = str.replace(/\*\*\*(.+?)\*\*\*/g, (_, t) => r.boldItalic(t))
+  str = str.replace(/\*\*(.+?)\*\*/g, (_, t) => r.bold(t))
+  str = str.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, (_, t) => r.italic(t))
+  str = str.replace(/__(.+?)__/g, (_, t) => r.underline(t))
+  return str
+}
+
 globalThis.save = () => {
   const clone = structuredClone(project)
   delete clone.config.icon

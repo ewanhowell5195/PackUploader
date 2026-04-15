@@ -217,7 +217,7 @@ export default {
     for (const replacement of replacements) {
       let str = ""
       if (replacement[1] === "description") {
-        str = project.config.description.map(e => e + "\n\n").join("").trim()
+        str = project.config.description.map(e => formatInline(e, "modrinth") + "\n\n").join("").trim()
       } else if (replacement[1] === "images") {
         const images = project.config.images.filter(e => e.embed)
         for (const image of images) {
@@ -244,6 +244,7 @@ export default {
         if (typeof str !== "string") {
           str = "undefined"
         }
+        str = formatInline(str, "modrinth")
       }
       markdown = markdown.replaceAll(replacement[0], str)
     }

@@ -361,7 +361,7 @@ export default {
     for (const replacement of replacements) {
       let str = ""
       if (replacement[1] === "description") {
-        str = project.config.description.join("\n\n")
+        str = project.config.description.map(e => formatInline(e, "planetminecraft")).join("\n\n")
       } else if (replacement[1] === "images") {
         const images = project.config.images.filter(e => e.embed)
         const imageList = []
@@ -384,6 +384,7 @@ export default {
         if (typeof str !== "string") {
           str = "undefined"
         }
+        str = formatInline(str, "planetminecraft")
       }
       bbcode = bbcode.replaceAll(replacement[0], str)
     }

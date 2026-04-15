@@ -578,7 +578,7 @@ export default {
     for (const replacement of replacements) {
       let str = ""
       if (replacement[1] === "description") {
-        str += project.config.description.map(e => `<p>${e.replaceAll("\n", "<br>")}</p>`).join("")
+        str += project.config.description.map(e => `<p>${formatInline(e, "curseforge").replaceAll("\n", "<br>")}</p>`).join("")
       } else if (replacement[1] === "images") {
         const images = project.config.images.filter(e => e.embed)
         for (const image of images) {
@@ -600,6 +600,7 @@ export default {
         if (typeof str !== "string") {
           str = "undefined"
         }
+        str = formatInline(str, "curseforge")
       }
       html = html.replaceAll(replacement[0], str)
     }
