@@ -227,6 +227,19 @@ These variables have special handling and are not standard text insertion:
 - `{{ images }}` - Embedded project images
 - `{{ video }}` - YouTube video embed (Modrinth only - CurseForge and Planet Minecraft use native video support)
 
+## Inline Formatting
+
+Template variable values support inline markdown formatting that is automatically converted to each platform's native format:
+
+| Syntax | CurseForge (HTML) | Modrinth (Markdown) | Planet Minecraft (BBCode) |
+|---|---|---|---|
+| `*text*` | `<em>` | passthrough | `[i]` |
+| `**text**` | `<strong>` | passthrough | `[b]` |
+| `***text***` | `<strong><em>` | passthrough | `[b][i]` |
+| `__text__` | underline `<span>` | passthrough | `[u]` |
+
+This works in both `{{ description }}` paragraphs and standard template variables.
+
 ## Snippets
 
 Snippets are reusable components shared across projects. They're formatted as `{{ snippet:snippetname }}` and loaded from the `templates/snippets/` folder:
