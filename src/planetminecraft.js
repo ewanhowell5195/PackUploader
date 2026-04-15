@@ -548,8 +548,12 @@ export default {
             imgPath = path.join(projectPath, "images", name)
           }
           log(`Downloading image: ${name}`)
-          const { buffer } = await getBuffer(image.url, auth.planetminecraft)
-          await sharp(buffer).png().toFile(imgPath)
+          try {
+            const { buffer } = await getBuffer(image.url, auth.planetminecraft)
+            await sharp(buffer).png().toFile(imgPath)
+          } catch (e) {
+            log(`Failed to download image: ${name} - ${e.message}`)
+          }
         }
       }
     }

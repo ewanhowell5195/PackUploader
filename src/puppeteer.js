@@ -38,32 +38,45 @@ export async function getBuffer(url, cookie) {
 
   let status = 0
   let buffer = null
+  const pending = []
 
-  const capture = async res => {
-    if (res.url() !== url) return
-    status = res.status()
-    try {
-      buffer = await res.buffer()
-    } catch {}
+  const stripQuery = u => u.split("?")[0]
+  const target = stripQuery(url)
+
+  const capture = res => {
+    const p = (async () => {
+      try {
+        if (stripQuery(res.url()) !== target) return
+        if ([301, 302, 303, 307, 308].includes(res.status())) return
+        const buf = await res.buffer()
+        if (buf && buf.length) {
+          status = res.status()
+          buffer = buf
+        }
+      } catch {}
+    })()
+    pending.push(p)
   }
   page.on("response", capture)
 
   try {
-    await page.goto(url, { waitUntil: "networkidle0" })
+    await page.goto(url, { waitUntil: "networkidle0", timeout: 30000 })
   } catch (e) {
-    if (!/ERR_ABORTED/.test(e.message)) {
+    if (!/ERR_ABORTED|Navigation timeout/.test(e.message)) {
       page.off("response", capture)
       await page.close()
       throw e
     }
   }
 
-  for (let i = 0; i < 20 && !buffer; i++) {
-    await new Promise(r => setTimeout(r, 50))
-  }
+  await Promise.all(pending)
 
   page.off("response", capture)
   await page.close()
+
+  if (!buffer) {
+    throw new Error(`getBuffer: no response body captured for ${url}`)
+  }
 
   return { status, buffer }
 }
