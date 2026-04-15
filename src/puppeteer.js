@@ -31,6 +31,20 @@ export async function getHtml(url, cookie) {
   return { status, html }
 }
 
+export async function getBuffer(url, cookie) {
+  const page = await browser.newPage()
+
+  await page.setExtraHTTPHeaders({ cookie })
+
+  const response = await page.goto(url)
+  const status = response.status()
+  const buffer = await response.buffer()
+
+  await page.close()
+
+  return { status, buffer }
+}
+
 export async function makePost(referrerUrl, requestUrl, cookie, headers, body) {
   const page = await browser.newPage()
 

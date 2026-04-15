@@ -1,4 +1,4 @@
-import { getHtml, makePost } from "./puppeteer.js"
+import { getHtml, getBuffer, makePost } from "./puppeteer.js"
 import { JSDOM } from "jsdom"
 
 let token
@@ -548,7 +548,8 @@ export default {
             imgPath = path.join(projectPath, "images", name)
           }
           log(`Downloading image: ${name}`)
-          await sharp(await fetch(image.url).then(e => e.arrayBuffer())).png().toFile(imgPath)
+          const { buffer } = await getBuffer(image.url, auth.planetminecraft)
+          await sharp(buffer).png().toFile(imgPath)
         }
       }
     }
