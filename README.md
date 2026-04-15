@@ -45,7 +45,7 @@ PackUploader is an automation tool that streamlines the process of publishing Mi
 4. Open a terminal in that folder
 5. Run `npm i` to install all required dependencies
 
-The scripts are run via launcher files in the `run/` folder. Windows users use the `.bat` files (e.g. `run/create.bat`). macOS/Linux users use the matching `.sh` files (e.g. `./run/create.sh`), and may need to mark them executable once with `chmod +x run/*.sh`. Throughout the rest of this README, wherever a `.bat` file is mentioned, use the corresponding `.sh` file instead if you're on macOS or Linux.
+The scripts are run via launcher files in the `run` folder. Windows users use the `.bat` files (e.g. `run\create.bat`). macOS/Linux users use the matching `.sh` files (e.g. `./run/create.sh`), and may need to mark them executable once with `chmod +x run/*.sh`. Throughout the rest of this README, wherever a `.bat` file is mentioned, use the corresponding `.sh` file instead if you're on macOS or Linux.
 
 ## Authentication
 The `auth.json` file stores your authentication tokens and cookies, allowing the program to interact with the websites on your behalf.
@@ -281,7 +281,7 @@ Used for creating new projects on all platforms.
 1. Navigate to the `data/create/` folder
 2. Configure your project settings (see configuration details below)
 3. Add your required files (pack.zip, pack.png, create.json)
-4. Double-click `run/create.bat` to create and upload the project
+4. Double-click `run\create.bat` to create and upload the project
 
 Your project will have been created and uploaded. You will now have a project folder within the `/projects/` directory with all your project information.
 
@@ -520,7 +520,7 @@ Used for importing existing projects from platforms into your local system.
 ## Usage
 1. Navigate to the `data/` folder
 2. Configure your `import.json` file (see configuration below)
-3. Double-click `run/import.bat` to import the project
+3. Double-click `run\import.bat` to import the project
 
 After importing, your project will appear in `/projects/yourprojectid/`. Check this folder to ensure everything looks correct and make any required changes.
 
@@ -575,7 +575,7 @@ Used for uploading updates to existing projects on all platforms.
 1. Navigate to the `data/update/` folder
 2. Add your required files (pack.zip, update.json)
 3. Configure your `update.json` file (see configuration below)
-4. Double-click `run/update.bat` to upload the update
+4. Double-click `run\update.bat` to upload the update
 
 ## Required Files
 - `pack.zip` - Your updated resource pack file (must be named exactly this)
@@ -624,7 +624,7 @@ Used for updating project information like description, name, summary, social li
 1. Navigate to your project folder in `/projects/yourprojectid/`
 2. Make any desired changes to your project files
 3. Configure `data/details.json` (see configuration below)
-4. Double-click `run/details.bat` to update the project details
+4. Double-click `run\details.bat` to update the project details
 
 ### What Gets Updated
 This script updates project information such as description, name, categories, social links, and more. If `images` is set to `true`, it will also reupload project icons and images across all platforms.
@@ -655,4 +655,4 @@ Planet Minecraft has a limit of how many project updates you can submit per day.
 
 ## Usage
 1. Have a project be added to the queue. You will be told when this happens
-1. Double-click `run/queue.bat` to process your queue
+1. Double-click `run\queue.bat` to process your queue
