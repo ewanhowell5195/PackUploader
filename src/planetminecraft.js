@@ -521,7 +521,7 @@ export default {
         const fileCounts = {}
         const imageData = Array.from(document.querySelectorAll(".image_list > .thumbnail")).map((e, i) => {
           const url = e.dataset.fullFilename
-          const basename = url?.split("/").at(-1).replace(/\.\w+$/, "").replace(/_s$/, "")
+          const basename = url?.split("/").at(-1).replace(/\.\w+$/, "").replace(/_[sl]$/, "")
           let file = basename?.replace(/^\d+-/, "").replaceAll("-", "_") || basename || (url ? `image_${i + 1}` : undefined)
           if (file) {
             fileCounts[file] = (fileCounts[file] ?? 0) + 1
