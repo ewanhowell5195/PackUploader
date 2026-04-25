@@ -35,9 +35,18 @@ const licenses = {
 
 export default {
   async createProject() {
+    const baseSlug = project.modrinth.slug ?? project.config.id
+    let slug = baseSlug
+    let suffix = 0
+    while ((await fetch(`https://api.modrinth.com/v2/project/${slug}`)).status !== 404) {
+      suffix++
+      slug = `${baseSlug}-${suffix}`
+    }
+    if (slug !== baseSlug) log(`Slug "${baseSlug}" is taken, using "${slug}" instead`)
+
     const form = makeForm({
       data: {
-        slug: project.config.id,
+        slug,
         title: project.config.name,
         description: project.config.summary,
         categories: Object.entries(project.config.modrinth.tags).filter(e => e[1] === "featured").map(e => e[0]),
