@@ -518,18 +518,25 @@ export default {
       }
       
       if (!settings.ewan || project.ewanhowell?.ignore) {
-        const imageData = Array.from(document.querySelectorAll(".image_list > .thumbnail")).map(e => {
-          const file = e.dataset.fullFilename?.split("/").at(-1).slice(0, -6).split("-").slice(1).join("_")
+        const fileCounts = {}
+        const imageData = Array.from(document.querySelectorAll(".image_list > .thumbnail")).map((e, i) => {
+          const url = e.dataset.fullFilename
+          const basename = url?.split("/").at(-1).replace(/\.\w+$/, "").replace(/_s$/, "")
+          let file = basename?.replace(/^\d+-/, "").replaceAll("-", "_") || basename || (url ? `image_${i + 1}` : undefined)
+          if (file) {
+            fileCounts[file] = (fileCounts[file] ?? 0) + 1
+            if (fileCounts[file] > 1) file = `${file}_${fileCounts[file]}`
+          }
           const caption = e.dataset.caption
           const special = caption === "Project Thumbnail" || caption === "Project Logo"
           const hasSeparator = !special && caption?.includes(" - ")
           return {
             file,
-            url: e.dataset.fullFilename,
+            url,
             title: special ? caption : hasSeparator ? caption.split(" - ")[0] : undefined,
             description: hasSeparator ? caption.split(" - ").slice(1).join(" - ") : special ? undefined : caption
           }
-        }).filter(e => e.file)
+        }).filter(e => e.url)
 
         config.images = imageData.filter(e => e.title !== "Project Thumbnail" && e.title !== "Project Logo").map((e, i) => ({
           name: e.title || `Image #${i + 1}`,
