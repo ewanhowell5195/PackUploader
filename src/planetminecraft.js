@@ -520,17 +520,20 @@ export default {
       if (!settings.ewan || project.ewanhowell?.ignore) {
         const imageData = Array.from(document.querySelectorAll(".image_list > .thumbnail")).map(e => {
           const file = e.dataset.fullFilename?.split("/").at(-1).slice(0, -6).split("-").slice(1).join("_")
+          const caption = e.dataset.caption
+          const special = caption === "Project Thumbnail" || caption === "Project Logo"
+          const hasSeparator = !special && caption?.includes(" - ")
           return {
             file,
             url: e.dataset.fullFilename,
-            title: e.dataset.caption?.split(" - ")[0] || file?.split("_").map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(" "),
-            description: e.dataset.caption?.split(" - ").slice(1).join(" - ")
+            title: special ? caption : hasSeparator ? caption.split(" - ")[0] : undefined,
+            description: hasSeparator ? caption.split(" - ").slice(1).join(" - ") : special ? undefined : caption
           }
         }).filter(e => e.file)
-        
+
         config.images = imageData.filter(e => e.title !== "Project Thumbnail" && e.title !== "Project Logo").map((e, i) => ({
-          name: e.title,
-          description: e.description || e.title,
+          name: e.title || `Image #${i + 1}`,
+          description: e.description || e.title || `Image #${i + 1}`,
           file: e.file,
           embed: i < 3 ? true : undefined,
           featured: i ? undefined : true
