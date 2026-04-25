@@ -364,7 +364,7 @@ export default {
       }
       const versions = await versionsRequest.json()
 
-      config.version = versions[0].version_number
+      config.version = versions[0]?.version_number ?? "0.0.0"
 
       config.versions = {
         curseforge: {

@@ -678,18 +678,20 @@ export default {
     config.video = media.find(e => e.type === 2)?.url.split("?")[0].split("/").at(-1) ?? false
     config.github = (await sourceRequest.json()).sourceHostUrl ?? false
     
+    const gameVersion = files[0]?.gameVersions[0]?.Label ?? null
+    if (!files[0]) config.version = "0.0.0"
     config.versions = {
       curseforge: {
         type: "exact",
-        version: files[0].gameVersions[0].Label
+        version: gameVersion
       },
       planetminecraft: {
         type: "exact",
-        version: files[0].gameVersions[0].Label
+        version: gameVersion
       },
       modrinth: {
         type: "exact",
-        version: files[0].gameVersions[0].Label
+        version: gameVersion
       }
     }
 
