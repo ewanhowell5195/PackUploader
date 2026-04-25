@@ -307,7 +307,7 @@ export default {
         issues_url: project.config.github ? project.config.github.replace(/\/+$/, "") + "/issues" : undefined,
         source_url: project.config.github || undefined,
         discord_url: settings.modrinth.discord,
-        license_id: licenses[project.config.modrinth.license] ?? "LicenseRef-All-Rights-Reserved",
+        license_id: project.config.modrinth.license ? licenses[project.config.modrinth.license] ?? "LicenseRef-All-Rights-Reserved" : undefined,
         requested_status: "approved",
         status: !live ? "processing" : undefined
       })
@@ -341,7 +341,7 @@ export default {
       config.modrinth.tags[category] = true
     }
 
-    config.modrinth.license = Object.entries(licenses).find(e => e[1] === data.license.id)[0]
+    config.modrinth.license = Object.entries(licenses).find(e => e[1] === data.license.id)?.[0] ?? null
 
     if (!project.curseforge.id) {
       config.name = data.title

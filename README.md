@@ -485,6 +485,8 @@ Configure your project images in the `images` array. Each image object supports:
 
 </details>
 
+If a project is imported with a license that PackUploader doesn't support (e.g. a custom `LicenseRef-*` license set on the Modrinth website), `modrinth.license` is set to `null`. In this state, subsequent updates leave the license field untouched on Modrinth, preserving the original custom license. Set the field to one of the supported names above if you want PackUploader to manage it.
+
 ### Planet Minecraft Settings
 
 <details>
