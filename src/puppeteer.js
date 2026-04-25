@@ -38,40 +38,47 @@ export async function getBuffer(url, cookie) {
 
   let status = 0
   let buffer = null
-  const pending = []
 
   const stripQuery = u => u.split("?")[0]
   const target = stripQuery(url)
 
-  const capture = res => {
-    const p = (async () => {
-      try {
-        if (stripQuery(res.url()) !== target) return
-        if ([301, 302, 303, 307, 308].includes(res.status())) return
-        const buf = await res.buffer()
-        if (buf && buf.length) {
-          status = res.status()
-          buffer = buf
+  const client = await page.createCDPSession()
+  await client.send("Fetch.enable", {
+    patterns: [{ urlPattern: "*", requestStage: "Response" }]
+  })
+
+  client.on("Fetch.requestPaused", async event => {
+    const { requestId, responseHeaders = [], responseStatusCode, request } = event
+    try {
+      const { body, base64Encoded } = await client.send("Fetch.getResponseBody", { requestId })
+      if (stripQuery(request.url) === target && body && ![301, 302, 303, 307, 308].includes(responseStatusCode)) {
+        const data = Buffer.from(body, base64Encoded ? "base64" : "utf8")
+        if (data.length) {
+          status = responseStatusCode
+          buffer = data
         }
-      } catch {}
-    })()
-    pending.push(p)
-  }
-  page.on("response", capture)
+      }
+      const headers = responseHeaders.filter(h => h.name.toLowerCase() !== "content-disposition")
+      await client.send("Fetch.fulfillRequest", {
+        requestId,
+        responseCode: responseStatusCode,
+        responseHeaders: headers,
+        body
+      })
+    } catch {
+      try { await client.send("Fetch.continueRequest", { requestId }) } catch {}
+    }
+  })
 
   try {
     await page.goto(url, { waitUntil: "networkidle0", timeout: 30000 })
   } catch (e) {
     if (!/ERR_ABORTED|Navigation timeout/.test(e.message)) {
-      page.off("response", capture)
       await page.close()
       throw e
     }
   }
 
-  await Promise.all(pending)
-
-  page.off("response", capture)
   await page.close()
 
   if (!buffer) {
