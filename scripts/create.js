@@ -117,4 +117,4 @@ if (!project.planetminecraft.id) {
   console.log("Planet Minecraft: Project fully created")
 }
 
-process.exit()
+await exit()

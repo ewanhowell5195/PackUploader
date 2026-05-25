@@ -12,7 +12,7 @@ globalThis.project = JSON.parse(fs.readFileSync(projectPath + "/project.json"))
 
 if (project.config.version === config.version) {
   console.error(`Error: "${config.id}" is already at version ${config.version}`)
-  process.exit()
+  await exit()
 }
 
 project.config.version = config.version
@@ -38,4 +38,4 @@ if (project.planetminecraft.id) {
   await planetminecraft.versionUpdate()
 }
 
-process.exit()
+await exit()

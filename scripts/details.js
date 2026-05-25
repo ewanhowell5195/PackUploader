@@ -119,4 +119,4 @@ if (settings.ewan && !project.ewanhowell?.ignore) {
   console.log("Ewan Howell: Updated project details")
 }
 
-process.exit()
+await exit()

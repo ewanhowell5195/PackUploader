@@ -10,6 +10,12 @@ globalThis.planetminecraft = (await import("./planetminecraft.js")).default
 globalThis.modrinth = (await import("./modrinth.js")).default
 globalThis.ewanhowell = (await import("./ewanhowell.js")).default
 
+const { closeBrowser } = await import("./puppeteer.js")
+globalThis.exit = async (code = 0) => {
+  await closeBrowser()
+  process.exit(code)
+}
+
 globalThis.makeForm = data => {
   const form = new FormData
   for (const [k, v] of Object.entries(data)) {

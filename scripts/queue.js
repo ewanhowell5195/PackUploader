@@ -4,7 +4,7 @@ const queuePath = "data/queue.json"
 
 if (!fs.existsSync(queuePath)) {
   console.log("You do not have a queue to process")
-  process.exit()
+  await exit()
 }
 
 console.log("Processing queue")
@@ -35,4 +35,4 @@ if (Array.isArray(queue) && queue.length === 0) {
   fs.writeFileSync(queuePath, JSON.stringify(queue, null, 2))
 }
 
-process.exit()
+await exit()

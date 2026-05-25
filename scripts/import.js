@@ -109,7 +109,7 @@ globalThis.projectPath = path.join("projects", config.id)
 
 if (fs.existsSync(projectPath)) {
   console.error(`Error: "${config.id}" is already exists`)
-  process.exit()
+  await exit()
 } else {
   fs.mkdirSync(path.join(projectPath, "images"), { recursive: true })
 }
@@ -160,4 +160,4 @@ if (project.planetminecraft.id) {
 
 console.log(`Project fully imported "${config.id}"`)
 
-process.exit()
+await exit()

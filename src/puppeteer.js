@@ -5,9 +5,12 @@ puppeteer.use(StealthPlugin())
 
 const browser = await puppeteer.launch({ headless: true })
 
-process.on("exit", () => browser?.close())
-process.on("SIGINT", () => process.exit())
-process.on("SIGTERM", () => process.exit())
+export async function closeBrowser() {
+  if (browser?.connected) await browser.close()
+}
+
+process.on("SIGINT", async () => { await closeBrowser(); process.exit() })
+process.on("SIGTERM", async () => { await closeBrowser(); process.exit() })
 process.on("uncaughtException", err => {
   console.error(err)
   process.exit(1)
