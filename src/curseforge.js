@@ -2,8 +2,13 @@ function log(message) {
   console.log(`CurseForge: ${message}`)
 }
 
-async function error(err, req) {
-  throw new Error(`CurseForge: ${err} - ${await req.text()}`)
+async function error(err, req, nonFatal) {
+  const message = `CurseForge: ${err} - ${await req.text()}`
+  if (nonFatal) {
+    console.error(message)
+    return
+  }
+  throw new Error(message)
 }
 
 const categories = {
@@ -268,7 +273,7 @@ export default {
       if (r.ok) {
         log(`Updated metadata for image "${image.file}"`)
       } else {
-        await error(`Failed to update metadata for image "${image.file}"`, r)
+        await error(`Failed to update metadata for image "${image.file}"`, r, true)
       }
     }
   },
@@ -408,25 +413,6 @@ export default {
       bluesky: 14
     }
 
-    const socialsRequest = await fetch(`https://authors.curseforge.com/_api/projects/social-links/${project.curseforge.id}`, {
-      method: "PUT",
-      headers: {
-        cookie: auth.curseforge.cookie,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        links: Object.entries(settings.curseforge.socials).filter(e => e[1]).map(([k, v]) => ({
-          type: socialTypes[k],
-          url: v
-        }))
-      })
-    })
-    if (socialsRequest.ok) {
-      log("Social links set")
-    } else {
-      await error("Failed to set social links", socialsRequest)
-    }
-
     const licenseRequest = await fetch(`https://authors.curseforge.com/_api/project-license/${project.curseforge.id}/update`, {
       method: "PUT",
       headers: {
@@ -440,7 +426,7 @@ export default {
     if (licenseRequest.ok) {
       log("License set")
     } else {
-      await error("Failed to set license", licenseRequest)
+      await error("Failed to set license", licenseRequest, true)
     }
 
     const donationTypes = {
@@ -468,7 +454,11 @@ export default {
         subCategoryIds: Object.entries(project.config.curseforge.additionalCategories).filter(e => e[1]).map(e => subCategories[e[0]]),
         summary: project.config.summary,
         donationTypeId: donationTypes[settings.curseforge.donation.type],
-        donationIdentifier: settings.curseforge.donation.type === "none" ? "" : settings.curseforge.donation.value
+        donationIdentifier: settings.curseforge.donation.type === "none" ? "" : settings.curseforge.donation.value,
+        links: Object.entries(settings.curseforge.socials).filter(e => e[1]).map(([k, v]) => ({
+          type: socialTypes[k],
+          url: v
+        }))
       })
     })
     if (!updateRequest.ok) {
@@ -535,7 +525,7 @@ export default {
       if (metadataRequest.ok) {
         log(`Updated metadata for video`)
       } else {
-        await error("Failed to update metadata for video", metadataRequest)
+        await error("Failed to update metadata for video", metadataRequest, true)
       }
 
       const orderRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}/update-display-order`, {
