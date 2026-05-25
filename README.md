@@ -59,25 +59,35 @@ Example:
 CobaltSession=hguoewhguoewhudofewhfuioewhfuopewufjeiwohgoewpgwe
 ```
 
+If multiple cookies are required, separate them with `; `:
+```
+CookieName1=CookieValue1; CookieName2=CookieValue2
+```
+Example:
+```
+CobaltSession=hguoewhguoewhudofewhfuioewhfuopewufjeiwohgoewpgwe; AuthorsUser=fheuiwlgiojgoegiwefioehguiwehofwejgewuifgewiuofghueiwgviuew
+```
+
 <details>
   <summary><strong>CurseForge Setup</strong></summary>
 
 You will need:
 - `token`
 - `CobaltSession` cookie
+- `AuthorsUser` cookie
 
 ### Token
 1. Go to [CurseForge API Tokens](https://authors-old.curseforge.com/account/api-tokens)
 2. Create a new API token
 3. Add this to your `auth.json`
 
-### Cookie
+### Cookies
 1. Go to [CurseForge Authors](https://authors.curseforge.com/) and log in
 2. Open your browser's developer tools
    - **Firefox:** Storage tab
    - **Chrome:** Application tab
 3. Under **Cookies**, select the site
-4. Copy the `CobaltSession` name and value into your `auth.json`
+4. Copy the `CobaltSession` and `AuthorsUser` names and values into your `auth.json`
 
 </details>
 
