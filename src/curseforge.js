@@ -268,7 +268,7 @@ export default {
       if (r.ok) {
         log(`Updated metadata for image "${image.file}"`)
       } else {
-        console.error(`Failed to update metadata for image "${image.file}" - ${await r.text()}`)
+        await error(`Failed to update metadata for image "${image.file}"`, r)
       }
     }
   },
@@ -424,7 +424,7 @@ export default {
     if (socialsRequest.ok) {
       log("Social links set")
     } else {
-      console.error(`Failed to set social links - ${await socialsRequest.text()}`)
+      await error("Failed to set social links", socialsRequest)
     }
 
     const licenseRequest = await fetch(`https://authors.curseforge.com/_api/project-license/${project.curseforge.id}/update`, {
@@ -440,7 +440,7 @@ export default {
     if (licenseRequest.ok) {
       log("License set")
     } else {
-      console.error(`Failed to set license - ${await licenseRequest.text()}`)
+      await error("Failed to set license", licenseRequest)
     }
 
     const donationTypes = {
@@ -535,7 +535,7 @@ export default {
       if (metadataRequest.ok) {
         log(`Updated metadata for video`)
       } else {
-        console.error(`Failed to update metadata for video - ${await metadataRequest.text()}`)
+        await error("Failed to update metadata for video", metadataRequest)
       }
 
       const orderRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}/update-display-order`, {
