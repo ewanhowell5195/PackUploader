@@ -18,10 +18,13 @@ if (project.config.version === config.version) {
 project.config.version = config.version
 project.config.versions = config.versions
 
+const changelog = config.changelog
+
 globalThis.config = project.config
 
 save()
 
+config.changelog = changelog
 config.pack = fs.readFileSync("data/update/pack.zip")
 
 // Updates
