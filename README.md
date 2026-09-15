@@ -678,6 +678,8 @@ Make all desired changes to your project files in the `/projects/yourprojectid/`
 
 Planet Minecraft has a limit of how many project updates you can submit per day. If you are submitting updates and you reach this limit, these updates will be submit on CurseForge and Modrinth, but queued for Planet Minecraft. You can then process the queue once your limit has been reset to submit those updates.
 
+The same happens if your Planet Minecraft `pmc_autologin` cookie has expired. The update is queued, and you can process the queue after putting a fresh cookie in your `auth.json`.
+
 ## Usage
 1. Have a project be added to the queue. You will be told when this happens
 1. Double-click `run\queue.bat` to process your queue

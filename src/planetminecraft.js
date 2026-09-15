@@ -29,6 +29,25 @@ function ratelimited(r) {
   }
 }
 
+function loggedIn(html) {
+  return html.includes('name="member_id"')
+}
+
+const loggedOutMessage = "You are not logged in to Planet Minecraft, your pmc_autologin cookie has probably expired"
+
+function addToQueue(entry) {
+  let queue = []
+  if (fs.existsSync("data/queue.json")) {
+    queue = JSON.parse(fs.readFileSync("data/queue.json")).filter(e => !(e.type === "planetminecraft" && e.id === config.id))
+  }
+  queue.push({
+    id: config.id,
+    type: "planetminecraft",
+    ...entry
+  })
+  fs.writeFileSync("data/queue.json", JSON.stringify(queue, null, 2))
+}
+
 async function request(body, referrer, json = true) {
   referrer ??= project.planetminecraft.id
   const { status, text } = await makePost(`https://www.planetminecraft.com/account/manage/texture-packs/${referrer}`, "https://www.planetminecraft.com/ajax.php", auth.planetminecraft, {
@@ -78,7 +97,7 @@ const categories = {
 }
 
 export default {
-  async getProject() {
+  async getProject(allowLoggedOut) {
     const { status, html } = await getHtml(
       `https://www.planetminecraft.com/account/manage/texture-packs/${project.planetminecraft.id}`,
       auth.planetminecraft
@@ -86,11 +105,16 @@ export default {
 
     ratelimited({ status })
 
-    const $ = load(html)
-
     if (status >= 400) {
       error("Failed to fetch project", html)
     }
+
+    if (!loggedIn(html)) {
+      if (allowLoggedOut) return null
+      error(loggedOutMessage)
+    }
+
+    const $ = load(html)
 
     token = $("#core-csrf-token").attr("content")
 
@@ -106,6 +130,10 @@ export default {
 
     if (status >= 400) {
       error("Failed to fetch project", html)
+    }
+
+    if (!loggedIn(html)) {
+      error(loggedOutMessage)
     }
 
     const document = new JSDOM(html).window.document
@@ -126,6 +154,10 @@ export default {
 
     if (status >= 400) {
       error("Failed to fetch a new project", html)
+    }
+
+    if (!loggedIn(html)) {
+      error(loggedOutMessage)
     }
 
     const $ = load(html)
@@ -412,18 +444,11 @@ export default {
           return
         }
         log("You have reached the daily Planet Minecraft update limit. Your update has been added to the update queue")
-        let queue = []
-        if (fs.existsSync("data/queue.json")) {
-          queue = JSON.parse(fs.readFileSync("data/queue.json")).filter(e => e.id !== project.planetminecraft.id)
-        }
-        queue.push({
-          id: config.id,
-          type: "planetminecraft",
+        addToQueue({
           version: args.version,
           changelog: args.changelog,
           versions: config.versions.planetminecraft
         })
-        fs.writeFileSync("data/queue.json", JSON.stringify(queue, null, 2))
         return
       }
       error("Failed to submit update log", logRequest, false)
@@ -434,7 +459,17 @@ export default {
     return true
   },
   async versionUpdate() {
-    const $ = await this.getProject()
+    const $ = await this.getProject(true)
+
+    if (!$) {
+      log(`${loggedOutMessage}. Your update has been added to the update queue`)
+      addToQueue({
+        version: config.version,
+        changelog: config.changelog,
+        versions: config.versions.planetminecraft
+      })
+      return
+    }
 
     // Make Log
 
@@ -572,7 +607,12 @@ export default {
   async queue(entry) {
     log(`Processing queue entry for: ${config.id}`)
 
-    const $ = await this.getProject()
+    const $ = await this.getProject(true)
+
+    if (!$) {
+      log(`${loggedOutMessage}. No queued Planet Minecraft updates will be processed`)
+      return true
+    }
 
     const logSuccess = await this.submitLog({
       ...entry,
