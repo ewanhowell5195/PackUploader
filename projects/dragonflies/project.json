@@ -10,7 +10,7 @@
     "optifine": "OptiFine is used to add support for remodelling bees and randomising entity textures.",
     "video": "pCnBhaqKaD4",
     "github": false,
-    "version": "1.3.0",
+    "version": "1.4.0",
     "versions": {
       "curseforge": {
         "type": "after",
