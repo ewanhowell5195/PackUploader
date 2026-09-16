@@ -38,21 +38,25 @@ globalThis.formatInline = (str, platform) => {
       boldItalic: t => `<strong><em>${t}</em></strong>`,
       bold: t => `<strong>${t}</strong>`,
       italic: t => `<em>${t}</em>`,
-      underline: t => `<span style="text-decoration: underline;">${t}</span>`
+      underline: t => `<span style="text-decoration: underline;">${t}</span>`,
+      link: (t, url) => `<a href="${url}" target="_blank">${t}</a>`
     },
     planetminecraft: {
       boldItalic: t => `[b][i]${t}[/i][/b]`,
       bold: t => `[b]${t}[/b]`,
       italic: t => `[i]${t}[/i]`,
-      underline: t => `[u]${t}[/u]`
+      underline: t => `[u]${t}[/u]`,
+      link: (t, url) => `[url=${url}]${t}[/url]`
     }
   }[platform]
   if (!r) return str
+  const links = []
+  str = str.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, t, url) => `\u0000${links.push(r.link(t, url)) - 1}\u0000`)
   str = str.replace(/\*\*\*(.+?)\*\*\*/g, (_, t) => r.boldItalic(t))
   str = str.replace(/\*\*(.+?)\*\*/g, (_, t) => r.bold(t))
   str = str.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, (_, t) => r.italic(t))
   str = str.replace(/__(.+?)__/g, (_, t) => r.underline(t))
-  return str
+  return str.replace(/\u0000(\d+)\u0000/g, (_, i) => links[i])
 }
 
 globalThis.save = () => {
