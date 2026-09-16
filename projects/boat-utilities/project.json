@@ -10,18 +10,20 @@
     "optifine": "OptiFine is used to add support for remodelling the boats",
     "video": "oSRm__7sDzA",
     "github": false,
-    "version": "1.3.0",
+    "version": "1.4.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.21.9"
-      },
-      "planetminecraft": {
-        "type": "latest"
+        "version": "1.21.9",
+        "snapshots": false
       },
       "modrinth": {
         "type": "after",
-        "version": "1.21.9"
+        "version": "1.21.9",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
       }
     },
     "images": [

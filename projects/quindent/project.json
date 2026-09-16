@@ -9,18 +9,20 @@
     "optifine": "OptiFine is required to add support for remodelling the Trident",
     "video": "DbeCkY1yajI",
     "github": false,
-    "version": "1.6.0",
+    "version": "1.7.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.21.9"
-      },
-      "planetminecraft": {
-        "type": "latest"
+        "version": "1.21.9",
+        "snapshots": false
       },
       "modrinth": {
         "type": "after",
-        "version": "1.21.9"
+        "version": "1.21.9",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
       }
     },
     "images": [

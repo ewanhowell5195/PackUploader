@@ -9,15 +9,17 @@
     "optifine": "OptiFine is used to add support for custom skyboxes",
     "video": "E6_Cxt1mocY",
     "github": false,
-    "version": "1.4.0",
+    "version": "1.5.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.21.9"
+        "version": "1.21.9",
+        "snapshots": false
       },
       "modrinth": {
         "type": "after",
-        "version": "1.21.9"
+        "version": "1.21.9",
+        "snapshots": false
       },
       "planetminecraft": {
         "type": "latest"
