@@ -9,13 +9,17 @@
     "optifine": false,
     "video": "-iZ4ud0Qz74",
     "github": "https://github.com/ewanhowell5195/DoublePixelEyes",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "versions": {
       "curseforge": {
-        "type": "latest"
+        "type": "after",
+        "version": "26.1",
+        "snapshots": false
       },
       "modrinth": {
-        "type": "latest"
+        "type": "after",
+        "version": "26.1",
+        "snapshots": false
       },
       "planetminecraft": {
         "type": "latest"
