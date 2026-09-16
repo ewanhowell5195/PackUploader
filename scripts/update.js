@@ -15,6 +15,12 @@ if (project.config.version === config.version) {
   await exit()
 }
 
+const pack = fs.readFileSync("data/update/pack.zip")
+
+if (!validatePack(pack)) {
+  await exit()
+}
+
 project.config.version = config.version
 project.config.versions = config.versions
 
@@ -25,7 +31,7 @@ globalThis.config = project.config
 save()
 
 config.changelog = changelog
-config.pack = fs.readFileSync("data/update/pack.zip")
+config.pack = pack
 
 // Updates
 

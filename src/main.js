@@ -4,6 +4,7 @@ globalThis.sharp = (await import("sharp")).default
 globalThis.load = (await import("cheerio")).load
 globalThis.path = await import("node:path")
 globalThis.fs = await import("node:fs")
+globalThis.zlib = await import("node:zlib")
 
 globalThis.curseforge = (await import("./curseforge.js")).default
 globalThis.planetminecraft = (await import("./planetminecraft.js")).default
@@ -57,6 +58,48 @@ globalThis.formatInline = (str, platform) => {
   str = str.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, (_, t) => r.italic(t))
   str = str.replace(/__(.+?)__/g, (_, t) => r.underline(t))
   return str.replace(/\u0000(\d+)\u0000/g, (_, i) => links[i])
+}
+
+globalThis.readZip = buffer => {
+  let end = buffer.length - 22
+  while (end >= 0 && buffer.readUInt32LE(end) !== 0x06054b50) end--
+  if (end < 0) throw new Error("not a valid zip")
+  const count = buffer.readUInt16LE(end + 10)
+  const entries = new Map
+  let offset = buffer.readUInt32LE(end + 16)
+  for (let i = 0; i < count; i++) {
+    const nameLength = buffer.readUInt16LE(offset + 28)
+    entries.set(buffer.toString("utf8", offset + 46, offset + 46 + nameLength), {
+      method: buffer.readUInt16LE(offset + 10),
+      compressedSize: buffer.readUInt32LE(offset + 20),
+      header: buffer.readUInt32LE(offset + 42)
+    })
+    offset += 46 + nameLength + buffer.readUInt16LE(offset + 30) + buffer.readUInt16LE(offset + 32)
+  }
+  return entries
+}
+
+globalThis.readZipFile = (buffer, entry) => {
+  const start = entry.header + 30 + buffer.readUInt16LE(entry.header + 26) + buffer.readUInt16LE(entry.header + 28)
+  const data = buffer.subarray(start, start + entry.compressedSize)
+  return entry.method === 0 ? data : zlib.inflateRawSync(data)
+}
+
+globalThis.validatePack = buffer => {
+  const entries = readZip(buffer)
+  const mcmeta = entries.get("pack.mcmeta")
+  if (!mcmeta) {
+    console.error("Error: pack.zip has no pack.mcmeta in its root")
+    return false
+  }
+  const meta = JSON.parse(readZipFile(buffer, mcmeta).toString("utf8").replace(/^﻿/, ""))
+  const allowed = new Set(["pack.mcmeta", "pack.png", "assets"].concat((meta.overlays?.entries ?? []).map(e => e.directory)))
+  const extra = Array.from(new Set(Array.from(entries.keys()).map(name => name.split("/")[0]))).filter(name => !allowed.has(name))
+  if (extra.length) {
+    console.error(`Error: pack.zip has unexpected root entries: ${extra.join(", ")}`)
+    return false
+  }
+  return true
 }
 
 globalThis.save = () => {
