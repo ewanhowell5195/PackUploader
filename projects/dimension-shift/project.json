@@ -9,7 +9,7 @@
     "optifine": "OptiFine is used to add support for custom colours and connected textures.",
     "video": "DHk-PKDN0uo",
     "github": false,
-    "version": "3.0.0",
+    "version": "2.0.0",
     "versions": {
       "curseforge": {
         "type": "exact",
