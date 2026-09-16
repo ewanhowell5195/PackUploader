@@ -10,7 +10,7 @@
     "optifine": "OptiFine is used to add support for remodelling entities and random entity textures.",
     "video": "fT3U2n-zDMs",
     "github": false,
-    "version": "3.0",
+    "version": "1.2.0",
     "versions": {
       "curseforge": {
         "type": "exact",
