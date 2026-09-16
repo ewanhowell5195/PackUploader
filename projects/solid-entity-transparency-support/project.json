@@ -14,18 +14,20 @@
     "optifine": false,
     "video": false,
     "github": false,
-    "version": "1.2.0",
+    "version": "1.4.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.21.10"
-      },
-      "planetminecraft": {
-        "type": "latest"
+        "version": "26.3",
+        "snapshots": false
       },
       "modrinth": {
         "type": "after",
-        "version": "1.21.10"
+        "version": "26.3",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
       }
     },
     "images": [
