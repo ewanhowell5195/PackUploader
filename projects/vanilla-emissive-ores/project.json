@@ -9,15 +9,17 @@
     "optifine": false,
     "video": false,
     "github": "https://github.com/ewanhowell5195/VanillaEmissiveTextures",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "26.1"
+        "version": "26.1",
+        "snapshots": false
       },
       "modrinth": {
         "type": "after",
-        "version": "26.1"
+        "version": "26.1",
+        "snapshots": false
       },
       "planetminecraft": {
         "type": "latest"
