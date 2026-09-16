@@ -9,7 +9,7 @@
     "optifine": "OptiFine is used to add connected textures to better hide repeated textures.\n\nCustom entity models are also included to make entity models work better with 8x8 textures.",
     "video": "ApNzlL2JDp4",
     "github": "https://github.com/ewanhowell5195/f8thful",
-    "version": "14.0",
+    "version": "2.2.0",
     "versions": {
       "curseforge": {
         "type": "range",
