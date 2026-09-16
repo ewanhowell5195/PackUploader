@@ -9,15 +9,17 @@
     "optifine": false,
     "video": "5mtykgHM6NQ",
     "github": false,
-    "version": "1.6.0",
+    "version": "1.7.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.21.9"
+        "version": "1.21.9",
+        "snapshots": false
       },
       "modrinth": {
         "type": "after",
-        "version": "1.21.9"
+        "version": "1.21.9",
+        "snapshots": false
       },
       "planetminecraft": {
         "type": "latest"
