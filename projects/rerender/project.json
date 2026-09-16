@@ -12,7 +12,7 @@
     "optifine": "OptiFine is used to add support for connected textures and random entity textures",
     "video": "hYS0kEceuEo",
     "github": false,
-    "version": "2.1",
+    "version": "2.0.1",
     "versions": {
       "curseforge": {
         "type": "exact",
