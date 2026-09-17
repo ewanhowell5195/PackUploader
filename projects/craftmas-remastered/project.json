@@ -1,0 +1,183 @@
+{
+  "config": {
+    "id": "craftmas-remastered",
+    "name": "Craftmas Remastered",
+    "summary": "The remastered Christmas resource pack!",
+    "description": [
+      "This is a resource pack that is perfect for Christmas and Winter Time as it makes the entire world snowy, adds christmas presents, skiing villagers, and more!"
+    ],
+    "optifine": "OptiFine is used to add support for remodelling entities, connected textures, and colormaps.",
+    "video": "dRrkDLrZ-As",
+    "github": false,
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.16.4",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.16.4"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.16.4",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Candy Canes",
+        "description": "Sugar cane grown as candy canes",
+        "file": "cane",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Santa's Sleigh",
+        "description": "Santa and his reindeer, replacing the Ender Dragon",
+        "file": "dragon",
+        "embed": true
+      },
+      {
+        "name": "Villagers",
+        "description": "Skiing villagers in a village strung with lights",
+        "file": "village",
+        "embed": true
+      },
+      {
+        "name": "Oak Forest",
+        "description": "An oak forest buried in snow",
+        "file": "oak"
+      },
+      {
+        "name": "Spruce Forest",
+        "description": "A snowy spruce forest",
+        "file": "spruce"
+      },
+      {
+        "name": "Lights",
+        "description": "Icicle lights hung along a brick house",
+        "file": "house"
+      },
+      {
+        "name": "Crimson Forest",
+        "description": "A crimson forest grown from candy cane stems",
+        "file": "crimson"
+      },
+      {
+        "name": "Warped Forest",
+        "description": "A warped forest grown from candy cane stems",
+        "file": "warped"
+      },
+      {
+        "name": "Nether",
+        "description": "The Nether gone cold, with its lava seas frozen over",
+        "file": "nether"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "Toxteer",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": true,
+        "font": 0,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": true,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "christmas",
+        "cold",
+        "cool",
+        "environment",
+        "experimental",
+        "gui",
+        "ice",
+        "items",
+        "misc",
+        "mobs",
+        "models",
+        "optifine",
+        "particles",
+        "season",
+        "seasonal",
+        "snow",
+        "snowy",
+        "winter"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": true,
+        "entities": "featured",
+        "environment": "featured",
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 430777,
+    "slug": "craftmas-remastered"
+  },
+  "planetminecraft": {
+    "id": 4889747,
+    "slug": "craftmas-remastered"
+  },
+  "modrinth": {
+    "id": "DYH2S2ra",
+    "slug": "craftmas-remastered"
+  }
+}
