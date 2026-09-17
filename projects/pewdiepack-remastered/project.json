@@ -1,0 +1,160 @@
+{
+  "config": {
+    "id": "pewdiepack-remastered",
+    "name": "PewDiePack Remastered",
+    "summary": "This is Pewdiepack Remastered!",
+    "description": [
+      "The complete remaster of the PewDiePie themed resource pack!"
+    ],
+    "optifine": "OptiFine is used to add support for custom entity models, random entity textures, and custom item textures.",
+    "video": "hAmZDoVQjbs",
+    "github": false,
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.16.5",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.16.5"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.16.5",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Acacia",
+        "description": "Acacia trees turned into pink blossom trees",
+        "file": "acacia",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "DJ Villager",
+        "description": "A villager DJ, with the boat remade into a deck",
+        "file": "dj",
+        "embed": true
+      },
+      {
+        "name": "Beds",
+        "description": "Beds retextured with pet faces, beside emerald blocks turned to cash",
+        "file": "beds",
+        "embed": true
+      },
+      {
+        "name": "Food",
+        "description": "Remodelled food around a cake iced with the 100 emoji",
+        "file": "cake"
+      },
+      {
+        "name": "Main Menu",
+        "description": "The title screen, rebranded",
+        "file": "menu"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": true,
+        "art": true,
+        "environment": true,
+        "font": 0,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": true,
+        "models": true
+      },
+      "tags": [
+        "armor",
+        "art",
+        "audio",
+        "environment",
+        "experimental",
+        "gui",
+        "items",
+        "misc",
+        "mobs",
+        "models",
+        "pewdiepack",
+        "pewdiepie",
+        "remaster",
+        "youtube",
+        "youtuber"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": true,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": true,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 468958,
+    "slug": "pewdiepack-remastered"
+  },
+  "planetminecraft": {
+    "id": 4750742,
+    "slug": "pewdiepack-remastered"
+  },
+  "modrinth": {
+    "id": "2iYv91N9",
+    "slug": "pewdiepack-remastered"
+  }
+}
