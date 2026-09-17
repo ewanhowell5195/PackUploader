@@ -1,0 +1,203 @@
+{
+  "config": {
+    "id": "packtober-remastered",
+    "name": "Packtober Remastered",
+    "summary": "The ultimate halloween themed resource pack",
+    "description": [
+      "This pack adds lots of halloween related features, from ghost Piglins, to chests that jump up and bite you!"
+    ],
+    "optifine": "OptiFine is used to add support for custom entity models, connected textures, emissive textures, and custom colours.",
+    "video": "447HkFIq93k",
+    "github": false,
+    "version": "3.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.19.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.19.2"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.19.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Leaves",
+        "description": "Autumn leaves and leaf litter across the forest",
+        "file": "leaves",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Scarecrow",
+        "description": "A scarecrow watching over an autumn farm",
+        "file": "pumpkin",
+        "embed": true
+      },
+      {
+        "name": "Villagers",
+        "description": "Villagers in their halloween costumes",
+        "file": "villagers",
+        "embed": true
+      },
+      {
+        "name": "Endermen",
+        "description": "Endermen turned into jack o' lanterns in a corn field",
+        "file": "endermen"
+      },
+      {
+        "name": "Skeletons",
+        "description": "Skeletons collapsed across a graveyard",
+        "file": "bones"
+      },
+      {
+        "name": "Graveyard",
+        "description": "Gravestones and skeleton horses in a graveyard",
+        "file": "signs"
+      },
+      {
+        "name": "Beds",
+        "description": "A four poster bed in a halloween bedroom",
+        "file": "beds"
+      },
+      {
+        "name": "Lanterns",
+        "description": "Carved lanterns lighting a hallway",
+        "file": "lanterns"
+      },
+      {
+        "name": "Ores",
+        "description": "Ores carved into jack o' lantern faces",
+        "file": "ore"
+      },
+      {
+        "name": "Ender Dragon",
+        "description": "A skeletal Ender Dragon over the End",
+        "file": "dragon"
+      },
+      {
+        "name": "End City",
+        "description": "An End city under an orange End sky",
+        "file": "end-city"
+      },
+      {
+        "name": "Shulkers",
+        "description": "Shulkers hidden in the walls of an End city",
+        "file": "shulkers"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": true,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "Toxteer - Armour",
+      "modifies": {
+        "armor": true,
+        "art": 0,
+        "environment": true,
+        "font": 0,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": true,
+        "models": true
+      },
+      "tags": [
+        "armor",
+        "audio",
+        "autumn",
+        "cem",
+        "environment",
+        "experimental",
+        "fall",
+        "gui",
+        "halloween",
+        "halloweenpack",
+        "herobrine",
+        "items",
+        "misc",
+        "mobs",
+        "models",
+        "october",
+        "optifine",
+        "packtober",
+        "pumpkin",
+        "scary",
+        "season",
+        "seasonal",
+        "spooky"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": "featured",
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 415935,
+    "slug": "packtober-remastered"
+  },
+  "planetminecraft": {
+    "id": 4814488,
+    "slug": "packtober-remastered"
+  },
+  "modrinth": {
+    "id": "qnMZHobv",
+    "slug": "packtober-remastered"
+  }
+}

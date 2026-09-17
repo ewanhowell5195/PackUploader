@@ -227,13 +227,19 @@ export default {
           }), image.file + ".jpg")
         }
 
-        const imagesRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/image/${project.curseforge.id}`, {
-          method: "POST",
-          headers: {
-            cookie: auth.curseforge.cookie
-          },
-          body: imageForm
-        })
+        let imagesRequest
+        for (let attempt = 0; attempt < 5; attempt++) {
+          imagesRequest = await fetch(`https://authors.curseforge.com/_api/image-attachments/image/${project.curseforge.id}`, {
+            method: "POST",
+            headers: {
+              cookie: auth.curseforge.cookie
+            },
+            body: imageForm
+          })
+          if (imagesRequest.status !== 429) break
+          log(`Image "${image.file}" was throttled, retrying`)
+          await new Promise(fulfil => setTimeout(fulfil, 5000 * (attempt + 1)))
+        }
 
         if (!imagesRequest.ok) {
           await error(`Image "${image.file}" failed to upload`, imagesRequest).catch(e => console.error(e.message))
