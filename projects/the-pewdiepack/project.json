@@ -1,0 +1,210 @@
+{
+  "config": {
+    "id": "the-pewdiepack",
+    "name": "The PewDiePack",
+    "summary": "The original PewDiePie themed resource pack!",
+    "description": [
+      "Mobs, blocks and items across the whole game remade after PewDiePie's videos, pets and running jokes."
+    ],
+    "optifine": "OptiFine is used to add support for custom entity models, random entity textures, and custom item textures.",
+    "video": "_ll3arLm9No",
+    "github": false,
+    "version": "15.2.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.15.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.15.2"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.15.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Creeper",
+        "description": "A creeper covered in wavy stripes",
+        "file": "creeper",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Wolves",
+        "description": "Wolves remade as pugs, with a collar for each colour",
+        "file": "wolves",
+        "embed": true
+      },
+      {
+        "name": "Paintings",
+        "description": "Every painting replaced with custom art",
+        "file": "paintings",
+        "embed": true
+      },
+      {
+        "name": "Spawn Eggs",
+        "description": "Spawn eggs remade into buckets of mobs",
+        "file": "gui"
+      },
+      {
+        "name": "Zombie",
+        "description": "A zombie wearing a Sven shirt",
+        "file": "zombie"
+      },
+      {
+        "name": "Iron Golem",
+        "description": "The iron golem turned into a mossy statue",
+        "file": "golem"
+      },
+      {
+        "name": "Cats",
+        "description": "Cats wearing a collar in every colour",
+        "file": "cats"
+      },
+      {
+        "name": "Beds",
+        "description": "Beds in every colour, each stamped with a brofist",
+        "file": "beds"
+      },
+      {
+        "name": "Banners",
+        "description": "The brofist flown on banners",
+        "file": "brofist"
+      },
+      {
+        "name": "Wavy Banners",
+        "description": "Banners covered in wavy stripes",
+        "file": "wavy"
+      },
+      {
+        "name": "Barrels",
+        "description": "Barrels that open into a toothy mouth",
+        "file": "barrels"
+      },
+      {
+        "name": "Bottles",
+        "description": "Bottles remade into drink cups",
+        "file": "bottles"
+      },
+      {
+        "name": "Jukebox",
+        "description": "The jukebox rebuilt as a speaker",
+        "file": "music"
+      },
+      {
+        "name": "Hotbar",
+        "description": "A redesigned hotbar and health bar",
+        "file": "hotbar"
+      },
+      {
+        "name": "Main Menu",
+        "description": "The title screen, rebranded",
+        "file": "menu"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": true,
+        "art": true,
+        "environment": 0,
+        "font": 0,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": true,
+        "models": true
+      },
+      "tags": [
+        "armor",
+        "art",
+        "audio",
+        "grandayy",
+        "gui",
+        "items",
+        "jacksepticeye",
+        "misc",
+        "mobs",
+        "models",
+        "other",
+        "pewdiepack",
+        "pewdiepie",
+        "pewds",
+        "youtube"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": true,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": true,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 327951,
+    "slug": "the-pewdiepack"
+  },
+  "planetminecraft": {
+    "id": 4349213,
+    "slug": "the-pewdiepack"
+  },
+  "modrinth": {
+    "id": "JLBxnfju",
+    "slug": "the-pewdiepack"
+  }
+}
