@@ -148,10 +148,12 @@ export default {
 
     log("Pack uploaded")
   },
-  async uploadImages() {
-    for (const [i, image] of project.config.images.entries()) {
+  async uploadImages(images) {
+    const duplicates = []
+    for (const image of images ?? project.config.images) {
       if (image.thumbnail || (settings.ewan && !project.ewanhowell?.ignore && image.logo)) continue
-      const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/gallery?ext=png&featured=${!!image.featured}&title=${encodeURIComponent(image.name)}&description=${encodeURIComponent(image.description)}&ordering=${i}`, {
+      const ordering = project.config.images.indexOf(image)
+      const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/gallery?ext=png&featured=${!!image.featured}&title=${encodeURIComponent(image.name)}&description=${encodeURIComponent(image.description)}&ordering=${ordering}`, {
         method: "POST",
         headers: {
           Authorization: auth.modrinth,
@@ -162,10 +164,16 @@ export default {
         })
       })
       if (!r.ok) {
-        error(`Failed to upload image "${image.file}"`, await r.text())
+        const message = await r.text()
+        if (message.includes("duplicate gallery images")) {
+          duplicates.push(image)
+          continue
+        }
+        error(`Failed to upload image "${image.file}"`, message)
       }
       log(`Uploaded image "${image.file}"`)
     }
+    return duplicates
   },
   async uploadIcon() {
     const r = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/icon?ext=png`, {
@@ -190,8 +198,15 @@ export default {
       }
     }).then(e => e.json()).then(e => e.gallery)
   },
-  async removeImages() {
-    const images = await this.getImages()
+  getStatus() {
+    return fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}`, {
+      headers: {
+        Authorization: auth.modrinth
+      }
+    }).then(e => e.json()).then(e => e.status)
+  },
+  async removeImages(images) {
+    images ??= await this.getImages()
     for (const image of images) {
       const deleteRequest = await fetch(`https://api.modrinth.com/v2/project/${project.modrinth.id}/gallery?url=${image.url}`, {
         method: "DELETE",

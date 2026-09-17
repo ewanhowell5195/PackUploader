@@ -82,11 +82,21 @@ if (data.images) {
       await modrinth.uploadIcon()
     }
 
-    await modrinth.removeImages()
+    // Modrinth refuses gallery deletions that would empty the gallery while a project is under review
+    const images = await modrinth.getImages()
+    const keep = await modrinth.getStatus() === "approved" ? [] : images.slice(-1)
+
+    await modrinth.removeImages(images.filter(e => !keep.includes(e)))
     console.log("Modrinth: Removed project images")
 
-    await modrinth.uploadImages()
+    const deferred = await modrinth.uploadImages()
     console.log("Modrinth: Added project images")
+
+    if (keep.length) {
+      await modrinth.removeImages(keep)
+      await modrinth.uploadImages(deferred)
+      console.log("Modrinth: Replaced the image kept for review")
+    }
   }
 
   if (settings.ewan && !project.ewanhowell?.ignore) {

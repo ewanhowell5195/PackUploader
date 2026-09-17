@@ -1,0 +1,146 @@
+{
+  "config": {
+    "id": "sheepified-remastered",
+    "name": "Sheepified Remastered",
+    "summary": "The pack where everything is a Sheep!",
+    "description": [
+      "This is a resource pack that makes every mob texture into a sheep!"
+    ],
+    "optifine": "OptiFine is used to remodel the Ender Dragon and dragon head.",
+    "video": "16tWXN7ZTW4",
+    "github": "https://github.com/ewanhowell5195/SheepifiedRemastered",
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.20.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.20.2"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.20.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Mobs",
+        "description": "A gathering of sheepified mobs",
+        "file": "group1",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "More Mobs",
+        "description": "A ghast, an iron golem, a phantom and a pufferfish, all sheep",
+        "file": "group2",
+        "embed": true
+      },
+      {
+        "name": "Ender Dragon",
+        "description": "The remodelled Ender Dragon",
+        "file": "dragon",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "blessed",
+        "blursed",
+        "cursed",
+        "experimental",
+        "horror",
+        "mobs",
+        "pewdiepie",
+        "scary",
+        "sheep",
+        "sheepified",
+        "watersheep"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": "featured",
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 470484,
+    "slug": "sheepified-remastered"
+  },
+  "planetminecraft": {
+    "id": 5068489,
+    "slug": "sheepified-remastered"
+  },
+  "modrinth": {
+    "id": "gkWYsYar",
+    "slug": "sheepified-remastered"
+  }
+}
