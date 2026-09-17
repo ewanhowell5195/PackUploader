@@ -235,7 +235,7 @@ export default {
         str = str.trim()
       } else if (replacement[1] === "video") {
         if (project.config.video) {
-          str = `<iframe src="https://www.youtube.com/embed/${project.config.video}" width="${project.config.imageWidths ?? settings.imageWidths ?? 600}" allowfullscreen="allowfullscreen"></iframe><br><br><br>\n\n`
+          str = `<iframe src="https://www.youtube.com/embed/${project.config.video}" width="${project.config.imageWidths ?? settings.imageWidths ?? 600}" title="${project.config.name} showcase video" allowfullscreen="allowfullscreen"></iframe><br><br><br>\n\n`
         }
       } else if (replacement[1] === "logo") {
         const logo = gallery.find(e => e.title === "Project Logo")?.raw_url
