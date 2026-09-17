@@ -283,6 +283,35 @@ export default {
       }
     }
   },
+  async setImageDetails() {
+    const existing = (await this.getMedia()).filter(e => e.type === 1 && e.title !== "logo.png" && e.title !== "Project Logo")
+    const images = project.config.images.filter(e => !e.thumbnail && !e.logo)
+
+    if (existing.length !== images.length) {
+      throw new Error(`CurseForge: has ${existing.length} images but the project has ${images.length}, so they cannot be paired up`)
+    }
+
+    for (const [i, image] of images.entries()) {
+      const r = await fetch(`https://authors.curseforge.com/_api/image-attachments/${project.curseforge.id}`, {
+        method: "PUT",
+        headers: {
+          cookie: auth.curseforge.cookie,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          title: image.name,
+          description: image.description,
+          id: existing[i].id,
+          isFeatured: true,
+          type: 1
+        })
+      })
+      if (!r.ok) {
+        await error(`Failed to update metadata for image "${image.file}"`, r)
+      }
+      log(`Updated metadata for image "${image.file}"`)
+    }
+  },
   async uploadIcon() {
     const iconForm = new FormData()
     iconForm.append("id", project.curseforge.id)

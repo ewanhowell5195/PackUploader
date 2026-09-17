@@ -205,6 +205,32 @@ export default {
       }
     }).then(e => e.json()).then(e => e.status)
   },
+  async setImageDetails() {
+    const gallery = await this.getImages()
+    const images = project.config.images.filter(e => !e.thumbnail && !(settings.ewan && !project.ewanhowell?.ignore && e.logo))
+
+    for (const [i, image] of images.entries()) {
+      const item = gallery.find(e => e.ordering === i)
+      if (!item) {
+        error(`Failed to update image "${image.file}"`, `there is no gallery image at position ${i}`)
+      }
+      const url = new URL(`https://api.modrinth.com/v2/project/${project.modrinth.id}/gallery`)
+      url.searchParams.set("url", item.url)
+      url.searchParams.set("title", image.name)
+      url.searchParams.set("description", image.description)
+      url.searchParams.set("featured", !!image.featured)
+      const r = await fetch(url, {
+        method: "PATCH",
+        headers: {
+          Authorization: auth.modrinth
+        }
+      })
+      if (!r.ok) {
+        error(`Failed to update image "${image.file}"`, await r.text())
+      }
+      log(`Updated details for image "${image.file}"`)
+    }
+  },
   async removeImages(images) {
     images ??= await this.getImages()
     for (const image of images) {

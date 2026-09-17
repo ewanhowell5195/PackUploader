@@ -329,6 +329,35 @@ export default {
       log(`Uploaded image "${image.file}"`)
     }
   },
+  async setImageDetails() {
+    const $ = await this.getProject()
+    const existing = $(".image_list > .thumbnail[id]").map((i, e) => $(e).data("media-item-id")).get()
+    const images = project.config.images.filter(e => !(e.logo && ((settings.ewan && !project.ewanhowell?.ignore) || project.curseforge.id || project.modrinth.id))).slice(0, 15)
+
+    if (existing.length !== images.length) {
+      error(`Planet Minecraft has ${existing.length} images but the project has ${images.length}, so they cannot be paired up`)
+    }
+
+    for (const [i, image] of images.entries()) {
+      const imageForm = makeForm({
+        module: "tools/media",
+        myaction: "save",
+        modern: true,
+        media_id: existing[i],
+        media_key: "image_key",
+        connect_id: project.planetminecraft.id,
+        title: `${image.name} - ${image.description}`
+      })
+      imageForm.append("filename", new Blob([image.buffer], {
+        type: "image/jpeg"
+      }), image.file + ".jpg")
+      const r = await request(imageForm, "item/new")
+      if (r.status !== "success") {
+        error(`Failed to update image "${image.file}"`, r)
+      }
+      log(`Updated details for image "${image.file}"`)
+    }
+  },
   async removeImages() {
     const $ = await this.getProject()
     const images = $(".image_list > .thumbnail[id]").map((i, e) => {

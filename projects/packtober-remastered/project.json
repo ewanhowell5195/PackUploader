@@ -41,34 +41,34 @@
         "embed": true
       },
       {
-        "name": "Villagers",
-        "description": "Villagers in their halloween costumes",
+        "name": "Skeleton Villagers",
+        "description": "Villagers redesigned as skeletons",
         "file": "villagers",
         "embed": true
       },
       {
         "name": "Endermen",
-        "description": "Endermen turned into jack o' lanterns in a corn field",
+        "description": "Redesigned Endermen in the End",
         "file": "endermen"
       },
       {
-        "name": "Skeletons",
-        "description": "Skeletons collapsed across a graveyard",
+        "name": "Fences",
+        "description": "Fences remade from bones",
         "file": "bones"
       },
       {
-        "name": "Graveyard",
-        "description": "Gravestones and skeleton horses in a graveyard",
+        "name": "Signs",
+        "description": "A collection of redesigned signs",
         "file": "signs"
       },
       {
         "name": "Beds",
-        "description": "A four poster bed in a halloween bedroom",
+        "description": "Redesigned beds",
         "file": "beds"
       },
       {
-        "name": "Lanterns",
-        "description": "Carved lanterns lighting a hallway",
+        "name": "Candles",
+        "description": "Candles hanging from a wooden ceiling",
         "file": "lanterns"
       },
       {
@@ -77,8 +77,8 @@
         "file": "ore"
       },
       {
-        "name": "Ender Dragon",
-        "description": "A skeletal Ender Dragon over the End",
+        "name": "Herobrine",
+        "description": "Herobrine, replacing the Ender Dragon",
         "file": "dragon"
       },
       {

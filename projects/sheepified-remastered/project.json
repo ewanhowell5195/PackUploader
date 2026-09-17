@@ -35,8 +35,8 @@
         "embed": true
       },
       {
-        "name": "More Mobs",
-        "description": "A ghast, an iron golem, a phantom and a pufferfish, all sheep",
+        "name": "Big Mobs",
+        "description": "An elder guardian, a ghast, a giant, the Ender Dragon and the Wither, all sheep",
         "file": "group2",
         "embed": true
       },
