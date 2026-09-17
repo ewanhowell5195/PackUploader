@@ -1,0 +1,146 @@
+{
+  "config": {
+    "id": "translucencraft",
+    "name": "Translucencraft",
+    "summary": "The Transparent Item Resource Pack",
+    "description": [
+      "Do you feel like the items take up too much screen space? Well this is the pack for you!",
+      "This pack makes items and blocks semi transparent while you are holding them, so that you can see straight through whatever is in your hand!",
+      "It only applies in first person, meaning items stay solid in your inventory, on the ground, and in item frames.",
+      "This way they can stay regular size, but not obscure your vision."
+    ],
+    "optifine": false,
+    "video": "HF9kb62A9xs",
+    "github": false,
+    "version": "2.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "1.21.9",
+        "snapshots": false
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "1.21.9",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "latest"
+      }
+    },
+    "images": [
+      {
+        "name": "Sword",
+        "description": "Holding a diamond sword",
+        "file": "sword",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Bow",
+        "description": "Holding a bow",
+        "file": "bow",
+        "embed": true
+      },
+      {
+        "name": "Blocks",
+        "description": "Blocks are transparent when held too",
+        "file": "blocks",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": 0,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "experimental",
+        "free",
+        "freespace",
+        "helpful",
+        "invisible",
+        "items",
+        "screen",
+        "translucent",
+        "transparent"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": 0,
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": "featured",
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": "featured",
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 413956,
+    "slug": "translucencraft"
+  },
+  "planetminecraft": {
+    "id": 4801992,
+    "slug": "translucencraft"
+  },
+  "modrinth": {
+    "id": "aOYTRyFa",
+    "slug": "translucencraft"
+  }
+}
