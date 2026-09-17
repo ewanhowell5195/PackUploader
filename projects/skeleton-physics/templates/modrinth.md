@@ -1,5 +1,7 @@
 <center>
 {{ snippet:header }}
+
+[Check out the Fresh Animations version!](https://ewanhowell.com/resourcepacks/fresh-skeleton-physics)
 <br><br>
 
 {{ video }}{{ description }}

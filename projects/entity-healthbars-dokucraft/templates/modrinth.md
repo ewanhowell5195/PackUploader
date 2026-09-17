@@ -1,5 +1,7 @@
 <center>
 {{ snippet:header }}
+
+[Built for Dokucraft](https://dokucraft.co.uk/)
 <br><br>
 
 {{ video }}[This addon requires the base pack!](https://ewanhowell.com/resourcepacks/entity-healthbars)

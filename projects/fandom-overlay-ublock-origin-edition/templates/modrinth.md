@@ -1,5 +1,7 @@
 <center>
 {{ snippet:header }}
+
+[Check out the original pack!](https://ewanhowell.com/resourcepacks/fandom-overlay)
 <br><br>
 
 {{ video }}{{ description }}

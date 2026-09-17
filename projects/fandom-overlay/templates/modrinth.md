@@ -1,5 +1,7 @@
 <center>
 {{ snippet:header }}
+
+[Check out the uBlock Origin edition!](https://ewanhowell.com/resourcepacks/fandom-overlay-ublock-origin-edition)
 <br><br>
 
 {{ video }}{{ description }}
