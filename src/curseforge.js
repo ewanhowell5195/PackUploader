@@ -607,7 +607,11 @@ export default {
       } else if (replacement[1] === "images") {
         const images = project.config.images.filter(e => e.embed)
         for (const image of images) {
-          str += `<br><img src="${imageData.find(e => e.type === 1 && (e.title === image.file + ".jpg" || e.title === image.name))?.url}" width="${project.config.imageWidths ?? settings.imageWidths ?? 600}" alt="${image.name}"><br>`
+          const url = imageData.find(e => e.type === 1 && (e.title === image.file + ".jpg" || e.title === image.name))?.url
+          if (!url) {
+            throw new Error(`CurseForge: Image "${image.file}" is embedded in the description but is not in the gallery`)
+          }
+          str += `<br><img src="${url}" width="${project.config.imageWidths ?? settings.imageWidths ?? 600}" alt="${image.name}"><br>`
         }
       } else if (replacement[1] === "logo") {
         const logo = imageData.find(e => e.type === 1 && (e.title === "logo.png" || e.title === "Project Logo"))?.url

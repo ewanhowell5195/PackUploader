@@ -209,16 +209,17 @@ export default {
     const gallery = await this.getImages()
     const images = project.config.images.filter(e => !e.thumbnail && !(settings.ewan && !project.ewanhowell?.ignore && e.logo))
 
+    if (gallery.length !== images.length) {
+      error("Failed to update image details", `Modrinth has ${gallery.length} images but the project has ${images.length}, so they cannot be paired up`)
+    }
+
     for (const [i, image] of images.entries()) {
-      const item = gallery.find(e => e.ordering === i)
-      if (!item) {
-        error(`Failed to update image "${image.file}"`, `there is no gallery image at position ${i}`)
-      }
       const url = new URL(`https://api.modrinth.com/v2/project/${project.modrinth.id}/gallery`)
-      url.searchParams.set("url", item.url)
+      url.searchParams.set("url", gallery[i].url)
       url.searchParams.set("title", image.name)
       url.searchParams.set("description", image.description)
       url.searchParams.set("featured", !!image.featured)
+      url.searchParams.set("ordering", i)
       const r = await fetch(url, {
         method: "PATCH",
         headers: {
@@ -271,7 +272,11 @@ export default {
       } else if (replacement[1] === "images") {
         const images = project.config.images.filter(e => e.embed)
         for (const image of images) {
-          str += `<img src="${gallery.find(e => e.title === image.name)?.raw_url}" width="600" alt="${image.name}"><br><br>\n`
+          const url = gallery.find(e => e.title === image.name)?.raw_url
+          if (!url) {
+            throw new Error(`Modrinth: Image "${image.file}" is embedded in the description but is not in the gallery`)
+          }
+          str += `<img src="${url}" width="600" alt="${image.name}"><br><br>\n`
         }
         str = str.trim()
       } else if (replacement[1] === "video") {

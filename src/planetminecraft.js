@@ -386,9 +386,10 @@ export default {
   async getDescription() {
     const document = await this.getProjectDom()
 
+    // Planet Minecraft strips parentheses out of image captions
     const imageData = Array.from(document.querySelectorAll(".image_list > .thumbnail")).map(e => ({
       url: e.dataset.fullFilename,
-      title: e.dataset.caption?.split(" - ")[0]
+      title: e.dataset.caption?.split(" - ")[0].replaceAll("(", "").replaceAll(")", "")
     }))
 
     let logo
@@ -427,7 +428,11 @@ export default {
         const images = project.config.images.filter(e => e.embed)
         const imageList = []
         for (const image of images) {
-          imageList.push(`[img width=${project.config.imageWidths ?? settings.imageWidths ?? 600}]${imageData.find(e => e.title === image.name)?.url}[/img]`)
+          const url = imageData.find(e => e.title === image.name.replaceAll("(", "").replaceAll(")", ""))?.url
+          if (!url) {
+            throw new Error(`Planet Minecraft: Image "${image.file}" is embedded in the description but is not in the gallery`)
+          }
+          imageList.push(`[img width=${project.config.imageWidths ?? settings.imageWidths ?? 600}]${url}[/img]`)
         }
         str = imageList.join("\n\n")
       } else if (replacement[1] === "logo") {
