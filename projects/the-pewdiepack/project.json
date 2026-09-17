@@ -29,81 +29,81 @@
     "images": [
       {
         "name": "Creeper",
-        "description": "A creeper covered in wavy stripes",
+        "description": "A special wavy creeper",
         "file": "creeper",
         "featured": true,
         "embed": true
       },
       {
-        "name": "Wolf Armour",
-        "description": "Wolf armour, redesigned for every dye colour",
+        "name": "Dog Armour",
+        "description": "Dogs get Dog Armour, as requested by Felix in LWIAY",
         "file": "wolves",
         "embed": true
       },
       {
         "name": "Paintings",
-        "description": "Every painting replaced with custom art",
+        "description": "Every painting replaced by fan art",
         "file": "paintings",
         "embed": true
       },
       {
         "name": "Spawn Eggs",
-        "description": "Spawn eggs remade into buckets of mobs",
+        "description": "Spawn eggs replaced with Bucket Of Mob",
         "file": "gui"
       },
       {
         "name": "Zombie",
-        "description": "A zombie wearing a Sven shirt",
+        "description": "Zombies get the Sven merch logo on the back of their tops",
         "file": "zombie"
       },
       {
-        "name": "Iron Golem",
-        "description": "The iron golem turned into a mossy statue",
+        "name": "Stone Men",
+        "description": "Iron golems become Stone Men",
         "file": "golem"
       },
       {
-        "name": "Cats",
-        "description": "Cats wearing a collar in every colour",
+        "name": "Cat Armour",
+        "description": "Cats get Cat Armour",
         "file": "cats"
       },
       {
         "name": "Beds",
-        "description": "Beds in every colour, each stamped with a brofist",
+        "description": "Bro Fist beds",
         "file": "beds"
       },
       {
-        "name": "Banners",
-        "description": "The brofist as a banner pattern",
+        "name": "Bro Fist Banner",
+        "description": "A new Bro Fist banner",
         "file": "brofist"
       },
       {
-        "name": "Wavy Banners",
-        "description": "Banners covered in wavy stripes",
+        "name": "Wave Banner",
+        "description": "The PewDiePie wave, now on a banner",
         "file": "wavy"
       },
       {
         "name": "Barrels",
-        "description": "Barrels that open into a toothy mouth",
+        "description": "Barrels become Evil",
         "file": "barrels"
       },
       {
-        "name": "Bottles",
-        "description": "Bottles remade into G Fuel cups",
+        "name": "G Fuel",
+        "description": "G Fuel replaces potions",
         "file": "bottles"
       },
       {
         "name": "Music Discs",
-        "description": "All twelve music discs replaced, playing from a jukebox",
+        "description": "New audio for the in game music discs",
         "file": "music"
       },
       {
         "name": "Hotbar",
-        "description": "A redesigned hotbar and health bar",
+        "description": "Watermelon hunger icons, and a blue and yellow xp bar",
         "file": "hotbar"
       },
       {
         "name": "Main Menu",
-        "description": "The title screen, rebranded",
+        "description": "Custom splashes, logo and background",
         "file": "menu"
       }
     ],
