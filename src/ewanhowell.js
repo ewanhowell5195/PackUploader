@@ -5,6 +5,29 @@ function error(err) {
 }
 
 export default {
+  getDescription() {
+    const templatePath = path.join("projects", project.config.id, "templates", "ewanhowell.html")
+    if (!fs.existsSync(templatePath)) {
+      return project.config.description.join("\n\n")
+    }
+
+    let html = fs.readFileSync(templatePath, "utf-8")
+
+    for (const replacement of Array.from(html.matchAll(/{{\s*([a-z0-9_.\[\]]+)\s*}}/gi))) {
+      let str
+      if (replacement[1] === "description") {
+        str = project.config.description.join("\n\n")
+      } else {
+        str = getReplacementPath(project.config, replacement[1]) ?? getReplacementPath(settings.templateDefaults, replacement[1])
+        if (typeof str !== "string") {
+          str = "undefined"
+        }
+      }
+      html = html.replaceAll(replacement[0], str)
+    }
+
+    return html.trim()
+  },
   writeDetails() {
     const dataPath = path.join(sitePath, "json", "resourcepacks", project.config.id + ".json")
     
@@ -14,7 +37,7 @@ export default {
     }
 
     data.subtitle = project.config.summary
-    data.description = project.config.description.join("\n\n")
+    data.description = this.getDescription()
     data.optifine = project.config.optifine || undefined
     data.video = project.config.video || undefined
     data.images = project.config.images.filter(e => !e.thumbnail && !e.logo).map(e => e.file)
