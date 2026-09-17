@@ -35,20 +35,16 @@ const licenses = {
 
 export default {
   async createProject() {
-    const baseSlug = project.modrinth.slug ?? project.config.id
-    let slug = baseSlug
-    let suffix = 0
-    while ((await fetch(`https://api.modrinth.com/v2/project/${slug}`)).status !== 404) {
-      suffix++
-      slug = `${baseSlug}-${suffix}`
+    const slug = project.modrinth.slug ?? project.config.id
+    if ((await fetch(`https://api.modrinth.com/v2/project/${slug}`)).status !== 404) {
+      error("Cannot create project", `the slug "${slug}" is taken. Pick another one and set it as modrinth.slug in the project`)
     }
-    if (slug !== baseSlug) log(`Slug "${baseSlug}" is taken, using "${slug}" instead`)
 
     const form = makeForm({
       data: {
         slug,
         title: project.config.name,
-        description: project.config.summary,
+        description: project.config.modrinth.summary ?? project.config.summary,
         categories: Object.entries(project.config.modrinth.tags).filter(e => e[1] === "featured").map(e => e[0]),
         additional_categories: Object.entries(project.config.modrinth.tags).filter(e => e[1] && e[1] !== "featured").map(e => e[0]),
         client_side: "required",
@@ -75,6 +71,11 @@ export default {
       },
       body: form
     }).then(e => e.json())
+
+    // an unlisted or archived project can hold a slug without being visible to the lookup above
+    if (r.description?.includes("Slug is already taken")) {
+      error("Cannot create project", `the slug "${slug}" is taken. Pick another one and set it as modrinth.slug in the project`)
+    }
 
     if (r.error) {
       error("Failed to create project", r)
@@ -345,7 +346,7 @@ export default {
       },
       body: JSON.stringify({
         title: project.config.name,
-        description: project.config.summary,
+        description: project.config.modrinth.summary ?? project.config.summary,
         categories: Object.entries(project.config.modrinth.tags).filter(e => e[1] === "featured").map(e => e[0]),
         additional_categories: Object.entries(project.config.modrinth.tags).filter(e => e[1] && e[1] !== "featured").map(e => e[0]),
         body: markdown,
