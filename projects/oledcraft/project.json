@@ -12,15 +12,17 @@
     "optifine": false,
     "video": "AvMs3535auI",
     "github": "https://github.com/ewanhowell5195/OLEDcaft",
-    "version": "1.11.0",
+    "version": "1.12.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.21.9"
+        "version": "1.21.9",
+        "snapshots": false
       },
       "modrinth": {
         "type": "after",
-        "version": "1.21.9"
+        "version": "1.21.9",
+        "snapshots": false
       },
       "planetminecraft": {
         "type": "latest"
