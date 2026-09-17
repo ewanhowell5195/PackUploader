@@ -1,6 +1,5 @@
 <center>
 {{ snippet:header }}
-
 [Check out the remastered version!](https://ewanhowell.com/resourcepacks/rebearth-remastered)
 <br><br>
 

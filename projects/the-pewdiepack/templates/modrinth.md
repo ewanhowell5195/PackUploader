@@ -1,8 +1,6 @@
 <center>
 {{ snippet:header }}
-
-[Check out the remastered version!](https://ewanhowell.com/resourcepacks/pewdiepack-remastered)
-
+[Check out the remastered version!](https://ewanhowell.com/resourcepacks/pewdiepack-remastered)  
 [Watch the full feature playlist!](https://www.youtube.com/playlist?list=PLYMG6bVBIumL74qyZN6UxHrTu-4jTO8bF)
 <br><br>
 
