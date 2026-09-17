@@ -35,8 +35,8 @@
         "embed": true
       },
       {
-        "name": "Wolves",
-        "description": "Wolves remade as pugs, with a collar for each colour",
+        "name": "Wolf Armour",
+        "description": "Wolf armour, redesigned for every dye colour",
         "file": "wolves",
         "embed": true
       },
@@ -73,7 +73,7 @@
       },
       {
         "name": "Banners",
-        "description": "The brofist flown on banners",
+        "description": "The brofist as a banner pattern",
         "file": "brofist"
       },
       {
@@ -88,12 +88,12 @@
       },
       {
         "name": "Bottles",
-        "description": "Bottles remade into drink cups",
+        "description": "Bottles remade into G Fuel cups",
         "file": "bottles"
       },
       {
-        "name": "Jukebox",
-        "description": "The jukebox rebuilt as a speaker",
+        "name": "Music Discs",
+        "description": "All twelve music discs replaced, playing from a jukebox",
         "file": "music"
       },
       {
