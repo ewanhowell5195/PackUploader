@@ -2,9 +2,9 @@
   "config": {
     "id": "pewdiepack-remastered",
     "name": "PewDiePack Remastered",
-    "summary": "This is Pewdiepack Remastered!",
+    "summary": "The remastered PewDiePie themed resource pack!",
     "description": [
-      "The complete remaster of the PewDiePie themed resource pack!"
+      "A complete rebuild of the original pack, with remodelled mobs, blocks and items from PewDiePie's videos."
     ],
     "optifine": "OptiFine is used to add support for custom entity models, random entity textures, and custom item textures.",
     "video": "hAmZDoVQjbs",
