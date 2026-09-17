@@ -9,15 +9,17 @@
     "optifine": false,
     "video": "cOXiETe9FYA",
     "github": "https://github.com/ewanhowell5195/MiniItems",
-    "version": "1.8.0",
+    "version": "1.9.0",
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "1.21.9"
+        "version": "1.21.9",
+        "snapshots": false
       },
       "modrinth": {
         "type": "after",
-        "version": "1.21.9"
+        "version": "1.21.9",
+        "snapshots": false
       },
       "planetminecraft": {
         "type": "latest"
