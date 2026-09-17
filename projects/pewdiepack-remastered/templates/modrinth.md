@@ -1,5 +1,6 @@
 <center>
 {{ snippet:header }}
+
 [Check out the legacy version!](https://ewanhowell.com/resourcepacks/the-pewdiepack)
 <br><br>
 

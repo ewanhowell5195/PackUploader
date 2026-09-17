@@ -1,6 +1,8 @@
 <center>
 {{ snippet:header }}
-[Check out the original pack!](https://ewanhowell.com/resourcepacks/skeleton-physics)  
+
+[Check out the original pack!](https://ewanhowell.com/resourcepacks/skeleton-physics)
+
 [Ported by ALtheGatorMC](https://x.com/ALtheGatorMC)
 <br><br>
 

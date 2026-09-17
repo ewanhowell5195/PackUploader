@@ -1,6 +1,8 @@
 <center>
 {{ snippet:header }}
-[Check out the Fresh Animations version!](https://ewanhowell.com/resourcepacks/fresh-umbrella-villagers)  
+
+[Check out the Fresh Animations version!](https://ewanhowell.com/resourcepacks/fresh-umbrella-villagers)
+
 [Textures by Bold_Muddy](https://x.com/muddyatbest)
 <br><br>
 
