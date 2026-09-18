@@ -1,0 +1,141 @@
+{
+  "config": {
+    "id": "packommunity",
+    "name": "Packommunity",
+    "summary": "A pack made entirely from community suggestions",
+    "description": [
+      "This pack is made entirely from suggestions and ideas from the community."
+    ],
+    "optifine": "OptiFine is used to add support for custom entity models and emissive textures.",
+    "video": "oi1UdNojCUk",
+    "github": false,
+    "version": "6.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.15.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.15"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.15.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Purple Dragon",
+        "description": "The Ender Dragon turned purple",
+        "file": "dragon",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Horned Sheep",
+        "description": "Sheep grow horns",
+        "file": "sheep",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": true,
+        "art": true,
+        "environment": true,
+        "font": 0,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": 0,
+        "terrain": true,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "community",
+        "experimental",
+        "gui",
+        "items",
+        "misc",
+        "mobs",
+        "models",
+        "optifine",
+        "packommunity",
+        "suggestions",
+        "terrain",
+        "vanilla"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": true,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": "featured",
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": true,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 350425,
+    "slug": "packommunity"
+  },
+  "planetminecraft": {
+    "id": 7051731,
+    "slug": "packommunity"
+  },
+  "modrinth": {
+    "id": "cp9hNFZV",
+    "slug": "packommunity"
+  }
+}
