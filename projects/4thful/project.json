@@ -47,8 +47,8 @@
         "embed": true
       },
       {
-        "name": "Village",
-        "description": "A village street",
+        "name": "Japanese Village",
+        "description": "A village built in a Japanese style",
         "file": "houses"
       },
       {
