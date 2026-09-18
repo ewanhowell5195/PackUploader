@@ -32,10 +32,10 @@ for (const id of fs.readdirSync("projects")) {
     const before = current.length
 
     // the source is not always the bigger image, and the site copy should never lose resolution
-    const source_size = await sharp(source).metadata()
-    const target_size = await sharp(current).metadata()
-    if (source_size.width < target_size.width || source_size.height < target_size.height) {
-      console.log()
+    const sourceSize = await sharp(source).metadata()
+    const targetSize = await sharp(current).metadata()
+    if (sourceSize.width < targetSize.width || sourceSize.height < targetSize.height) {
+      console.log(`${(id + "/" + image.file).padEnd(44)} skipped, source is only ${sourceSize.width}x${sourceSize.height} against ${targetSize.width}x${targetSize.height}`)
       skipped++
       continue
     }
