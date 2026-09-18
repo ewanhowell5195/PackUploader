@@ -30,6 +30,15 @@ for (const id of fs.readdirSync("projects")) {
 
     const current = fs.readFileSync(target)
     const before = current.length
+
+    // the source is not always the bigger image, and the site copy should never lose resolution
+    const source_size = await sharp(source).metadata()
+    const target_size = await sharp(current).metadata()
+    if (source_size.width < target_size.width || source_size.height < target_size.height) {
+      console.log()
+      skipped++
+      continue
+    }
     const fresh = await sharp(source).resize(1920, 1080, { fit: "inside", withoutEnlargement: true }).webp({ quality: 95 }).toBuffer()
 
     // a website image already at this quality re-encodes to about the same size, so there is nothing to regain
