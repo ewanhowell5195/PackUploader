@@ -1,0 +1,183 @@
+{
+  "config": {
+    "id": "4thful",
+    "name": "4thful",
+    "summary": "The Vanilla 4x4 Resource Pack",
+    "description": [
+      "4thful is a vanilla friendly resource pack where every texture has been recreated in 4x4!"
+    ],
+    "optifine": "OptiFine is used to add connected textures to better hide repeated textures.",
+    "video": "PMVLUDugIqM",
+    "github": "https://github.com/ewanhowell5195/4thful",
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.17.1",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.17.1"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.17.1",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "House",
+        "description": "Every texture in this village house redrawn at 4x4",
+        "file": "house",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Forest",
+        "description": "A forest, four pixels at a time",
+        "file": "forest",
+        "embed": true
+      },
+      {
+        "name": "Main Menu",
+        "description": "Even the font is 4x4",
+        "file": "menu",
+        "embed": true
+      },
+      {
+        "name": "Village",
+        "description": "A village street",
+        "file": "houses"
+      },
+      {
+        "name": "Farm",
+        "description": "A farm on the coast",
+        "file": "farm"
+      },
+      {
+        "name": "Strider",
+        "description": "A strider crossing the lava",
+        "file": "strider"
+      },
+      {
+        "name": "Crimson Forest",
+        "description": "The crimson forest",
+        "file": "crimson"
+      },
+      {
+        "name": "Warped Forest",
+        "description": "The warped forest",
+        "file": "warped"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": true,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": true,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved",
+      "name": "F4thful"
+    },
+    "planetminecraft": {
+      "category": "Simplistic",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": true,
+        "art": true,
+        "environment": true,
+        "font": true,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": true,
+        "terrain": true,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "4thful",
+        "4x4",
+        "armor",
+        "art",
+        "connectedtextures",
+        "ctm",
+        "environment",
+        "experimental",
+        "faithful",
+        "font",
+        "gui",
+        "items",
+        "misc",
+        "mobs",
+        "models",
+        "particles",
+        "simplistic",
+        "small",
+        "smol",
+        "terrain",
+        "vanilla",
+        "vanillafriendly"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": true,
+        "16x": 0,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": true,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": "featured",
+        "entities": true,
+        "environment": 0,
+        "equipment": 0,
+        "fonts": true,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": "featured",
+        "themed": 0,
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 502501,
+    "slug": "f4thful"
+  },
+  "planetminecraft": {
+    "id": 5206252,
+    "slug": "4thful"
+  },
+  "modrinth": {
+    "id": "WSUy8uQV",
+    "slug": "4thful"
+  }
+}
