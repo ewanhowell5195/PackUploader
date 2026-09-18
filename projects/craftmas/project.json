@@ -1,0 +1,138 @@
+{
+  "config": {
+    "id": "craftmas",
+    "name": "Craftmas",
+    "summary": "The Christmas themed resource pack",
+    "description": [
+      "This is a resource pack that is perfect for Christmas and Winter Time as it makes the entire world snowy! A lot of other christmas references are in there too, such as Candy Cane Fences."
+    ],
+    "optifine": "OptiFine is used to add support for remodelling entities.",
+    "video": "w-ZKOcfPeNA",
+    "github": false,
+    "version": "3.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.16.4",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.16.4"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.16.4",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Candy Cane Fences",
+        "description": "Fences grown as candy canes in the snow",
+        "file": "fence",
+        "featured": true,
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": true,
+        "font": 0,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "cold",
+        "craft",
+        "craftmas",
+        "cristmas",
+        "environment",
+        "experimental",
+        "gui",
+        "items",
+        "misc",
+        "mobs",
+        "models",
+        "season",
+        "seasonal",
+        "snow",
+        "winter"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": true,
+        "entities": "featured",
+        "environment": "featured",
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 351877,
+    "slug": "craftmas"
+  },
+  "planetminecraft": {
+    "id": 4886864,
+    "slug": "craftmas-4886864"
+  },
+  "modrinth": {
+    "id": "JRvurzuq",
+    "slug": "craftmas-pack"
+  }
+}

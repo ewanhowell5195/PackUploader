@@ -36,8 +36,18 @@ const licenses = {
 export default {
   async createProject() {
     const slug = project.modrinth.slug ?? project.config.id
-    if ((await fetch(`https://api.modrinth.com/v2/project/${slug}`)).status !== 404) {
+    const taken = await fetch(`https://api.modrinth.com/v2/project/${slug}`, {
+      headers: {
+        Authorization: auth.modrinth
+      }
+    })
+
+    if (taken.ok) {
       error("Cannot create project", `the slug "${slug}" is taken. Pick another one and set it as modrinth.slug in the project`)
+    }
+
+    if (taken.status !== 404) {
+      error("Cannot create project", `checking whether the slug "${slug}" is free returned ${taken.status}`)
     }
 
     const form = makeForm({

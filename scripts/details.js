@@ -84,7 +84,8 @@ if (data.images) {
 
     // Modrinth refuses gallery deletions that would empty the gallery while a project is under review
     const images = await modrinth.getImages()
-    const keep = await modrinth.getStatus() === "approved" ? [] : images.slice(-1)
+    const underReview = await modrinth.getStatus() !== "approved"
+    const keep = underReview ? images.slice(-1) : []
 
     await modrinth.removeImages(images.filter(e => !keep.includes(e)))
     console.log("Modrinth: Removed project images")
@@ -92,10 +93,13 @@ if (data.images) {
     const deferred = await modrinth.uploadImages()
     console.log("Modrinth: Added project images")
 
-    if (keep.length) {
+    // with a single image there is never a second one to hold the gallery open, so the kept one has to stay
+    if (keep.length && config.images.filter(e => !e.thumbnail && !e.logo).length > 1) {
       await modrinth.removeImages(keep)
       await modrinth.uploadImages(deferred)
       console.log("Modrinth: Replaced the image kept for review")
+    } else if (keep.length) {
+      console.log("Modrinth: Kept the existing image, the gallery cannot be emptied while under review")
     }
   }
 
