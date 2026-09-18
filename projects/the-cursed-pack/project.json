@@ -36,7 +36,7 @@
         "embed": true
       },
       {
-        "name": "Hostile Mobs",
+        "name": "More Mobs",
         "description": "A turtle, creeper, spider and enderman, all wearing each other's textures",
         "file": "mobs2",
         "embed": true
