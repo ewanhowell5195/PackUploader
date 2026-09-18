@@ -57,53 +57,67 @@ if (data.images) {
     })
   }
 
+  const detailsOnly = data.images === "details"
+
   if (project.curseforge.id) {
-    if (config.icon) {
-      await curseforge.uploadIcon()
+    if (detailsOnly) {
+      await curseforge.setImageDetails()
+    } else {
+      if (config.icon) {
+        await curseforge.uploadIcon()
+      }
+
+      await curseforge.removeImages()
+      console.log("CurseForge: Removed project images")
+
+      await curseforge.uploadImages()
+      console.log("CurseForge: Added project images")
     }
-
-    await curseforge.removeImages()
-    console.log("CurseForge: Removed project images")
-
-    await curseforge.uploadImages()
-    console.log("CurseForge: Added project images")
   }
 
   if (project.planetminecraft.id) {
-    await planetminecraft.removeImages()
-    console.log("Planet Minecraft: Removed project images")
+    if (detailsOnly) {
+      await planetminecraft.setImageDetails()
+    } else {
+      await planetminecraft.removeImages()
+      console.log("Planet Minecraft: Removed project images")
 
-    await planetminecraft.uploadImages()
-    console.log("Planet Minecraft: Added project images")
+      await planetminecraft.uploadImages()
+      console.log("Planet Minecraft: Added project images")
+    }
   }
 
   if (project.modrinth.id) {
-    if (config.icon) {
-      await modrinth.uploadIcon()
-    }
+    if (detailsOnly) {
+      await modrinth.setImageDetails()
+    } else {
+      if (config.icon) {
+        await modrinth.uploadIcon()
+      }
 
-    // Modrinth refuses gallery deletions that would empty the gallery while a project is under review
-    const images = await modrinth.getImages()
-    const underReview = await modrinth.getStatus() !== "approved"
-    const keep = underReview ? images.slice(-1) : []
+      // Modrinth refuses gallery deletions that would empty the gallery while a project is under review
+      const images = await modrinth.getImages()
+      const underReview = await modrinth.getStatus() !== "approved"
+      const keep = underReview ? images.slice(-1) : []
 
-    await modrinth.removeImages(images.filter(e => !keep.includes(e)))
-    console.log("Modrinth: Removed project images")
+      await modrinth.removeImages(images.filter(e => !keep.includes(e)))
+      console.log("Modrinth: Removed project images")
 
-    const deferred = await modrinth.uploadImages()
-    console.log("Modrinth: Added project images")
+      const deferred = await modrinth.uploadImages()
+      console.log("Modrinth: Added project images")
 
-    // with a single image there is never a second one to hold the gallery open, so the kept one has to stay
-    if (keep.length && config.images.filter(e => !e.thumbnail && !e.logo).length > 1) {
-      await modrinth.removeImages(keep)
-      await modrinth.uploadImages(deferred)
-      console.log("Modrinth: Replaced the image kept for review")
-    } else if (keep.length) {
-      console.log("Modrinth: Kept the existing image, the gallery cannot be emptied while under review")
+      // with a single image there is never a second one to hold the gallery open, so the kept one has to stay
+      if (keep.length && config.images.filter(e => !e.thumbnail && !e.logo).length > 1) {
+        await modrinth.removeImages(keep)
+        await modrinth.uploadImages(deferred)
+        console.log("Modrinth: Replaced the image kept for review")
+      } else if (keep.length) {
+        console.log("Modrinth: Kept the existing image, the gallery cannot be emptied while under review")
+      }
     }
   }
 
-  if (settings.ewan && !project.ewanhowell?.ignore) {
+  if (settings.ewan && !project.ewanhowell?.ignore && !detailsOnly) {
     await ewanhowell.removeImages()
     console.log("Ewan Howell: Removed project images")
 
