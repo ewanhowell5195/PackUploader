@@ -1,0 +1,161 @@
+{
+  "config": {
+    "id": "concraft",
+    "name": "Concraft",
+    "summary": "A Flat, Concrete Like Resource Pack",
+    "description": [
+      "This pack turns every block texture into a 1x1 resolution, resulting in a Concrete appearance."
+    ],
+    "optifine": false,
+    "video": "m9yx6oATSQM",
+    "github": false,
+    "version": "2.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.16.2",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.16.2"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.16.2",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Forest",
+        "description": "Woodland with every block flattened to one colour",
+        "file": "forest",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "House",
+        "description": "A village house in flat colour",
+        "file": "house",
+        "embed": true
+      },
+      {
+        "name": "Spruce Forest",
+        "description": "A spruce forest in flat colour",
+        "file": "spruce",
+        "embed": true
+      },
+      {
+        "name": "Nether",
+        "description": "The Nether, stripped back to solid colour",
+        "file": "nether"
+      },
+      {
+        "name": "Crimson Forest",
+        "description": "The crimson forest in flat colour",
+        "file": "crimson"
+      },
+      {
+        "name": "Warped Forest",
+        "description": "The warped forest in flat colour",
+        "file": "warped"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": true,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": true,
+        "font": 0,
+        "gui": 0,
+        "items": true,
+        "misc": true,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": true,
+        "audio": 0,
+        "models": 0
+      },
+      "tags": [
+        "1x1",
+        "concraft",
+        "concrete",
+        "flat",
+        "minimal",
+        "minimalist",
+        "other",
+        "simple",
+        "simplistic",
+        "solid",
+        "terrain"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": true,
+        "16x": 0,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": "featured",
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": true,
+        "entities": 0,
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": 0,
+        "realistic": 0,
+        "simplistic": "featured",
+        "themed": 0,
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 366560,
+    "slug": "concraft"
+  },
+  "planetminecraft": {
+    "id": 7051747,
+    "slug": "concraft-7051747"
+  },
+  "modrinth": {
+    "id": "lQS5G5xC",
+    "slug": "concraft"
+  }
+}
