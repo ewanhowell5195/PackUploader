@@ -50,7 +50,7 @@ if (!fs.existsSync(templates)) {
 
 config.pack = fs.readFileSync("data/create/pack.zip")
 
-config.icon = await sharp(path.join(projectPath, "pack.png")).resize(400, 400, { kernel: "nearest" }).png().toBuffer()
+config.icon = await makeIcon(path.join(projectPath, "pack.png"), 400)
 
 for (const img of config.images) {
   img.buffer = await sharp(path.join(projectPath, "images", img.file + ".png")).resize(1920, 1080, { fit: "inside", withoutEnlargement: true }).jpeg({ quality: 95 }).toBuffer()

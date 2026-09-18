@@ -51,7 +51,11 @@ export default {
   },
   removeImages() {
     const imgPath = path.join(sitePath, "images", "resourcepacks", project.config.id, "images")
-    fs.readdirSync(imgPath).forEach(f => fs.unlinkSync(path.join(imgPath, f)))
+
+    // some packs have an image the site card points at that is not in the gallery, so only clear what is
+    const managed = new Set(project.config.images.filter(e => !e.thumbnail && !e.logo).map(e => e.file + ".webp"))
+
+    fs.readdirSync(imgPath).filter(f => managed.has(f)).forEach(f => fs.unlinkSync(path.join(imgPath, f)))
   },
   async addImages() {
     const imgPath = path.join(sitePath, "images", "resourcepacks", project.config.id)

@@ -30,6 +30,17 @@ globalThis.makeForm = data => {
   return form
 }
 
+globalThis.makeIcon = async (file, size) => {
+  const icon = await sharp(file).resize(size, size, { kernel: "nearest" }).png().toBuffer()
+
+  // Modrinth rejects icons over 256KiB, and a palette costs far less than it saves
+  if (icon.length <= 256 * 1024) {
+    return icon
+  }
+
+  return sharp(file).resize(size, size, { kernel: "nearest" }).png({ compressionLevel: 9, palette: true }).toBuffer()
+}
+
 globalThis.getReplacementPath = (obj, path) => path.replace(/\[(\d+)\]/g, ".$1").split(".").reduce((o, k) => (o && k in o ? o[k] : undefined), obj)
 
 globalThis.formatInline = (str, platform) => {

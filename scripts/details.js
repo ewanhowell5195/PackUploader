@@ -13,7 +13,7 @@ globalThis.config = project.config
 
 const icon = path.join(projectPath, "pack.png")
 if (fs.existsSync(icon)) {
-  config.icon = await sharp(icon).resize(512, 512, { kernel: "nearest" }).png().toBuffer()
+  config.icon = await makeIcon(icon, 512)
 }
 
 const logo = path.join(projectPath, "logo.png")
