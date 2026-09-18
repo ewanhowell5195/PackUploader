@@ -1,0 +1,135 @@
+{
+  "config": {
+    "id": "fences-plus-faithful",
+    "name": "Fences+: Faithful",
+    "summary": "The Faithful version of the fence improvement resource pack",
+    "description": [
+      "This is the Faithful version of Fences+, which changes all of the fence models to be more unique and exciting!",
+      "It is an addon, so Fences+ has to be installed underneath it."
+    ],
+    "optifine": false,
+    "video": false,
+    "github": false,
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.16.3",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.16.3"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.16.3",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Fences",
+        "description": "Every Fences+ model, redrawn in Faithful",
+        "file": "fences",
+        "featured": true,
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "32x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Other",
+      "resolution": "32",
+      "progress": 100,
+      "credit": "Doge - Textures",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": true,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": true,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": true,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "3d",
+        "addon",
+        "block",
+        "blockmodel",
+        "faithful",
+        "fence",
+        "fences",
+        "improvement",
+        "model",
+        "models",
+        "other"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": 0,
+        "32x": true,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": true,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": "featured",
+        "entities": 0,
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 1700856,
+    "slug": "fences-faithful"
+  },
+  "planetminecraft": {
+    "id": 7051470,
+    "slug": "fences-faithful"
+  },
+  "modrinth": {
+    "id": "w8w9FZhH",
+    "slug": "fences-plus-faithful"
+  }
+}
