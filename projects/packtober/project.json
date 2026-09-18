@@ -1,0 +1,147 @@
+{
+  "config": {
+    "id": "packtober",
+    "name": "Packtober",
+    "summary": "The Halloween themed resource pack",
+    "description": [
+      "A halloween themed pack that turns bows into trumpets and double chests into coffins, then fills the world with graves, ghosts, pumpkins and skeletons."
+    ],
+    "optifine": "OptiFine is used to add support for remodelling entities.",
+    "video": "PAYQjrzt1vI",
+    "github": false,
+    "version": "4.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.16.3",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.16.3"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.16.3",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Doot Doot",
+        "description": "Bows become trumpets",
+        "file": "trumpet-skeleton",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Coffin Chest",
+        "description": "Double chests become coffins",
+        "file": "coffin",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": true,
+        "art": true,
+        "environment": true,
+        "font": 0,
+        "gui": true,
+        "items": true,
+        "misc": true,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": true,
+        "models": true
+      },
+      "tags": [
+        "armor",
+        "art",
+        "audio",
+        "dark",
+        "environment",
+        "experimental",
+        "fall",
+        "gui",
+        "halloween",
+        "items",
+        "misc",
+        "mobs",
+        "models",
+        "october",
+        "optifine",
+        "season",
+        "seasonal",
+        "spooky"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": "featured",
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": true,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": true,
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": 0
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 347731,
+    "slug": "packtober"
+  },
+  "planetminecraft": {
+    "id": 4803529,
+    "slug": "packtober"
+  },
+  "modrinth": {
+    "id": "yTwy5O3O",
+    "slug": "packtober"
+  }
+}
