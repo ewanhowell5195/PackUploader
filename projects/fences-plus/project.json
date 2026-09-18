@@ -1,0 +1,150 @@
+{
+  "config": {
+    "id": "fences-plus",
+    "name": "Fences+",
+    "summary": "The fence improvement resource pack",
+    "description": [
+      "This pack changes all of the fence models to be more unique and exciting!"
+    ],
+    "optifine": false,
+    "video": "EtTvagq7-B4",
+    "github": "https://github.com/ewanhowell5195/FencesPlus",
+    "version": "1.0.0",
+    "versions": {
+      "curseforge": {
+        "type": "exact",
+        "version": "1.16.3",
+        "snapshots": false
+      },
+      "planetminecraft": {
+        "type": "exact",
+        "version": "1.16.3"
+      },
+      "modrinth": {
+        "type": "exact",
+        "version": "1.16.3",
+        "snapshots": false
+      }
+    },
+    "images": [
+      {
+        "name": "Oak Fences",
+        "description": "Oak fences fencing in a farm",
+        "file": "oak",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Every Fence",
+        "description": "Every wood type, each with its own design",
+        "file": "all",
+        "embed": true
+      },
+      {
+        "name": "Bridge",
+        "description": "Fences as railings along a bridge",
+        "file": "bridge",
+        "embed": true
+      },
+      {
+        "name": "Spruce Fences",
+        "description": "Spruce fences holding up a building",
+        "file": "spruce"
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Experimental",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": true,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": true,
+        "mobs": 0,
+        "particles": 0,
+        "terrain": true,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "3d",
+        "block",
+        "blockmodel",
+        "enhancement",
+        "experimental",
+        "fence",
+        "fences",
+        "improvement",
+        "model",
+        "models"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": true,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": "featured",
+        "entities": 0,
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": 0,
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": "featured"
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 416589,
+    "slug": "fences"
+  },
+  "planetminecraft": {
+    "id": 4814584,
+    "slug": "fences"
+  },
+  "modrinth": {
+    "id": "eUlrTqKk",
+    "slug": "fences-plus"
+  }
+}
