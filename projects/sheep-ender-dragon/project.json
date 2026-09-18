@@ -43,8 +43,8 @@
         "embed": true
       },
       {
-        "name": "Dragon Breath",
-        "description": "It still breathes like a dragon",
+        "name": "Flying",
+        "description": "The sheep in flight over the End island",
         "file": "fly",
         "embed": true
       }
