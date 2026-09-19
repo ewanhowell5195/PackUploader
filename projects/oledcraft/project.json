@@ -33,6 +33,7 @@
         "name": "Inventory",
         "description": "The survival inventory with the recipe book open",
         "file": "inventory",
+        "featured": true,
         "embed": true
       },
       {
