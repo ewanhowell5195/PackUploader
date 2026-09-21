@@ -129,7 +129,7 @@ export default {
       data: {
         name: project.config.name,
         version_number: project.config.version.toString(),
-        changelog: config.changelog?.replace("\n", "\n\n") ?? "Initial release",
+        changelog: config.changelog?.replaceAll("\n", "\n\n") ?? "Initial release",
         dependencies: [],
         game_versions: versions,
         version_type: "release",
