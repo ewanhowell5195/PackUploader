@@ -13,11 +13,11 @@
     "versions": {
       "curseforge": {
         "type": "after",
-        "version": "26.1"
+        "version": "1.21.9"
       },
       "modrinth": {
         "type": "after",
-        "version": "26.1"
+        "version": "1.21.9"
       },
       "planetminecraft": {
         "type": "latest"
