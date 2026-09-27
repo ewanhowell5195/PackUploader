@@ -1,0 +1,146 @@
+{
+  "config": {
+    "id": "chillagers",
+    "name": "Chillagers",
+    "summary": "A pack to replace Evokers with Chillagers (Iceologers)",
+    "description": [
+      "This pack replaces the Evokers with the Minecraft Dungeons Chillager! Also known as the Iceologer."
+    ],
+    "optifine": "OptiFine is used to add support for remodelling evokers.",
+    "video": "h6Bq9H9s9Mc",
+    "github": false,
+    "version": "1.1.0",
+    "versions": {
+      "curseforge": {
+        "type": "after",
+        "version": "26.1"
+      },
+      "modrinth": {
+        "type": "after",
+        "version": "26.1"
+      },
+      "planetminecraft": {
+        "type": "latest"
+      }
+    },
+    "images": [
+      {
+        "name": "Chillager",
+        "description": "The Chillager out in the snow",
+        "file": "chillager",
+        "featured": true,
+        "embed": true
+      },
+      {
+        "name": "Attacks",
+        "description": "An ice spike and a summoned ice block, either side of the Chillager",
+        "file": "attacks",
+        "embed": true
+      },
+      {
+        "name": "Attacking",
+        "description": "Ice spikes erupting out of the ground mid cast",
+        "file": "attacking",
+        "embed": true
+      }
+    ],
+    "curseforge": {
+      "mainCategory": "16x",
+      "additionalCategories": {
+        "animated": false,
+        "dataPacks": false,
+        "fontPacks": false,
+        "medieval": false,
+        "modSupport": false,
+        "modern": false,
+        "photoRealistic": false,
+        "steampunk": false,
+        "traditional": false,
+        "miscellaneous": true
+      },
+      "license": "All Rights Reserved"
+    },
+    "planetminecraft": {
+      "category": "Themed",
+      "resolution": "16",
+      "progress": 100,
+      "credit": "Minecraft Dungeons",
+      "modifies": {
+        "armor": 0,
+        "art": 0,
+        "environment": 0,
+        "font": 0,
+        "gui": 0,
+        "items": 0,
+        "misc": 0,
+        "mobs": true,
+        "particles": 0,
+        "terrain": 0,
+        "audio": 0,
+        "models": true
+      },
+      "tags": [
+        "chillager",
+        "dungeon",
+        "dungeons",
+        "evoker",
+        "hostile",
+        "iceologer",
+        "illager",
+        "mcdungeons",
+        "minecraftdungeons",
+        "optifine",
+        "reskin",
+        "resource",
+        "resourcepack",
+        "themed"
+      ]
+    },
+    "modrinth": {
+      "tags": {
+        "8x-": 0,
+        "16x": true,
+        "32x": 0,
+        "48x": 0,
+        "64x": 0,
+        "128x": 0,
+        "256x": 0,
+        "512x+": 0,
+        "audio": 0,
+        "blocks": 0,
+        "combat": 0,
+        "core-shaders": 0,
+        "cursed": 0,
+        "decoration": 0,
+        "entities": "featured",
+        "environment": 0,
+        "equipment": 0,
+        "fonts": 0,
+        "gui": 0,
+        "items": 0,
+        "locale": 0,
+        "modded": 0,
+        "models": "featured",
+        "realistic": 0,
+        "simplistic": 0,
+        "themed": "featured",
+        "tweaks": 0,
+        "utility": 0,
+        "vanilla-like": true
+      },
+      "license": "All Rights Reserved/No License"
+    }
+  },
+  "curseforge": {
+    "id": 410361,
+    "slug": "chillagers"
+  },
+  "planetminecraft": {
+    "id": 4776511,
+    "slug": "chillagers-iceologers"
+  },
+  "modrinth": {
+    "id": "oW7mG6PW",
+    "slug": "chillagers"
+  }
+}
